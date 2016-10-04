@@ -43,6 +43,5 @@ CSV.read('seed_csvs/sales.csv').map do |line|
   sale_hash[:purchase_time] = line[2]
   sale_hash[:vendor_id] = line[3]
   sale_hash[:product_id] = line[4]
-
   Sale.create(sale_hash)
 end
