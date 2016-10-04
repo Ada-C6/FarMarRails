@@ -1,4 +1,4 @@
-"id", "name", "no_of_employees", "market_id"
+id,name,no_of_employees,market_id
 1,Feil-Farrell,8,1
 2,"Hamill, Kilback and Pfeffer",5,1
 3,"Breitenberg Inc",5,1
