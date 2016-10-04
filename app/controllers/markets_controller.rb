@@ -1,4 +1,8 @@
 class MarketsController < ApplicationController
+  def index
+    @markets = Market.all
+  end
+
   def new
   end
 
@@ -17,6 +21,5 @@ class MarketsController < ApplicationController
   def show
   end
 
-  def index
-  end
+
 end
