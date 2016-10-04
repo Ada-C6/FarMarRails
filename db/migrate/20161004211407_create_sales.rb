@@ -3,8 +3,8 @@ class CreateSales < ActiveRecord::Migration
     create_table :sales do |t|
       t.integer :amount
       t.datetime :purchase_time
-      t.belongs_to :product
-      t.belongs_to :vendor
+      t.belongs_to :product, index: true
+      t.belongs_to :vendor, index: true
 
       t.timestamps null: false
     end

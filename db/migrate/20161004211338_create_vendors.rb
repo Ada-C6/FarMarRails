@@ -3,7 +3,7 @@ class CreateVendors < ActiveRecord::Migration
     create_table :vendors do |t|
       t.string :name
       t.integer :num_employees
-      t.belongs_to :market
+      t.belongs_to :market, index: true
 
       t.timestamps null: false
     end
