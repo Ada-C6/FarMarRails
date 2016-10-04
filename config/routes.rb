@@ -1,4 +1,24 @@
 Rails.application.routes.draw do
+
+  get 'welcome/index'
+  root 'welcome#index'
+
+  resources :markets, except: [:show, :destroy] do
+    resources :vendors, except: [:show]
+  end
+
+  resources :vendors, only: [:index] do
+    resources :products, except: [:show] do
+      resources :sales, only: [:create]
+    end
+
+    resources :sales, only: [:index]
+  end
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
