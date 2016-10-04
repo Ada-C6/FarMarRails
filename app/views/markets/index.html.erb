@@ -2,6 +2,6 @@
 
 <ul>
 <% @markets.each do |market| %>
-    <li><%= market.name + ": " + market.city + ", " + market.state %></li>
+    <li><%= link_to("#{market.name}", show_market_path(market)) %><%= ": #{market.city}, #{market.state}"%></li>
 <% end %>
 </ul>
