@@ -1,4 +1,46 @@
 Rails.application.routes.draw do
+  get 'visitors/index'
+
+  get 'visitors/show'
+
+  get 'visitors/new'
+
+  get 'visitors/create'
+
+  get 'visitors/edit'
+
+  get 'visitors/update'
+
+  get 'visitors/destroy'
+
+  get 'vendors/index'
+
+  get 'vendors/show'
+
+  get 'vendors/new'
+
+  get 'vendors/create'
+
+  get 'vendors/edit'
+
+  get 'vendors/update'
+
+  get 'vendors/destroy'
+
+  get 'market_admins/index'
+
+  get 'market_admins/show'
+
+  get 'market_admins/new'
+
+  get 'market_admins/create'
+
+  get 'market_admins/edit'
+
+  get 'market_admins/update'
+
+  get 'market_admins/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
