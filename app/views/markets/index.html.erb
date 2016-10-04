@@ -1,2 +1,7 @@
-<h1>Markets#index</h1>
-<p>Find me in app/views/markets/index.html.erb</p>
+<h1>All Markets</h1>
+
+<ul>
+<% @markets.each do |market| %>
+    <li><%= link_to("#{market.name}", show_market_path(market)) %><%= ": #{market.city}, #{market.state}"%></li>
+<% end %>
+</ul>

@@ -42,7 +42,7 @@ root to: 'homes#index'
 
   get 'vendors/show'
 
-  get 'vendors/index' => 'vendors_index', as: 'vendors_home'
+  get 'vendors/index' => 'vendors#index', as: 'vendors_home'
 
   get 'markets/new'
 
@@ -54,7 +54,7 @@ root to: 'homes#index'
 
   get 'markets/destroy'
 
-  get 'markets/show'
+  get 'markets/:id/show' => 'markets#show', as: 'show_market'
 
   get 'markets/index' => 'markets#index', as: 'markets_home'
 
