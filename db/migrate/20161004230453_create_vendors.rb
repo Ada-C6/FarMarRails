@@ -1,7 +1,7 @@
 class CreateVendors < ActiveRecord::Migration
   def change
     create_table :vendors do |t|
-      t.integer :id
+      t.integer :vendor_id
       t.string :name
       t.integer :num_employees
       t.integer :market_id
