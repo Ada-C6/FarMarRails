@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'homes/index'
+
+root to: 'homes#index'
 
   get 'sales/new'
 
@@ -41,7 +42,7 @@ Rails.application.routes.draw do
 
   get 'vendors/show'
 
-  get 'vendors/index'
+  get 'vendors/index' => 'vendors_index', as: 'vendors_home'
 
   get 'markets/new'
 
@@ -55,7 +56,7 @@ Rails.application.routes.draw do
 
   get 'markets/show'
 
-  get 'markets/index'
+  get 'markets/index' => 'markets#index', as: 'markets_home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
