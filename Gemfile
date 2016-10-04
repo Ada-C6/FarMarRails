@@ -43,5 +43,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-end
 
+  gem 'better_errors'
+  # Optional but allows more advanced features of better_errors
+  gem 'binding_of_caller'
+
+  gem 'pry-rails'
+end
