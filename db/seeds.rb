@@ -8,9 +8,11 @@
 
 # for markets:
 
+require 'csv'
+
 markets = []
 
-CSV.read('/../../seed_csvs/markets.csv').map do |line|
+CSV.read('seed_csvs/markets.csv').map do |line|
   market_hash = {}
   market_hash[:name] = line[1]
   market_hash[:address] = line[2]
