@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'homes/index'
+
   get 'sales/new'
 
   get 'sales/create'
