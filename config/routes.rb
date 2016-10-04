@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/show_markets' => 'home#show_markets'
+
   resources :markets
   resources :vendors do
     resources :products
     resources :sales
-  end 
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
