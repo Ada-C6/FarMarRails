@@ -1,0 +1,2 @@
+class MarketController < ApplicationController
+end
