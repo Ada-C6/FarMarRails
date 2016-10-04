@@ -1,4 +1,7 @@
-# FarMar Rails
+#Melissa & Joanna's Trello Board link!
+https://trello.com/b/wKhhSz24/melissa-joanna-do-farmarrails
+
+FarMar Rails
 Build a database backend application to view, create, and manage farmers markets as well as their vendors, products, and sales.
 In this implementation we'll be seeding with static data, and also building a tool to allow markets and/or vendors to sign up and add their own data.
 
