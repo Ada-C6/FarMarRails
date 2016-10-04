@@ -1,3 +1,4 @@
+"id", "name", "address", "city", "county", "state", "zip"
 1,"People's Co-op Farmers Market","30th and Burnside",Portland,Multnomah,Oregon,97202
 2,"Silverdale Farmers Market",98383,Silverdale,Kitsap,Washington,98383
 3,"Dolgeville Farmer's Market","(Parking Lot) Between Main St. and Helmer Ave",Dolgeville,Herkimer,"New York",13329
