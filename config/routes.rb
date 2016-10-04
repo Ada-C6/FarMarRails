@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   #We have created the first routes for markets and the user page.
   root 'users#index'
   get '/users' => 'users#index'
-  get '/users/markets' => 'users#show'
+  get '/users/markets' => 'users#markets'
   get '/users/markets/:id' => 'users#show'
 
   resources :markets
