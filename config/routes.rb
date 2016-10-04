@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  #We have created the first routes for markets and the user page.
+  root 'users#index'
+  get '/users' => 'users#index'
+  get '/users/markets' => 'users#show'
+  get '/users/markets/:id' => 'users#show'
+
+  resources :markets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
