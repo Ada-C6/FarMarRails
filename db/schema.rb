@@ -35,14 +35,14 @@ ActiveRecord::Schema.define(version: 20161004213512) do
 
   create_table "sales", force: :cascade do |t|
     t.integer  "vendor_id"
-    t.integer  "sale_id"
+    t.integer  "product_id"
     t.integer  "amount"
     t.datetime "purchase_time"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
 
-  add_index "sales", ["sale_id"], name: "index_sales_on_sale_id"
+  add_index "sales", ["product_id"], name: "index_sales_on_product_id"
   add_index "sales", ["vendor_id"], name: "index_sales_on_vendor_id"
 
   create_table "vendors", force: :cascade do |t|
