@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+CSV.foreach('./seed_csvs/markets.csv', :headers => true) do |row|
+    Market.create(row.to_hash)
+end
+
+CSV.foreach('./seed_csvs/vendors.csv', :headers => true) do |row|
+    Vendor.create(row.to_hash)
+end
+
+CSV.foreach('./seed_csvs/products.csv', :headers => true) do |row|
+    Product.create(row.to_hash)
+end
+
+CSV.foreach('./seed_csvs/sales.csv', :headers => true) do |row|
+    Sale.create(row.to_hash)
+end
