@@ -11,5 +11,4 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
     @vendors_list = @market.vendors
   end
-
 end
