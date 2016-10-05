@@ -20,3 +20,35 @@ CSV.read('seed_csvs/markets.csv').each do |line|
   Market.create(market)
 
 end
+
+CSV.read('seed_csvs/vendors.csv').each do |line|
+  vendor = {}
+  vendor[:name] = line[1]
+  vendor[:num_employees] = line[2].to_i
+  vendor[:market_id] = line[3].to_i
+
+  Vendor.create(vendor)
+end
+
+CSV.read('seed_csvs/products.csv').each do |line|
+  product = {}
+  product[:name] = line[1]
+  product[:vendor_id] = line[2].to_i
+
+  Product.create(product)
+end
+
+CSV.read('seed_csvs/sales.csv').each do |line|
+  sale = {}
+  sale[:amount] = line[1].to_i
+  sale[:purchase_time] = DateTime.parse(line[2])
+  sale[:vendor_id] = line[3].to_i
+  sale[:product_id] = line[4].to_i
+
+  Sale.create(sale)
+end
+
+
+
+# do a rake db:reset before adding more in here
+# dont forget the correct datatype/check with schema
