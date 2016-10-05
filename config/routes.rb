@@ -5,7 +5,19 @@ Rails.application.routes.draw do
   get '/users/markets' => 'users#markets'
   get '/users/markets/:id', to: 'users#show', as:'user_market'
 
-  resources :markets, except: [:destroy]
+  resources :markets, except: [:destroy] do
+    resources :vendors
+  end
+
+  resources :vendors, only: [:index, :show] do
+    resources :products
+    resources :sales, only: [:show, :create]
+  end
+
+
+
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
