@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+
+  get 'markets/index'
+
+  get 'markets/show'
+
+  get 'markets/create'
+
+  get 'markets/new'
+
+  get 'markets/edit'
+
+  get 'markets/update'
+
+  get 'markets/destroy'
+
+
   get 'vendors/index'
 
   get 'vendors/show'
@@ -13,21 +29,9 @@ Rails.application.routes.draw do
 
   get 'vendors/destory'
 
-  get 'vender_user/index'
 
-  get 'vender_user/show'
 
-  get 'vender_user/edit'
 
-  get 'vender_user/update'
-
-  get 'vender_user/new'
-
-  get 'vender_user/create'
-
-  get 'vender_user/destory'
-
-  
 
   root to: 'general_users#index'
 
