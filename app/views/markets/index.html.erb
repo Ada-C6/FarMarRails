@@ -1,1 +1,7 @@
 You're here because you are a market. Yay!
+
+
+<h3>Here's a list of all our current running markets: </h3>
+<% @markets.each do |market| %>
+  <br><%= link_to("#{market.name}", market_path(market.id)) %>
+<% end %>

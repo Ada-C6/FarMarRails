@@ -1,14 +1,16 @@
 <h1><%= @market.name %></h1>
-<p><%= @market.id %>
+<p>Market ID:<%= @market.id %>
 
-<p>Address</p>
-<p><%= @market.address %></p>
-<p><%= @market.city %></p>
-<p><%= @market.county %></p>
-<p><%= @market.state %></p>
-<p><%= @market.zip %></p>
+<h3>Address</h3>
+<p>Street: <%= @market.address %></p>
+<p> City: <%= @market.city %></p>
+<p> County: <%= @market.county %></p>
+<p>State: <%= @market.state %></p>
+<p>Zip Code: <%= @market.zip %></p>
 
-<p>Vendors</p>
+<h3>Vendors</h3>
 <% @vendors_list.each do |vendor|%>
   <p><%= vendor.name %></p>
 <% end %>
+
+<%= link_to "Edit Market Info", edit_market_path(@market.id) %>
