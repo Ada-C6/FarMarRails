@@ -4,3 +4,5 @@
 <%= render partial: 'vendors/product_buttons', locals: {product_id: @product.id} %>
 
 <%= render partial: 'sales/new_sale_button', locals: {product_id: @product.id} %>
+
+<%= link_to ("Back to Vendor", show_vendor_path()) %>
