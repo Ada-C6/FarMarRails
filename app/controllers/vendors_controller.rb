@@ -1,4 +1,4 @@
-class VenderUserController < ApplicationController
+class VendorsController < ApplicationController
   def index
   end
 
