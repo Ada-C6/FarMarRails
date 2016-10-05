@@ -27,8 +27,8 @@
 <h3>List of Vendors</h3>
 
 <ul>
-<% vendors = Vendor.where(market_id: @market.id) %>
-<% vendors.each do |vendor| %>
+
+<% @vendors.each do |vendor| %>
   <li>
  <%= vendor.name %>
   </li>
