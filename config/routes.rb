@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'market_admins/index' => 'market_admins#index', as: 'market_admins'
 
-  get 'market_admins/show'
+  get 'market_admins/show/:id' => 'market_admins#show', as: 'show_market'
 
   get 'market_admins/new'
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'vendors/index' => 'vendors#index', as: 'vendors'
 
-  get 'vendors/show'
+  get 'vendors/show' => 'vendors#show', as: 'show_vendor'
 
   get 'vendors/new'
 

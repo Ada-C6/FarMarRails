@@ -1,2 +1,15 @@
-<h1>MarketAdmins#show</h1>
-<p>Find me in app/views/market_admins/show.html.erb</p>
+<h1><%= @market.name %></h1>
+<p><%= @market.address %></p>
+<p><%= @market.city %></p>
+<p><%= @market.county %></p>
+<p><%= @market.state %></p>
+<p><%= @market.zip %></p>
+
+<h1>List of market's vendors</h1>
+<% @vendor_list.each do |vendor| %>
+<article>
+  <p>
+    <%= link_to "#{vendor.name}", show_vendor_path(vendor.id) %>
+  </p>
+  <% end %>
+</article>

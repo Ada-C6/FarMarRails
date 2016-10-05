@@ -1,7 +1,19 @@
 <h1>Welcome Market Admin!</h1>
-
+<h2>Here is a list of all markets:</h2>
 <% @markets.each do |market| %>
-<section>
-  <p><%= @markets %></p>
-</section>
-<% end %>
+<article>
+  <p>
+    <%= link_to "#{market.name}", show_market_path(market.id) %>
+    <%= market.state %>
+  </p>
+  <% end %>
+</article>
+
+<!-- <h2>Here is a list of all vendors:</h2>
+<article>
+  <% @vendors.each do |vendor| %>
+  <p>
+    <%= vendor.name %>
+  </p>
+  <% end %>
+</article> -->
