@@ -1,0 +1,13 @@
+ <h1>Markets#show</h1>
+<section>
+	<p>id: <%= @mymarket.id %></p>
+	<p>name: <%= @mymarket.name %></p>
+	<p>address: <%=@mymarket.address %> <%=@mymarket.city%> <%=@mymarket.county%> <%=@mymarket.state%>, <%=@mymarket.zip%></p>
+</section>
+<section>
+	<h2>Vendors</h2>
+	<% @myvendors.each do |vendor| %>
+		<p><%= vendor.name %></p>
+	<%end%>
+</section>
+
