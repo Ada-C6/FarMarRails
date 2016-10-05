@@ -21,6 +21,17 @@ CSV.read("seed_csvs/markets.csv").each do |line|
   market.save
 end
 
+# Vendor seed
+CSV.read("seed_csvs/vendors.csv").each do |line|
+  id, name, num_employees, market_id = line # parallel assignment!
+  id = id.to_i # need id to be a fixnum
+  num_employees = num_employees.to_i # want num_employees to be a fixnum also
+  market_id = market_id.to_i #want market_id to be a fixnum
+  vendor = Vendor.new(id: id, market_id: market_id, name: name, num_employees:num_employees)
+
+  vendor.save
+end
+
 
 # Sales seed
 # CSV.read("support/sales.csv").each do |line|
