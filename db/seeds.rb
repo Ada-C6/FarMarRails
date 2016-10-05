@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'csv'
+
+CSV.read('seed_csvs/markets.csv').each do |line|
+  market = {}
+  market[:name] = line[1]
+  market[:address] = line[2]
+  market[:city] = line[3]
+  market[:county] = line[4]
+  market[:state] = line[5]
+  market[:zip] = line[6]
+
+  Market.create(market)
+
+end
