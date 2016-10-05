@@ -1,0 +1,14 @@
+<p>
+  Select the vendor (who you are)
+</p>
+
+<% @vendors.each do |vendor| %>
+<p>
+  <%= link_to "#{ vendor.name }", vendor_path(vendor) %>
+</p>
+<%=  %>
+
+<% end %>
+
+
+<p>This is the vendors view index.html.erb</p>
