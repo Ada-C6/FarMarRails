@@ -35,6 +35,8 @@ Rails.application.routes.draw do
 
   get 'vendors/edit'
 
+  get 'vendors/create'
+
   get 'vendors/update'
 
   get 'vendors/destroy'
@@ -44,6 +46,8 @@ Rails.application.routes.draw do
   get 'markets/show'
 
   get 'markets/new'
+
+  get 'markets/create'
 
   get 'markets/edit'
 
