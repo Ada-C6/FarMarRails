@@ -2,3 +2,5 @@
 
 <!-- This form doesn't need the ../ to let you know to go back up to the vendors view folder.  -->
 <%= render partial: 'vendors/product_buttons', locals: {product_id: @product.id} %>
+
+<%= render partial: 'sales/new_sale_button', locals: {product_id: @product.id} %>
