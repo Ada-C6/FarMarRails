@@ -20,9 +20,9 @@ root to: 'homes#index'
 
   get 'sales/index'
 
-  get 'products/new'
+  get 'products/:id/new' => 'products#new', as: 'new_product_for_vendor'
 
-  get 'products/create'
+  post 'products/:id/create' => 'products#create'
 
   get 'products/update'
 

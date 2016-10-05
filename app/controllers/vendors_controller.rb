@@ -4,7 +4,12 @@ class VendorsController < ApplicationController
     @vendors = Vendor.all
   end
 
+  def show
+    @vendor = Vendor.find(params[:id])
+  end
+
   def new
+
   end
 
   def create
@@ -19,8 +24,7 @@ class VendorsController < ApplicationController
   def destroy
   end
 
-  def show
-  end
+
 
 
 end

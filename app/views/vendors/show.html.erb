@@ -1,2 +1,12 @@
-<h1>Vendors#show</h1>
-<p>Find me in app/views/vendors/show.html.erb</p>
+<h1>Here's the vendor you just clicked on.</h1>
+
+<h3><%= @vendor.name %></h3>
+
+<h3>Products at this Vendor</h3>
+<ul>
+<% @vendor.products.each do |product| %>
+    <li><%= product.name %></li>
+<% end %>
+</ul>
+
+<%= link_to("Add a product", new_product_for_vendor_path)%>
