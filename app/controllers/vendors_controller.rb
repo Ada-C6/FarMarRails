@@ -3,6 +3,7 @@ class VendorsController < ApplicationController
   end
 
   def show
+    @myvendor = Vendor.find(params[:id].to_i)
   end
 
   def new

@@ -1,2 +1,20 @@
-<h1>Vendors#index</h1>
-<p>Find me in app/views/vendors/index.html.erb</p>
+<h1>Meet our Vendors!</h1>
+<table>
+<tr>
+  <th>Vendor Name</th>
+  <th> Jobs Provided</th>
+  <th>City</th>
+  <th>Market ID</th>
+  <!-- <th>State</th>
+  <th>Zipcode</th> -->
+  <th colspan="2"></th>
+</tr>
+<% @vendors.each do |vendor| %>
+    <tr>
+      <td><%= vendor.name %> </td>
+      <td><%= vendor.num_employees %></td>
+      <!-- <td><%# add address of market that vendor is at %></td> -->
+      <!-- <td><%# link_to 'View Vendors!', vendor_show_path(vendor) %></td> -->
+    </tr>
+  <% end %>
+</table>
