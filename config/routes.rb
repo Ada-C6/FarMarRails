@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :markets, only: [:index, :show]
+  # root 'user#index'
+
+  # resources :user, only: [:index] do
+    resources :markets, only: [:index, :show] do
+      resources :vendors
+    end
+  # end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
