@@ -1,0 +1,20 @@
+<h1><%= @market[:name] %></h1>
+<article>
+  <h3>Located at: </h3>
+  <p><%= @market.address %></p>
+  <p><%= @market.city %>, <%= @market.state %> <%= @market.zip %></p>
+  <p>County: <%= @market.county %></p>
+</article>
+
+<article>
+  <h3> Current vendors:  </h3>
+  <% @market.vendors.each do |vendor| %>
+    <p><%= link_to(vendor.name, vendorsshow_path(vendor.id)) %></p>
+  <% end %>
+</article>
+
+<ul>
+  <li><%= button_to 'Edit', marketsedit_path(params[:id]), method: :get %></li>
+  <li><%= button_to 'Delete', marketsdestroy_path(params[:id]), method: :destroy, data: {confirm: 'Are you sure?'} %>
+  </li>
+</ul>

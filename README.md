@@ -1,3 +1,8 @@
+# links to Trello and ERD:
+https://trello.com/b/6JRDemNP/farmar-board
+
+https://www.lucidchart.com/invitations/accept/7e76aa32-fd18-47fc-9a31-084ec081b6e9
+
 # FarMar Rails
 Build a database backend application to view, create, and manage farmers markets as well as their vendors, products, and sales.
 In this implementation we'll be seeding with static data, and also building a tool to allow markets and/or vendors to sign up and add their own data.

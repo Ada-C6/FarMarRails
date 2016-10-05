@@ -1,0 +1,25 @@
+<%= form_for @market,
+  url: action_name do |f| %>
+<ul>
+  <li><%= f.label :name %></li>
+  <li><%= f.text_field :name %></li>
+
+  <li><%= f.label :address %></li>
+  <li><%= f.text_field :address %></li>
+
+  <li><%= f.label :city %></li>
+  <li><%= f.text_field :city %></li>
+
+  <li><%= f.label :state %></li>
+  <li><%= f.text_field :state %></li>
+
+  <li><%= f.label :zip %></li>
+  <li><%= f.text_field :zip %></li>
+
+  <li><%= f.label :county %></li>
+  <li><%= f.text_field :county %></li>
+
+  <li><%= f.submit %></li>
+</ul>
+
+  <% end %>

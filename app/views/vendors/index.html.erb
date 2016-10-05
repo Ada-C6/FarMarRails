@@ -1,0 +1,8 @@
+<h1>Here are all of the vendors!</h1>
+<% @vendors.each do |vendor| %>
+
+  <article>
+    <h2><%= link_to(vendor.name, vendorsshow_path(vendor.id)) %></h2>
+  </article>
+
+<% end %>
