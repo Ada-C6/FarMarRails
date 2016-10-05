@@ -6,5 +6,6 @@ class HomesController < ApplicationController
 
   def show
     @market = Market.find(params[:id])
+    @vendors = Vendor.where(market_id: params[:id])
   end
 end

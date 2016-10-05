@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'homes#index'
   get 'homes/show_markets' => 'homes#show_markets'
+  get 'homes/:id' => 'homes#show', as: 'single_market'
 
   resources :markets
   resources :vendors do

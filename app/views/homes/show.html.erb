@@ -7,3 +7,10 @@
   <%= @market.address %><br>
   <%= "#{@market.city}, #{@market.state} #{@market.zip}" %><br>
 </p>
+
+<h4>Vendors</h4>
+  <% @vendors.each do |vendor| %>
+  <ul>
+  <li><%= vendor.name %></li>
+</ul>
+  <% end  %>

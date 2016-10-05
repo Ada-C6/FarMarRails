@@ -1,0 +1,14 @@
+<h1>Please choose your market.</h1>
+
+<% @markets.each do |market| %>
+<ul>
+
+  <li><%= link_to "#{market.name}", market_path(market) %>
+    <%= link_to "Edit", edit_market_path(market) %>
+
+  </li>
+
+
+
+</ul>
+<% end %>
