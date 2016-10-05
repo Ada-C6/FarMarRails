@@ -1,5 +1,6 @@
 class MarketAdminsController < ApplicationController
   def index
+    @markets = Market.all
   end
 
   def show

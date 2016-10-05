@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-# root to: 'index'
+  root 'far_mar#index'
 
   get 'far_mar/index' => 'far_mar#index', as: 'index'
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   #################################
 
-  get 'vendors/index'
+  get 'vendors/index' => 'vendors#index', as: 'vendors'
 
   get 'vendors/show'
 
@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   #################################
 
-    get 'visitors/index'
+    get 'visitors/index' => 'visitors#index', as: 'visitors'
 
     get 'visitors/show'
 
