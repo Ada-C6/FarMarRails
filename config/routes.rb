@@ -6,9 +6,9 @@ root to: 'homes#index'
 
   get 'homes/markets_show/:id' => 'homes#markets_show', as: 'markets_show'
 
-  get 'sales/new'
+  get 'sales/new' => 'sales#new', as: 'new_sale'
 
-  get 'sales/create'
+  post 'sales/create' => 'sales#create'
 
   get 'sales/update'
 
