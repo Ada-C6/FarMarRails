@@ -1,0 +1,5 @@
+<h1>Vendors#edit</h1>
+<p>Find me in app/views/vendors/edit.html.erb</p>
+
+
+<%= render partial: 'form', locals: { vendor_create_or_update: [@market, @market.vendors.find(params[:id])]} %>
