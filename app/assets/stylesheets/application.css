@@ -4,6 +4,7 @@ a:hover {
 
 a {
   color: #F5B19A;
+  font-family: 'Quicksand';
 }
 
 footer a {
@@ -66,6 +67,25 @@ h3 {
   opacity: 0.7;
   background-image: url("http://abwatercolors.com/wp-content/uploads/2012/11/farmersMarket.jpg");
 }
+
+table {
+  margin: 0 17%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+}
+th {
+  text-align: left;
+}
+
+
+/*.table-top * {
+  margin: 0 20%;
+}
+
+.table-info * {
+  margin-right: 10%;
+}*/
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
