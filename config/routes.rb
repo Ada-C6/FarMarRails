@@ -30,7 +30,7 @@ root to: 'homes#index'
 
   delete 'products/destroy/:id' => 'products#destroy', as: 'delete_product'
 
-  get 'products/show'
+  get 'products/:id/show' => 'products#show', as: 'show_product'
 
   get 'products/index'
 

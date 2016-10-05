@@ -5,7 +5,7 @@
 <h3>Products at this Vendor</h3>
 <ul>
 <% @vendor.products.each do |product| %>
-    <li><%= product.name %><%= render partial: 'product_buttons', locals: {product_id: product.id} %></li>
+    <li><%= link_to(product.name, show_product_path(product)) %><%= render partial: 'product_buttons', locals: {product_id: product.id} %></li>
 <% end %>
 </ul>
 
