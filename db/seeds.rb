@@ -32,15 +32,27 @@ CSV.read("seed_csvs/vendors.csv").each do |line|
   vendor.save
 end
 
+# Products seed
+CSV.read("seed_csvs/products.csv").each do |line|
+      id, product_name, vendor_id = line # parallel assignment!
+      id = id.to_i # need product_id to be a fixnum
+      vendor_id = vendor_id.to_i #want vendor_id to be a fixnum
+
+      product =  Product.new(id: id, vendor_id: vendor_id, name: product_name)
+
+      product.save
+    end
 
 # Sales seed
-# CSV.read("support/sales.csv").each do |line|
-#   sale_id, amount, purchase_time, vendor_id, product_id = line # parallel assignment!
-#   sale_id = sale_id.to_i # need sale_id to be a fixnum
-#   amount = amount.to_i # want amount to be a fixnum also
-#   vendor_id = vendor_id.to_i # want vendor_id to be a fixnum
-#   product_id = product_id.to_i # want product_id also to be a fixnum
-#
-#   sale = Sale.new(sale_id, amount, purchase_time, vendor_id, product_id)
-#   sale.save
-# end
+CSV.read("seed_csvs/sales.csv").each do |line|
+  id, amount, purchase_time, vendor_id, product_id = line # parallel assignment!
+  id = id.to_i # need sale_id to be a fixnum
+  amount = amount.to_i # want amount to be a fixnum also
+  vendor_id = vendor_id.to_i # want vendor_id to be a fixnum
+  product_id = product_id.to_i # want product_id also to be a fixnum
+  purchase_time = DateTime.parse(purchase_time) #convert purchase_time string to a DateTime object.
+
+  sale = Sale.new(id: id, amount: amount, purchase_time: purchase_time, vendor_id: vendor_id, product_id: product_id)
+  
+  sale.save
+end
