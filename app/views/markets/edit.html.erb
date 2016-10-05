@@ -1,0 +1,26 @@
+
+<h1>Editing Market: <%= @edit_market.name %> </h1>
+<br>
+
+<h6> Market ID (take this out later): <%= @edit_market.id %></h6>
+<%= form_for @edit_market do |market| %>
+  <br><%= market.label :name, "Market Name" %>
+  <%= market.text_field :name %>
+
+  <br><%= market.label :address, "Market Street Address" %>
+  <%= market.text_field :address %>
+
+  <br><%= market.label :city, "City" %>
+  <%= market.text_field :city %>
+
+  <br><%= market.label :county, "County" %>
+  <%= market.text_field :county %>
+
+  <br><%= market.label :state, "State" %>
+  <%= market.text_field :state %>
+
+  <br><%= market.label :zip, "Zip" %>
+  <%= market.text_field :zip %>
+
+  <br><%= market.submit "Submit Edited Information"%>
+<% end %>
