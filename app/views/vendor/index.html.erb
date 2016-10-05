@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <header>
-      <h1>View All Vendors</h1>
-      <nav>
-        <ul class="top-buttons">
-          <li><a href="../">HOME</a></li>
-          <li><a href="../market">VIEW ALL MARKETS</a></li>
-          <li><a href="../vendor">VIEW ALL VENDORS</a></li>
-        </ul>
-      </nav>
-    </header>
-  </body>
-</html>
+<h3>View all vendors</h3>
+<table>
+  <tr>
+    <th>Vendor Name</th>
+    <th># of Employees</th>
+    <th>Market</th>
+    <th>Actions</th>
+  </tr>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= link_to "#{vendor.name}", vendor_path(vendor) %></td>
+    <td><%= vendor.num_employees %></td>
+    <td><%= Market.find(vendor.market_id).name %></td>
+    <td><small>
+      <%= link_to "[Edit]", edit_vendor_path(vendor) %>
+      <%= link_to "[Delete]", vendor_path(vendor), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
+  </tr>
+  <% end %>
+</table>
