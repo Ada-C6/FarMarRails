@@ -22,11 +22,9 @@ class MarketsController < ApplicationController
 
   end
 
-
   def edit
     @market = Market.find(params[:id])
   end
-
 
   def update
     @market = Market.find(params[:id])
@@ -37,6 +35,10 @@ class MarketsController < ApplicationController
       render :edit
     end
 
+  end
+
+  def show_vendors
+    @vendors = Vendor.all
   end
 
   private
