@@ -10,13 +10,24 @@ class VendorsController < ApplicationController
     @all_vendors = Vendor.all
   end
 
-  def destroy
-    @market = Market.find(params[:market_id])
-    vendor = @market.vendors.find(params[:id])
-    vendor.destroy
+  def create
+    market = Market.find(params[:market_id])
+    vendor = market.vendor.create(vendor_params)
 
-    redirect_to market_path(@market)
+    redirect_to market_path(market)
   end
 
+  def destroy
+    market = Market.find(params[:market_id])
+    vendor = market.vendors.find(params[:id])
+    vendor.destroy
+
+    redirect_to market_path(market)
+  end
+
+  private
+    def vendor_params
+      params.require(:vendor).permit(:name, :no_of_employees)
+    end
 
 end
