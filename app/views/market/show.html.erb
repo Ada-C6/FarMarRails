@@ -1,0 +1,25 @@
+<h3>--Detailed Market Page--</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>County</th>
+    <th>State</th>
+    <th>Zip</th>
+  </tr>
+  <tr>
+    <td><%= @market.name %></td>
+    <td><%= @market.address %></td>
+    <td><%= @market.city %></td>
+    <td><%= @market.county %></td>
+    <td><%= @market.state %></td>
+    <td><%= @market.zip %></td>
+  </tr>
+</table>
+
+<p><%= link_to "Back to all markets", market_index_path %></p>
+
+<br>
+<%= button_to "Delete this market", {:action => 'destroy', :id => @market.id }, :method => :delete, data: { confirm: "Really, now?" } %>
