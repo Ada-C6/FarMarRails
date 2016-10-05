@@ -2,21 +2,15 @@ class VisitorsController < ApplicationController
   def index
   end
 
-  def show
+  def show_markets
   end
 
-  def new
+  def show_vendors
   end
 
-  def create
+  def show_products
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def show_markets_by_product
   end
 end

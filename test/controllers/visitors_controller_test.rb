@@ -6,33 +6,23 @@ class VisitorsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get show" do
-    get :show
+  test "should get show_markets" do
+    get :show_markets
     assert_response :success
   end
 
-  test "should get new" do
-    get :new
+  test "should get show_vendors" do
+    get :show_vendors
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
+  test "should get show_products" do
+    get :show_products
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get update" do
-    get :update
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get :destroy
+  test "should get show_markets_by_product" do
+    get :show_markets_by_product
     assert_response :success
   end
 

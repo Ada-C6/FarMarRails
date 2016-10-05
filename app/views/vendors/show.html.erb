@@ -1,2 +1,25 @@
 <h1>Vendors#show</h1>
-<p>Find me in app/views/vendors/show.html.erb</p>
+
+############ change market to vendor ###########
+
+<h1><%= @market.name %></h1>
+<p><%= @market.address %></p>
+<p><%= @market.city %></p>
+<p><%= @market.county %></p>
+<p><%= @market.state %></p>
+<p><%= @market.zip %></p>
+
+
+############ change vendors to products ###########
+
+<h1>List of vendor's product </h1>
+<% @vendor_list.each do |vendor| %>
+<article>
+  <p>
+    <%= link_to "#{vendor.name}", show_vendor_path(vendor.id) %>
+  </p>
+  <% end %>
+</article>
+
+
+######### add total sales figure #######
