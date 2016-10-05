@@ -1,0 +1,35 @@
+<h1>Add a New Market</h1>
+
+<%= form_for @market do |f| %>
+  <p>
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %>:
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :city %>:
+    <%= f.text_field :city %>
+  </p>
+
+  <p>
+    <%= f.label :county %>:
+    <%= f.text_field :county %>
+  </p>
+
+  <p>
+    <%= f.label :state %>:
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <%= f.label :zip %>:
+    <%= f.text_field :zip %>
+  </p>
+
+  <%= f.submit "Submit" %>
+<% end %>
