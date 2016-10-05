@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get 'home/show_markets' => 'home#show_markets'
+  root 'homes#index'
+  get 'homes/show_markets' => 'homes#show_markets'
 
   resources :markets
   resources :vendors do
