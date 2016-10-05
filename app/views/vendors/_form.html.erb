@@ -1,0 +1,13 @@
+<%= form_for([@market, @market.vendors.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :no_of_employees %><br>
+    <%= f.text_area :no_of_employees %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -10,9 +10,13 @@ class VendorsController < ApplicationController
     @all_vendors = Vendor.all
   end
 
+  def new
+    @market = Market.find(params[:market_id])
+  end
+
   def create
     market = Market.find(params[:market_id])
-    vendor = market.vendor.create(vendor_params)
+    vendor = market.vendors.create(vendor_params)
 
     redirect_to market_path(market)
   end
