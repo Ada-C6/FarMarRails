@@ -44,7 +44,7 @@ root to: 'homes#index'
 
   get 'vendors/index' => 'vendors#index', as: 'vendors_home'
 
-  get 'markets/new'
+  get 'markets/new' => 'markets#new', as: 'markets_new'
 
   post 'markets/create' => 'markets#create', as: 'markets_create'
 

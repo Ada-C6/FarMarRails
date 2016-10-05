@@ -1,5 +1,7 @@
 <h1>All Markets</h1>
 
+<%= link_to("Add a Market", markets_new_path) %>
+
 <ul>
 <% @markets.each do |market| %>
     <li><%= link_to("#{market.name}", show_market_path(market)) %><%= ": #{market.city}, #{market.state}"%></li>
