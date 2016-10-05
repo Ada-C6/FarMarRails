@@ -10,13 +10,15 @@ require 'csv'
 
 # Market seed
 CSV.read("seed_csvs/markets.csv").each do |line|
+  # TODO: We can refactor to use a hash here, but this works for now.
+
   id, name, address, city, county, state, zip = line # parallel assignment!
 
   id = id.to_i # need id to be a fixnum
 
   market = Market.new(id: id, name: name, street_address: address, city: city, county: county, state: state, zip_code: zip)
 
-  market.save 
+  market.save
 end
 
 
