@@ -1,0 +1,7 @@
+<h1>Vendors#show</h1>
+
+<p><%= "Hi #{current_user.name}! Here are the products you currently sell: " %></p>
+
+<p><% current_user.products.each do |product| %>
+  <p><%= "Name: #{product.name}, ID: #{product.id}" %></p>
+<%end%></p>

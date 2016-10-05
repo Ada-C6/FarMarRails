@@ -1,0 +1,14 @@
+<h1>Products#index</h1>
+
+<p><%= "Hi #{current_user.name}! Here are the products you currently sell: " %></p>
+
+<p><% current_user.products.each do |product| %>
+  <p><%= "Name: #{product.name}, ID: #{product.id}" %>
+    <%= button_to "Edit", products_edit_path(product.id)%>
+    <%= button_to "Delete", products_destroy_path(product.id)%></p>
+<%end%></p>
+
+<p>What would you like to do?</p>
+<p><%= link_to "Add", markets_new_path %></p>
+<p><%= link_to "See my own market's stats", markets_show_path(current_user.id)%></p>
+<p><%= link_to "Add a vendor to my market", vendors_new_path %></p>

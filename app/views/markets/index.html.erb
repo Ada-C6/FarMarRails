@@ -1,0 +1,7 @@
+<h1>Markets#index</h1>
+<p>Find me in app/views/markets/index.html.erb</p>
+<p><%= "Market: #{current_user.name}"%></p>
+<p>What would you like to do today?</p>
+<p><%= link_to "Make a new market", markets_new_path %></p>
+<p><%= link_to "See my own market's stats", markets_show_path(current_user.id)%></p>
+<p><%= link_to "Add a vendor to my market", vendors_new_path %></p>
