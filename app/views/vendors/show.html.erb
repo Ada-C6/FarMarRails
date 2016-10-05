@@ -1,0 +1,15 @@
+<h2> <%= @vendor.name %></h2>
+
+<ul>
+<li>At: <%= @market.name %></li>
+<li>Employees: <%= @vendor.num_employees %></li>
+</ul>
+
+<h3> Products </h3>
+<ul>
+<% @vendor.products.each do |product| %>
+  <li><%= link_to product.name, market_vendor_product_path(vendor_id:@vendor.id, id:product) %></li>
+<% end %>
+</ul>
+
+<h3><%= link_to "See Sales", market_vendor_sales_path(vendor_id:@vendor.id) %></h3>
