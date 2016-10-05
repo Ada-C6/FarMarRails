@@ -20,11 +20,13 @@ class ProductsController < ApplicationController
   end
 
   def update
-    @product = Product.find(params[:id])
     Product.update(params[:id], name: params[:product][:name])
+    @product = Product.find(params[:id])
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
   end
 
   def show

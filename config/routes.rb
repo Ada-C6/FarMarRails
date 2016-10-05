@@ -28,7 +28,7 @@ root to: 'homes#index'
 
   get 'products/edit/:id' => 'products#edit', as: 'edit_product'
 
-  get 'products/destroy'
+  delete 'products/destroy/:id' => 'products#destroy', as: 'delete_product'
 
   get 'products/show'
 
