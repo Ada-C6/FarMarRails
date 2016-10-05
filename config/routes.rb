@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'homepage#index'
   # Acting as a market
   resources :market do
     resources :vendor, only: [:new, :create, :edit, :delete] do

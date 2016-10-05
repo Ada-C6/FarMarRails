@@ -1,3 +1,71 @@
+a:hover {
+  color: #9ADEF5;
+}
+
+a {
+  color: #F5B19A;
+}
+
+footer a {
+  color: #F5B19A;
+}
+
+.top-buttons li {
+  display: inline;
+  font-family: 'Julius Sans One', sans-serif;
+  border-right: 2pt solid #39324b;
+  color: #39324b;
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 0 25px;
+  font-size: 9pt;
+}
+
+footer {
+  font-family: 'Bad Script', sans-serif;
+  color: #F5B19A;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
+}
+
+.bottom-buttons li{
+  display: inline;
+  font-family: 'Julius Sans One', sans-serif;
+  border-right: 2pt solid #39324b;
+  color: #39324b;
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 0px 25px;
+  font-size: 9pt;
+}
+
+
+h1{
+  text-align: center;
+  font-family: 'Poiret One', serif;
+  font-size: 4em;
+  color: #E3E7E8;
+  /*margin: 5%;*/
+
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Quicksand', serif;
+  letter-spacing: 5px;
+  font-size: 5em;
+  color: white;
+  border-radius: 25px;
+  background-size: 280px 260px;
+  padding: 3% 3%;
+  margin: 5% 10%;
+  background-repeat: repeat;
+  opacity: 0.7;
+  background-image: url("http://abwatercolors.com/wp-content/uploads/2012/11/farmersMarket.jpg");
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
