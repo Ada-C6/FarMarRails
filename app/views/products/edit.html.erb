@@ -1,0 +1,11 @@
+<h1>Edit a Product</h1>
+
+<%= form_for @product, url: vendor_product_path, method: :patch do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit%>
+
+<% end %>
+
+<h5>Don't want to edit anymore, <%= link_to "Go Back to All Products", vendor_products_path %></h5>

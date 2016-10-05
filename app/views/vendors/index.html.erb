@@ -1,0 +1,8 @@
+<h1>Vendor List:</h1>
+<ol>
+  <% @all_vendors.each do | vendor | %><li>
+    <p>
+      <%= link_to "#{vendor.name}", vendor_products_path(vendor.id), method: :get %>
+    </p>
+  <% end %></li>
+</ol>
