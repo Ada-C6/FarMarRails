@@ -7,19 +7,23 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new
-    # @method = :post
-    # @path = "show"
     @product.name = params[:product][:name]
     @product.vendor_id = params[:id]
 
     @product.save
   end
 
-  def update
+  def edit
+    @product = Product.find(params[:id])
+    @method = :put
+    @path = update_product_path(@product.id)
   end
 
-  def edit
+  def update
+    Product.update(params[:id], name: params[:product][:name])
   end
+
+
 
   def destroy
   end

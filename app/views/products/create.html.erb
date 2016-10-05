@@ -1,4 +1,7 @@
 <h1>You created a product</h1>
 
 
-<%= params %>
+<h3><%= Vendor.find(@product.vendor_id).name %></h3>
+<p>
+  <%= @product.name %>
+</p>
