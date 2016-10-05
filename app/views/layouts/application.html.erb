@@ -8,7 +8,28 @@
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <ul>
+    <li>
+      <%= link_to "Home Page", root_path %>
+    </li>
+    <li>
+      <%= link_to "List of All Markets", users_markets_path %>
+    </li>
+    <li>
+      <%= link_to "Market Main Page", markets_path %>
+    </li>
+    <li>
+      <%= link_to "Vendor Main Page", vendors_path %>
+    </li>
+  </ul>
+</header>
+
+<div class="main-body">
+
+  <%= yield %>
+
+</div>
 
 <footer>
   &copy; 2016 by Shari and Heather!!!

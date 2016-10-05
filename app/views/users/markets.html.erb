@@ -3,8 +3,10 @@
   This will include a link for each market to its show page.
 </p>
 
-<p>
+<ul>
   <%@market.each do |i|%>
-  <%=i.name%>
+  <li>
+    <%=i.name%>
+  </li>
   <%end%>
-</p>
+</ul>
