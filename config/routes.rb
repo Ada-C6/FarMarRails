@@ -44,7 +44,7 @@ root to: 'homes#index'
 
   get 'vendors/destroy'
 
-  get 'vendors/show'
+  get 'vendors/show/:id' => 'vendors#show', as: 'show_vendor'
 
   get 'vendors/index' => 'vendors#index', as: 'vendors_home'
 

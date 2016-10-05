@@ -1,4 +1,9 @@
 class VendorsController < ApplicationController
+
+  def index
+    @vendors = Vendor.all
+  end
+
   def new
   end
 
@@ -17,6 +22,5 @@ class VendorsController < ApplicationController
   def show
   end
 
-  def index
-  end
+
 end
