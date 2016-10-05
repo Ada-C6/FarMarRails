@@ -38,11 +38,11 @@ root to: 'homes#index'
 
   post 'market/:id/vendors/create' => 'vendors#create', as: 'vendors_create'
 
-  get 'vendors/update' => 'vendors#update', as: 'vendors_update'
+  put 'vendors/:id/update' => 'vendors#update', as: 'vendors_update'
 
-  get 'market/:id/vendors/:id/edit' => 'vendors#edit', as: 'vendors_edit'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'vendors_edit'
 
-  delete 'market/:id/vendors/destroy' => 'vendors#destroy', as: 'vendors_destroy'
+  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'vendors_destroy'
 
   get 'vendors/show'
 
