@@ -1,9 +1,43 @@
 class MarketsController < ApplicationController
   def index
     @markets = Market.all
-  end
+  end #index
 
   def show
     @market = Market.find(params[:id])
+  end #show
+
+  def new
+    @market = Market.new
+  end #new
+
+  def create
+    @market = Market.new(market_params)
+
+    if @market.save
+      redirect_to market_path(@market)
+    else
+      render :new
+    end
+  end #create
+
+  def edit
+    @market = Market.find(params[:id])
+  end #edit
+
+  def update
+    @market = Market.find(params[:id])
+
+    if @market.update(market_params)
+      redirect_to market_path(@market)
+    else
+      render :edit
+    end
+  end #update
+
+  private
+
+  def market_params
+    params.require(:market).permit(:name, :street_address, :city, :county, :state, :zip_code)
   end
 end
