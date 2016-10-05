@@ -26,7 +26,7 @@ root to: 'homes#index'
 
   put 'products/update/:id' => 'products#update', as: 'update_product'
 
-  get 'products/edit/:id' => 'products#edit'
+  get 'products/edit/:id' => 'products#edit', as: 'edit_product'
 
   get 'products/destroy'
 
