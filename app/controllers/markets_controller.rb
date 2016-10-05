@@ -20,10 +20,19 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
   end
 
-# TODO:
-# markets#edit
-# markets#show
-# markets#update
+  def edit
+    @market = Market.find(params[:id])
+  end
+
+  def update
+    @market = Market.find(params[:id])
+    if @market.update(market_params)
+      redirect_to markets_path
+    else
+      render :edit
+    end
+  end
+
 
 # ---- PRIVATE METHODS ----
 

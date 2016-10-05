@@ -1,9 +1,9 @@
 <h1>All Markets</h1>
 
 <ul>
-<% @markets.each do |m| %>
+<% @markets.each do |market| %>
  <li>
-  <%= m.name %>
+  <%= link_to "#{market.name}", market_path(market) %>
 </li>
 <% end %>
 </ul>
