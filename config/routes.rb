@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 root to: 'homes#index'
 
+  get 'homes/markets_index' => 'homes#markets_index', as: 'markets_index'
+
+  get 'homes/markets_show/:id' => 'homes#markets_show', as: 'markets_show'
+
   get 'sales/new'
 
   get 'sales/create'
