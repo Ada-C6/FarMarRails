@@ -6,11 +6,11 @@
 <div class="overall-header-text">
   <h1>List of Markets</h1>
 </div>
-
+<%= button_to "Add New Market", new_market_path, method: :get%>
 <ul>
   <% @market.all.each do |market| %>
   <li class="list-of-markets">
-    <%= link_to "#{market.name}", market_vendor_path(i) %>
-  </li>
-  <% end %>
-</ul>
+    <%= link_to "#{market.name}", market_path(market) %> <%= button_to "Edit Me!", edit_market_path(market), method: :get%>
+    </li>
+    <% end %>
+  </ul>
