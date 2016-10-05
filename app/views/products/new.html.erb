@@ -1,0 +1,11 @@
+<h1>Add a new Product</h1>
+
+<%= form_for @product, url: vendor_products_path, method: :post do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit%>
+
+<% end %>
+
+<h5>Don't want to add anymore, go back to all products <%= link_to "Go Back to All Products", vendor_products_path %></h5>

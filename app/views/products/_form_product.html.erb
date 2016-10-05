@@ -1,0 +1,7 @@
+<%= form_for @product, url: vendor_product_path, method: http_method do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit%>
+
+<% end %>

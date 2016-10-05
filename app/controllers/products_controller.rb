@@ -4,6 +4,26 @@ class ProductsController < ApplicationController
     @all_products_by_vendor = Product.where(vendor_id: params[:vendor_id])
   end
 
+  def new
+    @product = Product.new
+  end
+
+
+  def create
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = Product.new(product_params)
+    @vendor.products << @product
+
+    if @product.save
+      # saved successfully
+      redirect_to vendor_products_path
+    else
+      # did not save
+      render :new
+    end
+  end
+
+
   def edit
     @product = Product.find(params[:id])
   end
@@ -11,7 +31,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    if @product.update(task_params)
+    if @product.update(product_params)
       # saved successfully
       redirect_to vendor_products_path
     else
@@ -29,7 +49,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def task_params
+  def product_params
     params.require(:product).permit(:name)
   end
 

@@ -1,11 +1,17 @@
 <h1>Products by Vendor:</h1>
+<%= link_to "Add a new Product", new_vendor_product_path %>
+
 <ol>
   <% @all_products_by_vendor.each do | product | %><li>
     <p>
-      <%= link_to "#{product.name}", edit_vendor_product_path(vendor_id: product.vendor_id, id: product.id)%>
+      <%= product.name %>
     </p>
+
+    <%= button_to "edit", edit_vendor_product_path(vendor_id: product.vendor_id, id: product.id)%>
 
     <%= button_to "delete", vendor_product_path(vendor_id: product.vendor_id, id: product.id), method: :delete,
                       data: { confirm: "Are you sure you want to delete this task?" } %>
   <% end %></li>
 </ol>
+
+<%= link_to "Back to all Vendors", vendors_path %>
