@@ -1,0 +1,11 @@
+<%= form_for @myvendor,
+  method: @vendor_method,
+  url: @vendor_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :no_employees %>
+  <%= f.text_field :no_employees %>
+
+  <%= f.submit %>
+<% end %>

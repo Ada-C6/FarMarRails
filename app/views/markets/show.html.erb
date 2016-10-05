@@ -9,8 +9,15 @@
 <h3>Vendors at this Market</h3>
 <ul>
 <% @market.vendors.each do |vendor| %>
-    <li><%= vendor.name %></li>
+    <li>
+      <%= vendor.name %>
+      <%= button_to "Delete", vendors_destroy_path(vendor.id),
+                              method: :delete, data: { confirm: "Are you sure?"} %>
+      <%= button_to "Edit", vendors_edit_path(vendor.id), method: :get %>
+
+    </li>
 <% end %>
 </ul>
 
 <%= link_to("Edit", markets_edit_path) %>
+<%= link_to("Add vendor", vendors_new_path) %>

@@ -34,15 +34,15 @@ root to: 'homes#index'
 
   get 'products/index'
 
-  get 'vendors/new'
+  get 'market/:id/vendors/new' => 'vendors#new', as: 'vendors_new'
 
-  get 'vendors/create'
+  post 'market/:id/vendors/create' => 'vendors#create', as: 'vendors_create'
 
-  get 'vendors/update'
+  put 'vendors/:id/update' => 'vendors#update', as: 'vendors_update'
 
-  get 'vendors/edit'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'vendors_edit'
 
-  get 'vendors/destroy'
+  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'vendors_destroy'
 
   get 'vendors/show'
 

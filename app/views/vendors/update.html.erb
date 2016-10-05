@@ -1,2 +1,8 @@
-<h1>Vendors#update</h1>
-<p>Find me in app/views/vendors/update.html.erb</p>
+<h1>Vendor successfully updated</h1>
+<p>
+  Vendor Name: <%= @myvendor.name %>
+</p>
+<p>
+  Number of Employees: <%= @myvendor.no_employees %>
+</p>
+<%= link_to("Back to Market", show_market_path(@myvendor.market_id)) %>
