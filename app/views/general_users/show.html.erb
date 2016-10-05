@@ -1,2 +1,18 @@
-<h1>GeneralUsers#show</h1>
-<p>Find me in app/views/general_users/show.html.erb</p>
+<h1> <%= @market[:name]  %></h1>
+<article>
+
+  <p><%= @market[:street] %></p>
+  <p><%= @market[:city] %>, <%= @market[:state] %> <%= @market[:zip] %></p>
+</article>
+
+<section>
+<h2> Vendors in this Market: </h2>
+  <ul>
+    <% @allvendors.each do |ven| %>
+      <% if @market[:id] == ven.market_id %>
+        <li><%= ven.name %></li>
+      <% end %>
+    <% end %>
+
+  </ul>
+</section>

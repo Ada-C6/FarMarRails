@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'vender_user/index'
+
+  get 'vender_user/show'
+
+  get 'vender_user/edit'
+
+  get 'vender_user/update'
+
+  get 'vender_user/new'
+
+  get 'vender_user/create'
+
+  get 'vender_user/destory'
+
   root to: 'general_users#index'
 
   get 'general_users/index' => 'general_users#index'
