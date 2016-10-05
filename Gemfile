@@ -49,4 +49,6 @@ group :development do
   gem 'binding_of_caller'
 
   gem 'pry-rails'
+
+  gem 'rails-erd'
 end

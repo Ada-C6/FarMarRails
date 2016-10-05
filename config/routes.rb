@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'users#index'
   get '/users' => 'users#index'
   get '/users/markets' => 'users#markets'
-  get '/users/markets/:id' => 'users#show'
+  get '/users/markets/:id', to: 'users#show', as:'user_market'
 
   resources :markets, except: [:destroy]
 

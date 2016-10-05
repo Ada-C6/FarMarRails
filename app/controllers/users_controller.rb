@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @market = Market.find(params[:id])
   end
 
   def markets

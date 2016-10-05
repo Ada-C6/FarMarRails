@@ -4,9 +4,9 @@
 </p>
 
 <ul>
-  <%@market.each do |i|%>
+  <% @market.each do |i| %>
   <li>
-    <%=i.name%>
+    <%= link_to "#{i.name}", user_market_path(i) %>
   </li>
-  <%end%>
+  <% end %>
 </ul>
