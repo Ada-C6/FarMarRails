@@ -47,8 +47,3 @@ CSV.read('seed_csvs/sales.csv').each do |line|
 
   Sale.create(sale)
 end
-
-
-
-# do a rake db:reset before adding more in here
-# dont forget the correct datatype/check with schema

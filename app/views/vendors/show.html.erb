@@ -1,0 +1,26 @@
+<h2>Welcome <%= @vendor.name %></h2>
+<p>
+Number of employees: <%= @vendor.num_employees %>
+</p>
+<p>
+  Create a new product <%= link_to "here", new_vendor_product_path(@vendor) %>.
+</p>
+<h3>Products:</h3>
+<% @vendor.products.each do |product| %>
+<p>
+  <%= product.name %>
+  <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %>
+  <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "#{product.name}: This product will be deleted. Please confirm."} %>
+
+</p>
+<% end %>
+
+<p>
+  ______________________________________________________
+</p>
+<p>
+  As a vendor, I can create, edit, or delete my Products
+</p>
+
+
+<p>This is the vendors view show.html.erb</p>
