@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
-  
-  root 'markets#index'
+
+  root 'index#index'
+
+  get 'index/index'
+
+  get 'index/show'
+
+  get 'index/new'
+
+  get 'index/create'
+
+  get 'index/edit'
+
+  get 'index/update'
+
+  get 'index/destroy'
 
   get 'products/index'
 
@@ -30,9 +44,9 @@ Rails.application.routes.draw do
 
   get 'sales/destroy'
 
-  get 'vendors/index'
+  get 'vendors/index' => 'vendors#index', as: 'vendor_index'
 
-  get 'vendors/show/:id' => 'vendors#show', as: 'vendor_show' 
+  get 'vendors/show/:id' => 'vendors#show', as: 'vendor_show'
 
   get 'vendors/new'
 
@@ -44,9 +58,9 @@ Rails.application.routes.draw do
 
   get 'vendors/destroy'
 
-  get 'markets/index'
+  get 'markets/index' => 'markets#index', as: 'market_index'
 
-  get 'markets/show/:id' => 'markets#show', as: 'market_show' 
+  get 'markets/show/:id' => 'markets#show', as: 'market_show'
 
   get 'markets/new'
 
