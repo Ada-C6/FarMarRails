@@ -16,6 +16,8 @@ class MarketsController < ApplicationController
     end
   end
 
+  
+
 # TODO:
 # markets#edit
 # markets#show

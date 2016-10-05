@@ -1,5 +1,17 @@
 <h1>Add a New Market</h1>
 
+<% if @market.errors.any? %>
+  <ul class="errors">
+    <% @market.errors.each do |column, message| %>
+      <li>
+        <strong>
+          <%= column.capitalize %>
+        </strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @market do |f| %>
   <p>
     <%= f.label :name %>:
