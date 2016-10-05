@@ -35,6 +35,9 @@
  <%= vendor.name %>
   </li>
 
+  <li><%= link_to "Edit Vendor",
+        edit_market_vendor_path(vendor.market, vendor) %></li>
+
   <li><%= link_to "Delete Vendor",
         market_vendor_path(vendor.market, vendor),
         data: {confirm: "Are you sure you want to delete this vendor?"},

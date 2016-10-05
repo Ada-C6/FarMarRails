@@ -21,6 +21,7 @@ class VendorsController < ApplicationController
   def create
     market = Market.find(params[:market_id])
     vendor = market.vendors.create(vendor_params)
+
     if vendor
       redirect_to market_path(market)
     else
@@ -30,9 +31,13 @@ class VendorsController < ApplicationController
 
   def update
     market = Market.find(params[:market_id])
-    vendor = market.vendors.create(vendor_params)
+    vendor = market.vendors.find(params[:id])
 
-    redirect_to market_path(market)
+    if vendor.update(vendor_params)
+      redirect_to market_path(market)
+    else
+      render :new
+    end
   end
 
   def destroy

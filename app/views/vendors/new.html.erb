@@ -2,4 +2,4 @@
 <p>Find me in app/views/vendors/new.html.erb</p>
 
 
-<%= render partial: 'form' %>
+<%= render partial: 'form', locals: { vendor_create_or_update: [@market, @market.vendors.build]} %>
