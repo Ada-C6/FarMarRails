@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
 
-  resources :markets, except: [:show, :destroy] do
+  resources :markets, except: [:destroy] do
     resources :vendors, except: [:show]
   end
 

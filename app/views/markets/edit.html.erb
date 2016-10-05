@@ -1,0 +1,39 @@
+<h1>Markets#edit</h1>
+<p>Find me in app/views/markets/edit.html.erb</p>
+
+
+<%= form_for @market, url: market_path, method: :patch do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </p>
+
+  <p>
+    <%= f.label :city %><br>
+    <%= f.text_area :city %>
+  </p>
+
+  <p>
+    <%= f.label :county %><br>
+    <%= f.text_area :county %>
+  </p>
+
+  <p>
+    <%= f.label :state %><br>
+    <%= f.text_area :state %>
+  </p>
+
+  <p>
+    <%= f.label :zip %><br>
+    <%= f.text_area :zip %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,36 @@
+<h1>Markets#show</h1>
+<p>Find me in app/views/markets/show.html.erb</p>
+
+
+<h2><%= @market.name %></h2>
+
+<%= link_to "Edit Market", edit_market_path(@market) %>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>City</th>
+    <th>County</th>
+    <th>State</th>
+    <th>Zip</th>
+  </tr>
+  <tr>
+    <td><%= @market.address %></td>
+    <td><%= @market.city %></td>
+    <td><%= @market.county %></td>
+    <td><%= @market.state %></td>
+    <td><%= @market.zip %></td>
+  </tr>
+
+</table>
+
+<h3>List of Vendors</h3>
+
+<ul>
+<% vendors = Vendor.where(market_id: @market.id) %>
+<% vendors.each do |vendor| %>
+  <li>
+ <%= vendor.name %>
+  </li>
+<% end %>
+</ul>
