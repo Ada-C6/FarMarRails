@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get '/markets' => 'markets#index'
+  get '/markets/:id', to: 'markets#show', as: 'market'
+
+
+  get '/market_views' => 'markets#index'
+  get '/market_views/new' => 'markets#new'
+  post '/market_views' => 'markets#create'
+  get '/market_views/:id', to: 'markets#show', as: 'market_view'
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
