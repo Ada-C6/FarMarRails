@@ -1,2 +1,21 @@
-<h1>Markets#index</h1>
-<p>Find me in app/views/markets/index.html.erb</p>
+<h1>Welcome to our Markets</h1>
+<table>
+<tr>
+  <th>Title</th>
+  <th>Text</th>
+  <th colspan="2"></th>
+</tr>
+<% @markets.each do |market| %>
+    <tr>
+      <td><%= market.name %> </td>
+      <td><%= market.address %></td>
+      <td><%= market.city %></td>
+      <td><%= market.county %></td>
+      <td><%= market.state %></td>
+      <td><%= market.zip %></td>
+      <td><%= link_to 'View Markets!', show_path(market) %></td>
+      <!-- <td><%# link_to 'View Vendors', vendor_path(vendor) %></td> -->
+      <!-- <td><<%#  %> link_to 'Destroy your Article', article_path(article), method: :delete, data: { confirm: 'Are you really sure?'} %></td> -->
+    </tr>
+  <% end %>
+</table>
