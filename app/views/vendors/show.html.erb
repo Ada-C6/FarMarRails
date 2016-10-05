@@ -1,0 +1,24 @@
+<div class="individual-vendor">
+  <div class="overall-header-text">
+    <h1><%= @vendor.name %></h1>
+  </div>
+  <br />Number of employees: <%= @vendor.employee_number %>
+
+  <h3>Product list</h3>
+  <ul>
+    <% @vendor.products.all.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+
+  <h3>Sales list</h3>
+  <ul>
+    <% @vendor.sales.all.each do |sale| %>
+      <li><%= number_to_currency(sale.amount/100) %> at <%= sale.purchase_time.strftime("%m/%d/%Y") %></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+<h1> This is the page where vendors will choose whether they want to create a create, edit, or delete a product, OR create a sale or see a list of their sales.</h1>

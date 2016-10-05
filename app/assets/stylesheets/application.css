@@ -58,6 +58,6 @@ header, footer {
   color: #009900;
 }
 
-.list-of-markets {
+li {
   display: block;
 }
