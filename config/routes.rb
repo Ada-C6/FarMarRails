@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   post 'farmers/market_views' => 'markets#create'
   get 'farmers/market_views/:id', to: 'markets#show2', as: 'market_view'
 
+  get 'farmers/vendors' => 'vendors#index'
+  get 'farmers/vendors/:id', to: 'vendors#show', as: 'vendor'
+
+
 
 
 
