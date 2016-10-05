@@ -1,2 +1,4 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1><%= @product.name %></h1>
+
+<!-- This form doesn't need the ../ to let you know to go back up to the vendors view folder.  -->
+<%= render partial: 'vendors/product_buttons', locals: {product_id: @product.id} %>

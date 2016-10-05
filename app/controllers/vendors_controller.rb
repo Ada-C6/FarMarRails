@@ -1,4 +1,13 @@
 class VendorsController < ApplicationController
+
+  def index
+    @vendors = Vendor.all
+  end
+
+  def show
+    @vendor = Vendor.find(params[:id])
+  end
+
   def new
     @myvendor = Vendor.new
     @vendor_method = :post
@@ -36,9 +45,7 @@ class VendorsController < ApplicationController
     redirect_to show_market_path(@mymarket)
   end
 
-  def show
-  end
 
-  def index
-  end
+
+
 end

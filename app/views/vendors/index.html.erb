@@ -1,2 +1,8 @@
-<h1>Vendors#index</h1>
-<p>Find me in app/views/vendors/index.html.erb</p>
+<h1>List of Vendors</h1>
+
+
+<ul>
+<% @vendors.each do |vendor| %>
+    <li><%= link_to(vendor.name, show_vendor_path(vendor)) %></li>
+<% end %>
+</ul>

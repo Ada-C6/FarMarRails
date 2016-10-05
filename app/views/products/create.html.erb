@@ -1,2 +1,9 @@
-<h1>Products#create</h1>
-<p>Find me in app/views/products/create.html.erb</p>
+<h1>You created a product</h1>
+
+
+<h3><%= Vendor.find(@product.vendor_id).name %></h3>
+<p>
+  <%= @product.name %>
+</p>
+
+<%= link_to("Back to Vendor", show_vendor_path(@product.vendor_id)) %>

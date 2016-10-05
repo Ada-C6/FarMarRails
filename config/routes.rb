@@ -20,17 +20,17 @@ root to: 'homes#index'
 
   get 'sales/index'
 
-  get 'products/new'
+  get 'products/:id/new' => 'products#new', as: 'new_product_for_vendor'
 
-  get 'products/create'
+  post 'products/:id/create' => 'products#create'
 
-  get 'products/update'
+  put 'products/update/:id' => 'products#update', as: 'update_product'
 
-  get 'products/edit'
+  get 'products/edit/:id' => 'products#edit', as: 'edit_product'
 
-  get 'products/destroy'
+  delete 'products/destroy/:id' => 'products#destroy', as: 'delete_product'
 
-  get 'products/show'
+  get 'products/:id/show' => 'products#show', as: 'show_product'
 
   get 'products/index'
 
@@ -44,7 +44,7 @@ root to: 'homes#index'
 
   delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'vendors_destroy'
 
-  get 'vendors/show'
+  get 'vendors/show/:id' => 'vendors#show', as: 'show_vendor'
 
   get 'vendors/index' => 'vendors#index', as: 'vendors_home'
 
