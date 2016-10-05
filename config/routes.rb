@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
   get '/' => 'home#index'
-
   get 'markets/all' => 'markets#all'
-
   resources :markets, except: [:destroy]
-
-
   get '/vendors' => 'vendors#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

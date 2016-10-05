@@ -1,5 +1,5 @@
 MARKETS ALL
 
 <% @markets.each do |market| %>
-  <br><%= market[:name] %>
-<%  end %>
+  <br><%= link_to("#{market.name}", market_path(market.id)) %>
+<% end %>
