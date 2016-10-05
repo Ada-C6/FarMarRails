@@ -1,3 +1,10 @@
-<h1>As a Market</h1>
+<h1>Market Details</h1>
 
-<%= render partial: "index" %>
+<ul>
+  <% @market_list.each do |m| %>
+  <li><%= link_to "#{m.name}", market_path(m) %>
+  <%= link_to "Edit", edit_market_path(m) %></li>
+  <% end %>
+
+
+</ul>
