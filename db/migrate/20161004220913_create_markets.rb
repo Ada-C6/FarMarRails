@@ -1,7 +1,6 @@
 class CreateMarkets < ActiveRecord::Migration
   def change
     create_table :markets do |t|
-      t.fixnum :id
       t.string :name
       t.string :street
       t.string :city
