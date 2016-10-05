@@ -1,11 +1,10 @@
-<h1> This is Where all the Markets live!</h1>
-<p>
-  This will include a link for each market to its show page.
-</p>
+<div class="overall-header-text">
+  <h1>List of Markets</h1>
+</div>
 
 <ul>
   <% @market.each do |i| %>
-  <li>
+  <li class="list-of-markets">
     <%= link_to "#{i.name}", user_market_path(i) %>
   </li>
   <% end %>

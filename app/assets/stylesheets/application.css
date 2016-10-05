@@ -13,8 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+/*All pages*/
 html {
-  font: normal normal 14px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: normal normal 16px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 header a {
@@ -38,10 +41,23 @@ header li {
 
 footer {
   padding: 10px 0;
+  margin-top: 50px;
 }
 
 header, footer {
   background-color: #009900;
   color: white;
-  text-align: center;
+}
+
+.individual-market {
+  font-size: 18px;
+}
+
+.overall-header-text {
+  font: 24px/1 "Lato", sans-serif;
+  color: #009900;
+}
+
+.list-of-markets {
+  display: block;
 }
