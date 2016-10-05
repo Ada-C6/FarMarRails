@@ -18,5 +18,6 @@ class SalesController < ApplicationController
   end
 
   def index
+    @sales = Sale.where(vendor_id:params[:id])
   end
 end

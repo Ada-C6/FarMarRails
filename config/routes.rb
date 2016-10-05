@@ -18,7 +18,7 @@ root to: 'homes#index'
 
   get 'sales/show'
 
-  get 'sales/index'
+  get 'vendor/:id/sales/index' => 'sales#index', as: 'sales_index'
 
   get 'products/:id/new' => 'products#new', as: 'new_product_for_vendor'
 
