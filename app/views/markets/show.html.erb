@@ -1,0 +1,8 @@
+<h1>Show Page Listing the Vendors of A Market</h1>
+
+<ul>
+  <li> <%@market.vendors.all.each do |vendor|%>
+      Vendor <%=vendor.name%>
+      <%end%>
+  </li>
+</ul>
