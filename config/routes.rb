@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :sales, only: [:index]
   end
 
+  get '/vendors/:vendor_id/sales/current_sales', to: 'sales#current_sales', as: 'vendor_current_sales'
+
 
 
 
