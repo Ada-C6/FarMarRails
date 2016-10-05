@@ -2,4 +2,12 @@
   <h1>Vendors Main Page</h1>
 </div>
 
-<h1> This is the page where vendors will choose whether they want to create a create, edit, or delete a product, OR create a sale or see a list of their sales.</h1>
+<h1>Please select a Vendor from the list below:</h1>
+
+<ul>
+  <% @vendor.each do |i| %>
+    <li class="list-of-vendors">
+      <%= link_to "#{i.name}", vendor_path(i) %>
+    </li>
+  <% end %>
+</ul>
