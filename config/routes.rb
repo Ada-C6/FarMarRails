@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get '/' => 'markets#home'
+  root 'home#index'
+  get '/' => 'home#index'
 
   get 'markets/all' => 'markets#all'
 
