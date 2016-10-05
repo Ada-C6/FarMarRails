@@ -32,5 +32,10 @@
   <li>
  <%= vendor.name %>
   </li>
+
+  <li><%= link_to "Delete Vendor",
+        market_vendor_path(vendor.market, vendor),
+        data: {confirm: "Are you sure you want to delete this vendor??"},
+        method: :delete %></li>
 <% end %>
 </ul>
