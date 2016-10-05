@@ -1,6 +1,19 @@
 <h1>View all markets</h1>
-<ul>
-      <% @markets.each do |market| %>
-      <li><%= market.name %>: <%= market.city %>, <%= market.state %></li>
-      <% end %>
-</ul>
+<table>
+  <tr>
+    <th>Market Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Actions</th>
+  </tr>
+  <% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+    <td><%= market.city %></td>
+    <td><%= market.state %></td>
+    <td><small><%= link_to "[Details]", market_path(market) %>
+      <%= link_to "[Edit]", edit_market_path(market) %>
+      <%= link_to "[Delete]", market_path(market), method: :delete, data: { confirm: "Really, now?" } %> </small> </td>
+  </tr>
+  <% end %>
+</table>
