@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'markets/index'
+
+  get 'markets/show'
+
+  get 'markets/new'
+
+  get 'markets/edit'
+
+  get 'markets/update'
+
+  get 'markets/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
