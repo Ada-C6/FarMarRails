@@ -12,3 +12,7 @@ require 'csv'
 CSV.foreach('seed_csvs/markets.csv', :headers => true) do |csv_obj|
   Market.create(name: csv_obj['name'], address: csv_obj['address'], city: csv_obj['city'], county: csv_obj['county'], state: csv_obj['state'], zip: csv_obj['zip'])
 end
+
+CSV.foreach('seed_csvs/products.csv', :headers => true) do |csv_obj|
+  Product.create(product_name: csv_obj['product_name'], vendor_id: csv_obj['vendor_id'])
+end

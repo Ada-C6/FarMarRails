@@ -13,6 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20161004230156) do
 
+  create_table "markets", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "county"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "product_name"
     t.integer  "vendor_id"
@@ -25,21 +36,8 @@ ActiveRecord::Schema.define(version: 20161004230156) do
     t.datetime "purchase_time"
     t.integer  "vendor_id"
     t.integer  "product_id"
-  end
-
-end
-
-ActiveRecord::Schema.define(version: 20161004225938) do
-
-  create_table "markets", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "county"
-    t.string   "state"
-    t.string   "zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "vendors", force: :cascade do |t|
