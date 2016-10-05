@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  get '/markets' => 'markets#index'
-  get '/markets/:id', to: 'markets#show', as: 'market'
+  root 'farmers#index'
+  get '/farmers' => 'farmers#index'
+
+  get 'farmers/markets' => 'markets#index1'
+  get 'farmers/markets/:id', to: 'markets#show1', as: 'market'
 
 
-  get '/market_views' => 'markets#index'
-  get '/market_views/new' => 'markets#new'
-  post '/market_views' => 'markets#create'
-  get '/market_views/:id', to: 'markets#show', as: 'market_view'
+  get 'farmers/market_views' => 'markets#index2'
+  get 'farmers/market_views/new' => 'markets#new'
+  post 'farmers/market_views' => 'markets#create'
+  get 'farmers/market_views/:id', to: 'markets#show2', as: 'market_view'
 
 
 

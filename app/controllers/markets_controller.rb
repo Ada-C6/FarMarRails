@@ -1,13 +1,23 @@
 class MarketsController < ApplicationController
 
-  def index
+  def index1
     @market_list = Market.all
   end
 
-  def show
+  def show1
     this_market = Integer(params[:id])
     @this_market = Market.find(this_market)
   end
+
+  def index2
+    @market_list = Market.all
+  end
+
+  def show2
+    this_market = Integer(params[:id])
+    @this_market = Market.find(this_market)
+  end
+
 
   def new
     @new_market = Market.new
