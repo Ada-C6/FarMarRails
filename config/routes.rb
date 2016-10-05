@@ -46,11 +46,11 @@ root to: 'homes#index'
 
   get 'markets/new'
 
-  get 'markets/create'
+  post 'markets/create' => 'markets#create', as: 'markets_create'
 
-  get 'markets/update'
+  put 'markets/:id/update' => 'markets#update', as: 'markets_update'
 
-  get 'markets/edit'
+  get 'markets/:id/edit' => 'markets#edit', as: 'markets_edit'
 
   get 'markets/destroy'
 
