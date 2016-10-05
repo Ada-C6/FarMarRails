@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'general_users/index'
+  root to: 'general_users#index'
 
-  get 'general_users/show'
+  get 'general_users/index' => 'general_users#index', as: 'general_index'
+
+  get 'general_users/show/:id' => 'general_users#show' as: 'show_market'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

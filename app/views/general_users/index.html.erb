@@ -1,2 +1,6 @@
-<h1>GeneralUsers#index</h1>
-<p>Find me in app/views/general_users/index.html.erb</p>
+<h1>Markets</h1>
+<article>
+  <% @allmarkets.each do |ea_market| %>
+    <h2><%= link_to ( ea_market.name, show_market_path([ea_market.id]) ) %></h2>
+  <% end %>
+</article>
