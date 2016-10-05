@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   # root 'user#index'
 
   # resources :user, only: [:index] do
-    resources :markets, only: [:index, :show] do
-      resources :vendors
+    resources :markets do
+      resources :vendors do
+        resources :products, except: [:index]
+        resources :sales, except: [:destroy, :update, :edit]
+      end
     end
   # end
 
