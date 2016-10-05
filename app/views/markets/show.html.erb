@@ -11,6 +11,6 @@
 <h3> Vendors </h3>
 <ul>
 <% @market.vendors.each do |vendor| %>
-  <li><%= vendor.name %></li>
+  <li><%= link_to vendor.name, market_vendor_path(market_id: @market.id, id: vendor) %></li>
 <% end %>
 </ul>
