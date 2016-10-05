@@ -16,3 +16,7 @@ end
 CSV.foreach('seed_csvs/products.csv', :headers => true) do |csv_obj|
   Product.create(product_name: csv_obj['product_name'], vendor_id: csv_obj['vendor_id'])
 end
+
+CSV.foreach('seed_csvs/sales.csv', :headers => true) do |csv_obj|
+  Sale.create(amount: csv_obj['amount'], purchase_time: csv_obj['purchase_time'], vendor_id: csv_obj['vendor_id'], product_id: csv_obj['product_id'])
+end
