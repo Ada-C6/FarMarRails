@@ -1,22 +1,13 @@
-<h1>Vendors#show</h1>
 
-############ change market to vendor ###########
-
-<h1><%= @market.name %></h1>
-<p><%= @market.address %></p>
-<p><%= @market.city %></p>
-<p><%= @market.county %></p>
-<p><%= @market.state %></p>
-<p><%= @market.zip %></p>
-
-
-############ change vendors to products ###########
+<h1><%= @vendor.name %></h1>
+<p><%= @vendor.num_employees %></p>
+<!-- <p><%= @vendor.market_id %></p> -->
 
 <h1>List of vendor's product </h1>
-<% @vendor_list.each do |vendor| %>
+<% @product_list.each do |product| %>
 <article>
   <p>
-    <%= link_to "#{vendor.name}", show_vendor_path(vendor.id) %>
+    <%= link_to "#{product.name}", show_product_path(product.id) %>
   </p>
   <% end %>
 </article>
