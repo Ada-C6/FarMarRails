@@ -10,6 +10,12 @@
   <br /><%= @market.county %> County
 
   <h3>Vendor list</h3>
-  <br />Insert vendor list
+  <ul>
+    <li> <%@market.vendors.all.each do |vendor|%>
+       <%=vendor.name%>
+      <%end%>
+    </li>
+  </ul>
+  <br />
 
 </div>
