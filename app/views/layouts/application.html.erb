@@ -8,11 +8,12 @@
 </head>
 <body>
     <header>
-      <h1 class='top-title'><a href='/'>FarMar Finder</a></h1>
+      <h1 class='top-title'> <%= link_to('FarMar Finder','/') %></a></h1>
       <nav class='top-nav'>
         <ul>
-          <li><a href='about.html'>about</a></li>
-          <li><a href='about.html'>about</a></li>
+          <li><%= link_to('use as market', markets_home_path) %></li>
+          <li><%= link_to('use as vendor', vendors_home_path) %></li>
+          <li><%= link_to('use as guest', markets_index_path) %></li>
         </ul>
       </nav>
       <br class='clearfloat' />
