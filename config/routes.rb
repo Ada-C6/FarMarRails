@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   get 'homes/:id' => 'homes#show', as: 'single_market'
 
 
-  resources :markets
+  resources :markets do
+    resources :vendors
+  end
   resources :vendors do
-    resources :products
-    resources :sales
+      resources :products
+      resources :sales
   end
 
 

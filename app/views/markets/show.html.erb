@@ -12,12 +12,12 @@
   <% @vendors.each do |vendor| %>
   <ul>
   <li><%= vendor.name %>
-    <%= link_to " edit", edit_vendor_path(vendor) %>
+    <%= link_to " edit", edit_market_vendor_path(@market, vendor) %>
     <%= link_to "delete", market_path(vendor), method: :delete,
         data: {confirm: "Are you really, really sure?"}%></li>
 
 </ul>
   <% end  %>
 
-<%= link_to "Create new Vendor", new_vendor_path %>
+<%= link_to "Create new Vendor", new_market_vendor_path(market_id: @market) %>
 <%= link_to "Edit Market Info", edit_market_path %>

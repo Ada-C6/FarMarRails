@@ -13,11 +13,13 @@ class VendorsController < ApplicationController
   end
 
   def new
-    @vendor = Vendor.new
+    @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.new
   end
 
   def create
-    @vendor = Vendor.new(vendor_params)
+    @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.new(vendor_params)
     if @vendor.save
       redirect_to market_path(@vendor.market)
     else
@@ -32,7 +34,7 @@ class VendorsController < ApplicationController
   def update
     @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
-        redirect_to markets_path
+        redirect_to markets_path(@vendor.market)
     else
       render :edit
     end
@@ -40,13 +42,13 @@ class VendorsController < ApplicationController
 
   def destroy
     Vendor.find(params[:id]).destroy
-    redirect_to vendors_path
+    redirect_to market_vendors_path
   end
 
   private
 
   def vendor_params
-    params.require(:vendor).permit(:name, :vendor_id)
+    params.require(:vendor).permit(:name, :vendor_id, :num_employees)
   end
 
 
