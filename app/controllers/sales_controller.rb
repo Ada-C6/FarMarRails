@@ -35,5 +35,5 @@ class SalesController < ApplicationController
 
   private
   def params
-  params.require(:vendor).permit(:name, :num_employees, :market_id)
+  params.require(:sale).permit(:amount, :purchase_time, :vemdor_id, :product_id)
   end

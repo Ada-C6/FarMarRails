@@ -7,7 +7,7 @@
 <% @sale_list.each do |sale| %>
 <article>
   <p>
-    <%=link_to "$#{sale.amount}", show_sale_path(sale.id) %>
+    <%=link_to "$#{sale.amount/100.00}", show_sale_path(sale.id) %>
   </p>
   <% end %>
 </article>
