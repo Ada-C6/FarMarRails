@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # root 'user#index'
-
+  root 'site#index'
   # resources :user, only: [:index] do
     resources :markets do
       resources :vendors do
