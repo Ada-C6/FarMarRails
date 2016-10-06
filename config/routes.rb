@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "home#index"
-  resources :markets, except: [:destroy]
-  resources :vendors do
+  resources :markets, except: [:destroy] do
+    resources :vendors, only: [:new, :create]
+  end
+  resources :vendors, except: [:new, :create] do
     resources :products, except: [:index, :show]
     resources :sales, only: [:create, :new, :index]
   end

@@ -27,7 +27,7 @@ class MarketsController < ApplicationController
   def update
     @market = Market.find(params[:id])
     if @market.update(market_params)
-      redirect_to markets_path
+      redirect_to market_path
     else
       render :edit
     end

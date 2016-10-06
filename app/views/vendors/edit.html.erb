@@ -1,0 +1,27 @@
+<h1>Edit Vendor Information</h1>
+
+<% if @vendor.errors.any? %>
+  <ul class="errors">
+    <% @vendor.errors.each do |column, message| %>
+      <li>
+        <strong>
+          <%= column.capitalize %>
+        </strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @vendor, method: :patch do |f| %>
+  <p>
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :num_employees, "Number of Employees" %>:
+    <%= f.text_field :num_employees %>
+  </p>
+
+  <%= f.submit "Submit" %>
+<% end %>
