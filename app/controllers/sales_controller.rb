@@ -7,7 +7,7 @@ class SalesController < ApplicationController
 
   def create
     @sale = Sale.new
-    @sale.amount = params[:sale][:amount]
+    @sale.amount = Sale.make_into_cents(params[:sale][:amount])
     @sale.purchase_time = Time.now
     @sale.product_id = params[:id]
     # this finds the product by its ID, then grabs that product's vendor and its ID, and gives the Sale that Vendor ID.
