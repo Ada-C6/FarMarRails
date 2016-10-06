@@ -35,11 +35,12 @@ class MarketController < ApplicationController
     @market = Market.find(params[:id]).destroy
   end
 
-  #added this method for dealing with list of vendor from market
-  # def vendor_list
-  #   @market = Market.find(params[:id])
-  #   @marker.vendor
-  #   redirect_to market_vendor_index
-  # end
+####### STRONG PARAMS #########
+
+  private
+
+  def market_params
+    params.require(:market).permit(:name, :address, :city, :county, :state, :zip)
+  end
 
 end

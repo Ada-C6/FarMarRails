@@ -36,4 +36,12 @@ class VendorController < ApplicationController
     @vendor = Vendor.find(params[:id]).destroy
   end
 
+
+####### STRONG PARAMS #########
+
+  private
+
+  def vendor_params
+    params.require(:vendor).permit(:name, :num_employees, :market_id)
+  end
 end

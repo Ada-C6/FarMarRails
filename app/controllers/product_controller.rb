@@ -36,13 +36,12 @@ class ProductController < ApplicationController
     redirect_to vendor_product_index_path
   end
 
-####### STRONG PARAMS #######
+####### STRONG PARAMS #########
 
-private
+  private
 
-def product_params
-  params.require(:product).permit(:name, :vendor_id)
-  # params.require(:table_name).permit(:field_one, :field_two)
-end
+  def product_params
+    params.require(:product).permit(:name, :vendor_id)
+  end
 
 end
