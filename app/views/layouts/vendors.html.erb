@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>FarMarRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header>
+
+      <nav class="navigation-container">
+        <ul>
+          <li><h1><a href ="index.html"> Vendor's Home </a></h1></li>
+          <li><h1><a href ="../markets/index.html"> Show Markets </a></h1></li>
+          <li><h1><a href ="../users/index.html"> Miriachel FarMar Finder </a></h1></li>
+          <li><h1><a href ="http://www.homedepot.com/"> Purchase Supplies </a></h1></li>
+          <li><h1><a href ="../users/index.html"> Log Out </a></h1></li>
+        </ul>
+      </nav>
+    </header>
+
+
+<%= yield %>
+
+</body>
+</html>

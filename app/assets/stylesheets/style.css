@@ -1,0 +1,108 @@
+@import  'https://fonts.googleapis.com/css?family=Josefin+Sans|Playfair+Display';;
+
+html {
+font: normal normal 14px/1 'Playfair Display', 'serif';
+/*, Helvetica, Arial, sans-serif;*/
+}
+/************************************/
+/* NAVIGATION BAR AND HEADER SECTION */
+/************************************/
+
+.navigation-container {
+  width: 100%;
+  height: 10%;
+  text-align:center;
+  /*position: fixed;*/
+  /*background-color: #fff796;*/
+}
+
+.navigation-container li {
+  list-style-type: none;
+  padding: 0 2% 0 2%;
+  display: inline-block;
+}
+
+.navigation-container ul {
+  padding: 0 0 2% 0;
+  margin: 0;
+}
+
+
+/************************************/
+/* LINKS */
+/************************************/
+.navigation-container li a {
+  color: #000000;
+  font-size: .6em;
+  font-family: 'Josefin Sans';
+  text-decoration: none;
+  text-align: center;
+}
+
+.navigation-container img {
+  padding-left: 1.75%;
+}
+
+.navigation-container li a:hover {
+  /*color: #ff7ca7;*/
+  color: #b24569;
+}
+
+a:hover {
+  /*color: #c98f8f;*/
+  color: #4fb1cc;
+}
+
+/*a:visited {
+  color: #000000
+}*/
+
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+/************************************/
+/* MAIN BODY SECTION - INDEX.HTML */
+/************************************/
+body {
+  margin-left: .5%;
+  margin-right: .5%;
+  font-family: 'Playfair Display', serif
+}
+
+h2 {
+  font-family: 'Josefin Sans';
+  font-size: 1.5em;
+  text-align: left;
+  /*width: 30%;*/
+  margin: 5px 2px 5px 2px;
+}
+
+
+/************************************/
+/* FOOTER */
+/************************************/
+footer {
+  clear: both;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1%;
+  height: 3%;
+  bottom:0;
+}
+
+footer section {
+  float: right;
+  width: 10%;
+  margin: 0;
+}
+
+footer section a {
+  padding: 0 1% .5% 1%;
+}
+
+footer p {
+  float: left;
+  /*width: 90%;*/
+}

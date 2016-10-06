@@ -1,0 +1,11 @@
+<h1><%= @product[:name] %></h1>
+
+<article>
+  <h3> Currently sold at:  </h3>
+  <p><%= link_to(@product.vendor.market.name, marketsshow_path(@product.vendor.market.id)) %></p>
+</article>
+
+
+<li><%= button_to 'Edit', productsedit_path(params[:id]), method: :get %></li>
+<li><%= button_to 'Delete', productsdestroy_path(params[:id]), method: :destroy, data: {confirm: 'Are you sure?'} %>
+</li>

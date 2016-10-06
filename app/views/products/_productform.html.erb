@@ -1,0 +1,13 @@
+<%= form_for @product,
+  url: action_name do |f| %>
+<ul>
+  <li><%= f.label :name %></li>
+  <li><%= f.text_field :name %></li>
+
+  <li><%= f.label :vendor_id %></li>
+  <li><%= f.text_field :vendor_id %></li>
+
+  <li><%= f.submit %>
+</ul>
+
+  <% end %>

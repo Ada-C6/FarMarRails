@@ -1,0 +1,29 @@
+<h1><%= @vendor[:name] %></h1>
+<p>Current employees: <%= @vendor[:employees] %></p>
+Products sold:
+<ul>
+  <% @vendor.products.each do |product| %>
+  <li><%= link_to(product.name, productsshow_path(product.id)) %></li>
+  <% end %>
+  <li><%= button_to 'New Product', productsnew_path(), method: :get %></li>
+</ul>
+
+
+<article>
+  <h3> Currently at:  </h3>
+  <p><%= link_to(@vendor.market.name, marketsshow_path(@vendor.market.id)) %></p>
+  <p><%= @vendor.market.address %></p>
+  <p><%= @vendor.market.city %>, <%= @vendor.market.state %> <%= @vendor.market.zip %></p>
+  <p>County: <%= @vendor.market.county %></p>
+</article>
+
+<article>
+  <h5>Sales</h5>
+  <ul>
+    <% if @vendor.sales != nil %>
+      <% @vendor.sales.each do |sale| %>
+          <li><%= sale.id %>- <%= sale.product.name %> $<%= (sprintf "%.2f", (sale.amount / 100.0)) %></li>
+      <% end %>
+    <% end %>
+  </ul>
+</article>

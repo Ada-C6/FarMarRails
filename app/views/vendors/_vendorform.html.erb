@@ -1,0 +1,16 @@
+<%= form_for @vendor,
+  url: action_name do |f| %>
+<ul>
+  <li><%= f.label :name %></li>
+  <li><%= f.text_field :name %></li>
+
+  <li><%= f.label :employees %></li>
+  <li><%= f.text_field :employees %></li>
+
+  <li><%= f.label :market_id %></li>
+  <li><%= f.text_field :market_id %></li>
+
+  <li><%= f.submit %>
+</ul>
+
+  <% end %>
