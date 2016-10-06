@@ -37,6 +37,8 @@ class MarketsController < ApplicationController
 
   end
 
+# we don't need this. We can already see the damn vendors.
+# make a link to each vendor (that is vendor#show in vendors_controller) and that is literally all we need. you cannot get to that vendor display as a vendor. Then put delete and edit buttions on that, again run through the vendors controller. God, I wish we'd had a chance to talk with a tutor around 4:30 when we wanted to. Oh well.
   def show_vendors
     @vendors = Vendor.all
   end
