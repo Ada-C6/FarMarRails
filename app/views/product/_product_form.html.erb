@@ -1,0 +1,28 @@
+<h4>Add new product for <%= Vendor.find(params[:vendor_id]).name %></h4>
+
+<% if @product.errors.any? %>
+  <ul class="error">
+    <% @product.errors.each do |error, message| %>
+    <li><strong><%= error.upcase %></strong><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<table>
+  <%= form_for @product, :url => vendor_product_index_path, method: http_method do |f| %>
+  <tr>
+    <td><%= f.label :name %> </td>
+    <td><%= f.text_field :name, :size => 100 %> </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :vendor_id %> </td>
+    <td><%= f.text_field :vendor_id, :size => 100 %> </td>
+  </td>
+
+  <tr>
+    <td class="submit-button"><%= f.submit "Produce Product!" %></td>
+  </tr>
+</table>
+
+<% end %>

@@ -1,0 +1,19 @@
+<h3><%= Vendor.find(@products[0].vendor_id).name %>'s Products</h3>
+<h4>Market: <%= Market.find(@products[0].vendor_id).name %></h4>
+
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><small>
+      <%= link_to "[Edit]", edit_vendor_product_path(product) %>
+      <%= link_to "[Delete]", vendor_product_path_index(product), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
+  </tr>
+  <% end %>
+</table>
+
+<h4><%= link_to "Add a new product!", new_vendor_product_path %></h4>

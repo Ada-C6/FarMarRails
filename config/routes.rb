@@ -3,19 +3,13 @@ Rails.application.routes.draw do
   root 'homepage#index'
   # Acting as a market
   resources :market do
-    resources :vendor, only: [:new, :create, :edit, :delete] do
-      # resources :product, :sale, only: [:new, :create, :edit, :delete] do
-      #   resources :sale, only: [:new, :create, :edit, :delete]
-      # end
-    end
+    resources :vendor
   end
 
 
   # Acting as a Vendor
   resources :vendor do
-    resources :product, :sale, only: [:new, :create, :edit, :delete] do
-      resources :sale, only: [:new, :create, :edit, :delete]
-    end
+    resources :product, :sale
   end
 
 
