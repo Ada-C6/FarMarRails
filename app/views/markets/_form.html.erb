@@ -1,3 +1,13 @@
+<% if @market.errors.any? %>
+  <ul class="errors">
+    <% @market.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @market, url: submit_url, method: http_method do |f| %>
   <p>
     <%= f.label :name %><br>

@@ -1,0 +1,11 @@
+<h1><%= "#{@vendor.name}" %></h1>
+<ul>
+  <li><%= "Located @ #{@vendor.market.name}" %></li>
+  <li><%= "(#{@vendor.market.address}, #{@vendor.market.city}, #{@vendor.market.state})" %></li>
+  <li><%= "Number of Employees: #{@vendor.no_of_employees}" %></li>
+</ul>
+
+
+<%= button_to "View Products", vendor_products_path(@vendor.id), method: :get %>
+<%= button_to "View Sales", vendor_sales_path(@vendor.id), method: :get %>
+<%= link_to "Go Back to All Vendors", vendors_path, method: :get %>

@@ -2,9 +2,7 @@
 <ol>
   <% @all_vendors.each do | vendor | %><li>
     <p>
-      <%= "#{vendor.name}" %>
-      <%= button_to "View Products", vendor_products_path(vendor.id), method: :get %>
-      <%= button_to "View Sales", vendor_sales_path(vendor.id), method: :get %>
+      <%= link_to "#{vendor.name}", vendor_path(vendor.id), method: :get %>
     </p>
   <% end %></li>
 </ol>

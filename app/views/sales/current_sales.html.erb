@@ -1,6 +1,6 @@
 <h1><%= "#{@vendor.name}'s Sales:" %></h1>
 
-
+<p><%= "Current Sales Amount: $#{ @all_current_sales_amount }" %></p>
 <ol>
   <% @all_current_sales.each do | sale | %><li>
     <p>
@@ -14,4 +14,5 @@
   <% end %></li>
 </ol>
 
-<%= link_to "Back to all Vendors", vendors_path %>
+<%= link_to "Back to all Sales", vendor_sales_path %>
+<%= link_to "Back to Vendor", vendor_path(@vendor.id) %>
