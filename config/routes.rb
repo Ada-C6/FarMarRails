@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   get 'markets/all' => 'markets#all'
   resources :markets, except: [:destroy] do
-    resources :vendors, only: [:edit, :new, :update, :show, :destroy]
+    resources :vendors, only: [:edit, :new, :update, :show, :destroy, :create]
     end
 
   resources :vendors, only: [:index, :show] do

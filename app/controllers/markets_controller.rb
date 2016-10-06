@@ -32,8 +32,6 @@ class MarketsController < ApplicationController
     @market = Market.find(params[:id])
   end
 
-
-
   def update
     @market = Market.find(params[:id])
     if @market.update(market_params) #if it saves successfully
