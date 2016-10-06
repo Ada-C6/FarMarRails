@@ -13,6 +13,8 @@ class SalesController < ApplicationController
 
   def show
     @sale = find_sale
+    @vendor = Vendor.find(@sale.vendor_id).name
+    @product = Product.find(@sale.product_id).name
   end
 
   def new

@@ -1,13 +1,13 @@
-<h1><%= @product.name %></h1>
+<h1><%= @product.name %> Info:</h1>
 
-##### chnage to present name instead of id ######
-<p><%= @product.vendor_id %></p>
+<p>Vendor Name: <%= @vendor %></p>
 
-<h1>List of product's sales</h1>
+<h2>List of Product's Sales by Sale Amount:</h2>
+
 <% @sale_list.each do |sale| %>
 <article>
   <p>
-    <%= link_to "#{sale.amount}", show_sale_path(sale.id) %>
+    <%=link_to "$#{sale.amount}", show_sale_path(sale.id) %>
   </p>
   <% end %>
 </article>

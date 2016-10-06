@@ -15,10 +15,11 @@ class ProductsController < ApplicationController
   def show
     find_all
     @product = find_product
+    @vendor = Vendor.find(@product.vendor_id).name
     @sale_list = []
-    @sales.each do |product|
-      if sale.product == @product.id
-      @sale_list << product
+    @sales.each do |sale|
+      if sale.product_id == @product.id
+      @sale_list << sale
       end
     end
     return @sale_list

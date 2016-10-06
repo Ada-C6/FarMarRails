@@ -2,6 +2,7 @@ class VendorsController < ApplicationController
   def find_all
     @vendors = Vendor.all
     @products = Product.all
+    @sales = Sale.all
   end
 
   def find_vendor
@@ -15,13 +16,23 @@ class VendorsController < ApplicationController
   def show
     find_all
     @vendor = find_vendor
+    @market = Market.find(@vendor.market_id).name
+
+    @total_sales = 0
+    @sales.each do |sale|
+      if sale.vendor_id == @vendor.id
+        @total_sales += sale.amount
+      end
+    end
+    @total_sales
+
     @product_list = []
     @products.each do |product|
       if product.vendor_id == @vendor.id
       @product_list << product
       end
     end
-    return @product_list
+    @product_list
   end
 
   def new

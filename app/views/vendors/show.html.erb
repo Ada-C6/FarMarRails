@@ -1,9 +1,12 @@
 
-<h1><%= @vendor.name %></h1>
-<p><%= @vendor.num_employees %></p>
-<!-- <p><%= @vendor.market_id %></p> -->
+<h1><%= @vendor.name %> Info:</h1>
 
-<h1>List of vendor's product </h1>
+<p>Market Name: <%= @market %></p>
+
+<p>Vendor's Number of Employees: <%= @vendor.num_employees %></p>
+
+<h2>List of vendor's products:</h2>
+
 <% @product_list.each do |product| %>
 <article>
   <p>
@@ -12,5 +15,4 @@
   <% end %>
 </article>
 
-
-######### add total sales figure #######
+<h2>Vendor's Total Sales: $<%= @total_sales %></h2>

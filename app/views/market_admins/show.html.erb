@@ -1,11 +1,8 @@
-<h1><%= @market.name %></h1>
-<p><%= @market.address %></p>
-<p><%= @market.city %></p>
-<p><%= @market.county %></p>
-<p><%= @market.state %></p>
-<p><%= @market.zip %></p>
+<h1><%= @market.name %> Info:</h1>
 
-<h1>List of market's vendors</h1>
+<p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
+
+<h2>List of Market's Vendors:</h2>
 <% @vendor_list.each do |vendor| %>
 <article>
   <p>

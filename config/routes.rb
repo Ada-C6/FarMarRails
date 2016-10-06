@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'vendors/index' => 'vendors#index', as: 'vendors'
 
-  get 'vendors/show' => 'vendors#show', as: 'show_vendor'
+  get 'vendors/show/:id' => 'vendors#show', as: 'show_vendor'
 
   get 'vendors/new'
 
@@ -38,25 +38,9 @@ Rails.application.routes.draw do
 
   ###############################
 
-  get 'sales/index'
+  get 'products/index' => 'products#index', as: 'products'
 
-  get 'sales/show'
-
-  get 'sales/new'
-
-  get 'sales/create'
-
-  get 'sales/edit'
-
-  get 'sales/update'
-
-  get 'sales/destroy'
-
-  ###############################
-
-  get 'products/index'
-
-  get 'products/show'
+  get 'products/show/:id' => 'products#show', as: 'show_product'
 
   get 'products/new'
 
@@ -70,9 +54,26 @@ Rails.application.routes.draw do
 
   ###############################
 
+  get 'sales/index' => 'sales#index', as: 'sales'
+
+  get 'sales/show/:id' => 'sales#show', as: 'show_sale'
+
+  get 'sales/new'
+
+  get 'sales/create'
+
+  get 'sales/edit'
+
+  get 'sales/update'
+
+  get 'sales/destroy'
+
+  ###############################
+
+
   get 'visitors/index' => 'visitors#index', as: 'visitors'
 
-  get 'visitors/show_markets'
+  get 'visitors/show_markets' 
 
   get 'visitors/show_vendors'
 
