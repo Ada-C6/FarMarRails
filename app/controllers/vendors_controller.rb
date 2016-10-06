@@ -41,8 +41,13 @@ class VendorsController < ApplicationController
     redirect_to action: "index"
   end
 
-  def destory
-    @vendor = Vendor.find(params[:id].to_i)
+  def destroy
+    @vendor = Vendor.destroy(params[:id].to_i)
     redirect_to action: "index"
   end
+
+  private
+   def post_params
+     params.require(:task).permit(:title, :description)
+   end
 end

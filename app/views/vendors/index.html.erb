@@ -1,11 +1,12 @@
 <h1>Vendors Account</h1>
+
 <ul>
+  <li><%= link_to "Create a New Vendor", new_path %></li>
+  <p></p>
   <% @vendors.each do |vendor| %>
   <%= link_to vendor.name, show_path(vendor.id) %>
     <li><%= button_to "Edit", edit_path(vendor.id) %></li>
+    <li><%= button_to "Delete", delete_path(vendor.id), method: :delete, data: {confirm:"Are you sure?"} %></li>
   <% end %>
-  <p></p>
-  <li><%= link_to "Create a New Vendor", new_path %></li>
-
 
 </ul>

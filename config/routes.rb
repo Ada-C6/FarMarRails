@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   patch 'vendors/:id' => 'vendors#update', as: 'update'
 
-  delete 'vendors/destory' => 'tasks#destroy', as: 'delete'
+  delete 'vendors/:id' => 'vendors#destroy', as: 'delete'
 
 
 
