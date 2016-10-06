@@ -5,4 +5,9 @@
     Amount: $<%= "%.2f" % (sale.amount.to_f/100) %> Purchase Time: <%= sale.purchase_time %>
   </li>
   <% end %>
+
+  <p>
+    Overall Total: $<%=  "%.2f" % @sale_total %>
+  </p>
+
 </ul>
