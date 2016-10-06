@@ -12,31 +12,33 @@ class VendorsController < ApplicationController
 
   def new
     @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.new
   end
 
   def edit
     @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.find(params[:id])
   end
 
   def create
-    market = Market.find(params[:market_id])
-    vendor = market.vendors.create(vendor_params)
+    @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.build(vendor_params)
 
-    if vendor
-      redirect_to market_path(market)
+    if @vendor.save
+      redirect_to market_path(@market)
     else
       render :new
     end
   end
 
   def update
-    market = Market.find(params[:market_id])
-    vendor = market.vendors.find(params[:id])
+    @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.find(params[:id])
 
-    if vendor.update(vendor_params)
-      redirect_to market_path(market)
+    if @vendor.update(vendor_params)
+      redirect_to market_path(@market)
     else
-      render :new
+      render :edit
     end
   end
 

@@ -19,9 +19,11 @@ class SalesController < ApplicationController
     @product = Product.find(params[:product_id])
     @sale = Sale.new(sale_params)
     @sale.purchase_time = Time.now
-    @sale.amount = @sale.amount * 100
-    @product.sales << @sale
-    @vendor.sales << @sale
+    unless @sale.amount.nil?
+      @sale.amount = @sale.amount * 100
+      @product.sales << @sale
+      @vendor.sales << @sale
+    end
 
     if @sale.save
       # saved successfully

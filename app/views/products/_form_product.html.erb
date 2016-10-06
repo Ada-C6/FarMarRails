@@ -1,3 +1,13 @@
+<% if @product.errors.any? %>
+  <ul class="errors">
+    <% @product.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @product, url: submit_url, method: http_method do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
