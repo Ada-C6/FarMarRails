@@ -1,7 +1,10 @@
-<h1>Show Page Listing the Vendors of A Market</h1>
-
+<div class="overall-header-text">
+  <h1> <%=@market.name%></h1>
+</div>
 <%= button_to "Add A New Vendor", [:new, @market, @vendor], method: :get%>
-
+<div >
+  <h2> List of Vendors</h2>
+</div>
 <ul>
   <li> <%@market.vendors.all.each do |vendor|%>
       Vendor <%=vendor.name%>

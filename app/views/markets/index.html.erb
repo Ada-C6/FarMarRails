@@ -1,11 +1,8 @@
 <div class="overall-header-text">
-  <h1>Markets Main Page</h1>
-</div>
-
-<h1>This is the page where a Market can create a or edit (but not delete) a market and create, edit, or delete a vendor.</h1>
-<div class="overall-header-text">
   <h1>List of Markets</h1>
 </div>
+
+
 <%= button_to "Add New Market", new_market_path, method: :get%>
 <ul>
   <% @market.all.each do |market| %>
