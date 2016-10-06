@@ -8,16 +8,24 @@ class ProductsController < ApplicationController
     @vendor = Vendor.find(params[:vendor_id])
     @product.vendor_id = @vendor.id
     if @product.save
-      puts "REDIRECT ME: #{@vendor.id}"
       redirect_to vendor_path(@vendor.id)
     else
-      puts "RENDER"
       render :new
     end
   end
 
   def edit
-    
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @vendor = Vendor.find(params[:vendor_id])
+    if @product.update(product_params)
+      redirect_to vendor_path(@vendor.id)
+    else
+      render :edit
+    end
   end
 
 # ---- PRIVATE METHODS ----
