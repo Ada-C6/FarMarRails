@@ -1,4 +1,5 @@
 <h2><%= @market.name %></h2>
+<p><%= link_to("Edit", markets_edit_path) %></p>
 
 <br />
 
@@ -27,7 +28,7 @@
 <% end %>
 </ul>
 
-<p id="market_links">
-<%= link_to("Edit", markets_edit_path) %>
+<p id="market_link">
+  <br />
 <%= link_to("Add vendor", vendors_new_path) %>
 </p>

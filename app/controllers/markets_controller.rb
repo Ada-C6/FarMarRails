@@ -22,7 +22,7 @@ class MarketsController < ApplicationController
     @mymarket.state = params[:market][:state]
     @mymarket.zip = params[:market][:zip]
     @mymarket.save
-    #redirect_to action: 'markets_home'
+    redirect_to show_market_path(@mymarket.id)
   end
 
   def update
