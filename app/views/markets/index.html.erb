@@ -2,10 +2,10 @@
 
 <%= link_to "Create new market", new_market_path %>
 
-<ul>
+<ol>
 <% @markets.each do |market| %>
  <li>
   <%= link_to "#{market.name}", market_path(market) %>
 </li>
 <% end %>
-</ul>
+</ol>
