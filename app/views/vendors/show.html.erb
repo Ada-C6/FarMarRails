@@ -38,11 +38,17 @@
             <% @vendor.sales.all.each do |sale| %>
             <td><%= sale.product.name %></td>
             <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
-            <td><%= number_to_currency(sale.amount/100) %></td>
+            <td><%= number_to_currency(sale.amount.to_f/100) %></td>
           </tr>
           <% end %>
         </tbody>
       </table>
     <% end %>
+    <h4>
+      Total Sales:
+      <% @vendor.sales.all.each do |sale| %>
+        <%= (sale.amount.map {|s|}.reduce(:+)) %>
+      <% end %>
+    </h4>
   </div>
 </div>
