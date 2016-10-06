@@ -4,6 +4,8 @@
 <li>At: <%= @market.name %></li>
 <li>Employees: <%= @vendor.num_employees %></li>
 </ul>
+<%= button_to "Edit Vendor", edit_market_vendor_path(market_id: @market.id, id: @vendor.id), method: :get%>
+<%= button_to "Delete Vendor", market_vendor_path(market_id: @market.id, id: @vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" } %>
 
 <h3> Products </h3>
 <ul>
@@ -14,9 +16,10 @@
 <% end %>
 </ul>
 <%= button_to "Add New Product", new_market_vendor_product_path(vendor_id:@vendor.id), method: :get %>
-
-<h3><%= link_to "See Sales", market_vendor_sales_path(vendor_id:@vendor.id) %></h3>
-<%= button_to "Edit Vendor", edit_market_vendor_path(market_id: @market.id, id: @vendor.id), method: :get%>
-<p>
-</p>
-<%= button_to "Delete Vendor", market_vendor_path(market_id: @market.id, id: @vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" } %>
+<h3>Sales</h3>
+<ul>
+  <li>
+    <%= link_to "See Sales", market_vendor_sales_path(vendor_id:@vendor.id) %>
+  </li>
+</ul>
+<%= button_to "Add a Sale", new_market_vendor_sale_path(market_id: @market.id, vendor_id: @vendor.id), method: :get %>
