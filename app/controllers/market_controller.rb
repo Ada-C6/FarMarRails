@@ -33,6 +33,8 @@ class MarketController < ApplicationController
 
   def destroy
     @market = Market.find(params[:id]).destroy
+
+    redirect_to market_index_path
   end
 
 ####### STRONG PARAMS #########

@@ -1,7 +1,8 @@
 class VendorController < ApplicationController
 
   def index
-    if market = Market.find(params[:market_id])
+    if params[:market_id] != nil
+      market = Market.find(params[:market_id])
       @vendors = market.vendors
       return @vendors
     else
@@ -12,7 +13,7 @@ class VendorController < ApplicationController
   def create
     @vendor = Vendor.create(vendor_params)
 
-    redirect_to root_path
+    redirect_to market_vendor_index_path(vendor_params[:market_id])
   end
 
   def new
@@ -39,6 +40,7 @@ class VendorController < ApplicationController
 
   def destroy
     @vendor = Vendor.find(params[:id]).destroy
+   redirect_to vendor_index_path
   end
 
 
