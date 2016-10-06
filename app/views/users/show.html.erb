@@ -1,0 +1,18 @@
+<h1>Farmers Market: <%= @market.name %></h1>
+
+<h2>Address:</h2>
+
+<p><%=@market.address%></p>
+<p><%=@market.city%>, <%=@market.county%>, <%=@market.state%>, <%=@market.zip%></p>
+
+<h2>Vendors:</h2>
+
+<ul>
+
+  <% @market.vendors.each do |vendor| %>
+    <li><%=vendor.name%></li>
+  <% end %>
+
+</ul>
+
+<%= link_to "Back to directory", users_index_path %>

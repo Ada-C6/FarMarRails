@@ -1,0 +1,7 @@
+<h1>Markets#show</h1>
+
+<p><%= "Hi #{current_user.name}! Here are the vendors for your market: " %></p>
+
+<p><% current_user.vendors.each do |vendor| %>
+  <p><%= "Name: #{vendor.name}, ID: #{vendor.id}" %></p>
+<%end%></p>

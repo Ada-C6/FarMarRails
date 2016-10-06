@@ -1,0 +1,15 @@
+<h1>Welcome to FarMar</h1>
+
+<nav>
+  <ul>
+    <li>
+      <%= link_to "Guest Image", sessions_new_path(:user_type => 'user') %>
+    </li>
+    <li>
+      <%= link_to "Market Image", sessions_new_path(:user_type => 'market') %>
+    </li>
+    <li>
+      <%= link_to "Vendor Image", sessions_new_path(:user_type => 'vendor') %>
+    </li>
+  </ul>
+</nav>

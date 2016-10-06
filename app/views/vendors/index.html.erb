@@ -1,0 +1,15 @@
+<h1>Welcome, <%= @vendor.name %>!</h1>
+
+<h2>According to our records...</h2>
+
+<ul>
+  <li>You have <%= @vendor.num_employees %> employees</li>
+  <li>You sell at <%= @vendor.market.name %> </li>
+  <li>Your vendor ID is: <%= @vendor.id %> </li>
+</ul>
+
+<p>To update any of this information, please contact the administrator of your market. Contact details for your market can be found at <%= link_to "#{@vendor.market.name}", users_show_path(@vendor.market.id) %>.</p>
+
+<h2>What would you like to do today?</h2>
+<p><%= link_to "Go to my products", products_index_path %></p>
+<p><%= link_to "Go to my sales", sales_index_path %></p>

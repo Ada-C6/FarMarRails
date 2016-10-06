@@ -1,0 +1,21 @@
+<h1><%= "Welcome, #{@market.name}!"%></h1>
+
+<h2>Address:</h2>
+
+<p><%=@market.address%></p>
+<p><%=@market.city%>, <%=@market.county%>, <%=@market.state%>, <%=@market.zip%></p>
+
+<p><%= link_to "Edit my market profile", markets_edit_path(current_user.id) %></p>
+<p><%= link_to "Make a new market", markets_new_path %></p>
+
+<h2>Vendors:</h2>
+
+<ul>
+
+  <% @market.vendors.each do |vendor| %>
+    <li><%=vendor.name%></li>
+  <% end %>
+
+</ul>
+
+<p><%= link_to "Add a vendor to my market", vendors_new_path %></p>
