@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get 'market_admins/show/:id' => 'market_admins#show', as: 'show_market'
 
-  get 'market_admins/new'
+  get 'market_admins/new' => 'market_admins#new', as: 'new_market'
 
-  get 'market_admins/create'
+  post 'market_admins/create' => 'market_admins#create', as: 'create_market'
 
   get 'market_admins/edit'
 
