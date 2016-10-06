@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'vendors' => 'vendors#index', as:'index'
+  get 'vendors' => 'vendors#index', as:'vendorindex'
 
   get 'vendors/new' => 'vendors#new', as: 'new'
 

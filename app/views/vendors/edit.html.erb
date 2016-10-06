@@ -1,2 +1,13 @@
-<h1>Vendors#edit</h1>
-<p>Find me in app/views/vendors/edit.html.erb</p>
+<section>
+  <header>
+    <h1>Edit a Vendor</h1>
+  </header>
+  <%= form_for @vendor, url: update_path do |f| %>
+  <p>
+    <%= render partial: 'form', locals: {:f => f} %>
+    <div>
+      <%= f.submit 'Edit'%>
+    </div>
+  </p>
+  <% end %>
+</section>

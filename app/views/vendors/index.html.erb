@@ -1,4 +1,11 @@
 <h1>Vendors Account</h1>
 <ul>
-  <li><%= link_to( "Create a Vendor", new_path ) %></li>
+  <% @vendors.each do |vendor| %>
+  <%= link_to vendor.name, show_path(vendor.id) %>
+    <li><%= button_to "Edit", edit_path(vendor.id) %></li>
+  <% end %>
+  <p></p>
+  <li><%= link_to "Create a New Vendor", new_path %></li>
+
+
 </ul>

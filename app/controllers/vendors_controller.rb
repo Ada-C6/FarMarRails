@@ -13,28 +13,36 @@ class VendorsController < ApplicationController
     @vendor = Vendor.new
     @vendor.name = params[:vendor][:name]
     @vendor.employee_num = params[:vendor][:employee_num]
-    @vendor.name = params[:vendor][:name]
     @vendor.market_id = params[:vendor][:market_id]
 
     @vendor.save
 
     redirect_to action: "index"
-    # @path = "update"
 
   end
 
   def show
+    @vendor = Vendor.find(params[:id].to_i)
   end
 
   def edit
+    @vendor = Vendor.find(params[:id].to_i)
   end
 
   def update
+    @vendor = Vendor.find(params[:id].to_i)
+
+    @vendor.name = params[:vendor][:name]
+    @vendor.employee_num = params[:vendor][:employee_num]
+    @vendor.market_id = params[:vendor][:market_id]
+
+    @vendor.save
+
+    redirect_to action: "index"
   end
 
-
-
-
   def destory
+    @vendor = Vendor.find(params[:id].to_i)
+    redirect_to action: "index"
   end
 end
