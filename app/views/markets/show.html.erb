@@ -1,23 +1,41 @@
-<h2>Here's the market you just clicked on.</h2>
+<h2><%= @market.name %></h2>
+<p><%= link_to("Edit", markets_edit_path) %></p>
+<p><%= link_to("Shut Down", markets_destroy_path, method: :delete, data: { confirm: "Are you sure you want shut down your market?"}) %>
+</p>
 
-<h3><%= @market.name %></h3>
+<br />
+
+<h5>Address:</h5>
 <p>
   <%= @market.address  %><br />
   <%= "#{@market.city}, #{@market.state} #{@market.zip}" %>
 </p>
 
-<h3>Vendors at this Market</h3>
-<ul>
+<br />
+
+<h5>Vendors at this Market:</h5>
+<ul class="vendor_list">
 <% @market.vendors.each do |vendor| %>
     <li>
-      <%= vendor.name %>
+      <p><%= vendor.name %></p>
+      <p>
       <%= button_to "Delete", vendors_destroy_path(vendor.id),
-                              method: :delete, data: { confirm: "Are you sure?"} %>
-      <%= button_to "Edit", vendors_edit_path(vendor.id), method: :get %>
-
+                              method: :delete, data: { confirm: "Are you sure you want to remove this vendor?"} %>
+      </p>
+      <p>
+        <%= button_to "Edit", vendors_edit_path(vendor.id), method: :get %>
+      </p>
+      <p id="exception"> Employees: <%= vendor.no_employees %> </p>
     </li>
 <% end %>
 </ul>
 
-<%= link_to("Edit", markets_edit_path) %>
+<p id="market_link">
+  <br />
 <%= link_to("Add vendor", vendors_new_path) %>
+</p>
+
+<p>
+  <br />
+  <p><%= link_to("Return to Market List", markets_home_path) %></p>
+</p>

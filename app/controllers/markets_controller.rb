@@ -22,7 +22,7 @@ class MarketsController < ApplicationController
     @mymarket.state = params[:market][:state]
     @mymarket.zip = params[:market][:zip]
     @mymarket.save
-    #redirect_to action: 'markets_home'
+    redirect_to show_market_path(@mymarket.id)
   end
 
   def update
@@ -32,7 +32,7 @@ class MarketsController < ApplicationController
                               :county => params[:market][:county],
                               :state => params[:market][:state],
                               :zip => params[:market][:zip])
-    #redirect_to markets_show_path
+    redirect_to show_market_path
   end
 
   def edit
@@ -46,6 +46,8 @@ class MarketsController < ApplicationController
   end
 
   def destroy
+    @mymarket = Market.find(params[:id])
+    @mymarket.destroy
   end
 
 
