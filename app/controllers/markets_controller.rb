@@ -17,6 +17,8 @@ class MarketsController < ApplicationController
   def show2
     this_market = Integer(params[:id])
     @this_market = Market.find(this_market)
+    @id = params[:id]
+    @vendor = Vendor.where(market_id: params[:id] )
   end
 
 
@@ -32,13 +34,13 @@ class MarketsController < ApplicationController
 
   def edit
     @this_market = Market.find(params[:id])
-    @id = params[:id]
+
   end
 
   def update
     @this_market = Market.find(params[:id])
 
-    if @this_market.update(task_params)
+    if @this_market.update(market_params)
       redirect_to farmers_market_views_path
     else
       render :edit

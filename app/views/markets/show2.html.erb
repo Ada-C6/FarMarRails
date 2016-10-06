@@ -9,4 +9,16 @@
   <li>Zip: <%= @this_market.zip %></li>
 </ul>
 
-<!-- <p><%= link_to "Edit", edit_market_path(m) %></p>  -->
+<p><%= link_to "Edit Market", edit_market_path(@id) %></p>
+
+<h3>Market Vendors</h3>
+<ul>
+  <% @vendor.each do |v| %>
+    <li><%= v.name %>
+    <%= link_to "Edit", new_vendor_path(@id) %>
+    <%= link_to "Delete", new_vendor_path(@id) %> 
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add Vendor", new_vendor_path(@id) %></p>
