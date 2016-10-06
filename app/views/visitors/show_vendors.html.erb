@@ -1,2 +1,8 @@
-<h1>Visitors#show_vendors</h1>
-<p>Find me in app/views/visitors/show_vendors.html.erb</p>
+<h2>Here is a list of all vendors:</h2>
+<% @vendors.each do |vendor| %>
+<article>
+  <p>
+    <%= link_to "#{vendor.name}", show_all_path(vendor.market_id) %>
+  </p>
+  <% end %>
+</article>

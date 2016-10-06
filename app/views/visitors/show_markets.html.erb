@@ -1,2 +1,10 @@
-<h1>Visitors#show_markets</h1>
-<p>Find me in app/views/visitors/show_markets.html.erb</p>
+
+<h2>Here is a list of all markets:</h2>
+<% @markets.each do |market| %>
+<article>
+  <p>
+    <%= link_to "#{market.name}", show_all_path(market.id) %>
+    <%= market.state %>
+  </p>
+  <% end %>
+</article>

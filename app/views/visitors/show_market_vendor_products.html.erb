@@ -1,0 +1,18 @@
+<h1><%= @market.name %> Info:</h1>
+
+<p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
+
+
+<h2>List of Market's Vendors:</h2>
+<% @vendor_list.each do |vendor| %>
+<article>
+  <h3><%= vendor.name %></h3>
+      <% @product_list = [] %>
+      <h4>List of Vendor's Products:</h2>
+      <% @products.each do |product| %>
+        <% if product.vendor_id == vendor.id %>
+          <p><%= product.name %></p>
+        <% end %>
+      <% end %>
+  <% end %>
+</article>
