@@ -17,8 +17,9 @@
       <td><%= @mymarket.zip %></td>
     </tr>
 </table>
-
-<p><%= link_to "See our Vendors!", vendor_show_path(@mymarket[:id]) %><p>
+<!-- # this line is broken just shows one vendor
+ -->
+ <p><%= link_to "See our Vendors!", vendor_show_path(@mymarket[:id]) %><p>
 
 <% @vendors.each do |vendor| %>
     
