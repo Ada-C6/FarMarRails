@@ -9,27 +9,25 @@
   </ul>
 <% end %>
 
-<table>
 <%= form_for @vendor, :url => vendor_index_path, method: http_method do |f| %>
-<tr>
-  <td><%= f.label :name %> </td>
-  <td><%= f.text_field :name, :size => 100 %> </td>
-</tr>
+<table>
+  <tr>
+    <td><%= f.label :name %> </td>
+    <td><%= f.text_field :name, :size => 100 %> </td>
+  </tr>
 
-<tr>
-  <td><%= f.label :num_employees %> </td>
-  <td><%= f.text_field :num_employees, :size => 100 %> </td>
-</td>
+  <tr>
+    <td><%= f.label :num_employees %> </td>
+    <td><%= f.text_field :num_employees, :size => 100 %> </td>
+  </td>
 
-<tr>
-  <td><%= f.label :market_id %></td>
-  <td><%= f.text_field :market_id %></td>
-</tr>
+  <tr>
+    <td><%= f.label :market_id %></td>
+    <td><%= f.text_field :market_id %></td>
+  </tr>
 
-<tr>
-  <td class="submit-button"><%= f.submit "Send 'er, Vendor!" %></td>
-</tr>
-
+  <tr>
+    <td class="submit-button"><%= f.submit "Send 'er, Vendor!" %></td>
+  </tr>
 </table>
-
 <% end %>

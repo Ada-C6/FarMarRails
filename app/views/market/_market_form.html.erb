@@ -6,42 +6,40 @@
   </ul>
 <% end %>
 
-<table>
 <%= form_for @market, :url => market_index_path, method: http_method do |f| %>
-<tr>
-  <td><%= f.label :name %> </td>
-  <td><%= f.text_field :name, :size => 100 %> </td>
-</tr>
+<table>
+  <tr>
+    <td><%= f.label :name %> </td>
+    <td><%= f.text_field :name, :size => 100 %> </td>
+  </tr>
 
-<tr>
-  <td><%= f.label :address %> </td>
-  <td><%= f.text_field :address, :size => 100 %> </td>
-</td>
+  <tr>
+    <td><%= f.label :address %> </td>
+    <td><%= f.text_field :address, :size => 100 %> </td>
+  </td>
 
-<tr>
-  <td><%= f.label :city %></td>
-  <td><%= f.text_field :city %></td>
-</tr>
+  <tr>
+    <td><%= f.label :city %></td>
+    <td><%= f.text_field :city %></td>
+  </tr>
 
-<tr>
-  <td><%= f.label :county %></td>
-  <td><%= f.text_field :county, :size => 50 %></td>
-</tr>
+  <tr>
+    <td><%= f.label :county %></td>
+    <td><%= f.text_field :county, :size => 50 %></td>
+  </tr>
 
-<tr>
-  <td><%= f.label :state %></td>
-  <td><%= f.text_field :state %></td>
-</tr>
+  <tr>
+    <td><%= f.label :state %></td>
+    <td><%= f.text_field :state %></td>
+  </tr>
 
-<tr>
-  <td><%= f.label :zip %></td>
-  <td><%= f.text_field :zip %></td>
-</tr>
+  <tr>
+    <td><%= f.label :zip %></td>
+    <td><%= f.text_field :zip %></td>
+  </tr>
 
-<tr>
-  <td class="submit-button"><%= f.submit "Mark it, Market!" %></td>
-</tr>
-
+  <tr>
+    <td class="submit-button"><%= f.submit "Mark it, Market!" %></td>
+  </tr>
 </table>
-
 <% end %>
