@@ -1,4 +1,5 @@
 <h2>Sales</h2>
+
 <ul>
   <% @sales.each do |sale| %>
   <li>
@@ -6,22 +7,21 @@
   </li>
   <% end %>
 
+</ul>
+
   <p>
     Overall Total: $<%=  "%.2f" % @sale_total %>
   </p>
 
+<h2> This Month's Sales </h2>
+  <ul>
+    <% @month_sales.each do |month_sale| %>
+      <li>
+        Amount: $<%= "%.2f" % (month_sale.amount.to_f/100) %> Purchase Time: <%= month_sale.purchase_time %>
+      </li>
+    <% end %>
 </ul>
 
-<h1> This Month's Sales </h1>
-<ul>
-  <% @month_sales.each do |month_sale| %>
-    <li>
-      Amount: $<%= "%.2f" % (month_sale.amount.to_f/100) %> Purchase Time: <%= month_sale.purchase_time %>
-    </li>
-  <% end %>
-
-  <p>
-    Month Total: $<%= "%.2f" % @month_sale_total %>
-  </p>
-
-</ul>
+<p>
+  Month Total: $<%= "%.2f" % @month_sale_total %>
+</p>
