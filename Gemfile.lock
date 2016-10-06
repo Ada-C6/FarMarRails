@@ -126,6 +126,8 @@ GEM
     rake (11.3.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
     ruby-graphviz (1.2.2)
     sass (3.4.22)
     sass-rails (5.0.6)
@@ -178,6 +180,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.7)
   rails-erd
+  responders (~> 2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

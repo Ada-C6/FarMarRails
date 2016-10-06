@@ -8,9 +8,12 @@
 <p>State: <%= @market.state %></p>
 <p>Zip Code: <%= @market.zip %></p>
 
-<h3>Vendors</h3>
-<% @vendors_list.each do |vendor|%>
-  <p><%= vendor.name %></p>
-<% end %>
 
-<%= link_to "Edit Market Info", edit_market_path(@market.id) %>
+<b><%= link_to "Edit Market Info", edit_market_path(@market.id) %></b>
+
+<h3>Vendors</h3>
+<% @vendors_list.each do |vendor| %>
+  <p><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%>
+  </p>
+
+<% end %>
