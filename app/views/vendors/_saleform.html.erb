@@ -1,0 +1,15 @@
+<% render partial 'vendor_header_form' %>
+
+<%= form_for @mysale, method: @post_method, url: @post_path do |f| %>
+
+	<%= f.label :purchase_time %>
+	<%= f.date_field :purchase_time %>
+
+	<%= f.label :amount %>
+	<%= f.text_field :amount %>
+
+	<%= f.submit %>
+<% end %>
+
+
+

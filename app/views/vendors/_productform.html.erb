@@ -1,0 +1,10 @@
+<%= render partial: "vendor_header_form" %>
+
+<%= @myproduct.name %>
+<%= form_for @myproduct, method: @post_method, url: @post_path do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.submit %>
+
+<% end %>

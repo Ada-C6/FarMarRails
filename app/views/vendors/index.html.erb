@@ -1,0 +1,10 @@
+<h1>Who Are You?</h1>
+
+<% @vendors.each do |vendor|
+%>
+	<article>
+		<h2>
+			<%= link_to( vendor.name, show_vendor_path(vendor.id)) %>
+		</h2>
+	</article>
+<% end %>

@@ -1,0 +1,25 @@
+<%= @error if @error %>
+<%= form_for @mymarket,
+  method: @post_method,
+  url: @post_path do |f| %>
+  <!-- <%= @error if @error %> -->
+  <%= f.label :name %>
+    <%= f.text_field :name %>
+
+  <%= f.label :street %>
+  <%= f.text_field :street %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :county %>
+  <%= f.text_field :county %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+
+  <%= f.label :zip %>
+  <%= f.text_field :zip %>
+
+  <%= f.submit %>
+  <% end %>

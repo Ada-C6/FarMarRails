@@ -1,0 +1,19 @@
+<h1><%= @mymarket.name %></h1>
+<article>
+  <h3>Address: </h3>
+  <p> <%= @mymarket.street %>  </p>
+  <p> <%= @mymarket.city %>  </p>
+  <p> <%= @mymarket.county %>  </p>
+  <p> <%= @mymarket.state %>  </p>
+  <p> <%= @mymarket.zip %>  </p>
+  <p> <%= button_to "Edit", market_edit_path(@mymarket.id), method: :get %></p>
+  <p> <%= button_to "Delete", {action: "destroy", id: @mymarket.id}, method: :delete %></p>
+</article>
+
+<article>
+  <h3> Vendors: </h3>
+  <% @market_vendors.each do |vendor| %>
+    <p>  <%= link_to(vendor.name, market_vendor_show_path(@mymarket.id, vendor.id)) %>  </p>
+  <% end %>
+  <p><%= button_to "Add Vendor", {controller: 'markets', action: 'vendor_new'}, {path: 'market_vendor_new', method: :get} %></p>
+</article>

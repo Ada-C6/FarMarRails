@@ -1,0 +1,13 @@
+<%= @error if @error %>
+<%= form_for @myvendor,
+  method: @post_method,
+  url: @post_path do |f| %>
+  <!-- <%= @error if @error %> -->
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :num_employees %>
+  <%= f.text_field :num_employees %>
+
+  <%= f.submit %>
+  <% end %>
