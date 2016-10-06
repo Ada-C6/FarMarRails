@@ -5,8 +5,9 @@ class MarketsController < ApplicationController
   end
 
   def show1
-    this_market = Integer(params[:id])
-    @this_market = Market.find(this_market)
+    id = Integer(params[:id])
+    @this_market = Market.find(id)
+    @vendor = Vendor.where(market_id: id )
   end
 
   def index2
@@ -26,11 +27,7 @@ class MarketsController < ApplicationController
   def create
     @new_market = Market.new(market_params)
     @new_market.save
-    if @new_market.save
-      redirect_to market_views_path
-    else
-      render :new
-    end
+    redirect_to farmers_market_views_path
   end
 
   def edit
@@ -42,7 +39,7 @@ class MarketsController < ApplicationController
     @this_market = Market.find(params[:id])
 
     if @this_market.update(task_params)
-      redirect_to farmers_path
+      redirect_to farmers_market_views_path
     else
       render :edit
     end
@@ -50,9 +47,8 @@ class MarketsController < ApplicationController
 
   private
 
-def task_params
-  params.require(:market).permit(:name, :address, :city, :county, :state, :zip)
-end
-
+  def market_params
+    params.require(:market).permit(:name, :address, :city, :county, :state, :zip)
+  end
 
 end

@@ -1,5 +1,8 @@
 <h1>Market Details</h1>
 
+<h3><%= link_to "Create New Market", new_market_path %></h3>
+
+
 <ul>
   <% @market_list.each do |m| %>
   <li><%= link_to "#{m.name}", market_path(m) %>
