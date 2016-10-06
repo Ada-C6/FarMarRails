@@ -1,0 +1,8 @@
+<h1>Please enter your sale!</h1>
+
+<%= form_for [@product.vendor, @product, @sale], url: {action: "create"} do |f| %>
+  <%= f.label "Sale amount" %>
+  <%= f.text_field :amount %>
+
+  <%= f.submit %>
+<% end %>

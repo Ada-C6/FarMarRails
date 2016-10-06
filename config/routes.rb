@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   end
 
   resources :vendors, only: [:index, :show] do
-    resources :products
-    resources :sales, only: [:show, :create]
+    resources :products do
+      resources :sales, only: [:show, :create, :new]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

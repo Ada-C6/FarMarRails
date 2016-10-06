@@ -13,6 +13,7 @@
         <%= product.name %>
         <%= link_to "Edit", edit_vendor_product_path(@vendor, product) %>
         <%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %>
+        <%= link_to "Create Sale", new_vendor_product_sale_path(vendor_id: @vendor.id, product_id: product.id) %>
       </li>
     <% end %>
   </ul>
@@ -20,11 +21,10 @@
   <p> Would you like to add a new product? If so, <%= link_to "click here", new_vendor_product_path(@vendor) %> </p>
 
   <h3>Sales list</h3>
-  <% if @vendor.sales == nil %>
-    <p>This vendor has no sales</p>
-  <% else %>
-    <div class="vendor-sales">
-    </div>
+  <div class="vendor-sales">
+    <% if @vendor.sales == nil %>
+      <p>This vendor has no sales</p>
+    <% else %>
       <table>
         <thead>
           <tr>
@@ -38,15 +38,17 @@
             <% @vendor.sales.all.each do |sale| %>
             <td><%= sale.product.name %></td>
             <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
-            <td><%= number_to_currency(sale.amount/100) %></td>
+            <td><%= number_to_currency(sale.amount.to_f/100) %></td>
           </tr>
           <% end %>
         </tbody>
       </table>
-    </div>
-  <% end %>
+    <% end %>
+    <h4>
+      Total Sales:
+      <% @vendor.sales.all.each do |sale| %>
+        <%= (sale.amount.map {|s|}.reduce(:+)) %>
+      <% end %>
+    </h4>
+  </div>
 </div>
-
-
-
-<h1> This is the page where vendors will choose whether they want to create, edit, or delete a product, OR create a sale .</h1>
