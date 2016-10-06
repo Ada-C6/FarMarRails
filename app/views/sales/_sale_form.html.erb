@@ -1,6 +1,6 @@
 <%= form_for @sale, method: @method,  url: @path do |f| %>
-  <%= f.label :amount %>
+  <%= f.label :amount, "Amount: $"%>
   <%= f.text_field :amount %>
-  
+
   <%= f.submit %>
 <% end %>

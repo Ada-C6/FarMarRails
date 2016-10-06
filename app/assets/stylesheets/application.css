@@ -20,6 +20,27 @@
 
  * {
    font-family: 'Source Sans Pro', sans-serif;
+   color: #0A0908;
+ }
+
+ header {
+   background-color: #C6AC8F;
+ }
+
+ body {
+  background-color: #EAE0D5;
+ }
+
+ .body-content {
+  padding: 5vh 0 0 5vh;
+ }
+
+ a {
+  color: #22333B;
+ }
+
+ a:hover{
+   color: #4A314D;
  }
 
  h1 {
@@ -57,17 +78,20 @@
  }
 
 .top-nav {
-  text-align: right;
-  margin-top: 2vh;
+  float: right;
+  margin-top: 2vmin;
+  padding: 2vmin;
 }
 
 .top-title{
-  float: left;
   margin-bottom: 4vh;
-  padding: 3vh 0 0 3vw;
+  padding: 5vh;
+  display: inline;
  }
 
- header {
-   background-color: rgb(195, 212, 236);
-   margin-top: -2vh;
- }
+
+
+#top-home-link {
+  padding-top: 3vh;
+  text-decoration: none;
+}
