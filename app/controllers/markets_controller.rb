@@ -4,5 +4,9 @@ class MarketsController < ApplicationController
     @markets = Market.all
   end
 
+  def show
+    @market = Market.find(params[:id])
+  end
+
   
 end
