@@ -1,0 +1,23 @@
+<h1>My Vendor Account</h1>
+<article>
+  <h2> <%= @myvendor.name %></h2>
+    <h3> My Total Sales<h3>
+      <p>$<%= @total / 100.00 %></p>
+      <h2>My Sales</h2>
+      <% @sales.each do |sale| %>
+      <ul>
+      <li>$<%= sale.amount / 100.00 %>&nbsp;&nbsp;<%= sale.product.name %></li>
+      </ul>
+    <% end %>
+
+
+      <h2>My Products</h2>
+      <% @myproducts.each do |product| %>
+      <ul>
+        <li><%= product.name %></li><li><p><%= button_to('Edit Product', products_edit_path, method: :get) %></li>
+      <li><%= button_to('Delete', products_delete_path, method: :delete) %></li></ul>
+      <% end %>
+    </article>
+    <section>
+      <p><%= button_to('Add Product', products_new_path, method: :get) %></p>
+    </section>

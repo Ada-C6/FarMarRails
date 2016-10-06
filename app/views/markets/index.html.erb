@@ -1,0 +1,13 @@
+<h1>Markets#index</h1>
+<p>Find me in app/views/markets/index.html.erb</p>
+
+<section>
+<% @markets.each do |market| %>
+<p><%= link_to(market.name, markets_show_path(market.id)) %>
+<%= "#{market[:city]}, #{market[:state]}"  %></p>
+<% end %>
+</section>
+
+<section class='button'>
+	<%= button_to("add market", {action: "new"}, method: :get) %>
+</section>
