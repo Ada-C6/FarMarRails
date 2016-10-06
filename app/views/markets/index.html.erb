@@ -1,6 +1,8 @@
-<h2>All Markets</h2>
+<h2 class="addmarket">All Markets</h2>
 
-<%= link_to("Add a Market", markets_new_path) %>
+<p class="addmarket">
+  <%= button_to("Add a Market", markets_new_path, method: :get) %>
+</p>
 
 <ul>
 <% @markets.each do |market| %>
