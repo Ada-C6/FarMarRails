@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # resources :user, only: [:index] do
     resources :markets do
       resources :vendors do
-        resources :products, except: [:index]
+        resources :products, except: [:index, :show]
         resources :sales, except: [:destroy, :update, :edit]
       end
     end
