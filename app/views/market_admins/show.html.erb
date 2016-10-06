@@ -4,6 +4,10 @@
 
 <p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
 
+<section>
+    <p><%= link_to( 'Edit market info.', edit_market_path ) %></p>
+</section>
+
 <h2>List of Market's Vendors:</h2>
 <% @vendor_list.each do |vendor| %>
 <article>

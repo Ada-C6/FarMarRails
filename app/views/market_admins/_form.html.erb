@@ -1,4 +1,4 @@
-<%= form_for @mymarket, url: action_name do |f| %>
+<%= form_for @market, url: action_name do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -18,6 +18,5 @@
   <%= f.label :zip %>
   <%= f.text_field :zip %>
 
-  <%# tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
   <%= f.submit %>
 <% end %>

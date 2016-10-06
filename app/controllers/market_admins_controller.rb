@@ -26,26 +26,39 @@ class MarketAdminsController < ApplicationController
   end
 
   def new
-    @mymarket = Market.new
+    @market = Market.new
   end
 
   def create
     @params = params
-    @mymarket = Market.new
-    @mymarket.name = params[:market][:name]
-    @mymarket.address = params[:market][:address]
-    @mymarket.city = params[:market][:city]
-    @mymarket.county = params[:market][:county]
-    @mymarket.zip = params[:market][:zip]
-    @mymarket.save
+    @market = Market.new
+    @market.name = params[:market][:name]
+    @market.address = params[:market][:address]
+    @market.city = params[:market][:city]
+    @market.county = params[:market][:county]
+    @market.state = params[:market][:state]
+    @market.zip = params[:market][:zip]
+    @market.save
 
-    redirect_to show_market_path(@mymarket.id)
+    redirect_to show_market_path(@market.id)
   end
 
   def edit
+    show
   end
 
   def update
+    @params = params
+    @market = find_market
+    @market.name = params[:market][:name]
+    @market.address = params[:market][:address]
+    @market.city = params[:market][:city]
+    @market.county = params[:market][:county]
+    @market.state = params[:market][:state]
+    @market.zip = params[:market][:zip]
+    @market.save
+
+    redirect_to show_market_path(@market.id)
   end
 
   def destroy

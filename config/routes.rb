@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   post 'market_admins/create' => 'market_admins#create', as: 'create_market'
 
-  get 'market_admins/edit'
+  get 'market_admins/:id/edit' => 'market_admins#edit', as: 'edit_market'
 
-  get 'market_admins/update'
+  patch 'market_admins/:id/update' => 'market_admins#update', as: 'update_market'
 
   get 'market_admins/destroy'
 
@@ -73,7 +73,7 @@ Rails.application.routes.draw do
 
   get 'visitors/index' => 'visitors#index', as: 'visitors'
 
-  get 'visitors/show_markets' 
+  get 'visitors/show_markets'
 
   get 'visitors/show_vendors'
 
