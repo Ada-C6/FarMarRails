@@ -1,11 +1,6 @@
 class VendorsController < ApplicationController
-
   def index
     @vendors = Vendor.all
-  end
-
-  def show
-    @vendor = Vendor.find(params[:id])
   end
 
   def new
@@ -25,6 +20,26 @@ class VendorsController < ApplicationController
       redirect_to market_path(@market)
     else
       render :new
+    end
+  end
+
+  def show
+    @vendor = Vendor.find(params[:id])
+  end
+
+  def edit
+    @vendor = Vendor.find(params[:id])
+  end
+
+  def update
+    @vendor = Vendor.find(params[:id])
+    @market = Market.find(@vendor.market_id)
+    if @vendor.update(vendor_params)
+      # Since a Vendor never updates itself,
+      # redirect to the market page
+        redirect_to market_path(@market)
+    else
+      render :edit
     end
   end
 

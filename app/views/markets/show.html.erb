@@ -17,7 +17,8 @@
 <% @market.vendors.each do |vendor| %>
 <li>
   <%= link_to "#{vendor.name}", vendor_path(vendor) %>
-  (<%= link_to "delete", vendor_path(vendor),
+  (<%= link_to "edit", edit_vendor_path(vendor) %> /
+  <%= link_to "delete", vendor_path(vendor),
               method: "delete",
               data: { confirm: "Are you sure you want to delete this vendor?" } %>)
 </li>
