@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'index/new'
 
-  get 'index/create' 
+  get 'index/create'
 
   get 'index/edit'
 
@@ -66,9 +66,9 @@ Rails.application.routes.draw do
 
   post 'markets/create' => 'markets#create', as: 'market_create'
 
-  get 'markets/edit'
+  get 'markets/:id/edit' => 'markets#edit', as: 'market_edit'
 
-  get 'markets/update'
+  put 'markets/:id/update' => 'markets#update', as: 'market_update'
 
   get 'markets/destroy'
 

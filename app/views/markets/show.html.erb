@@ -17,8 +17,11 @@
       <td><%= @mymarket.zip %></td>
     </tr>
 </table>
+<br>
 
+<%= button_to "Edit Market", market_edit_path(@mymarket.id), method: :get%>
 <!-- wave 32 replace with partial -->
+<br>
 <table>
 <tr>
   <th>Vendor Name</th>
@@ -31,12 +34,9 @@
     <tr>
       <td><%= vendor.name %> </td>
       <td><%= vendor.num_employees %></td>
-      <td><%= vendor.market_id %></td> 
+      <td><%= vendor.market_id %></td>
       <td><%= link_to 'View Vendors!', vendor_show_path(vendor) %></td>
     </tr>
   <% end %>
 <% end %>
 </table>
-
-
-
