@@ -1,0 +1,20 @@
+<h2>Here's the market you selected.</h2>
+
+<h3><%= @market.name %></h3>
+<p>
+  <%= @market.address  %><br />
+  <%= "#{@market.city}, #{@market.state} #{@market.zip}" %>
+</p>
+
+<h3>Vendors at this Market & their Products</h3>
+<ul>
+<% @vendors.each do |vendor| %>
+    <li><%= vendor.name %></li>
+    <% products = Product.where(vendor_id: vendor.id) %>
+      <ul>
+        <% products.each do |product|  %>
+          <li><%= product.name %></li>
+        <% end  %>
+      </ul>
+<% end %>
+</ul>
