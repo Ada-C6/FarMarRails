@@ -64,6 +64,7 @@ class MarketAdminsController < ApplicationController
   def destroy
     @market = find_market
     @market.destroy
+    redirect_to market_admins_path
   end
 end
 

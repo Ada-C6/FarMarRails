@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   patch 'market_admins/:id/update' => 'market_admins#update', as: 'update_market'
 
-  get 'market_admins/destroy'
+  delete 'market_admins/destroy'
 
   #################################
 
