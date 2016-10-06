@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get 'farmers/vendors/:id/products', to: 'vendors#show_products', as: 'vendor_products'
 
+  get 'farmers/vendors/:id/products/new', to: 'vendors#new_product', as: 'vendor_products_new'
+  post 'farmers/vendors/:id/products' => 'vendors#create_product'
+
 
   get 'farmers/vendors/:id/sales', to: 'vendors#show_sales', as: 'vendor_sales'
 
