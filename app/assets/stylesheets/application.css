@@ -13,3 +13,61 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+
+ /* ------all-site-styling---------*/
+
+ * {
+   font-family: 'Source Sans Pro', sans-serif;
+ }
+
+ h1 {
+   font-size: 3em;
+ }
+
+ h2 {
+   font-size: 2.5em;
+ }
+
+ h3 {
+   font-size: 2em;
+ }
+
+ h4 {
+   font-size: 1.75em;
+ }
+
+ h5 {
+   font-size: 1.5em;
+ }
+
+ h6 {
+   font-size: 1.25em;
+ }
+
+ ul {
+   padding-top: 0;
+   margin-top: 0;
+ }
+
+ nav ul li{
+   display: inline;
+   padding: 2vmin;
+ }
+
+.top-nav {
+  text-align: right;
+  margin-top: 2vh;
+}
+
+.top-title{
+  float: left;
+  margin-bottom: 4vh;
+  padding: 3vh 0 0 3vw;
+ }
+
+ header {
+   background-color: rgb(195, 212, 236);
+   margin-top: -2vh;
+ }
