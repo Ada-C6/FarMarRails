@@ -1,6 +1,6 @@
-<h1>Add a New Market</h1>
+<h1>Edit Market Information</h1>
 
-<%= form_for @new_market, :url => { method: :post} do |f| %>
+<%= form_for @this_market, method: :patch do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -19,5 +19,5 @@
 <%= f.label :zip %>
 <%= f.text_field :zip %>
 
-  <%= f.submit "Submit" %>
+<%= f.submit "Submit" %>
 <% end %>
