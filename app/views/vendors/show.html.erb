@@ -20,7 +20,7 @@
 
   <p> Would you like to add a new product? If so, <%= link_to "click here", new_vendor_product_path(@vendor) %> </p>
 
-  <h3>Sales list</h3>
+  <h3>Total Sales List</h3>
   <div class="vendor-sales">
     <% if @vendor.sales == nil %>
       <p>This vendor has no sales</p>
@@ -38,7 +38,7 @@
             <% @vendor.sales.all.each do |sale| %>
             <td><%= sale.product.name %></td>
             <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
-            <td><%= number_to_currency(sale.amount.to_f/100) %></td>
+            <td><%= number_to_currency(sale.amount/100.00) %></td>
           </tr>
           <% end %>
         </tbody>
@@ -46,9 +46,40 @@
     <% end %>
     <h4>
       Total Sales:
-      <% @vendor.sales.all.each do |sale| %>
-        <%= sale.amount.reduce(:+) %>
-      <% end %>
+        $<%= (Sale.where(vendor_id: @vendor.id).sum(:amount))/100.00 %>
+    </h4>
+  </div>
+
+  <h3>Monthly Sales List</h3>
+  <div class="vendor-sales">
+    <% monthly_sales = @vendor.sales.where(:purchase_time => Time.now.beginning_of_month..Time.now.end_of_month) %>
+    <% if monthly_sales.count == 0 %>
+      <p>This vendor has no sales this month</p>
+    <% elsif %>
+    <!-- Something about going through monthly_sales and looking for this month -->
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @vendor.sales.all.each do |sale| %>
+            <td><%= sale.product.name %></td>
+            <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
+            <td><%= number_to_currency(sale.amount/100.00) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <h4>
+      Total Monthly Sales:
+        $<%= (Sale.where(vendor_id: @vendor.id).sum(:amount))/100.00 %>
     </h4>
   </div>
 </div>
