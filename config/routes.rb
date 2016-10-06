@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  resources :home, only: [:index] do
-      resources :markets, only: [:index, :show] do
-          resources :vendors, only: [:index]
-      end
-  end
+  resources :home, only: [:index]
+
+  # These are probably uncessary and duplicate routes
+  # resources :markets, only: [:index, :show] do
+  #     resources :vendors, only: [:index]
+  # end
 
   resources :markets, except: [:destroy] do
       resources :vendors, except: [:show]
