@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-      <h1 class='top-title'> <%= link_to('FarMar Finder','/') %></a></h1>
+      <h1 class='top-title'> <%= link_to('FarMar Finder','/', id: 'top-home-link') %></h1>
       <nav class='top-nav'>
         <ul>
           <li><%= link_to('use as market', markets_home_path) %></li>
@@ -19,7 +19,10 @@
       <br class='clearfloat' />
     </header>
 
+
+<div class='body-content'>
 <%= yield %>
+</div>
 
 </body>
 </html>
