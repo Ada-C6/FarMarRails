@@ -26,20 +26,39 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
   end
 
   def create
+    @params = params
+    @product = Product.new
+    @product.name = params[:product][:name]
+    @product.vendor_id = params[:product][:vendor_id]
+    @vendor.save
+
+    redirect_to show_vendor_path(@product.vendor_id)
   end
 
   def edit
+    show
   end
 
   def update
+    @params = params
+    @product = find_product
+    @product.name = params[:product][:name]
+    @product.vendor_id = params[:product][:vendor_id]
+    @vendor.save
+
+    redirect_to show_vendor_path(@product.vendor_id)
   end
 
   def destroy
+    @product = find_product
+    @product.destroy
+    redirect_to vendors_path
   end
-  end
+end
 
   private
   def params

@@ -36,20 +36,41 @@ class VendorsController < ApplicationController
   end
 
   def new
+    @vendor = Vendor.new
   end
 
   def create
+    @params = params
+    @vendor = Vendor.new
+    @vendor.name = params[:vendor][:name]
+    @vendor.num_employees = params[:vendor][:num_employees]
+    @vendor.market_id = params[:vendor][:market_id]
+    @vendor.save
+
+    redirect_to show_vendor_path(@vendor.id)
   end
 
   def edit
+    show
   end
 
   def update
+    @params = params
+    @market = find_market
+    @vendor.name = params[:vendor][:name]
+    @vendor.num_employees = params[:vendor][:num_employees]
+    @vendor.market_id = params[:vendor][:market_id]
+    @vendor.save
+
+    redirect_to show_vendor_path(@vendor.id)
   end
 
   def destroy
+    @vendor = find_vendor
+    @vendor.destroy
+    redirect_to vendors_path
   end
-  end
+end
 
   private
   def params
