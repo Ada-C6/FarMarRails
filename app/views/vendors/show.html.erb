@@ -4,26 +4,41 @@
   </div>
   <br />Number of employees: <%= @vendor.employee_number %>
 
+  <br />Market: <%= @vendor.market.name %>
+
   <h3>Product list</h3>
   <ul>
     <% @vendor.products.all.each do |product| %>
       <li>
         <%= product.name %>
-        <%= link_to "Edit", edit_vendor_product_path(product, @vendor) %>
-        <%= link_to "Delete", vendor_product_path(product, @vendor), method: :delete, data: { confirm: "Are you really sure?" } %>
+        <%= link_to "Edit", edit_vendor_product_path(@vendor, product) %>
+        <%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %>
       </li>
     <% end %>
-    
   </ul>
 
   <h3>Sales list</h3>
-  <ul>
-    <% @vendor.sales.all.each do |sale| %>
-      <li><%= number_to_currency(sale.amount/100) %> at <%= sale.purchase_time.strftime("%m/%d/%Y") %></li>
-    <% end %>
-  </ul>
+  <div class="vendor-sales">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><% @vendor.sales.all.each do |sale| %>
+          <td><%= sale.product.name %></td>
+          <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
+          <td><%= number_to_currency(sale.amount/100) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 
 
-<h1> This is the page where vendors will choose whether they want to create a create, edit, or delete a product, OR create a sale or see a list of their sales.</h1>
+<h1> This is the page where vendors will choose whether they want to create, edit, or delete a product, OR create a sale .</h1>
