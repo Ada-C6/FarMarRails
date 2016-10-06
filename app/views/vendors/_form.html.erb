@@ -1,0 +1,17 @@
+<ul>
+  <li>
+    <%= f.label "name:" %>
+    <%= f.text_field :name, :class => "ven_name" %>
+  </li>
+
+  <li>
+    <%= f.label "employee number:" %>
+    <%= f.text_field :employee_num, :class => "employees_num" %>
+  </li>
+
+  <li>
+    <%= f.label "associated market:" %>
+    <!-- <%= f.text_field :market_id, :class => "market_id" %> -->
+    <%= f.collection_select :market_id, Market.order(:name),:id,:name, include_blank: false %>
+  </li>
+</ul>
