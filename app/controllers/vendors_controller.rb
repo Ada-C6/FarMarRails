@@ -3,7 +3,6 @@ class VendorsController < ApplicationController
 
   def show
   @market = Market.find(params[:market_id])
-
   @vendor = Vendor.find(params[:id])
   end
 

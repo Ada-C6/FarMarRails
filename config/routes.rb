@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :sales, only: [:new] do
     end
   end
+
   get 'sales' => 'sales#index'
   post 'sales', to: 'sales#create', as: 'vendor_sales'
 end

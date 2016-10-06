@@ -14,9 +14,25 @@ class MarketsController < ApplicationController
     @vendors_list = @market.vendors
   end
 
+  def new
+    @new_market = Market.new
+  end
+
+  def create
+    @new_market = Market.new(market_params)
+
+    if @new_market.save
+      redirect_to markets_path
+    else
+      render :new
+    end
+  end
+
   def edit
     @edit_market = Market.find(params[:id])
   end
+
+
 
   def update
     @edit_market = Market.find(params[:id])
