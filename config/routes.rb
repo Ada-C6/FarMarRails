@@ -64,13 +64,15 @@ Rails.application.routes.draw do
 
   get 'markets/new' => 'markets#new', as: 'market_new'
 
-  get 'markets/create' => 'markets#create', as: 'market_create'
+  post 'markets/create' => 'markets#create', as: 'market_create'
 
   get 'markets/edit'
 
   get 'markets/update'
 
   get 'markets/destroy'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
