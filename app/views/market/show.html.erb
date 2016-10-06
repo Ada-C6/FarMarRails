@@ -20,7 +20,7 @@
 </table>
 
 <p><%= link_to "Back to all markets", market_index_path %></p>
-<p><%= link_to "View all vendors", market_index_path %></p>
+<p><%= link_to "View all vendors", market_vendor_index_path(params[:id]) %></p>
 
 <br>
 <%= button_to "Delete this market", {:action => 'destroy', :id => @market.id }, :method => :delete, data: { confirm: "Really, now?" } %>

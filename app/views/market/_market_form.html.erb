@@ -6,7 +6,7 @@
   </ul>
 <% end %>
 
-<%= form_for @market, :url => market_index_path, method: http_method do |f| %>
+<%= form_for @market, url: path, method: http_method do |f| %>
 <table>
   <tr>
     <td><%= f.label :name %> </td>

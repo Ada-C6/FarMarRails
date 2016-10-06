@@ -1,7 +1,12 @@
 class VendorController < ApplicationController
 
   def index
-    @vendors = Vendor.all
+    if market = Market.find(params[:market_id])
+      @vendors = market.vendors
+      return @vendors
+    else
+      @vendors = Vendor.all
+    end
   end
 
   def create
