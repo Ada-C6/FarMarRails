@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # root 'user#index'
   root 'site#index'
+  get 'market_portal' => 'site#market_portal', as: 'm_portal'
+  get 'vendor_portal' => 'site#vendor_portal', as: 'v_portal'
+
   # resources :user, only: [:index] do
     resources :markets do
       resources :vendors do
