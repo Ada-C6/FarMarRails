@@ -9,7 +9,7 @@
 <% end %>
 
 <table>
-  <%= form_for @product, :url => vendor_product_index_path, method: http_method do |f| %>
+  <%= form_for @product, :url => vendor_product_index_path(params[:vendor_id]), method: http_method do |f| %>
   <tr>
     <td><%= f.label :name %> </td>
     <td><%= f.text_field :name, :size => 100 %> </td>

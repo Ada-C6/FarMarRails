@@ -5,7 +5,7 @@ class ProductController < ApplicationController
   end
 
   def create
-    @product = product.create(product_params)
+    @product = Product.create(product_params)
 
     redirect_to vendor_product_index_path
   end
@@ -26,5 +26,14 @@ class ProductController < ApplicationController
     @product = Product.find(params[:id]).destroy
     redirect_to vendor_product_index_path
   end
+
+####### STRONG PARAMS #######
+
+private
+
+def product_params
+  params.require(:product).permit(:name, :vendor_id)
+  # params.require(:table_name).permit(:field_one, :field_two)
+end
 
 end
