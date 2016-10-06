@@ -1,6 +1,7 @@
 class MarketsController < ApplicationController
   def index
-    @markets = Market.all
+    # all of the markets alphabetized
+    @markets = Market.order(:name)
   end
 
   def show
