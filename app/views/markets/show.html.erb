@@ -1,9 +1,12 @@
 <h1>Show Page Listing the Vendors of A Market</h1>
 
+<%= button_to "Add A New Vendor", [:new, @market, @vendor], method: :get%>
+
 <ul>
   <li> <%@market.vendors.all.each do |vendor|%>
       Vendor <%=vendor.name%>
       <%= button_to "Edit Vendor", [:edit, @market, @vendor], method: :get%>
+      <%= button_to "Delete This Vendor", market_vendor_path(@market, vendor), method: :delete, data: { confirm: "Are you really sure?" } %>
 
       <%end%>
   </li>

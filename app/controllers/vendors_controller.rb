@@ -13,17 +13,20 @@ class VendorsController < ApplicationController
   end
 
   def create
+    @market = Market.find(params[:market_id])
     @vendor = Vendor.new(vendor_params)
+    @vendor.market_id = @market.id
     if @vendor.save
-      redirect_to market_path
+      redirect_to market_path(@market.id)
     else
       render :new
     end
   end
 
   def destroy
+    @market = Market.find(params[:market_id])
     @vendor = Vendor.find(params[:id]).destroy
-    redirect_to market_path
+    redirect_to market_path(@market.id)
   end
 
   def edit  # Will give the form, like new
