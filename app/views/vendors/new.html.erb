@@ -1,0 +1,11 @@
+<h1>New Vendor from Market</h1>
+
+<%= form_for @new_vendor, :url => { method: :post} do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :employees %>
+<%= f.text_field :employees %>
+
+  <%= f.submit "Submit" %>
+<% end %>

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   patch 'farmers/market_views/:id' => 'market#update'
   get 'farmers/market_views/:id', to: 'markets#show2', as: 'market_view'
 
+  get 'farmers/market_views/:id/vendor/new', to: 'vendors#new', as: 'new_vendor'
+  post 'farmers/market_views/:id/vendor/new' => 'vendors#create'
+
   get 'farmers/vendors' => 'vendors#index'
   get 'farmers/vendors/:id', to: 'vendors#show', as: 'vendor'
 
