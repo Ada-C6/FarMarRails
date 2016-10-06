@@ -1,3 +1,5 @@
 <p>
-  <%= @this_vendor %>
+  <%= "#{@this_vendor.name}" %>
+  <%= link_to "See Products", vendor_products_path %>
+  <%= link_to "See Sales", vendor_sales_path %>
 </p>
