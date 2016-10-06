@@ -14,3 +14,4 @@
   <li><%= link_to vendor.name, market_vendor_path(market_id: @market.id, id: vendor) %></li>
 <% end %>
 </ul>
+<%= button_to "Add New Vendor", new_market_vendor_path(@market), method: :get%>
