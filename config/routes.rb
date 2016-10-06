@@ -73,12 +73,12 @@ Rails.application.routes.draw do
 
   get 'visitors/index' => 'visitors#index', as: 'visitors'
 
-  get 'visitors/show_markets'
+  get 'visitors/show_markets' => 'visitors#show_markets', as: 'show_markets'
 
-  get 'visitors/show_vendors'
+  get 'visitors/show_vendors' => 'visitors#show_vendors', as: 'show_vendors'
 
-  get 'visitors/show_products'
+  get 'visitors/show_products' => 'visitors#show_products', as: 'show_products'
 
-  get 'visitors/show_markets_by_product'
+  get 'visitors/show_market_vendor_products'
 
 end
