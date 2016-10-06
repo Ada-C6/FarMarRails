@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :markets, except: [:destroy]
   resources :vendors, only: [:index, :show] do
     resources :products do
+      resources :sales, only: [:new] do
+    end
   end
+  get 'sales' => 'sales#index'
+  post 'sales', to: 'sales#create', as: 'vendor_sales'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
