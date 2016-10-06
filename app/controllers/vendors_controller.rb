@@ -20,12 +20,15 @@ class VendorsController < ApplicationController
     @myvendor.no_employees = params[:vendor][:no_employees]
     @myvendor.market_id = params[:id]
     @myvendor.save
+    redirect_to show_market_path
   end
 
   def update
     Vendor.update(params[:id], :name => params[:vendor][:name],
                               :no_employees => params[:vendor][:no_employees])
     @myvendor = Vendor.find(params[:id])
+    @mymarketid = @myvendor.market_id
+    redirect_to show_market_path(@mymarketid)
   end
 
   def edit
@@ -40,9 +43,9 @@ class VendorsController < ApplicationController
 
   def destroy
     @myvendor = Vendor.find(params[:id])
-    @mymarket = @myvendor.market_id
+    @mymarketid = @myvendor.market_id
     @myvendor.destroy
-    redirect_to show_market_path(@mymarket)
+    redirect_to show_market_path(@mymarketid)
   end
 
 

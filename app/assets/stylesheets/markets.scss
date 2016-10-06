@@ -1,3 +1,30 @@
 // Place all the styles related to the markets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.vendor_list li p {
+  float: left;
+  margin: 1% .5% 0 0;
+}
+
+.vendor_list li input{
+  float: left;
+  margin: 1% .01% 0 0;
+}
+
+.vendor_list li {
+  clear: both;
+}
+
+.vendor_list #exception{
+  margin: .25% 0 0 2%;
+  clear: both;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#market_links {
+  clear: both;
+}

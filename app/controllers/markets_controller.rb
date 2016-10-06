@@ -32,7 +32,7 @@ class MarketsController < ApplicationController
                               :county => params[:market][:county],
                               :state => params[:market][:state],
                               :zip => params[:market][:zip])
-    #redirect_to markets_show_path
+    redirect_to show_market_path
   end
 
   def edit
