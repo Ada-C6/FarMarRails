@@ -1,0 +1,17 @@
+<h1>My Vendor Account</h1>
+<article>
+  <h2> <%= @myvendor.name %></h2>
+    <h3> My Total Sales<h3>
+      <p><%= @total %></p>
+
+      <% @sales.each do |sale| %>
+      <p><%= sale.amount %></p><p><%= sale.product.name %></p>
+      <% end %>
+
+      <h2>My Products</h2>
+      <% @myproducts.each do |product| %>
+        <p><%= product.name %></p>
+      <% end %>
+
+
+</article>

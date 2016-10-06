@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  purchase_time: 2016-10-04 16:14:31
+  vendor_id: 1
+  product_id: 1
+
+two:
+  amount: 1
+  purchase_time: 2016-10-04 16:14:31
+  vendor_id: 1
+  product_id: 1
