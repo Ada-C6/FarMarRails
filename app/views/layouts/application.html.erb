@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FarMarRails</title>
+  <title>FarMar</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,8 +9,21 @@
   <link href="https://fonts.googleapis.com/css?family=Bad+Script|Anton|Julius+Sans+One|Poiret+One|Quicksand" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <h1><%= @title %></h1>
+    <h3><%= @page_name %></h3>
+    <nav>
+      <ul class="top-buttons">
+        <li><a href="../">HOME</a></li>
+        <li><a href="../market">VIEW ALL MARKETS</a></li>
+        <li><a href="../vendor">VIEW ALL VENDORS</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
 
-<%= yield %>
 
 <footer>
 <p>
