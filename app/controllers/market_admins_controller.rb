@@ -62,6 +62,8 @@ class MarketAdminsController < ApplicationController
   end
 
   def destroy
+    @market = find_market
+    @market.destroy
   end
 end
 
