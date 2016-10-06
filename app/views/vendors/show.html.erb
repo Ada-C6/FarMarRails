@@ -47,7 +47,7 @@
     <h4>
       Total Sales:
       <% @vendor.sales.all.each do |sale| %>
-        <%= (sale.amount.map {|s|}.reduce(:+)) %>
+        <%= sale.amount.reduce(:+) %>
       <% end %>
     </h4>
   </div>
