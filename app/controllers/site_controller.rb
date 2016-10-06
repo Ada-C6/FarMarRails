@@ -6,5 +6,6 @@ class SiteController < ApplicationController
   end
 
   def vendor_portal
-  end   
+    @vendors = Vendor.all.order(:name)
+  end
 end
