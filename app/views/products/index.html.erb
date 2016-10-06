@@ -1,3 +1,5 @@
 <% @product_list.each do |product| %>
   <p><%= link_to(product[:name], vendor_product_path(product[:vendor_id], product[:id]))%></p>
 <% end %>
+
+<p><%= link_to("New Product", new_vendor_product_path) %></p>
