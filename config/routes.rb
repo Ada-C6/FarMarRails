@@ -26,15 +26,15 @@ Rails.application.routes.draw do
 
   get 'vendors/show/:id' => 'vendors#show', as: 'show_vendor'
 
-  get 'vendors/new'
+  get 'vendors/new' => 'vendors#new', as: 'new_vendor'
 
-  get 'vendors/create'
+  post 'vendors/create' => 'vendors#create', as: 'create_vendor'
 
-  get 'vendors/edit'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'edit_vendor'
 
-  get 'vendors/update'
+  patch 'vendors/:id/update' => 'vendors#update', as: 'update_vendor'
 
-  get 'vendors/destroy'
+  delete 'vendors/destroy'
 
   ###############################
 
@@ -42,15 +42,15 @@ Rails.application.routes.draw do
 
   get 'products/show/:id' => 'products#show', as: 'show_product'
 
-  get 'products/new'
+  get 'products/new' => 'products#new', as: 'new_product'
 
-  get 'products/create'
+  post 'products/create' => 'products#create', as: 'create_product'
 
-  get 'products/edit'
+  get 'products/:id/edit' => 'products#edit', as: 'edit_product'
 
-  get 'products/update'
+  patch 'products/:id/update' => 'products#update', as: 'update_product'
 
-  get 'products/destroy'
+  delete 'products/destroy'
 
   ###############################
 
@@ -58,15 +58,15 @@ Rails.application.routes.draw do
 
   get 'sales/show/:id' => 'sales#show', as: 'show_sale'
 
-  get 'sales/new'
+  get 'sales/new' => 'sales#new', as: 'new_sale'
 
-  get 'sales/create'
+  post 'sales/create' => 'sales#create', as: 'create_sale'
 
-  get 'sales/edit'
+  get 'sales/:id/edit' => 'sales#edit', as: 'edit_sale'
 
-  get 'sales/update'
+  patch 'sales/:id/update' => 'sales#update', as: 'update_sale'
 
-  get 'sales/destroy'
+  delete 'sales/destroy'
 
   ###############################
 

@@ -1,0 +1,16 @@
+<%= form_for @market, url: action_name do |f| %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.label :purchase_time %>
+  <%= f.text_field :purchase_time %>
+
+  <%= f.label :vendor_id %>
+  <%= f.text_field :vendor_id %>
+
+  <%= f.label :product_id %>
+  <%= f.text_field :product_id %>
+
+  <%= f.submit %>
+<% end %>
