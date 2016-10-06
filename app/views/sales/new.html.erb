@@ -1,0 +1,9 @@
+<h1>Add a sale:</h1>
+
+<%= form_for @sale, url: vendor_product_sales_path , method: :post do |f| %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.submit%>
+
+<% end %>

@@ -9,11 +9,13 @@ Rails.application.routes.draw do
 
   resources :vendors, only: [:index] do
     resources :products, except: [:show] do
-      resources :sales, only: [:create]
+      resources :sales, only: [:new, :create]
     end
 
     resources :sales, only: [:index]
   end
+
+  get '/vendors/:vendor_id/sales/current_sales', to: 'sales#current_sales', as: 'vendor_current_sales'
 
 
 

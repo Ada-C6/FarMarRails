@@ -1,0 +1,17 @@
+<h1><%= "#{@vendor.name}'s Sales:" %></h1>
+
+
+<ol>
+  <% @all_current_sales.each do | sale | %><li>
+    <p>
+      <%= "Product: #{sale.product.name}"%>
+      <ul>
+        <li><strong><%= "Sale Amount:" %></strong> <%= "$#{sale.amount/100}" %></li>
+        <li><strong><%= "Purchase Time:" %></strong> <%= "#{sale.purchase_time}" %></li>
+      </ul>
+
+    </p>
+  <% end %></li>
+</ol>
+
+<%= link_to "Back to all Vendors", vendors_path %>
