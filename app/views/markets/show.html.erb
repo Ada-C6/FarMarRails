@@ -22,9 +22,9 @@
  <p><%= link_to "See our Vendors!", vendor_show_path(@mymarket[:id]) %><p>
 
 <% @vendors.each do |vendor| %>
-    
+
   <% if vendor.market_id == @mymarket.id %>
   <%=  vendor.name %>
   <%  end %>
-    
+
 <% end %>

@@ -7,10 +7,6 @@ class VendorsController < ApplicationController
     @myvendor = Vendor.find(params[:id].to_i)
   end
 
-  def self.find
-    @vendors = Vendor.all
-  end
-
   def new
   end
 
