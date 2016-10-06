@@ -1,7 +1,7 @@
 <%= form_for ([@vendor, @sale]) do |f| %>
-  <p><%= f.label :amount %>
+  <p><%= f.label "Sale Amount (in cents)"%>
   <%= f.text_field :amount %></p>
-  <p><%= f.label "Purchase date and time" %>
+  <p><%= f.label "Purchase Date and Time (YYYY-MM-DD XX:XXAM/XX:XXPM)" %>
   <%= f.text_field :purchase_time %></p>
 
   <p><%= f.submit "Submit" %></p>

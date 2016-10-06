@@ -1,4 +1,8 @@
+<p>Sale List</p>
+
+<%= link_to("Back to Product List", vendor_products_path(@vendor.id)) %>
+
 <% @sales.each do |sale| %>
-  <p><%= sale[:amount] %>
-  <%= sale[:purchase_time] %></p>
+  <p>Sale amount: $<%= add_decimal(sale[:amount]) %></p>
+  <p>Sale date/time: <%= sale[:purchase_time] %></p></p>
 <% end %>

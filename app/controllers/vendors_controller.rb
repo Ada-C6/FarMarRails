@@ -1,10 +1,11 @@
 class VendorsController < ApplicationController
-  def index; end
+  def index
+    @vendors = Vendor.all
+  end
 
   def show
-  @market = Market.find(params[:market_id])
-
-  @vendor = Vendor.find(params[:id])
+    @market = Market.find(params[:market_id])
+    @vendor = Vendor.find(params[:id])
   end
 
   # def new; end

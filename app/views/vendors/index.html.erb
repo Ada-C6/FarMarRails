@@ -1,1 +1,6 @@
-This is where you go when you're a Vendor
+Welcome to the vendor portal!
+
+<h3>Here's a list of our vendors: </h3>
+<% @vendors.each do |vendor| %>
+  <br><%= link_to("#{vendor.name}", vendor_products_path(vendor.id)) %>
+<% end %>

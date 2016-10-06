@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     @vendor = Vendor.find(params[:vendor_id])
     @product_list = @vendor.products
+    @sales = @vendor.sales
   end
 
   def show

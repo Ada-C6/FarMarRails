@@ -16,7 +16,7 @@ class SalesController < ApplicationController
     @vendor = Vendor.find(params[:vendor_id])
     @sale = Sale.new(sale_params)
     @sale.vendor_id = params[:vendor_id]
-    @sale.product_id = params[:product_id]
+    @sale.product_id = params[:id]
     if @sale.save
       redirect_to vendor_sales_path
     else
