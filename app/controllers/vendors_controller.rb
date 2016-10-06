@@ -6,6 +6,8 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+    @market = Market.find(@vendor.market_id)
+    @products = Product.where(vendor_id: params[:id])
     # TODO
     # make products for display
   end
@@ -44,11 +46,8 @@ class VendorsController < ApplicationController
   private
 
   def vendor_params
-    params.require(:vendor).permit(:name, :market_id, :num_employees)
+    params.require(:vendor).permit(:name, :vendor_id)
   end
-
-
-
 
 
 end

@@ -1,0 +1,6 @@
+
+<%= form_for [@product.vendor, @product], method: action_name do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit "Commit Changes" %>
+<% end %>

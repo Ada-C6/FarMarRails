@@ -1,18 +1,25 @@
-<h1>Here's your vendor</h1>
+<h1>This is a vendor from the vendor's point of view!</h1>
 
 <h3><%= "#{@vendor.name} details:" %></h3>
 
 <h4>Info</h4>
 <p>
-  <%= @vendor.market_id %><br>
-  <%= "#{@vendor.num_employees}" %><br>
+  <%= "Market: #{@market.name}"%><br>
+  <%= "Number of employees: #{@vendor.num_employees}" %><br>
 </p>
 
-<!-- <h4>Vendors</h4> -->
-  <%# @vendors.each do |vendor| %>
-  <!-- <ul> -->
-  <!-- <li><%# vendor.name %></li> -->
-<!-- </ul> -->
-  <%# end  %>
+<h4>Products!</h4>
 
-<%= link_to "Edit", edit_vendor_path %>
+
+  <% @products.each do |product| %>
+  <ul>
+  <li><%= product.name %></li> <%= link_to "Edit product", edit_vendor_product_path(@vendor, product) %>
+  <%= link_to "Delete product", vendor_product_path(@vendor, product), method: 'delete', data: {confirm: "BURNINATE?"} %>
+</ul>
+  <% end  %>
+
+  <p>
+    <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
+  </p>
+
+<!-- <%# link_to "Edit", edit_vendor_path %> Vendors cannot edit themselves! -->

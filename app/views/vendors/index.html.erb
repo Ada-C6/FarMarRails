@@ -1,16 +1,11 @@
-<h1>Please choose your vendor.</h1>
-
-<h1><%= link_to "Make a new Vendor", new_vendor_path %> </h1>
+<h1>Which vendor are you?</h1>
 
 <% @vendors.each do |vendor| %>
 <ul>
 
   <li><%= link_to "#{vendor.name}", vendor_path(vendor) %>
-    <%= link_to "Edit", edit_vendor_path(vendor) %>
 
   </li>
-
-
 
 </ul>
 <% end %>
