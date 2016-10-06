@@ -15,3 +15,6 @@
 
 <h3><%= link_to "See Sales", market_vendor_sales_path(vendor_id:@vendor.id) %></h3>
 <%= button_to "Edit Vendor", edit_market_vendor_path(market_id: @market.id, id: @vendor.id), method: :get%>
+<p>
+</p>
+<%= button_to "Delete Vendor", market_vendor_path(market_id: @market.id, id: @vendor.id), method: :delete%>
