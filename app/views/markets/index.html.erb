@@ -1,9 +1,14 @@
-<h1>Markets#index</h1>
-<p>Find me in app/views/markets/index.html.erb</p>
+<h1 class="markets-header">All Markets</h1>
 
-<%= link_to "Create a new Market", new_market_path %>
+<header>
+  <nav>
+    <%= link_to "Go Home", root_path, :class => "page-link" %>
+  </nav>
+</header>
 
-<ul>
+<%= link_to "Create a new Market", new_market_path, :class => "primary-btn add-markets" %>
+
+<ul class="contained-list">
 
 <% @markets.each do |market| %>
     <li>

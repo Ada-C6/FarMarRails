@@ -10,7 +10,7 @@
    padding-left: 8rem;
  }
 
- h1 {
+ .landing-page-header {
    margin: 8rem 0rem 0 0rem;
    font-size: 3.5rem;
    text-shadow: 4px 0 0 rgba(0, 0, 0, 0.51);
@@ -65,4 +65,53 @@ a {
 
 .primary-btn:hover {
   background-color: rgb(72, 134, 68);
+}
+
+/*markets*/
+.page-link {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.page-link:hover {
+  color: rgb(155, 155, 172);
+}
+
+/*body{
+ font-family: 'Judson', serif;
+ color: rgb(224,224,235);
+ padding-left: 8rem;
+}*/
+
+.markets-header {
+  font-family: 'Quando', serif;
+  margin: 4rem 0rem 0 0rem;
+  font-size: 3.5rem;
+  text-shadow: 4px 0 0 rgba(0, 0, 0, 0.51);
+  position: fixed;
+ }
+
+.contained-list {
+  font-size: 1rem;
+  margin: 2rem 0 0 0;
+  position: fixed;
+  height: 64%;
+  /*background-color: blue;*/
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.51);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.contained-list > li {
+  margin: .2rem;
+  list-style: none;
+  height: 1.5rem;
+  text-shadow: 1px 1px black;
+
+}
+
+.add-markets {
+ margin: 9rem 0rem 0 5rem;
+ font-family: 'Quando', serif;
 }

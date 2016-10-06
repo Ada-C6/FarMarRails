@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   get '/vendors/:vendor_id/sales/current_sales', to: 'sales#current_sales', as: 'vendor_current_sales'
 
 
-
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
