@@ -1,8 +1,5 @@
 <h1>Add a New Vendor</h1>
 
-<%= params %>
-
-
 <% if @vendor.errors.any? %>
   <ul class="errors">
     <% @vendor.errors.each do |column, message| %>
@@ -22,7 +19,7 @@
   </p>
 
   <p>
-    <%= f.label :num_employees %>:
+    <%= f.label :num_employees, "Number of Employees" %>:
     <%= f.text_field :num_employees %>
   </p>
 
