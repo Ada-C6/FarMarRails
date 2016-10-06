@@ -14,8 +14,11 @@
 <h3>Market Vendors</h3>
 <ul>
   <% @vendor.each do |v| %>
-    <li><%= v.name %></li>
+    <li><%= v.name %>
+    <%= link_to "Edit", new_vendor_path(@id) %>
+    <%= link_to "Delete", new_vendor_path(@id) %> 
+    </li>
   <% end %>
 </ul>
 
-<p><%= link_to "Add Vendor", edit_market_path(@id) %></p>
+<p><%= link_to "Add Vendor", new_vendor_path(@id) %></p>
