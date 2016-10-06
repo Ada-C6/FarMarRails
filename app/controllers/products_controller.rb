@@ -36,8 +36,10 @@ class ProductsController < ApplicationController
 
   def update # Actually do the update, like create
     @product = Product.find(params[:id])
+    @vendor = Vendor.find(params[:vendor_id])
+    @product.vendor_id = @vendor.id
     if @product.update(product_params)
-      redirect_to vendor_path
+      redirect_to vendor_path(@vendor.id)
     else
       render :edit
     end
