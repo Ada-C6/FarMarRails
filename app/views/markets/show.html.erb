@@ -20,6 +20,7 @@
 <br>
 
 <%= button_to "Edit Market", market_edit_path(@mymarket.id), method: :get%>
+<%= button_to "Delete Market", market_delete_path(@mymarket.id), method: :delete, data: {confirm:"Are you Sure?" }  %>
 <!-- wave 32 replace with partial -->
 <br>
 <table>

@@ -70,7 +70,7 @@ Rails.application.routes.draw do
 
   put 'markets/:id/update' => 'markets#update', as: 'market_update'
 
-  get 'markets/destroy'
+  delete 'markets/:id/destroy' => 'markets#destroy', as: 'market_delete'
 
 
 
