@@ -6,15 +6,21 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
   end
 
-  def edit
-    @vendor = Vendor.find(params[:id])
+  def new;
   end
 
-  def update
+  def edit
+    @market = Market.find(params[:market_id])
+    @vendor = Vendor.find(params[:id])
+    # @vendor = Vendor.find(params[:market_id])
+  end
+
+  def update ##fix the submit button on form partial
+    @market = Market.find(params[:market_id])
     @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params) #if it saves successfully
-    @vendor.market_id = params[:market_id]
-    redirect_to market_vendors_path
+    # @vendor.market_id = params[:market_id]
+    redirect_to market_path
     else #if it doesn't save
       render :edit
     end

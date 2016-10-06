@@ -1,2 +1,5 @@
 <h1> Edit Vendor Page </h1>
-<%# render partial: "form", locals: {http_method: :patch} %>
+<%= render partial: "form", locals: {http_method: :patch,
+  http_action: market_vendor_path({market_id: @market.id, vendor_id: @vendor})} %>
+
+<p>Note: submit button currently does not work. sorry!</p>

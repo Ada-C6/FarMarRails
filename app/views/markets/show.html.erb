@@ -12,6 +12,7 @@
 <b><%= link_to "Edit Market Info", edit_market_path(@market.id) %></b>
 
 <h3>Vendors</h3>
+<%# link_to("Create a New Vendor", new_market_vendor_path(@vendor.market_id))%>
 <% @vendors_list.each do |vendor| %>
   <p><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%>
     <%= link_to("Edit Vendor", edit_market_vendor_path(vendor.market_id, vendor.id))%>

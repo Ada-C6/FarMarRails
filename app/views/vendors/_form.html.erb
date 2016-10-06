@@ -1,4 +1,5 @@
-<%= form_for url: market_vendor_url, method: http_method do |f| %>
+<%#  market_vendor_url, method: http_method do |f| %>
+<%= form_for [@market, @vendor], method: http_method do |f| %>
   <br><%= f.label :name, "Vendor Name" %>
   <%= f.text_field :name %>
 
