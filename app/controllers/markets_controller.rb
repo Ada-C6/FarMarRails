@@ -2,7 +2,7 @@ class MarketsController < ApplicationController
 
   def index
       @markets = Market.all
-   end
+  end
 
   def all
     #put a list of all the markets here
