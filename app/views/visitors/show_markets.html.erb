@@ -3,7 +3,7 @@
 <% @markets.each do |market| %>
 <article>
   <p>
-    <%= link_to "#{market.name}", show_market_path(market.id) %>
+    <%= link_to "#{market.name}", show_all_path(market.id) %>
     <%= market.state %>
   </p>
   <% end %>

@@ -23,9 +23,17 @@ class VisitorsController < ApplicationController
   end
 
   def show_products
-    find_all
+    find_all 
   end
 
   def show_market_vendor_products
+    find_all
+    @market = find_market
+    @vendor_list = []
+    @vendors.each do |vendor|
+      if vendor.market_id == @market.id
+      @vendor_list << vendor
+      end
+    end
   end
 end

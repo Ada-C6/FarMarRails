@@ -79,6 +79,6 @@ Rails.application.routes.draw do
 
   get 'visitors/show_products' => 'visitors#show_products', as: 'show_products'
 
-  get 'visitors/show_market_vendor_products'
+  get 'visitors/:id/show_market_vendor_products' => 'visitors#show_market_vendor_products', as: 'show_all'
 
 end
