@@ -1,5 +1,20 @@
-<h1><%= @mymarket[:name] %></h1>
-<h2><%= @mymarket[:address]%></h2>
-<h2><%= @mymarket[:city] %></h2>
-<h2><%= @mymarket[:state] %></h2>
-<h2><%= @mymarket[:zip] %></h2>
+<table>
+<tr>
+  <th>Market Name</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>County</th>
+  <th>State</th>
+  <th>Zipcode</th>
+  <th colspan="2"></th>
+</tr>
+    <tr>
+      <td><%= @mymarket.name %> </td>
+      <td><%= @mymarket.address %></td>
+      <td><%= @mymarket.city %></td>
+      <td><%= @mymarket.county %></td>
+      <td><%= @mymarket.state%></td>
+      <td><%= @mymarket.zip %></td>
+      <td><%= link_to 'View Vendor!', vendor_show_path(@mymarket.id) %></td>
+    </tr>
+</table>
