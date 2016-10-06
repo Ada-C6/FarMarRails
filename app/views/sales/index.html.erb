@@ -1,5 +1,6 @@
 <h1><%= "#{@vendor.name}'s Sales:" %></h1>
 <%= link_to "Current Month Sales", vendor_current_sales_path %>
+<p><%= "Total Sales Amount: $#{ @total_sales_amount }" %></p>
 <ol>
   <% @all_sales_by_vendor.each do | sale | %><li>
     <p>
