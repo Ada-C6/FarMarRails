@@ -46,7 +46,7 @@ footer {
 }
 
 header, footer {
-  background-color: #009900;
+  background-color: #4183D7;
   color: white;
 }
 
@@ -61,4 +61,9 @@ header, footer {
 
 li {
   display: block;
+}
+
+.vendor-sales {
+  display: inline-block;
+  margin: 0 auto;
 }

@@ -5,7 +5,7 @@
 <h1>Please select a Vendor from the list below:</h1>
 
 <ul>
-  <% @vendor.each do |i| %>
+  <% @vendors.each do |i| %>
     <li class="list-of-vendors">
       <%= link_to "#{i.name}", vendor_path(i) %>
     </li>
