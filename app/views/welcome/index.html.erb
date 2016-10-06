@@ -1,8 +1,12 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>FarMar Rails</h1>
 
- <%= link_to "Browse as Vendor", vendors_path %>
+<header>
+  <nav>
+    <%= link_to "Login as a Vendor", vendors_path, :class => "login" %>
+    <%= link_to "Login as a Market", markets_path, :class => "login" %>
+  </nav>
+</header>
 
- <%= link_to "Browse as Market", markets_path %>
-
- <%= link_to "View all Markets", markets_path %>
+<nav>
+  <%= link_to "View all Markets", markets_path, :class => "primary-btn" %>
+</nav>
