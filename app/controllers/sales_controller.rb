@@ -1,7 +1,7 @@
 class SalesController < ApplicationController
   def index
-    @market = Market.find(params[:market_id])
-    @vendor = Vendor.find(@market.id)
+    @vendor = Vendor.find(params[:vendor_id])
     @sales = @vendor.sales
+
   end
 end
