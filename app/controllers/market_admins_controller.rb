@@ -26,9 +26,20 @@ class MarketAdminsController < ApplicationController
   end
 
   def new
+    @mymarket = Market.new
   end
 
   def create
+    @params = params
+    @mymarket = Market.new
+    @mymarket.name = params[:market][:name]
+    @mymarket.address = params[:market][:address]
+    @mymarket.city = params[:market][:city]
+    @mymarket.county = params[:market][:county]
+    @mymarket.zip = params[:market][:zip]
+    @mymarket.save
+
+    redirect_to show_market_path(@mymarket.id)
   end
 
   def edit
