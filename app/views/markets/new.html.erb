@@ -1,20 +1,2 @@
 <h1> Create a New Market</h1>
-
-<%= form_for @new_market do |f| %>
-  <%= f.label :name, "Market Name" %>
-  <%= f.text_field :name %>
-
-  <%= f.label :address, "Street Address" %>
-  <%= f.text_field :address %>
-
-  <%= f.label :city, "City" %>
-  <%= f.text_field :city %>
-
-  <%= f.label :county, "County" %>
-  <%= f.text_field :county %>
-
-  <%= f.label :zip, "Zipcode" %>
-  <%= f.text_field :zip %>
-
-  <%= f.submit "Submit"%>
-<% end %>
+<%= render partial: "form", locals: {http_method: :post} %>

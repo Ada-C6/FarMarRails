@@ -1,7 +1,7 @@
 
 <h1>Editing Market: <%= @edit_market.name %> </h1>
 <br>
-
+<%= render partial: "form", locals: {http_method: :edit} %>
 <h6> Market ID (take this out later): <%= @edit_market.id %></h6>
 <%= form_for @edit_market do |market| %>
   <br><%= market.label :name, "Market Name" %>

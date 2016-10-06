@@ -15,13 +15,13 @@ class MarketsController < ApplicationController
   end
 
   def new
-    @new_market = Market.new
+    @market = Market.new
   end
 
   def create
-    @new_market = Market.new(market_params)
+    @market = Market.new(market_params)
 
-    if @new_market.save
+    if @market.save
       redirect_to markets_path
     else
       render :new
