@@ -9,13 +9,11 @@
     <% @vendor.products.all.each do |product| %>
       <li>
         <%= product.name %>
-        <%= link_to "Edit", edit_vendor_product_path(product) %>
-        <%= link_to "Delete", vendor_product_path(product), method: :delete, data: { confirm: "Are you really sure?" } %>
+        <%= link_to "Edit", edit_vendor_product_path(product, @vendor) %>
+        <%= link_to "Delete", vendor_product_path(product, @vendor), method: :delete, data: { confirm: "Are you really sure?" } %>
       </li>
     <% end %>
-    <li>
-      <%= link_to "Create New Product", new_vendor_product_path %>
-    </li>
+    
   </ul>
 
   <h3>Sales list</h3>

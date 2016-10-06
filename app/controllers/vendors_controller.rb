@@ -1,7 +1,7 @@
 class VendorsController < ApplicationController
 
   def index
-    @vendor = Vendor.all
+    @vendors = Vendor.all
   end
 
   def show
