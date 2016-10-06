@@ -15,7 +15,7 @@ class ProductController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:vendor_id])
   end
 
   def show
@@ -24,6 +24,7 @@ class ProductController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id]).destroy
+    redirect_to vendor_product_index_path
   end
 
 end

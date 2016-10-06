@@ -10,8 +10,8 @@
   <tr>
     <td><%= product.name %></td>
     <td><small>
-      <%= link_to "[Edit]", edit_vendor_product_path(product) %>
-      <%= link_to "[Delete]", vendor_product_path_index(product), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
+      <%= link_to "[Edit]", edit_vendor_product_path(product.vendor_id, product) %>
+      <%= link_to "[Delete]", vendor_product_path(product.vendor_id, product.id), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
   </tr>
   <% end %>
 </table>
