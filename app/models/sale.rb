@@ -32,9 +32,8 @@ class Sale < ActiveRecord::Base
     # if the float is not the same as the float.to_i, then multiply by 100 and save.
     if Integer(money) != money
       money = (money * 100)
-    else
-      money = money
     end
+
     return money.to_i
   end
 
