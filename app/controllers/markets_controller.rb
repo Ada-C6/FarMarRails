@@ -9,9 +9,17 @@ class MarketsController < ApplicationController
   end
 
   def new
+    @mymarket = Market.new
   end
 
   def create
+    @mymarket = Market.new
+    @mymarket.name = params[:market][:name]
+    @mymarket.address = params[:market][:address]
+    @mymarket.city = params[:market][:city]
+    @mymarket.state = params[:market][:state]
+    @mymarket.zip = params[:market][:zip]
+    @mymarket.save
   end
 
   def edit

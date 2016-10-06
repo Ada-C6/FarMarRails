@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root 'index#index'
 
   get 'index/index'
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'index/new'
 
-  get 'index/create'
+  get 'index/create' 
 
   get 'index/edit'
 
@@ -62,9 +62,9 @@ Rails.application.routes.draw do
 
   get 'markets/show/:id' => 'markets#show', as: 'market_show'
 
-  get 'markets/new'
+  get 'markets/new' => 'markets#new', as: 'market_new'
 
-  get 'markets/create'
+  get 'markets/create' => 'markets#create', as: 'market_create'
 
   get 'markets/edit'
 
