@@ -14,9 +14,16 @@ class VendorsController < ApplicationController
   end
 
   def edit
+    @myvendor = Vendor.find(params[:id])
   end
 
   def update
+    @myvendor = Vendor.find(params[:id])
+    @myvendor.name = params[:vendor][:name]
+    @myvendor.num_employees = params[:vendor][:num_employees]
+    @myvendor.save
+
+    redirect_to action: 'index'
   end
 
   def destroy

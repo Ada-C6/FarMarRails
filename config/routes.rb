@@ -50,11 +50,11 @@ Rails.application.routes.draw do
 
   get 'vendors/new'
 
-  get 'vendors/edit'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'vendor_edit'
 
   get 'vendors/create'
 
-  get 'vendors/update'
+  put 'vendors/:id/update' => 'vendors#update', as: 'vendor_update'
 
   get 'vendors/destroy'
 
