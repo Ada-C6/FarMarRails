@@ -10,6 +10,10 @@ class VendorsController < ApplicationController
     @all_vendors = Vendor.all
   end
 
+  def show
+    @vendor = Vendor.find(params[:id])
+  end
+
   def new
     @market = Market.find(params[:market_id])
     @vendor = @market.vendors.new
