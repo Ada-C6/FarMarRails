@@ -10,7 +10,7 @@
 <ul>
   <% @market.all.each do |market| %>
   <li class="list-of-markets">
-    <%= link_to "#{market.name}", market_path(market) %> <%= button_to "Edit Me!", edit_market_path(market), method: :get%>
+    <%= link_to "#{market.name}", market_path(market) %> <%= button_to "Edit", edit_market_path(market), method: :get%>
     </li>
     <% end %>
   </ul>

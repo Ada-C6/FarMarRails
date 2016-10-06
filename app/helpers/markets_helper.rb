@@ -1,4 +1,5 @@
 module MarketsHelper
+
   def us_states
       [
         ['Alabama', 'AL'],
