@@ -11,8 +11,13 @@
 <h4>Vendors</h4>
   <% @vendors.each do |vendor| %>
   <ul>
-  <li><%= vendor.name %></li>
+  <li><%= vendor.name %>
+    <%= link_to " edit", edit_vendor_path(vendor) %>
+    <%= link_to "delete", market_path(vendor), method: :delete,
+        data: {confirm: "Are you really, really sure?"}%></li>
+
 </ul>
   <% end  %>
 
-<%= link_to "Edit", edit_market_path %>
+<%= link_to "Create new Vendor", new_vendor_path %>
+<%= link_to "Edit Market Info", edit_market_path %>
