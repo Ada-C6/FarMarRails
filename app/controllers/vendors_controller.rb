@@ -6,8 +6,6 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
-    # TODO
-    # make products for display
   end
 
   def new
@@ -17,7 +15,7 @@ class VendorsController < ApplicationController
   def create
     @vendor = Vendor.new(vendor_params)
     if @vendor.save
-      redirect_to vendors_path
+      redirect_to market_path(@vendor.market)
     else
       render :new
     end
@@ -30,7 +28,7 @@ class VendorsController < ApplicationController
   def update
     @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
-      redirect_to markets_show_vendors_path
+        redirect_to markets_path
     else
       render :edit
     end
