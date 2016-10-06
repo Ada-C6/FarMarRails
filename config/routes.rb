@@ -56,7 +56,7 @@ root to: 'homes#index'
 
   get 'markets/:id/edit' => 'markets#edit', as: 'markets_edit'
 
-  get 'markets/destroy'
+  delete 'markets/:id/destroy' => 'markets#destroy', as: 'markets_destroy'
 
   get 'markets/:id/show' => 'markets#show', as: 'show_market'
 

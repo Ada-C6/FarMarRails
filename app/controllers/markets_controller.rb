@@ -46,6 +46,8 @@ class MarketsController < ApplicationController
   end
 
   def destroy
+    @mymarket = Market.find(params[:id])
+    @mymarket.destroy
   end
 
 

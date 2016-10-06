@@ -1,5 +1,7 @@
 <h2><%= @market.name %></h2>
 <p><%= link_to("Edit", markets_edit_path) %></p>
+<p><%= link_to("Shut Down", markets_destroy_path, method: :delete, data: { confirm: "Are you sure you want shut down your market?"}) %>
+</p>
 
 <br />
 
