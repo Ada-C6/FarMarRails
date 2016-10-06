@@ -35,4 +35,11 @@ class MarketController < ApplicationController
     @market = Market.find(params[:id]).destroy
   end
 
+  #added this method for dealing with list of vendor from market
+  # def vendor_list
+  #   @market = Market.find(params[:id])
+  #   @marker.vendor
+  #   redirect_to market_vendor_index
+  # end
+
 end

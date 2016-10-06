@@ -8,10 +8,10 @@
   </tr>
   <% @markets.each do |market| %>
   <tr>
-    <td><%= market.name %></td>
+    <td><%= link_to "#{market.name}", market_path(market) %></td>
     <td><%= market.city %></td>
     <td><%= market.state %></td>
-    <td><small><%= link_to "[Details]", market_path(market) %>
+    <td class="edit-delete"><small>
       <%= link_to "[Edit]", edit_market_path(market) %>
       <%= link_to "[Delete]", market_path(market), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
   </tr>

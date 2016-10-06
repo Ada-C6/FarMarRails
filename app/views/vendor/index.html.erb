@@ -1,16 +1,14 @@
-<h3>View all vendors</h3>
+<head>
+  <title><%= @page_name = 'View All Vendors'%></title>
+</head>
 <table>
   <tr>
     <th>Vendor Name</th>
-    <th># of Employees</th>
-    <th>Market</th>
     <th>Actions</th>
   </tr>
   <% @vendors.each do |vendor| %>
   <tr>
     <td><%= link_to "#{vendor.name}", vendor_path(vendor) %></td>
-    <td><%= vendor.num_employees %></td>
-    <td><%= Market.find(vendor.market_id).name %></td>
     <td><small>
       <%= link_to "[Edit]", edit_vendor_path(vendor) %>
       <%= link_to "[Delete]", vendor_path(vendor), method: :delete, data: { confirm: "Really, now?" } %></small> </td>

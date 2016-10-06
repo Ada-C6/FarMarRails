@@ -1,20 +1,38 @@
 a:hover {
-  color: #9ADEF5;
+  color: #666699;
 }
 
 a {
   color: #F5B19A;
+  font-family: 'Quicksand';
 }
 
 footer a {
   color: #F5B19A;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Poiret One', serif;
+  font-size: 4em;
+  color: #C28599;
+  /*background-color: #efefef;*/
+}
+
+/*main {
+  margin-top: 30px;
+}*/
+
+nav{
+margin-left: 8%;
+}
+
 .top-buttons li {
   display: inline;
   font-family: 'Julius Sans One', sans-serif;
-  border-right: 2pt solid #39324b;
-  color: #39324b;
+  border-right: 2pt solid #F5B19A;
+  color: #666699;
+  /*previous color #39324b*/
   margin-right: 8%;
   margin-left: 8%;
   padding: 0 25px;
@@ -29,6 +47,7 @@ footer {
   left: 0;
   background-color: #efefef;
   text-align: center;
+  margin-top: 5%;
 }
 
 .bottom-buttons li{
@@ -43,16 +62,23 @@ footer {
 }
 
 
-h1{
+h3 {
   text-align: center;
-  font-family: 'Poiret One', serif;
-  font-size: 4em;
-  color: #E3E7E8;
-  /*margin: 5%;*/
-
+  font-family: 'Quicksand', serif;
+  letter-spacing: 5px;
+  font-size: 5em;
+  color: white;
+  border-radius: 25px;
+  background-size: 280px 260px;
+  /*padding will add an empty h3 background to a page that has no h3 field*/
+  /*padding: 3% 3%;*/
+  margin: 5% 10%;
+  background-repeat: repeat;
+  opacity: 0.7;
+  background-image: url("http://abwatercolors.com/wp-content/uploads/2012/11/farmersMarket.jpg");
 }
 
-h3 {
+h2 {
   text-align: center;
   font-family: 'Quicksand', serif;
   letter-spacing: 5px;
@@ -66,6 +92,29 @@ h3 {
   opacity: 0.7;
   background-image: url("http://abwatercolors.com/wp-content/uploads/2012/11/farmersMarket.jpg");
 }
+
+table {
+  margin: 0 17%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+}
+th {
+  text-align: left;
+}
+
+main table {
+  margin-top: 6%;
+  margin-left: 35%;
+}
+
+/*.table-top * {
+  margin: 0 20%;
+}
+
+.table-info * {
+  margin-right: 10%;
+}*/
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
