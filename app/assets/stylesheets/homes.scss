@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-  background-image: url("images/farmers-market-local-produce-520.jpg")
+#homepageback {
+  background-image: url("farmers-market-local-produce-520.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  size: 100%;
 }
