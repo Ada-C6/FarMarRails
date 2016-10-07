@@ -32,7 +32,7 @@ class VendorsController < ApplicationController
     @vendor = @market.vendors.find(params[:id])
 
     if @vendor.update(vendor_params)
-      redirect_to market_path(@market)
+      redirect_to market_vendor_path(@market, @vendor)
     else
       render :edit
     end
