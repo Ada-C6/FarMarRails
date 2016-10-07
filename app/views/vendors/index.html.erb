@@ -7,6 +7,7 @@
 
 <h3>Current Vendors </h3>
 
+<table>
 <% @vendors.each do |vendor| %>
 <tr>
   <td><%= link_to("#{vendor.name}", vendor_products_path(vendor.id)) %></td>
