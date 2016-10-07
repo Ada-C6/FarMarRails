@@ -6,6 +6,10 @@ h1 {
   color: white;
 }
 
+h2 {
+  text-align: center;
+}
+
 body {
     /*background-color: #82b324;*/
 }
@@ -92,11 +96,6 @@ td  {
 
 td a {
   padding: 10px;
-}
-
-.vendor_table {
-  display: block;
-  width: 70%;
 }
 
 /*div {

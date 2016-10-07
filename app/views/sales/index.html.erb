@@ -19,22 +19,29 @@
 
 <hr>
 
-<p>All Sales: </p>
-
+<h2>All Sales </h2>
+<table>
+  <tr>
+   <th>Sale Amount</th>
+   <th>Sale Date</th>
+ </tr>
 <% @sales.each do |sale| %>
-  <p>Sale Amount:
+<tr>
+  <td>
     <% if sale[:amount] == 0.to_i %>
       <%= " None" %></p>
     <% else %>
       $<%= add_decimal(sale[:amount]) %>
     <% end %>
-
-  <p>Sale Date:
+  </td>
+  <td>
     <% if sale[:purchase_time] != nil %>
       <%= sale[:purchase_time].strftime("%A, %B %d, %Y") %></p>
     <% else %>
       N/A</p>
     <% end %>
+  </td>
 <% end %>
-
+</tr>
+</table>
 <p><%= link_to("Back to Product List", vendor_products_path(@vendor.id)) %></p>
