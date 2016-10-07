@@ -1,10 +1,7 @@
-* {
-  font-family: cursive;
-  color: white;
-}
-
 h1 {
   text-align: center;
+  font-family: cursive;
+  color: white;
 }
 
 body {
