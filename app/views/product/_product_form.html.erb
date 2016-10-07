@@ -8,7 +8,7 @@
 
 
 <%= form_for @product, url: path, method: http_method do |f| %>
-<table>
+<table class="product-form-partial">
   <tr>
     <td><%= f.label :name %> </td>
     <td><%= f.text_field :name, :size => 100 %> </td>

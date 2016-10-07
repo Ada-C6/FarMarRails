@@ -8,7 +8,7 @@
 
 
 <%= form_for @sale, url: path, method: http_method do |f| %>
-<table>
+<table class="sale-form-partial">
   <tr>
     <td><%= f.label :amount %> </td>
     <td><%= f.text_field :amount, :size => 100 %> </td>

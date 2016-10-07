@@ -10,7 +10,7 @@
 <% end %>
 
 <%= form_for @vendor, :url => vendor_index_path, method: http_method do |f| %>
-<table>
+<table class="vendor-form-partial">
   <tr>
     <td><%= f.label :name %> </td>
     <td><%= f.text_field :name, :size => 100 %> </td>
