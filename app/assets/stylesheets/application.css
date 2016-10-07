@@ -99,15 +99,20 @@ thead th {
 }
 
 thead th:first-child {
-  width: 80%;
+  width: 85%;
 }
 
 thead th:nth-child(2) {
-  width: 10%;
+  width: 5%;
 
 }
 thead th:nth-child(3) {
-  width: 10%;
+  width: 5%;
+}
+
+}
+thead th:nth-child(3) {
+  width: 5%;
 }
 
 th, td {
