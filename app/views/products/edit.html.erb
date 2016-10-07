@@ -1,33 +1,14 @@
-<h2>Edit product:<%= "#{@product.name}" %></h2>
+<header>
+  <h2>Edit Product</h2>
 
-<% if @product.errors.any? %>
-  <ul class="errors">
-    <% @product.errors.each do |column, message| %>
-      <li>
-        <strong>
-          <%= column.capitalize %>
-        </strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Back to Vendor", vendor_path(@product.vendor_id) %></li>
+    </ul>
+  </nav>
+</header>
 
-<%= form_for @product, url: vendor_product_path, method: :patch do |f| %>
-<p>
-  <%= f.label :name %>:
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.submit "Submit" %>
-</p>
-
-
-
-
-<% end %>
-
-
-
-<p>
-  This is the product view: new.html.erb
-</p>
+<%= render partial: "form",
+          locals: { http_method: :patch,
+            local_path_variable: vendor_product_path } %>

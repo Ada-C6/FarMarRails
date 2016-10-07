@@ -1,25 +1,27 @@
-<% if @vendor.errors.any? %>
-  <ul class="errors">
-    <% @vendor.errors.each do |column, message| %>
-      <li>
-        <strong>
-          <%= column.capitalize %>
-      </strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<main>
+  <% if @vendor.errors.any? %>
+    <ul class="errors">
+      <% @vendor.errors.each do |column, message| %>
+        <li>
+          <strong>
+            <%= column.capitalize %>
+        </strong> <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_for @vendor, method: http_method, url: local_path_variable do |f| %>
-  <p>
-    <%= f.label :name %>:
-    <%= f.text_field :name %>
-  </p>
+  <%= form_for @vendor, method: http_method, url: local_path_variable do |f| %>
+    <p>
+      <%= f.label :name %>:
+      <%= f.text_field :name %>
+    </p>
 
-  <p>
-    <%= f.label :num_employees, "Number of Employees" %>:
-    <%= f.text_field :num_employees %>
-  </p>
+    <p>
+      <%= f.label :num_employees, "Number of Employees" %>:
+      <%= f.text_field :num_employees %>
+    </p>
 
-  <%= f.submit "Submit" %>
-<% end %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</main>

@@ -1,28 +1,24 @@
-<h3>This is the partial view for new/edit products</h3>
-<h4>Don't forget to choose the correct path for form submission and pick a form_action</h4>
-<h3>Please enter your product details here </h3>
-<% if @product.errors.any? %>
-  <ul class="errors">
-    <% @product.errors.each do |column, message| %>
-      <li>
-        <strong>
-          <%= column.capitalize %>
-        </strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<main>
+  <% if @product.errors.any? %>
+    <ul class="errors">
+      <% @product.errors.each do |column, message| %>
+        <li>
+          <strong>
+            <%= column.capitalize %>
+          </strong> <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 
-<%= form_for @product, url: local_path_variable do |f| %>
-<p>
-  <%= f.label :name %>:
-  <%= f.text_field :name %>
-</p>
-<p>
-  <%= f.submit "Submit" value: form_action %>
-</p>
+  <%= form_for @product, url: local_path_variable do |f| %>
+    <p>
+      <%= f.label :name %>:
+      <%= f.text_field :name %>
+    </p>
 
-
-
-
-<% end %>
+    <p>
+      <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+</main>
