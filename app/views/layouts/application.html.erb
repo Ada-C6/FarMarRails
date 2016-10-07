@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<div id="container">
+<div id="wrap">
 <body>
     <header>
       <h1 class='top-title'> <%= link_to('FarMar Finder','/', id: 'top-home-link') %></h1>
@@ -22,10 +22,9 @@
 <div class='body-content'>
 <%= yield %>
 </div>
-
-</body>
 <footer>
   &copy; 2016 Jessica Chung & Lauren Fries Brink
 </footer>
+</body>
 </div>
 </html>
