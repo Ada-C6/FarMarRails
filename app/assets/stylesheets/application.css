@@ -90,7 +90,7 @@ a:hover {
   color: #BACEB7;
 }
 
-input, #sale_product_id {
+input {
   background-color: #016572;
   color: #FFFFFF;
   border: 0px transparent;
