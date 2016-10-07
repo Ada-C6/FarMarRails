@@ -11,7 +11,7 @@ require 'csv'
 
 
 # seed Markets
-# 
+#
 # CSV.foreach('seed_csvs/markets.csv') do |line|
 #   Market.create(name: line[1], address: line[2], city: line[3], county: line[4], state: line[5], zip: line[6])
 # end
@@ -26,7 +26,7 @@ require 'csv'
 #
 # CSV.foreach('seed_csvs/products.csv') do |line|
 #   Product.create(name: line[1], vendor_id: line[2])
-end
+#end 
 
 # seed Sales
 
