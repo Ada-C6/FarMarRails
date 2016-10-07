@@ -15,6 +15,7 @@
   <ul>
   <li><%= product.name %></li> <%= link_to "Edit product", edit_vendor_product_path(@vendor, product) %>
   <%= link_to "Delete product", vendor_product_path(@vendor, product), method: 'delete', data: {confirm: "BURNINATE?"} %>
+  <%= link_to "Sell this product", new_vendor_product_sale_path(@vendor, product) %>
 </ul>
   <% end  %>
 
