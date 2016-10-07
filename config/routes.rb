@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   root 'homes#index'
   get 'homes/show_markets' => 'homes#show_markets'

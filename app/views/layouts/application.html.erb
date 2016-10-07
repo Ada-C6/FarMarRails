@@ -8,7 +8,24 @@
 </head>
 <body>
 
+  <header>
+    <h1>Farmers Market Finder</h1>
+    <nav>
+      <%= link_to "Home", root_path %>
+      <%= link_to "List of markets", homes_show_markets_path %>
+      <%= link_to "For Markets", markets_path %>
+      <%= link_to "For Vendors", vendors_path %>
+    </nav>
+  </header>
+
 <%= yield %>
+
+  <footer>
+    <h4>&copy; 2016</h4>
+      <p>
+        by Guinevere Saenger and Mary Morrison
+      </p>
+  </footer>
 
 </body>
 </html>

@@ -1,5 +1,3 @@
-<h1>This is a vendor from the vendor's point of view!</h1>
-
 <h3><%= "#{@vendor.name} details:" %></h3>
 
 <h4>Info</h4>
@@ -8,8 +6,7 @@
   <%= "Number of employees: #{@vendor.num_employees}" %><br>
 </p>
 
-<h4>Products!</h4>
-
+<h4>Products</h4>
 
   <% @products.each do |product| %>
   <ul>
@@ -23,21 +20,21 @@
     <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
   </p>
 
-<h4>Sales!</h4>
+<h4>Sale log</h4>
 
 <ol>
   <% @sales.each do |sale| %>
-  <li><%= link_to "#{sale.purchase_time}", vendor_sale_path(@vendor, sale) %></li>
+  <li><%= link_to "#{sale.purchase_time.to_formatted_s(:long_ordinal)}", vendor_sale_path(@vendor, sale) %></li>
 
   <% end %>
 </ol>
 
 <p><%= "Total Sales Amount: #{@vendor.sales_total}" %></p>
 <p>
-  <h5>Sales This Month:</h5>
+  <h4>Sales This Month:</h4>
   <ol>
       <% @vendor.sales_this_month(@vendor.get_current_month).each do |sale| %>
-      <li><%= link_to "#{sale.purchase_time}", vendor_sale_path(@vendor, sale) %></li>
+      <li><%= link_to "#{sale.purchase_time.to_formatted_s(:long_ordinal)}", vendor_sale_path(@vendor, sale) %></li>
     <% end %>
   </ol>
 
