@@ -8,7 +8,7 @@
 
 
 <%= form_for @sale, url: path, method: http_method do |f| %>
-<table>
+<table class="sale-form-partial">
   <tr>
     <td><%= f.label :amount %> </td>
     <td><%= f.text_field :amount, :size => 100 %> </td>
@@ -19,14 +19,22 @@
   </tr>
 
   <tr>
-    <td><%= f.label :vendor_id %> </td>
-    <td><%= f.text_field :vendor_id, :size => 100 %> </td>
-  </td>
-  
+    <td><%= f.label :vendor_id, "Vendor ID*" %> </td>
+    <% if vendor_sale? %>
+      <td><%= f.text_field :vendor_id, :value => params[:vendor_id] %> </td>
+    <% else %>
+      <td><%= f.text_field :vendor_id %> </td>
+    <% end %>
+  </tr>
+
   <tr>
-    <td><%= f.label :product_id %> </td>
-    <td><%= f.text_field :product_id, :size => 100 %> </td>
-  </td>
+    <td><%= f.label :product_id, "Product ID*" %> </td>
+    <% if product_sale? %>
+      <td><%= f.text_field :product_id, :value => params[:product_id] %> </td>
+    <% else %>
+      <td><%= f.text_field :product_id %> </td>
+    <% end %>
+  </tr>
 
   <tr>
     <td class="submit-button"><%= f.submit "Set Sale!" %></td>

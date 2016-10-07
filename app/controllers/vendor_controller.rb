@@ -11,7 +11,7 @@ class VendorController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.create(vendor_params)
+    @vendor = Vendor.create!(vendor_params)
 
     redirect_to market_vendor_index_path(vendor_params[:market_id])
   end
@@ -31,7 +31,7 @@ class VendorController < ApplicationController
   def update
     @vendor = Vendor.find(params[:id])
 
-    if @vendor.update(vendor_params)
+    if @vendor.update!(vendor_params)
       redirect_to vendor_path
     else
       render :edit

@@ -13,7 +13,7 @@ class SaleController < ApplicationController
   end
 
   def create
-    @sale = Sale.create(sale_params)
+    @sale = Sale.create!(sale_params)
     redirect_to vendor_sale_index_path
   end
 
@@ -28,7 +28,7 @@ class SaleController < ApplicationController
   def update
     @sale = Sale.find(params[:id])
 
-    if @sale.update(sale_params)
+    if @sale.update!(sale_params)
       redirect_to vendor_sale_index_path
     else
       render :edit

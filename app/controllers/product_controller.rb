@@ -5,7 +5,7 @@ class ProductController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_params)
+    @product = Product.create!(product_params)
     redirect_to vendor_product_index_path
   end
 
@@ -20,7 +20,7 @@ class ProductController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    if @product.update(product_params)
+    if @product.update!(product_params)
       redirect_to vendor_product_index_path
     else
       render :edit
