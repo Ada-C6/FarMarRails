@@ -30,7 +30,7 @@ end
 
 # seed Sales
 
-
-CSV.foreach('seed_csvs/sales.csv') do |line|
-  Sale.create(amount: line[1], purchase_time: line[2], vendor_id: line[3], product_id: line[4])
-end
+#
+# CSV.foreach('seed_csvs/sales.csv') do |line|
+#   Sale.create(amount: line[1], purchase_time: line[2], vendor_id: line[3], product_id: line[4])
+# end
