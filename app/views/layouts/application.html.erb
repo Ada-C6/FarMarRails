@@ -5,9 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <div>
   <header>
     <nav>
-
       <ul>
         <li><%= link_to "Home", root_path  %></li>
         <li><%= link_to "List of Markets", farmers_markets_path  %></li>
@@ -16,10 +16,15 @@
       </ul>
     </nav>
   </header>
+</div>
 </head>
 <body>
 
 <%= yield %>
 
 </body>
+
+<footer>
+  <p>&copy;2016</p>
+</footer>
 </html>
