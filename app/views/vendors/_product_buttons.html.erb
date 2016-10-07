@@ -1,3 +1,6 @@
-<%= button_to "Edit Product", edit_product_path(product_id), method: :get %>
-
-<%= button_to("Delete Product", delete_product_path(product_id), method: :delete, data: {confirm: "Are you sure? You can't undo this."}) %>
+<li>
+  <%= button_to "Edit", edit_product_path(product_id), method: :get %>
+</li>
+<li>
+  <%= button_to("Delete", delete_product_path(product_id), method: :delete, data: {confirm: "Are you sure? You can't undo this."}, class: 'sale-button') %>
+</li>

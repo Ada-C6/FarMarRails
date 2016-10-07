@@ -1,6 +1,6 @@
-<%= form_for @product, method: @method,  url: @path do |f| %>
+<%= form_for @product, method: @method, url: @path do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_area :name, :rows => "3", :cols => "40" %>
 
   <%= f.submit %>
 <% end %>

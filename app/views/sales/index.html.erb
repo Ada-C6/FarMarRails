@@ -1,19 +1,19 @@
-<h2>Sales</h2>
+<h2>Sales for <%= Vendor.find(params[:id]).name %></h2>
 
 <ul>
   <% @sales.each do |sale| %>
   <li>
-    Amount: $<%= "%.2f" % (sale.amount.to_f/100) %> Purchase Time: <%= sale.purchase_time %>
-  </li>
+    <strong>Amount:</strong> $<%= "%.2f" % (sale.amount.to_f/100) %> <strong>Purchase Time:</strong> <%= sale.purchase_time %>
+
   <% end %>
 
 </ul>
 
-  <p>
+  <h5>
     Overall Total: $<%=  "%.2f" % @sale_total %>
-  </p>
+  </h5>
 
-<h2> This Month's Sales </h2>
+<h2 id='bottom'> This Month's Sales </h2>
   <ul>
     <% @month_sales.each do |month_sale| %>
       <li>
@@ -22,6 +22,11 @@
     <% end %>
 </ul>
 
-<p>
+<h5>
   Month Total: $<%= "%.2f" % @month_sale_total %>
-</p>
+</h5>
+
+<nav id='even-more-bottom'>
+  <%= link_to("Back to Vendor", show_vendor_path(params[:id])) %>
+  <%= link_to("All Vendors", vendors_home_path) %>
+</nav>

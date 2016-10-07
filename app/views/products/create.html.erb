@@ -1,9 +1,16 @@
-<h2>You created a product</h2>
+<article class='created-product'>
 
 
-<h3><%= Vendor.find(@product.vendor_id).name %></h3>
-<p>
+<h4>Product created for <%=Vendor.find(@product.vendor_id).name %></h4>
+
+<h6>
   <%= @product.name %>
-</p>
+</h6>
 
-<%= link_to("Back to Vendor", show_vendor_path(@product.vendor_id)) %>
+
+<nav>
+  <%= link_to("Back to Vendor", show_vendor_path(@product.vendor_id)) %>
+  <%= link_to("All Vendors", vendors_home_path) %>
+</nav>
+
+</article>
