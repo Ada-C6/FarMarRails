@@ -2,21 +2,19 @@
 <h4>Dont forget to specify the path when this partial is called, also pick a form_action</h4>
 <h3>Please enter your vendor data here:</h3>
 
-<h1>Add a New Vendor</h1>
-
 <% if @vendor.errors.any? %>
   <ul class="errors">
     <% @vendor.errors.each do |column, message| %>
       <li>
         <strong>
           <%= column.capitalize %>
-        </strong> <%= message %>
+      </strong> <%= message %>
       </li>
     <% end %>
   </ul>
 <% end %>
 
-<%= form_for @vendor, url: local_path_variable do |f| %>
+<%= form_for @vendor, method: http_method, url: local_path_variable do |f| %>
   <p>
     <%= f.label :name %>:
     <%= f.text_field :name %>
@@ -27,5 +25,5 @@
     <%= f.text_field :num_employees %>
   </p>
 
-  <%= f.submit "Submit" value: form_action %>
+  <%= f.submit "Submit" %>
 <% end %>
