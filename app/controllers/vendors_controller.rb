@@ -39,7 +39,13 @@ class VendorsController < ApplicationController
     end
   end
 
-  # def new; end
+   def destroy
+    @market = Market.find(params[:market_id])
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+
+    redirect_to market_path(@market.id)
+   end
 
   private
 
