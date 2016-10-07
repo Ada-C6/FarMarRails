@@ -1,8 +1,17 @@
-<h1>Vendor List:</h1>
-<ol>
-  <% @all_vendors.each do | vendor | %><li>
-    <p>
-      <%= link_to "#{vendor.name}", vendor_path(vendor.id), method: :get %>
-    </p>
-  <% end %></li>
-</ol>
+<header>
+  <nav>
+
+    <h1><%= link_to "FarMar / ", root_path, :class => "page-link" %></h1>
+    <h2 class="user-header">Vendors</h2>
+  </nav>
+</header>
+
+<ul class="contained-list vendors-list">
+
+  <% @all_vendors.each do | vendor | %>
+  <li class="list-item">
+    <%= link_to "#{vendor.name}", vendor_path(vendor.id), method: :get %>
+  </li>
+  <% end %>
+
+</ul>

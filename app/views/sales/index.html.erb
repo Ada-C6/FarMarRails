@@ -1,17 +1,38 @@
-<h1><%= "#{@vendor.name}'s Sales:" %></h1>
-<%= link_to "Current Month Sales", vendor_current_sales_path %>
-<p><%= "Total Sales Amount: $#{ @total_sales_amount }" %></p>
-<ol>
-  <% @all_sales_by_vendor.each do | sale | %><li>
-    <p>
-      <%= "Product: #{sale.product.name}"%>
-      <ul>
-        <li><strong><%= "Sale Amount:" %></strong> <%= "$#{sale.amount/100}" %></li>
-        <li><strong><%= "Purchase Time:" %></strong> <%= "#{sale.purchase_time}" %></li>
-      </ul>
+<header>
+  <nav>
 
-    </p>
-  <% end %></li>
-</ol>
+    <h1>
+      <%= link_to "FarMar  ", root_path, class: "page-link" %>
+      <%= link_to "Vendors ", vendors_path, class: "page-link" %>
+      <%= link_to "#{@vendor.name} / ", vendors_path, class: "page-link" %>
+    </h1>
+    <h2 class="user-header">Sales</h2>
+  </nav>
+</header>
 
-<%= link_to "Back to Vendor", vendor_path(@vendor.id) %>
+<div class="sale-list-header">
+
+  <h3><%= "Total Sales: $ #{ @total_sales_amount }" %></h3>
+  <%= link_to "Current Month Sales", vendor_current_sales_path,
+  class: "primary-btn add-vendor" %>
+</div>
+
+<% @all_sales_by_vendor.each do | sale | %>
+
+<table class="sale-display">
+  <tr>
+    <th>Product</th>
+    <th>Amount in USD</th>
+    <th>Purchase Time</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= sale.product.name %></td>
+    <td><%= sale.amount/100 %></td>
+    <td><%= sale.purchase_time %></td>
+  </tr>
+  <tr>
+  </tr>
+</table>
+
+<% end %>
