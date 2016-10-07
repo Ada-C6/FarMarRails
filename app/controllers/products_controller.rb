@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+    @vendor = Vendor.find(params[:vendor_id])
 
     if @product.update(product_params)
       # saved successfully
