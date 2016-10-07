@@ -3,6 +3,8 @@ class SalesController < ApplicationController
         @sale = Sale.new
         @vendor_id = params[:vendor_id]
         @product_id = params[:product_id]
+        @vendor = Vendor.find(@vendor_id)
+        @product = Product.find(@product_id)
     end
 
     def create
