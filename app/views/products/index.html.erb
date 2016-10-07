@@ -1,13 +1,15 @@
 <%= render partial: "market_vendor_header" , locals: { action_name: "get"}%>
 
-<h2>Here is a list of all products:</h2>
-<% @products.each do |product| %>
-<article>
-  <p>
-    <%find_market = Vendor.find(product.vendor_id) %>
-    <%= link_to "#{product.name}", show_product_path(find_market.market_id) %>
-    <%= link_to( 'Edit', edit_product_path(product.id) ) %>
-    <%= button_to 'delete', {action: "destroy", id: product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
-  </p>
-  <% end %>
-</article>
+<h2>PRODUCTS:</h2>
+<section class="visitor_list">
+  <% @products.each do |product| %>
+  <article>
+    <p>
+      <%find_market = Vendor.find(product.vendor_id) %>
+      <%= link_to "#{product.name}", show_product_path(find_market.market_id) %>
+      <%= link_to( 'Edit', edit_product_path(product.id) ) %>
+      <%= button_to 'delete', {action: "destroy", id: product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+    </p>
+    <% end %>
+  </article>
+</section>

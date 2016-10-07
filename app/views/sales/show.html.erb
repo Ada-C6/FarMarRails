@@ -1,14 +1,16 @@
 <%= render partial: "market_vendor_header" , locals: { action_name: "get"}%>
 
-<h1>Sale Info:</h1>
+<h2>SALE Info:</h2>
 
-<p>Vendor Name: <%= @vendor %></p>
+<section class="visitor_list">
+  <p>Vendor Name: <%= @vendor %></p>
 
-<p>Product Name: <%= @product %></p>
+  <p>Product Name: <%= @product %></p>
 
-<p>Sale Amount: $<%= @sale.amount/100.00 %></p>
+  <p>Sale Amount: $<%= @sale.amount/100.00 %></p>
 
-<p>Sale Date and Time: <%= @sale.purchase_time %></p>
+  <p>Sale Date and Time: <%= @sale.purchase_time %></p>
 
-<%= link_to( 'Edit', edit_sale_path(@sale.id) ) %>
-<%= button_to 'delete', {action: "destroy", id: @sale.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to( 'Edit', edit_sale_path(@sale.id) ) %>
+  <%= button_to 'delete', {action: "destroy", id: @sale.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+</section>

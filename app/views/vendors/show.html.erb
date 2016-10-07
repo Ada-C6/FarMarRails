@@ -1,24 +1,26 @@
 <%= render partial: "vendor_header" , locals: { action_name: "get"}%>
 
-<h1><%= @vendor.name %> Info:</h1>
+<h2><%= @vendor.name.upcase %> Info:</h2>
 
-<p>Market Name: <%= @market %></p>
+<section class="visitor_list">
+  <p>Market Name: <%= @market %></p>
 
-<p>Vendor's Number of Employees: <%= @vendor.num_employees %></p>
+  <p>Vendor's Number of Employees: <%= @vendor.num_employees %></p>
 
-<%= link_to( 'Edit', edit_vendor_path(@vendor.id) ) %>
-<%= button_to 'delete', {action: "destroy", id: @vendor.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+  <%= link_to( 'Edit', edit_vendor_path(@vendor.id) ) %>
+  <%= button_to 'delete', {action: "destroy", id: @vendor.id }, method: :delete, data: {confirm: "Are you sure?"} %>
 
-<h2>List of vendor's products:</h2>
+  <h3>PRODUCTS:</h3>
 
-<% @product_list.each do |product| %>
-<article>
-  <p>
-    <%= link_to "#{product.name}", show_product_path(product.id) %>
-    <%= link_to( 'Edit', edit_product_path(product.id) ) %>
-    <%= button_to 'delete', {action: "destroy", id: product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
-  </p>
-  <% end %>
-</article>
+  <% @product_list.each do |product| %>
+  <article>
+    <p>
+      <%= link_to "#{product.name}", show_product_path(product.id) %>
+      <%= link_to( 'Edit', edit_product_path(product.id) ) %>
+      <%= button_to 'delete', {action: "destroy", id: product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+    </p>
+    <% end %>
+  </article>
 
-<h2>Vendor's Total Sales: $<%= @total_sales/100.00 %></h2>
+  <h2>Vendor's Total Sales: $<%= @total_sales/100.00 %></h2>
+</section>

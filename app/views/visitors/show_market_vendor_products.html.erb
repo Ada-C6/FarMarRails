@@ -1,20 +1,22 @@
 <%= render partial: "visitor_header" , locals: { action_name: "get"}%>
 
-<h1><%= @market.name %> Info:</h1>
+<h2><%= @market.name.upcase %> Info:</h2>
 
 <p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
 
 
-<h2>List of Market's Vendors:</h2>
-<% @vendor_list.each do |vendor| %>
-<article>
-  <h3><%= vendor.name %></h3>
-      <% @product_list = [] %>
-      <h4>List of Vendor's Products:</h2>
-      <% @products.each do |product| %>
-        <% if product.vendor_id == vendor.id %>
-          <p><%= product.name %></p>
+<h2>VENDORS:</h2>
+<section class="visitor_list">
+  <% @vendor_list.each do |vendor| %>
+  <article>
+    <h3 class="yellow"><%= vendor.name %></h3>
+        <% @product_list = [] %>
+        <h4>PRODUCTS:</h2>
+        <% @products.each do |product| %>
+          <% if product.vendor_id == vendor.id %>
+            <p><%= product.name %></p>
+          <% end %>
         <% end %>
-      <% end %>
-  <% end %>
-</article>
+    <% end %>
+  </article>
+</section>

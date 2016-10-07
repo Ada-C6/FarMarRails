@@ -1,11 +1,13 @@
 <%= render partial: "market_vendor_header" , locals: { action_name: "get"}%>
 
-<h1>Welcome Market Admin!</h1>
+<h2>Welcome Market Admin!</h2>
 
-<section>
-    <p><%= link_to( 'Create a new Market', new_market_path ) %></p>
-</section>
+<section class="visitor_list">
+  <section>
+      <p><%= link_to( 'Create a new Market', new_market_path ) %></p>
+  </section>
 
-<section>
-    <p><%= link_to( 'Create a new Vendor', new_vendor_path ) %></p>
+  <section>
+      <p><%= link_to( 'Create a new Vendor', new_vendor_path ) %></p>
+  </section>
 </section>
