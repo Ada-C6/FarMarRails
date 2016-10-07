@@ -9,7 +9,7 @@
 require 'CSV'
 
 markets_list = []
-CSV.read("seed_csvs/markets.csv").each do |line|
+CSV.read("./seed_csvs/markets.csv").each do |line|
   markets_list.push(
   {
   name: line[1],
