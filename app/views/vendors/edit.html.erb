@@ -1,0 +1,14 @@
+<h1>Edit This Vendor</h1>
+
+<%= form_for @vendor do |v| %>
+  <%= v.label :name %>
+  <%= v.text_field :name %>
+
+  <%= v.label :num_employees %>
+  <%= v.text_field :num_employees %>
+
+  <%= v.label :market_id %>
+  <%= v.text_field :market_id %>
+
+  <%= v.submit "Submit" %>
+<% end %>
