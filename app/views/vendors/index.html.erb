@@ -1,14 +1,23 @@
-<p>
-  Select the vendor (who you are)
-</p>
+<header>
+  <h1>All Vendors</h1>
+  <nav>
+    <ul>
+      <li>
+      <%= link_to "Home", root_path %>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-<% @vendors.each do |vendor| %>
-<p>
-  <%= link_to "#{ vendor.name }", vendor_path(vendor) %>
-</p>
-<%=  %>
-
-<% end %>
-
-
+<main>
+  <ul>
+  <% @vendors.each do |vendor| %>
+    <li>
+      <%= link_to "#{ vendor.name }", vendor_path(vendor) %>
+    </li>
+  <% end %>
+  </ul>
+</main>
+<!-- DELETE THIS BEFORE SUBMITTING! -->
+<hr>
 <p>This is the vendors view index.html.erb</p>
