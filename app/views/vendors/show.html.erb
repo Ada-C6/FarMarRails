@@ -13,8 +13,8 @@
         <tr>
           <% @vendor.products.all.each do |product| %>
             <td><%= product.name %></td>
-            <td><%= link_to "Edit", edit_vendor_product_path(@vendor, product) %></td>
-            <td><%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %></td>
+            <td><%= link_to image_tag("/assets/edit.svg"), edit_vendor_product_path(@vendor, product) %></td>
+            <td><%= link_to image_tag("/assets/delete.svg"), vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %></td>
             <td><%= link_to "Create Sale", new_vendor_product_sale_path(vendor_id: @vendor.id, product_id: product.id) %></td>
         </tr>
           <% end %>

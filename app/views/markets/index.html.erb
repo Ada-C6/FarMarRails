@@ -1,5 +1,5 @@
 <div class="overall-header-text">
-  <h1>List of Markets</h1>
+  <h1>Markets Main Page</h1>
 </div>
 <p>
 <%= link_to "Add New Market", new_market_path, method: :get%>
@@ -9,8 +9,7 @@
     <tr>
       <% @market.all.each do |market| %>
       <td><%= link_to "#{market.name}", market_path(market) %> </td>
-      <td><%= link_to "Edit", edit_market_path(market), method: :get  %></td>
-
+      <td><%= link_to image_tag("/assets/edit.svg"), edit_market_path(market), method: :get%></td>
     </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,17 @@
+<h1>Please edit or add your market</h1>
+
+<%= form_for @market do  |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :address %>
+<%= f.text_field :address %>
+<%= f.label :city %>
+<%= f.text_field :city %>
+<%= f.label :county %>
+<%= f.text_field :county %>
+<%= f.label :state %>
+<%= select_tag :state, options_for_select(us_states) %>
+<%= f.label :zip %>
+<%= f.text_field :zip%>
+<%= f.submit%>
+<% end %>
