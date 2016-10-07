@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   patch 'farmers/vendors/:vendor_id/products/:id/edit' => 'products#update'
   delete 'farmers/vendors/:vendor_id/products/:id' => 'products#destroy', as: 'delete_product'
 
+  get 'farmers/vendors/:vendor_id/products/:id/new' => "sales#new"
+
   get 'farmers/vendors/:id/sales', to: 'sales#index', as: 'vendor_sales'
 
 
