@@ -8,8 +8,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <nav>
+        <h1>
+          <a href="/">Farmar Finder</a>
+        </h1>
+        <h2>by Karin and Kate</h2>
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="/market_portal">market portal</a></li>
+          <li><a href="/vendor_portal">vendor portal</a></li>
+          <li><a href="/markets">list of markets</a></li>
+        </ul>
+      </nav>
+  </header>
 
 <%= yield %>
-
+  <footer>
+    <h4>&copy; 2016</h4>
+  </footer>
 </body>
 </html>

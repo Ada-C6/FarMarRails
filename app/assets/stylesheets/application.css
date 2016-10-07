@@ -18,10 +18,51 @@ html {
   font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
+header {
+  display: inline-block;
+  width: 100%;
+  /*background-color: teal;*/
+  background-color: #114B5F;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+  padding: 10px;
   background-color: #114B5F;
   color: #FFFFFF;
   font-family: 'Acme', sans-serif;
+}
+
+nav h1 {
+  /*padding: 40px 0px 0px 60px;*/
+  font-size: 3em;
+  font-weight: lighter;
+  margin-bottom: 0px;
+  text-align: center
+}
+
+nav h2 {
+  margin-top: 0px;
+  font-size: 2em;
+  font-weight: lighter;
+}
+
+ul, .button_to {
+  text-align: center;
+  list-style: none;
+  padding: 0px;
+}
+
+nav ul li {
+  font-weight: lighter;
+  font-family: 'Acme', sans-serif;
+  display: inline-block;
+  padding: 20px;
+}
+
+/*Nav links need to be a different color because the background is darker*/
+nav a {
+  color: #0099ad;
 }
 
 a {
@@ -29,6 +70,7 @@ a {
   color: #016572;
 }
 
+/*The link hover color works well for both the main page background and the nav backgroung*/
 a:hover {
   color: #BACEB7;
 }
