@@ -6,5 +6,5 @@ class Market < ActiveRecord::Base
   validates :city, presence: true
   validates :county, presence: true
   validates :state, presence: true
-  validates :zip, presence: true, format: {with: /\d{5}/}
+  validates :zip, presence: true
 end
