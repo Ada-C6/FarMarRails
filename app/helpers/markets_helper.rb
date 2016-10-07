@@ -47,10 +47,10 @@ module MarketsHelper
         ['South Dakota', 'South Dakota'],
         ['Tennessee', 'Tennessee'],
         ['Texas', 'Texas'],
-        ['Utah', 'UT'],
+        ['Utah', 'Utah'],
         ['Vermont', 'Vermont'],
         ['Virginia', 'Virginia'],
-        ['Washington', 'Washington'],
+        ['Washington', "Washington"],
         ['West Virginia', 'West Virginia'],
         ['Wisconsin', 'Wisconsin'],
         ['Wyoming', 'Wyoming']

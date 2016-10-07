@@ -67,3 +67,7 @@ li {
   display: inline-block;
   margin: 0 auto;
 }
+
+.all-markets {
+  text-align: center;
+}

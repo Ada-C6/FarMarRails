@@ -11,11 +11,10 @@
 
   <h3>Vendor list</h3>
   <ul>
-    <li> <%@market.vendors.all.each do |vendor|%>
-       <%=vendor.name%>
-      <%end%>
+    <%@market.vendors.all.each do |vendor|%>
+    <li>
+      <%=vendor.name%>
     </li>
+    <%end%>
   </ul>
-  <br />
-
 </div>

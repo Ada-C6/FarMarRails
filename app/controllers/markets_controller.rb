@@ -15,11 +15,10 @@ class MarketsController < ApplicationController
   end
 
   def create
-    @vendor = Vendor.find(params[:vendor_id])
     @market = Market.new(market_params)
 
     if @market.save
-      redirect_to market_path
+      redirect_to markets_path
     else
       render :new
     end

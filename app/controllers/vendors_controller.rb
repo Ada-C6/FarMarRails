@@ -9,7 +9,8 @@ class VendorsController < ApplicationController
   end
 
   def new
-    @vendor = Vendor.new
+    @market = Market.find(params[:market_id])
+    @vendor = @market.vendors.build
   end
 
   def create
