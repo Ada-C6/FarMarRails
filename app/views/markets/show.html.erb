@@ -1,7 +1,14 @@
-<h1><%= @market.name %></h1>
+<header>
+  <h1><%= @market.name %></h1>
+  <nav>
+    <ul>
+      <li><%= link_to "Edit Market Information", edit_market_path %></li>
+      <li><%= link_to "Markets Index", markets_path %></li>
+    </ul>
+</nav>
+</header>
 
-[<%= link_to "Edit Market Information", edit_market_path %>]
-
+<main>
 <h2>Address:</h2>
 <p>
   <%= @market.address %><br>
@@ -12,7 +19,10 @@
 </p>
 
 <h3>Vendors:</h3>
-[<%= link_to "Add a new vendor", new_market_vendor_path(@market.id) %>]
+<p>
+<%= link_to "Add a new vendor", new_market_vendor_path(@market.id), class: "new" %>
+</p>
+
 <ul>
 <% @market.vendors.each do |vendor| %>
 <li>
@@ -24,3 +34,4 @@
 </li>
 <% end %>
 </ul>
+</main>
