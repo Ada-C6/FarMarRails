@@ -17,6 +17,7 @@ class MarketsController < ApplicationController
     @mymarket.name = params[:market][:name]
     @mymarket.address = params[:market][:address]
     @mymarket.city = params[:market][:city]
+    @mymarket.county = params[:market][:county]
     @mymarket.state = params[:market][:state]
     @mymarket.zip = params[:market][:zip]
     @mymarket.save
