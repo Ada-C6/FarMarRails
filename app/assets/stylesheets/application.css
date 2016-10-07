@@ -30,7 +30,7 @@
    background-size: 100%;
  }
 
- body {
+body {
   background-color: #EAE0D5;
  }
 
@@ -115,4 +115,9 @@
 
 li {
   margin-top: 2vh;
+}
+
+footer {
+  margin: 5vh 0 2vh 0;
+  text-align: center;
 }
