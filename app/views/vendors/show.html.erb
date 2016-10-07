@@ -1,13 +1,18 @@
-<h2>Here's the vendor you just clicked on.</h2>
+<article class='vendor-info'>
+  <h2>Vendor Detail</h2>
 
-<h3><%= @vendor.name %></h3>
+  <h4><%= "#{@vendor.name}: #{Market.find(@vendor).city}, #{Market.find(@vendor).state}"%></h4>
 
-<h3>Products at this Vendor</h3>
-<ul>
-<% @vendor.products.each do |product| %>
-    <li><%= link_to(product.name, show_product_path(product)) %><%= render partial: 'product_buttons', locals: {product_id: product.id} %></li>
-<% end %>
-</ul>
+  <h5>Products at this Vendor</h5>
+    <ul>
+    <% @vendor.products.each do |product| %>
+        <li><%= link_to(product.name, show_product_path(product)) %></li>
+        <%= render partial: 'product_buttons', locals: {product_id: product.id} %>
+        <br class='clearfloat' />
+    <% end %>
+    </ul>
 
-<%= link_to("Add a product", new_product_for_vendor_path)%>
-<%= link_to("See Sales", sales_index_path) %>
+  <%= link_to("Add a product", new_product_for_vendor_path)%>
+  <%= link_to("See Sales", sales_index_path) %>
+
+</article>
