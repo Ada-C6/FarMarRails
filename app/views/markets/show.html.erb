@@ -7,4 +7,15 @@
   <li>county: <%= @market.county %> </li>
   <li>state: <%= @market.state %> </li>
   <li>zip: <%= @market.zip %> </li>
+
+  <li>vendors: <%= @vendors.length %></li>
 </ul>
+
+<%= link_to "Add a new vendor", new_market_vendor_path(@market.id) %>
+
+
+<p>
+  <% @vendors.each do |vendor| %>
+    <p> vendor: <%= vendor.name link_to "Edit", edit_market_vendor_path(@market.id) %> </p>
+  <% end %>
+</p>
