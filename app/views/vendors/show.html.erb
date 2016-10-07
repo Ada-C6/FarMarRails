@@ -2,21 +2,25 @@
   <div class="overall-header-text">
     <h1><%= @vendor.name %></h1>
   </div>
-  <br />Number of employees: <%= @vendor.employee_number %>
+  <div class="products-employees">
+    <br />Number of employees: <%= @vendor.employee_number %>
 
-  <br />Market: <%= @vendor.market.name %>
+    <br />Market: <%= @vendor.market.name %>
 
-  <h3>Product list</h3>
-  <ul>
-    <% @vendor.products.all.each do |product| %>
-      <li>
-        <%= product.name %>
-        <%= link_to "Edit", edit_vendor_product_path(@vendor, product) %>
-        <%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %>
-        <%= link_to "Create Sale", new_vendor_product_sale_path(vendor_id: @vendor.id, product_id: product.id) %>
-      </li>
-    <% end %>
-  </ul>
+    <h3>Product list</h3>
+    <table>
+      <tbody>
+        <tr>
+          <% @vendor.products.all.each do |product| %>
+            <td><%= product.name %></td>
+            <td><%= link_to "Edit", edit_vendor_product_path(@vendor, product) %></td>
+            <td><%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %></td>
+            <td><%= link_to "Create Sale", new_vendor_product_sale_path(vendor_id: @vendor.id, product_id: product.id) %></td>
+        </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
 
   <p> Would you like to add a new product? If so, <%= link_to "click here", new_vendor_product_path(@vendor) %> </p>
 

@@ -63,7 +63,7 @@ li {
   display: block;
 }
 
-.vendor-sales {
+.vendor-sales, .products-employees {
   display: inline-block;
   margin: 0 auto;
 }
