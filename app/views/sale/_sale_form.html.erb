@@ -1,0 +1,35 @@
+<% if @sale.errors.any? %>
+  <ul class="error">
+    <% @sale.errors.each do |error, message| %>
+    <li><strong><%= error.upcase %></strong><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @sale, url: path, method: http_method do |f| %>
+<table>
+  <tr>
+    <td><%= f.label :amount %> </td>
+    <td><%= f.text_field :amount, :size => 100 %> </td>
+  </tr>
+  <tr>
+    <td><%= f.label :purchase_time %> </td>
+    <td><%= f.datetime_field :purchase_time, :size => 100 %> </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :vendor_id %> </td>
+    <td><%= f.text_field :vendor_id, :size => 100 %> </td>
+  </td>
+  
+  <tr>
+    <td><%= f.label :product_id %> </td>
+    <td><%= f.text_field :product_id, :size => 100 %> </td>
+  </td>
+
+  <tr>
+    <td class="submit-button"><%= f.submit "Set Sale!" %></td>
+  </tr>
+</table>
+<% end %>

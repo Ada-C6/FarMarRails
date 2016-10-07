@@ -1,0 +1,23 @@
+<h3>Detailed Sale Page</h3>
+
+<table>
+  <tr>
+    <th>Sale ID</th>
+    <th>Amount</th>
+    <th>Purchase Time</th>
+    <th>Vendor ID</th>
+    <th>Market ID</th>
+  </tr>
+  <tr>
+    <td><%= @sale.id %></td>
+    <td>$<%= @sale.amount / 100 %></td>
+    <td><%= @sale.purchase_time %></td>
+    <td><%= @sale.vendor_id %></td>
+    <td><%= @sale.market_id %></td>
+  </tr>
+</table>
+
+<p><%= link_to "Back to all sales", vendor_sale_index_path %></p>
+
+<br>
+<%= button_to "Delete this sale", {:action => 'destroy', :id => @sale.id }, :method => :delete, data: { confirm: "Really, now?" } %>

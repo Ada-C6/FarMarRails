@@ -1,0 +1,25 @@
+<h3><%= Vendor.find(@sales[0].vendor_id).name %>'s Products</h3>
+<h4>Market: <%= Market.find(@sales[0].vendor_id).name %></h4>
+
+<table>
+  <tr>
+    <th>Sale ID</th>
+    <th>Amount</th>
+    <th>Actions</th>
+  </tr>
+  <% @sales.each do |sale| %>
+  <tr>
+    <td><%= sale.id %></td>
+    <td>$<%= sale.amount / 100 %></td>
+    <td><small>
+      <%= link_to "[Edit]", edit_vendor_sale_path(sale.vendor_id, sale.id) %>
+      <%= link_to "[Delete]", vendor_sale_path(sale.vendor_id, sale.id), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
+  </tr>
+  <% end %>
+</table>
+
+<% if product_sale? %>
+  <h4><%= link_to "Add a new sale!", new_product_sale_path %></h4>
+<% else vendor_sale? %>
+  <h4><%= link_to "Add a new sale!", new_vendor_sale_path %></h4>
+<% end %>
