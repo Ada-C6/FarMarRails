@@ -1,3 +1,45 @@
 // Place all the styles related to the Index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  border: 2px solid black;
+  text-align: center;
+  height: 100px;
+  background-color: orange;
+}
+
+// #pumpkin {
+//   background-image: url("pumpkin.jpg");
+//   background-size: 40%;
+//   background-repeat: no-repeat;
+//   background-position: center center;
+//   width: 100%;
+//   height: 700px;
+// }
+
+
+.windows {
+  display: inline-block;
+  padding: 5%;
+  margin: 5%;
+  background-image: url("pumpkins.png");
+  background-size: 65%;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: center center;
+}
+
+section {
+  text-align: center;
+}
+
+.windows a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.windows a:hover {
+  color: gray;
+}
