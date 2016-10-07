@@ -1,8 +1,8 @@
 <table>
 <tr>
-  <th>Vendor Name</th>
-  <th> Jobs Provided</th>
-  <th>Market ID</th>
+  <th class="header">Vendor Name</th>
+  <th class="header"> Jobs Provided</th>
+  <th class="header">Market ID</th>
   <th colspan="2"></th>
 </tr>
     <tr>
@@ -12,5 +12,6 @@
     </tr>
 </table>
 <br>
-<%= button_to "Edit Vendor", vendor_edit_path(@myvendor.id), method: :get%><br>
-<%= button_to "Delete Vendor", vendor_delete_path(@myvendor.id), method: :delete%><br>
+
+<button><%= button_to "Edit Vendor", vendor_edit_path(@myvendor.id), method: :get%></button><br>
+<button><%= button_to "Delete Vendor", vendor_delete_path(@myvendor.id), method: :delete%></button>
