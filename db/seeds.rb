@@ -10,12 +10,19 @@ require 'csv'
 
 CSV.read('seed_csvs/markets.csv').each do |line|
   market = {}
+
   market[:name] = line[1]
   market[:address] = line[2]
   market[:city] = line[3]
   market[:county] = line[4]
   market[:state] = line[5]
   market[:zip] = line[6]
+
+  market.each do |key, value|
+    if value.nil?
+      value == key.to_s
+    end
+  end
 
   Market.create(market)
 
