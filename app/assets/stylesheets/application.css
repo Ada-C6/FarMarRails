@@ -63,9 +63,14 @@ a {
   margin-left: 0;
 }
 
-.page-link:not(:last-child):after {
+
+.page-link:after {
   color: rgb(155, 155, 172);
   content:' |'
+}
+
+.login:last-child:after {
+  content:' '
 }
 
 .page-link:hover {
