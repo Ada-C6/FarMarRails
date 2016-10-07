@@ -3,6 +3,16 @@
 <%= link_to("Back to Product List", vendor_products_path(@vendor.id)) %>
 
 <% @sales.each do |sale| %>
-  <p>Sale amount: $<%= add_decimal(sale[:amount]) %></p>
-  <p>Sale date/time: <%= sale[:purchase_time] %></p></p>
+  <p>Sale amount:
+    <% if sale[:amount] == 0.to_i %>
+      <%= " N/A" %></p>
+    <% else %>
+      $<%= add_decimal(sale[:amount]) %>
+    <% end %>
+  <p>Sale date:
+    <% if sale[:purchase_time] != nil %>
+      <%= sale[:purchase_time].strftime("%A, %B %d, %Y") %></p>
+    <% else %>
+      <%= " N/A" %>
+    <% end %>
 <% end %>
