@@ -2,13 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title><%= @title = 'Welcome to FarMar Database!'%></title>
-  <link rel="stylesheet" href="../../assets/stylesheets/homepage.scss" media="screen" title="no title" charset="utf-8">
+    <title>
+      <% @little_title = 'welcome to'%>
+      <%= @title = '~FARMAR HELL~'%>
+    </title>
   </head>
   <body>
     <main>
-      <h2>ACT AS A MARKET</h2>
-      <h2>ACT AS A VENDOR</h2>
+      <h2><a class='main-page-middle' href="http://localhost:3000/market">ACT AS A MARKET</h2>
+      <h2><a class='main-page-middle' href="http://localhost:3000/vendor">ACT AS A VENDOR</h2>
     </main>
   </body>
 </html>

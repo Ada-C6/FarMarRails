@@ -1,6 +1,8 @@
-<h3>Detailed Market Page</h3>
+<head>
+  <title><%= @page_name = 'Market Info'%></title>
+</head>
 
-<table class="table-top">
+<table class="market-details">
   <tr>
     <th>Name</th>
     <th>Address</th>
@@ -9,13 +11,13 @@
     <th>State</th>
     <th>Zip</th>
   </tr>
-  <tr>
-    <td class="table-info"><%= @market.name %></td>
-    <td class="table-info"><%= @market.address %></td>
-    <td class="table-info"><%= @market.city %></td>
-    <td class="table-info"><%= @market.county %></td>
-    <td class="table-info"><%= @market.state %></td>
-    <td class="table-info"><%= @market.zip %></td>
+  <tr class="table-info">
+    <td><%= @market.name %></td>
+    <td><%= @market.address %></td>
+    <td><%= @market.city %></td>
+    <td><%= @market.county %></td>
+    <td><%= @market.state %></td>
+    <td><%= @market.zip %></td>
   </tr>
 </table>
 

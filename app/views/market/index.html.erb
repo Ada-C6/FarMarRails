@@ -1,16 +1,17 @@
-<h3>View all markets</h3>
-<table>
+<head>
+  <title><%= @page_name = 'View All Markets'%></title>
+</head>
+
+<h4 class='add-market'><%= link_to "Add a new market", new_market_path %></h4>
+
+<table class='market-table'>
   <tr>
     <th>Market Name</th>
-    <th>City</th>
-    <th>State</th>
     <th>Actions</th>
   </tr>
   <% @markets.each do |market| %>
   <tr>
     <td><%= link_to "#{market.name}", market_path(market) %></td>
-    <td><%= market.city %></td>
-    <td><%= market.state %></td>
     <td class="edit-delete"><small>
       <%= link_to "[Edit]", edit_market_path(market) %>
       <%= link_to "[Delete]", market_path(market), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
