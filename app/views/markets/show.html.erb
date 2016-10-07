@@ -8,7 +8,7 @@
 <ul>
   <li> <%@market.vendors.all.each do |vendor|%>
       Vendor <%=vendor.name%>
-      <%= button_to "Edit Vendor", [:edit, @market, @vendor], method: :get%>
+      <%= button_to "Edit" , [:edit, @market, @vendor], method: :get%>
       <%= button_to "Delete This Vendor", market_vendor_path(@market, vendor), method: :delete, data: { confirm: "Are you really sure?" } %>
 
       <%end%>
