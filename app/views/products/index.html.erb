@@ -1,8 +1,11 @@
 <!-- TODO: Refactor to move Ruby code to Model/ Controller/Helper as appropriate -->
+<head>
+<title><%= @header = @vendor.name %> %></title>
+</head>
+<div class="container">
+<body class="market-view">
 
-<h3><%= @vendor.name %></h3>
-
-<p>Product list</p>
+<h3>Product list</h3>
 <% @product_list.each do |product| %>
   <p><%= product[:name] %> <%= link_to("Edit ", edit_vendor_product_path(product[:vendor_id], product[:id]))%> <%= link_to("Delete", vendor_product_path(product[:vendor_id], product[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this product?"}) %> <%= link_to("New Sale", new_vendor_product_sale_path(@vendor.id, product.id))%></p>
   <!--  Alternative Syntax -->
@@ -38,4 +41,4 @@
   <%= " N/A"%></p>
 <% end %>
 
-<p><%= link_to("Sales Lists", vendor_sales_path) %></p>
+<p><%= link_to("All Sales List", vendor_sales_path) %></p>

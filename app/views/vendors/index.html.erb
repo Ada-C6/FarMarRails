@@ -1,8 +1,11 @@
 <!-- TODO: Refactor to move Ruby code to Model/ Controller/Helper as appropriate -->
+<head>
+<title><%= @header = "All Vendors" %></title>
+</head>
+<div class="container">
+<body class="market-view">
 
-Welcome to the vendor portal!
-
-<h3>Here's a list of our vendors: </h3>
+<h3>Current Vendors </h3>
 <% @vendors.each do |vendor| %>
   <br><%= link_to("#{vendor.name}", vendor_products_path(vendor.id)) %>
 <% end %>
