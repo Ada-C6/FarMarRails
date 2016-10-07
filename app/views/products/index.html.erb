@@ -1,7 +1,11 @@
 <h2>Vendor Product List</h2>
 <ul>
   <% @this_vendors_products.each do |p| %>
-    <li><%= "#{p.name}" %></li>
+    <li><%= "#{p.name}" %>
+        <%= link_to "EDIT", edit_product_path(p.vendor_id, p.id) %>
+        <%= link_to "DELETE", delete_product_path(p.vendor_id, p.id),  method: :delete , data: {confirm: "Are you really sure?"}%>
+    </li>
+
   <% end %>
 </ul>
 <%= link_to "ADD A NEW PRODUCT", products_new_path %>
