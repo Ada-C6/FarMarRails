@@ -5,8 +5,25 @@ class Vendor < ActiveRecord::Base
 
   def sales_total
     total = 0
-    @sales.each do |sale|
+    sales.each do |sale|
       total += sale.amount.to_i
     end
+    return total
   end
+
+  def get_current_month
+    t = Time.now
+    return t.month
+  end
+
+  def sales_total_current_month(month)
+    total = 0
+    sales.each do |sale|
+      if sale.purchase_time.month == month
+        total += sale.amount.to_i
+      end
+    end
+    return total
+  end
+
 end
