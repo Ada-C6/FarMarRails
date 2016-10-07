@@ -4,6 +4,7 @@
     <li><%= "#{p.name}" %>
         <%= link_to "EDIT", edit_product_path(p.vendor_id, p.id) %>
         <%= link_to "DELETE", delete_product_path(p.vendor_id, p.id),  method: :delete , data: {confirm: "Are you really sure?"}%>
+        <%= link_to "Create Sale", sales_new_path(p.vendor_id, p.id) %>
     </li>
 
   <% end %>

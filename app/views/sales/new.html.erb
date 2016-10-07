@@ -1,0 +1,10 @@
+<h2>Create new sale form</h2>
+
+<%= form_for @new_sale, :url => { method: :post} do |f| %>
+  <%=f.label :amount %>
+  <%=f.text_field :amount %>
+  <%=f.label :time %>
+  <%=f.text_field :time %>
+
+  <%=f.submit "Create Sale" %>
+<% end %>
