@@ -10,11 +10,9 @@
     <header>
       <h1 class='top-title'> <%= link_to('FarMar Finder','/', id: 'top-home-link') %></h1>
       <nav class='top-nav'>
-        <ul>
-          <li><%= link_to('use as market', markets_home_path) %></li>
-          <li><%= link_to('use as vendor', vendors_home_path) %></li>
-          <li><%= link_to('use as guest', markets_index_path) %></li>
-        </ul>
+          <%= link_to('use as market', markets_home_path) %>
+          <%= link_to('use as vendor', vendors_home_path) %>
+          <%= link_to('use as guest', markets_index_path) %>
       </nav>
       <br class='clearfloat' />
     </header>
