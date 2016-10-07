@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'markets' => 'markets#index', as: "marketsIndex"
 
-  get 'markets/show'
+  get 'markets/show/:id' => "markets#show", as: 'showthemarket'
 
   post 'markets/create' => 'markets#create', as: 'createmarket'
 
@@ -20,13 +20,13 @@ Rails.application.routes.draw do
 
   post 'markets/createvendor' => 'markets#createvendor', as: 'createvendor'
 
-  get 'markets/newvendor'
+  get 'markets/newvendor' => 'markets#newvendor', as: 'newvendor'
 
   get 'markets/:id/editvendor' => 'markets#editvendor', as: 'editvendor'
 
   patch 'markets/:id/updatevendor' => 'markets#updatevendor', as: 'updatevendor'
 
-  delete 'markets/:id/destroyvendor' => 'markets#destroyvendor', as: 'deletevendor'
+  delete 'markets/:id/destroyvendor' => 'markets#destroyvendor', as: 'destroyvendor'
 
  ############## Modify Products information ####################
 

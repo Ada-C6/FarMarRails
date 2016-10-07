@@ -4,7 +4,8 @@ class MarketsController < ApplicationController
   end
 
   def show
-
+    @market = Market.find(params[:id].to_i)
+    @vendors_in_market = @market.vendors
   end
 
   def create
@@ -57,11 +58,14 @@ class MarketsController < ApplicationController
     self.editvendor
     @params = params
 
-    @ven = Vendor.create({name: params[:vendor][:name], employee_num: params[:vendor][:employee_num], market_id: params[:vendor][:market_id]})
+    @ven.update({name: params[:vendor][:name], employee_num: params[:vendor][:employee_num], market_id: params[:vendor][:market_id]})
 
+    redirect_to action: "show", id: @ven.market_id
   end
 
   def destroyvendor
-
+    num = params[:id].to_i
+    Vendor.find(num).destroy
+    redirect_to action: "index"
   end
 end

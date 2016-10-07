@@ -5,6 +5,6 @@ class GeneralUsersController < ApplicationController
 
   def show
     @market = Market.find(params[:id].to_i)
-    @allvendors = Vendor.all
+    @allvendors = @market.vendors
   end
 end
