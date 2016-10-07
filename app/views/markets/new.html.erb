@@ -1,0 +1,12 @@
+<header>
+<h1>Add a New Market</h1>
+
+  <nav>
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+  </ul>
+</nav>
+
+</header>
+
+<%= render partial: "form", locals: { http_method: :post }%>

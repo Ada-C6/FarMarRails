@@ -1,0 +1,12 @@
+<header>
+  <h1>Edit Market Information</h1>
+
+  <nav>
+    <ul>
+      <li><%= link_to "Markets Index", markets_path %></li>
+    </ul>
+  </nav>
+
+</header>
+
+<%= render partial: "form", locals: {http_method: :patch} %>

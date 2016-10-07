@@ -1,0 +1,59 @@
+<header>
+  <h1><%= @market.name %></h1>
+  <nav>
+    <ul>
+      <li><%= link_to "Edit Market Information", edit_market_path %></li>
+      <li><%= link_to "Markets Index", markets_path %></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Address:</h2>
+    <p>
+      <%= @market.address %><br>
+      <%= @market.city %>, <%= @market.state %> <%= @market.zip %>
+    </p>
+    <p>
+      County: <%= @market.county %>
+    </p>
+  </section>
+
+  <section>
+    <h3>Vendors:</h3>
+    <p>
+      <%= link_to "Add a new vendor", new_market_vendor_path(@market.id), class: "new" %>
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Vendor</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @market.vendors.each do |vendor| %>
+        <tr>
+          <th scope="row">
+            <%= link_to "#{vendor.name}", vendor_path(vendor) %>
+          </th>
+
+          <td>
+            <%= link_to "Edit", edit_vendor_path(vendor) %>
+          </td>
+
+          <td>
+            <%= link_to "Delete", vendor_path(vendor),
+                        method: "delete",
+                        data: { confirm: "Are you sure you want to delete this vendor?" } %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</main>

@@ -1,0 +1,18 @@
+<header>
+  <h1>All Vendors</h1>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <ul>
+  <% @vendors.each do |vendor| %>
+    <li>
+      <%= link_to "#{ vendor.name }", vendor_path(vendor) %>
+    </li>
+  <% end %>
+  </ul>
+</main>

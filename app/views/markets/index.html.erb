@@ -1,0 +1,20 @@
+<header>
+  <h1>All Markets</h1>
+
+  <nav>
+    <ul>
+      <li><%= link_to "Add New Market", new_market_path %></li>
+      <li><%= link_to "Home", root_path %></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <ul>
+    <% @markets.each do |market| %>
+    <li>
+      <%= link_to "#{market.name}", market_path(market) %>
+    </li>
+    <% end %>
+  </ul>
+</main>

@@ -1,0 +1,61 @@
+<header>
+  <h1><%= @vendor.name %></h1>
+  <nav>
+    <li><%= link_to "Vendors Index", vendors_path %></li>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <p>
+      Number of employees: <%= @vendor.num_employees %>
+    </p>
+  </section>
+
+  <section>
+    <h2>Sales:</h2>
+    <p>
+      Current month sales: $<%= sales_sum_month(sales_month(@vendor)) %>
+      ($<%= sales_sum(@vendor) %> to date)
+      <%= link_to "Total sales", vendor_sales_path(@vendor) %>
+    </p>
+  </section>
+
+  <section>
+    <h2>Products:</h2>
+    <p>
+      <%= link_to "Add a new product", new_vendor_product_path(@vendor), class: "new" %>
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">New</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @vendor.products.each do |product| %>
+        <tr>
+          <th scope="row">
+            <%= product.name %>
+          </th>
+
+          <td>
+            <%= link_to "Register Sale", new_vendor_product_sale_path(@vendor.id, product.id), class: "new" %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %>
+          </td>
+          <td>
+            <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
+          </td>
+
+
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+</main>

@@ -1,0 +1,12 @@
+<header>
+<h1>Edit Vendor Information</h1>
+
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Back to Market", market_path(@vendor.market_id) %>
+    </ul>
+  </nav>
+</header>
+
+<%= render partial: "form", locals: { http_method: :patch, local_path_variable: vendor_path } %>

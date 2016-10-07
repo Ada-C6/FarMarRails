@@ -1,0 +1,14 @@
+<header>
+  <h2>Edit Product</h2>
+
+  <nav>
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Back to Vendor", vendor_path(@product.vendor_id) %></li>
+    </ul>
+  </nav>
+</header>
+
+<%= render partial: "form",
+          locals: { http_method: :patch,
+            local_path_variable: vendor_product_path } %>
