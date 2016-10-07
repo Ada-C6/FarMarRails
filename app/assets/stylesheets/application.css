@@ -10,8 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
 
 html {
@@ -67,7 +67,18 @@ nav a, nav a:visited {
   color: #ADABAB;
 }
 
-
 a.new {
   color: #A23822;
+}
+
+.splash {
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 2.5em;
+  text-align: center;
+  padding: 2.5vmin;
+}
+
+.splash a:hover {
+  text-decoration: none;
+  color: #A4A4A4;
 }
