@@ -28,11 +28,11 @@ class ProductsController < ApplicationController
         end
     end
 
-    # def destroy
-    #     @product = Product.find(params[:id])
-    #     @product.destroy
-    #     redirect_to vendor_path(@product.vendor)
-    # end
+    def destroy
+        @product = Product.find(params[:id])
+        @product.destroy
+        redirect_to vendor_path(@product.vendor)
+    end
 
 
     private
