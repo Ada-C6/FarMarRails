@@ -27,7 +27,7 @@
 <h4> Total sales:</h4>
 <p>$<%= total_sales(@sales) %> </p>
 
-<% a = [] %>
+<% month_sales = [] %>
 <h4>ALL SALES FOR LAST MONTH</h4>
 <table>
   <tr>
@@ -39,6 +39,7 @@
   <% @sales.each do |sale| %>
   <tr>
     <% if current_month?(sale.purchase_time) %>
+      <% month_sales << sale %>
       <td><%= sale.id %></td>
       <td><%= sale.purchase_time %>
       <td>$<%= sale.amount.to_f.round(2) / 100%></td>
@@ -51,7 +52,8 @@
   <% end %>
 </table>
 
-
+<h4> Total sales for last month:</h4>
+<p>$<%= total_sales(month_sales) %> </p>
 
 <% if product_sale? %>
   <h4><%= link_to "Add a new sale!", new_product_sale_path %></h4>
