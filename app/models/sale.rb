@@ -5,4 +5,7 @@ class Sale < ActiveRecord::Base
   require 'path_check.rb'
   include PathCheck
 
+  validates :vendor_id, presence: true
+  validates :product_id, presence: true
+
 end

@@ -22,8 +22,8 @@
   </td>
 
   <tr>
-    <td><%= f.label :market_id %></td>
-    <td><%= f.text_field :market_id %></td>
+    <td><%= f.label :market_id, "Market ID*" %></td>
+    <td><%= f.text_field :market_id, :value => params[:market_id] %></td>
   </tr>
 
   <tr>
