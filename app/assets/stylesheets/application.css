@@ -1,9 +1,29 @@
 
+table {
+  display: block;
+  margin-left: 20%;
+}
+
+.product-index-table {
+  margin-left: 30%;
+}
+
+.vendor-index-table {
+  margin-left: 35%;
+}
+
+.sales-index-table {
+  margin-left: 33%;
+}
 
 h1 {
   text-align: center;
   font-family: cursive;
   color: white;
+}
+
+h2 {
+  text-align: center;
 }
 
 body {
@@ -92,11 +112,6 @@ td  {
 
 td a {
   padding: 10px;
-}
-
-.vendor_table {
-  display: block;
-  width: 70%;
 }
 
 /*div {
