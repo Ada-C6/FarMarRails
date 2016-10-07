@@ -1,0 +1,12 @@
+<header>
+  <nav>
+    <h1><%= link_to "FarMar", root_path, class: "page-link" %>
+    <%= link_to "#{@market.name}", market_path(@market.id), class: "page-link" %></h1>
+  </nav>
+</header>
+
+<div class='form-header'>
+  <h1>Edit Market Details</h1>
+</div>
+
+<%= render partial: 'form', locals: {submit_url: market_path, http_method: :patch } %>

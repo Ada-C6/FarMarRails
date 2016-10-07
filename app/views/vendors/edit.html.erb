@@ -1,0 +1,23 @@
+<header>
+  <nav>
+    <h1><%= link_to "FarMar", root_path, class: "page-link" %>
+    <%= link_to "#{@market.name}", market_path(@market.id), class: "page-link" %></h1>
+    <h2 class="user-header">Edit a Vendor</h2>
+  </nav>
+</header>
+
+<div class='form-header'>
+  <h1>Vendor Details</h1>
+</div>
+
+<% if @vendor.errors.any? %>
+  <ul class="errors">
+    <% @vendor.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render partial: 'form', locals: {vendor_create_or_update: [@market, @market.vendors.find(params[:id])] } %>

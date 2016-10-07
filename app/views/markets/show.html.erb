@@ -1,0 +1,78 @@
+<header>
+  <nav>
+
+    <h1>
+      <%= link_to "FarMar", root_path, class: "page-link" %>
+      <%= link_to "Markets", markets_path, class: "page-link" %>
+    </h1>
+    <h2 class="user-header"><%= @market.name %></h2>
+  </nav>
+</header>
+
+<div class="user-details">
+
+  <table>
+    <tr>
+      <th>Address</th>
+      <th>City</th>
+      <th>County</th>
+      <th>State</th>
+      <th>Zip</th>
+    </tr>
+    <tr>
+      <td><%= @market.address %></td>
+      <td><%= @market.city %></td>
+      <td><%= @market.county %></td>
+      <td><%= @market.state %></td>
+      <td><%= @market.zip %></td>
+    </tr>
+    <tr>
+    </tr>
+  </table>
+
+  <%= link_to edit_market_path(@market),
+  class: "page-link-icon edit-markets",
+    aria: {label: "Edit Market"}  do %>
+    <i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
+  <% end %>
+
+</div>
+
+<div class="vendor-list-header">
+
+  <h3>Vendors List</h3>
+  <%= link_to "Add Vendor", new_market_vendor_path(@market),
+    class: "primary-btn add-vendor" %>
+
+</div>
+
+<ul class="contained-list vendor-list">
+
+  <% @vendors.each do |vendor| %>
+  <li class="one-group list-item">
+
+  <%= vendor.name %>
+
+    <ul class="mutable-action-links">
+
+      <li>
+      <%= link_to edit_market_vendor_path(vendor.market, vendor),
+        class: 'page-link-icon',
+        aria: {label: "Edit Vendor"}  do %>
+        <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+      <% end %>
+      </li>
+
+      <li>
+      <%= link_to market_vendor_path(vendor.market, vendor),
+        method: :delete,
+        class: 'page-link-icon',
+        aria: {label: "Delete Vendor"},
+        data: {confirm: "Are you sure you want to delete permanently?"} do %>
+        <i class="fa fa-trash fa-fw fa-lg" aria-hidden="true"></i>
+      <% end %>
+      </li>
+    </ul>
+  </li>
+  <% end %>
+</ul>

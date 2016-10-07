@@ -1,0 +1,54 @@
+<header>
+  <nav>
+    <h1>
+      <%= link_to "FarMar", root_path, class: "page-link" %>
+      <%= link_to "Vendors", vendors_path, class: "page-link" %>
+      <%= link_to "#{@vendor.name}", vendor_path(@vendor.id), class: "page-link" %>
+    </h1>
+    <h2 class="user-header">Products</h2>
+  </nav>
+</header>
+
+<%= link_to "Add New Product", new_vendor_product_path,
+  :class => "primary-btn add-products" %>
+
+<ul class="contained-list product-list">
+  <% @all_products_by_vendor.each do | product | %>
+
+  <li class="one-group list-item">
+    <%= product.name %>
+
+    <ul class="mutable-action-links">
+
+      <li>
+      <%= link_to new_vendor_product_sale_path(vendor_id: product.vendor_id,
+        product_id: product.id),
+        method: :get,
+        class: 'page-link-icon',
+        aria: {label: "Add a Sale"}  do %>
+        <i class="fa fa-usd fa-lg" aria-hidden="true"></i>
+      <% end %>
+      </li>
+
+      <li><%= link_to edit_vendor_product_path(vendor_id: product.vendor_id,
+        id: product.id),
+        method: :get,
+        class: 'page-link-icon',
+        aria: {label: "Edit Product"}  do %>
+        <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+      <% end %>
+      </li>
+
+      <li><%= link_to vendor_product_path(vendor_id: product.vendor_id,
+        id: product.id),
+        method: :delete,
+        class: 'page-link-icon',
+        aria: {label: "Delete Product"},
+        data: {confirm: "Are you sure you want to delete permanently?"} do %>
+        <i class="fa fa-trash fa-fw fa-lg" aria-hidden="true"></i>
+      <% end %>
+      </li>
+    </ul>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,32 @@
+<header>
+  <nav>
+
+    <h1>
+      <%= link_to "FarMar", root_path, :class => "page-link" %>
+      <%= link_to "Vendors", vendors_path, :class => "page-link" %>
+    </h1>
+      <h2 class="user-header"><%= @vendor.name %></h2>
+  </nav>
+</header>
+
+<div class="user-details">
+  <table>
+    <tr>
+      <th>Market</th>
+      <th>Address</th>
+      <th>Employees</th>
+    </tr>
+    <tr>
+      <td><%= "#{@vendor.market.name}" %></td>
+      <td><%= "#{@vendor.market.address}, #{@vendor.market.city}, #{@vendor.market.state}" %></td>
+      <td><%= "#{@vendor.no_of_employees}" %></td>
+    </tr>
+  </table>
+</div>
+
+<%= link_to "View Products", vendor_products_path(@vendor.id),
+  method: :get,
+  class: 'primary-btn' %>
+<%= link_to "View Sales", vendor_sales_path(@vendor.id),
+  method: :get,
+  class: 'primary-btn' %>

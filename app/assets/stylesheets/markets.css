@@ -1,0 +1,12 @@
+// Place all the styles related to the Markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.page-link {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.page-link:hover {
+  color: rgb(155, 155, 172);
+}

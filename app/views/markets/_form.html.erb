@@ -1,0 +1,32 @@
+<% if @market.errors.any? %>
+  <ul class="errors">
+    <% @market.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @market, url: submit_url, html: {class: 'form'}, method: http_method do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+
+    <%= f.label :county %>
+    <%= f.text_field :county %>
+
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
+
+    <%= f.submit :class => 'create_button' %>
+
+<% end %>

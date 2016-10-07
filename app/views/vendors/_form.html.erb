@@ -1,0 +1,10 @@
+<%= form_for vendor_create_or_update, html: {class: 'form'} do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :no_of_employees, "# of Employees"%>
+    <%= f.text_field :no_of_employees %>
+
+    <%= f.submit :class => 'create_button'  %>
+
+<% end %>

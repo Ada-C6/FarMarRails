@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+
+  get 'welcome/index'
+  root 'welcome#index'
+
+  resources :markets, except: [:destroy] do
+    resources :vendors, except: [:show]
+  end
+
+  resources :vendors, only: [:index, :show] do
+    resources :products, except: [:show] do
+      resources :sales, only: [:new, :create]
+    end
+
+    resources :sales, only: [:index]
+  end
+
+  get '/vendors/:vendor_id/sales/current_sales', to: 'sales#current_sales', as: 'vendor_current_sales'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

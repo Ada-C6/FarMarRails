@@ -1,0 +1,38 @@
+<header>
+  <nav>
+
+    <h1>
+      <%= link_to "FarMar", root_path, class: "page-link" %>
+      <%= link_to "Vendors", vendors_path, class: "page-link" %>
+      <%= link_to "#{@vendor.name}", vendor_path(@vendor.id), class: "page-link" %>
+    </h1>
+    <h2 class="user-header">Sales</h2>
+  </nav>
+</header>
+
+<div class="sale-list-header">
+
+  <h3><%= "Total Sales: $ #{ @total_sales_amount }" %></h3>
+  <%= link_to "Current Month Sales", vendor_current_sales_path,
+  class: "primary-btn add-vendor" %>
+</div>
+
+<% @all_sales_by_vendor.each do | sale | %>
+
+<table class="sale-display">
+  <tr>
+    <th>Product</th>
+    <th>Amount</th>
+    <th>Purchase Date</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><%= sale.product.name %></td>
+    <td><%= dollar_format(sale.amount) %></td>
+    <td><%= human_readable_time(sale.purchase_time) %></td>
+  </tr>
+  <tr>
+  </tr>
+</table>
+
+<% end %>
