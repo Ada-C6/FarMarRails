@@ -3,3 +3,6 @@
     <li><%= link_to("#{market.name}", path) %><%= ": #{market.city}, #{market.state}"%></li>
 <% end %>
 </ul>
+<%= render partial: 'markets/market_index', locals: {path: 'show_market_path(params[:id])'}%>
+
+<%= render partial: 'markets/market_index', locals: {path: 'markets_show_path()'}%>
