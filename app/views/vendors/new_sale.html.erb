@@ -1,0 +1,27 @@
+<section>
+    <h1>Add a New Sale</h1>
+    <%= form_for @sale, url: createSale_path do |f| %>
+      <ul>
+        <li>
+          <%= f.label "Sale Amount:" %>
+          <%= f.text_field :amount, :class => "amount" %>
+        </li>
+
+        <li>
+          <%= f.label "Purchase Time:" %>
+          <%= f.text_field :purchase_time, :class => "purchase_time" %>
+        </li>
+
+        <li>
+          <%= f.label "Vendor" %>
+          <%= f.text_field @vendor.name, :readonly => f.object.persisted?  %>
+        </li>
+
+        <li>
+          <%= f.label "Product" %>
+          <%= f.text_field @product.name, :readonly => f.object.persisted?  %>
+        </li>
+      </ul>
+      <%= f.submit 'Add'%>
+    <% end %>
+</section>

@@ -49,6 +49,12 @@ Rails.application.routes.draw do
 
 
 
+  # get 'vendors/show_sale/:id' => 'vendors#show_sale', as: 'showSale'
+
+  get 'vendors/new_sale/:id' => 'vendors#new_sale', as: 'newSale'
+  post 'vendors/create_Sale'  => 'vendors#create_sale', as: 'createSale'
+
+
   root to: 'general_users#index', as: 'index'
 
   get 'general_users/index' => 'general_users#index'
