@@ -1,5 +1,16 @@
-<h1>Vendors#new</h1>
-<p>Find me in app/views/vendors/new.html.erb</p>
+<header>
+  <nav>
+    <h1>
+      <%= link_to "FarMar", root_path, class: "page-link" %>
+      <%= link_to "Markets", markets_path, class: "page-link" %>
+    </h1>
+    <h2 class="user-header">Create a Vendor</h2>
+  </nav>
+</header>
+
+<div class='form-header'>
+  <h1>Vendor Details:</h1>
+</div>
 
 <% if @vendor.errors.any? %>
   <ul class="errors">
