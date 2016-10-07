@@ -56,7 +56,7 @@ Rails.application.routes.draw do
 
   put 'vendors/:id/update' => 'vendors#update', as: 'vendor_update'
 
-  get 'vendors/destroy'
+  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'vendor_delete'
 
   get 'markets/index' => 'markets#index', as: 'market_index'
 
