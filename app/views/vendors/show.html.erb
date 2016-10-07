@@ -30,6 +30,7 @@
       <thead>
         <tr>
           <th scope="col">Product</th>
+          <th scope="col">New</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
         </tr>
@@ -42,11 +43,16 @@
           </th>
 
           <td>
+            <%= link_to "Register Sale", new_vendor_product_sale_path(@vendor.id, product.id), class: "new" %>
+          </td>
+          <td>
             <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %>
           </td>
           <td>
             <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
           </td>
+
+
         </tr>
         <% end %>
       </tbody>
