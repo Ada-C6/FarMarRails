@@ -8,6 +8,7 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id])
     @market = Market.find(@vendor.market_id)
     @products = Product.where(vendor_id: params[:id])
+    @sales = Sale.where(vendor_id: params[:id])
 
 
   end

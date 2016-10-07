@@ -22,3 +22,17 @@
   <p>
     <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
   </p>
+
+
+
+  <h4>Sales!</h4>
+
+<ol>
+    <% @sales.each do |sale| %>
+
+      <li><%= link_to "#{sale.purchase_time}", vendor_sale_path(@vendor, sale) %></li>
+
+    <% end  %>
+</ol>
+
+<!-- <p><%# "Total Sales: #{@total_sales}"  %></p> -->

@@ -1,5 +1,14 @@
 class SalesController < ApplicationController
 
+  def index
+    @sales = Sale.all
+  end
+
+  def show
+    @sale = Sale.find(params[:id])
+    @vendor= Vendor.find(@sale.vendor_id)
+  end
+
   def new
     @vendor = Vendor.find(params[:vendor_id])
     @product = @vendor.products.find(params[:product_id])
@@ -19,10 +28,11 @@ class SalesController < ApplicationController
     end
   end
 
-private
+  private
 
-def sale_params
-  params.require(:sale).permit(:name, :product_id, :vendor_id, :purchase_time, :amount)
-end
+  def sale_params
+    params.require(:sale).permit(:name, :product_id, :vendor_id, :purchase_time, :amount)
+  end
+
 
 end

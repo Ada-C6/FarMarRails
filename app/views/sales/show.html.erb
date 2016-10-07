@@ -1,0 +1,10 @@
+<h1>Here's your sale:</h1>
+
+<p>
+  <%= "Amount: #{@sale.amount}" %><br>
+  <%= "Vendor id: #{ @sale.vendor_id }" %><br>
+  <%= "Product id: #{ @sale.product_id }" %><br>
+  <%= "Purchase Time: #{@sale.purchase_time}" %><br>
+
+  <%= link_to "Sales", vendor_sales_path %>
+</p>
