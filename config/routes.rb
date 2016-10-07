@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   get 'farmers/market_views/new', to: 'markets#new', as: 'new_market'
   post 'farmers/market_views' => 'markets#create'
   get 'farmers/market_views/:id/edit', to: 'markets#edit', as: 'edit_market'
-  patch 'farmers/market_views/:id' => 'market#update'
+  patch 'farmers/market_views/:id' => 'markets#update'
   get 'farmers/market_views/:id', to: 'markets#show2', as: 'market_view'
 
   get 'farmers/market_views/:id/vendor/new', to: 'vendors#new', as: 'new_vendor'
   post 'farmers/market_views/:id/vendor/new' => 'vendors#create'
+  get 'farmers/market_views/:id/vendor/edit', to: 'vendors#edit', as: 'edit_vendor'
+  patch 'farmers/vendors/:id' => 'vendors#update'
+  delete 'farmers/market_views/:id/' => 'vendors#destroy'
 
   get 'farmers/vendors' => 'vendors#index'
   get 'farmers/vendors/:id', to: 'vendors#show', as: 'vendor'
@@ -23,7 +26,6 @@ Rails.application.routes.draw do
 
   get 'farmers/vendors/:id/products/new', to: 'vendors#new_product', as: 'vendor_products_new'
   post 'farmers/vendors/:id/products' => 'vendors#create_product'
-
 
   get 'farmers/vendors/:id/sales', to: 'vendors#show_sales', as: 'vendor_sales'
 

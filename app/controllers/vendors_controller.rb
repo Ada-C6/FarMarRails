@@ -42,10 +42,31 @@ class VendorsController < ApplicationController
     @new_vendor = Vendor.new(market_id: id)
     @new_vendor.save
     if @new_vendor.update(vendor_params)
-      redirect_to farmers_market_views_path
+      redirect_to market_view_path
     else
       render :edit
     end
+  end
+
+  def edit
+    @this_vendor = Vendor.find(params[:id])
+  end
+
+  def update
+    @this_vendor = Vendor.find(params[:id])
+
+    if @this_vendor.update(vendor_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  # having trouble redirting once the entry is edited/deleted
+
+  def destroy
+    @this_vendor = Vendor.find(params[:id]).destroy
+    redirect_to root_path(:id)
   end
 
   private
