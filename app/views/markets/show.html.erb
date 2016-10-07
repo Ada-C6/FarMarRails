@@ -16,6 +16,6 @@
 
 <p>
   <% @vendors.each do |vendor| %>
-    <p> vendor: <%= vendor.name link_to "Edit", edit_market_vendor_path(@market.id) %> </p>
+    <p> vendor: <%= vendor.name %><%= link_to "Edit", edit_market_vendor_path(id: vendor.id, market_id: @market.id) %></p>
   <% end %>
 </p>
