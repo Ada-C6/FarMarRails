@@ -12,6 +12,7 @@
 <h2>Sales:</h2>
 <p>
   <%= link_to "Total sales", vendor_sales_path(@vendor) %>
+  ($<%= sales_sum(@vendor) %>)
 </p>
 
   <h2>Products:</h2>
