@@ -1,0 +1,14 @@
+<h1><%= @product[:name] %></h1>
+
+<article>
+  <h3> Currently sold at:  </h3>
+  <p>Market: <%= link_to(@product.vendor.market.name, marketsshow_path(@product.vendor.market.id)) %></p>
+  <p>Vendor: <%= link_to(@product.vendor.name, marketsshow_path(@product.vendor.id)) %></p>
+
+</article>
+
+<ul class="align-buttons">
+  <li><%= button_to 'Edit Product', productsedit_path(params[:id]), :class => "button", method: :get %></li>
+  <li><%= button_to 'Delete Product', productsdestroy_path(params[:id]), :class => "button", method: :delete, data: {confirm: 'Are you sure?'} %>
+  </li>
+</ul>

@@ -1,0 +1,62 @@
+<h1><%= @vendor[:name] %></h1>
+<ul class="align-buttons">
+  <li><%= button_to 'Delete this Vendor', vendorsdestroy_path(params[:id]), :class => "button", method: :delete, data: {confirm: 'Are you sure you want to delete this vendor?'} %></li>
+</ul>
+<p>Current employees: <%= @vendor[:employees] %></p>
+Products sold:
+<ul>
+  <% @vendor.products.each do |product| %>
+  <li><%= link_to(product.name, productsshow_path(product.id)) %></li>
+  <% end %>
+</ul>
+<ul class="align-buttons">
+  <li><%= button_to 'New Product', productsnew_path(), :class => "button", method: :get %></li>
+</ul>
+
+
+<article>
+  <h3> Currently at:  </h3>
+  <p><%= link_to(@vendor.market.name, marketsshow_path(@vendor.market.id)) %></p>
+  <p><%= @vendor.market.address %></p>
+  <p><%= @vendor.market.city %>, <%= @vendor.market.state %> <%= @vendor.market.zip %></p>
+  <p>County: <%= @vendor.market.county %></p>
+</article>
+
+<article>
+  <h3>This Month's Sales:</h3>
+  <ul>
+    <% if @vendor.sales != nil %>
+      <% totalsales = 0.0 %>
+      <% @vendor.sales.each do |sale| %>
+        <% if sale.purchase_time.to_time.month == 10 %>
+          <% sale_with_decimals = sale.amount / 100.0 %>
+            <li><%= link_to(sale.product.name, salesshow_path(sale.id)) %>: $<%= (sprintf "%.2f", sale_with_decimals) %>, <%= sale.purchase_time.to_datetime.month %>/<%= sale.purchase_time.to_datetime.year %></li>
+            <% totalsales += sale_with_decimals %>
+            <% end %>
+        <% end %>
+      <p>Total Sales this Month: $<%= (sprintf "%.2f", totalsales) %></p>
+    <% end %>
+  </ul>
+
+  <h3>All Sales:</h3>
+  <ul>
+
+    <% if @vendor.sales != nil %>
+      <% totalsales = 0.0 %>
+
+      <% @vendor.sales.each do |sale| %>
+        <% sale_with_decimals = sale.amount / 100.0 %>
+          <li><%= link_to(sale.product.name, salesshow_path(sale.id)) %>: $<%= (sprintf "%.2f", sale_with_decimals) %>
+          <% totalsales += sale_with_decimals %>, <%= sale.purchase_time.to_datetime.month %>/<%= sale.purchase_time.to_datetime.year %></li>
+      <% end %>
+      <p>Total Sales: $<%= (sprintf "%.2f", totalsales) %></p>
+
+    <% else %>
+      <h3>You might want to try selling something.</h3>
+    <% end %>
+  </ul>
+  <ul class="align-buttons">
+    <li><%= button_to 'New Sale', salesnew_path(), :class => "button", method: :get %></li>
+  </ul>
+
+</article>
