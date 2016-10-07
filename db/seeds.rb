@@ -18,7 +18,7 @@ CSV.read('seed_csvs/markets.csv').map do |line|
   market_hash[:city] = line[3]
   market_hash[:state] = line[4]
   market_hash[:zip] = line[5]
-  Market.create(market_hash)
+  Market.create!(market_hash)
 end
 
 CSV.read('seed_csvs/vendors.csv').map do |line|
