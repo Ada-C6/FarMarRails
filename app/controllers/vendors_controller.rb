@@ -7,7 +7,8 @@ class VendorsController < ApplicationController
 # As a vendor, I can see a total of my Sales for the current month
 
   def index
-    @all_vendors = Vendor.all
+    # all vendors in alphabetical order
+    @all_vendors = Vendor.order(:name)
   end
 
   def show

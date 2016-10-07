@@ -1,21 +1,20 @@
-
-
 <header>
   <nav>
 
-    <h1><%= link_to "FarMar / ", root_path, :class => "page-link" %></h1>
-    <h2 class="markets-header">Markets</h2>
+    <h1><%= link_to "FarMar / ", root_path, class: "page-link" %></h1>
+    <h2 class="user-header">Markets</h2>
   </nav>
 </header>
 
-<%= link_to "Add New Market", new_market_path, :class => "primary-btn add-markets" %>
+<%= link_to "Add New Market", new_market_path,
+  class: "primary-btn add-markets" %>
 
 <ul class="contained-list">
 
-<% @markets.each do |market| %>
-    <li class="list-item">
-      <%= link_to "#{market.name}", market_path(market) %>
-    </li>
-<% end  %>
+  <% @markets.each do |market| %>
+  <li class="list-item">
+    <%= link_to "#{market.name}", market_path(market) %>
+  </li>
+  <% end  %>
 
 </ul>

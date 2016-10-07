@@ -32,6 +32,12 @@ h1, h2 {
   margin: 0;
 }
 
+h3 {
+  font-size: 2rem;
+  text-shadow: 2px 0 0 rgba(0, 0, 0, 0.51);
+
+}
+
 .landing-page-header {
   flex-direction: row-reverse;
 
@@ -99,6 +105,12 @@ a {
  font-family: 'Quando', serif;
 }
 
+.add-products {
+ margin: 5rem 0rem 2rem 12.5rem;
+ font-family: 'Quando', serif;
+}
+
+
 .list-item {
   margin: 0 .2rem;
   list-style: none;
@@ -108,35 +120,107 @@ a {
   overflow: hidden;
 }
 
-.list-item:hover {
+.list-item:hover, .one-group:hover {
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 /*market details*/
-.market-address{
+.user-details, .vendor-list-header, .sale-list-header {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
 
 table {
-  margin: 4rem 0 0 2rem;
+  margin: 4rem 0 0 0;
   padding: .5rem;
+  padding-right: 3rem;
   background-color: rgba(0, 0, 0, 0.51);
   text-shadow: 1px 1px black;
   border-radius: 1rem;
 }
 
-.edit-markets {
-  margin-bottom: 1.5rem;
-}
-
 th {
   padding: 0;
+  color: rgb(155, 155, 172);
 }
 
 td {
   padding: 0 1rem 0 1rem;
   font-family: 'Didact Gothic', sans-serif;
+}
+
+.edit-markets {
+  margin-bottom: 1.2rem;
+  margin-left: -2.75rem;
+}
+
+.edit-markets:hover {
+  color: rgb(72, 134, 68);
+}
+
+/*vendor list*/
+.vendor-list-header {
+  align-items: center;
+  justify-content: space-around;
+  width: 34.25rem;
+}
+
+.sale-list-header {
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  width: 34.25rem;
+}
+
+.add-vendor{
+  margin: 0;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.vendor-list, .product-list {
+  margin-top: 0;
+  height: 58%;
+  width: 31.25rem;
+}
+
+.one-group {
+  width: 100%;
+  flex-direction: row;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.one-group > .list-item {
+  width: 70%;
+}
+
+.mutable-action-links > li {
+  list-style: none;
+  display: inline-block;
+  visibility: hidden;
+
+}
+
+.one-group:hover .mutable-action-links > li {
+  visibility: visible;
+}
+
+/*vendors styling*/
+
+.vendors-list {
+  font-size: 1rem;
+  margin: 5rem 0 0 0;
+  position: fixed;
+  height: 80%;
+  width: 34.25rem;
+
+}
+
+.sale-display {
+  margin: .7rem 0 0 0;
+  width: 36rem;
 }
