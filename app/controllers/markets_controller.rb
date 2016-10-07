@@ -7,6 +7,8 @@ class MarketsController < ApplicationController
   def all
     #put a list of all the markets here
     @markets = Market.all
+    @market = Market.find_by(params[:name])
+    @vendors = Vendor.where([:market_id] == @market.id)
   end
 
   def show
