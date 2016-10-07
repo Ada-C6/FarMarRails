@@ -19,13 +19,18 @@ tr:nth-child(even) {
   background: #F0691B;
 }
 
+td, a {
+  text-decoration: none;
+  text-color: #1A1506;
+}
 
+a:hover { 
+    background-color: yellow;
+}
 
 button {
-  background: #FFBE4B;
-  display: inline;
+  display: inline-block;
+  background-color: none;
 }
 
-link_to {
-  text-decoratoin: none;
-}
+
