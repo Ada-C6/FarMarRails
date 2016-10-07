@@ -59,7 +59,7 @@ a:hover {
 h1 {
   color: #AD2831;
   font-size:75px;
-  text-shadow: -2px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
+  text-shadow: -3px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
   border-radius: 2px;
 }
 
@@ -68,5 +68,8 @@ li {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
+  color: #A5FFD6;
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+
 }
