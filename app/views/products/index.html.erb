@@ -4,7 +4,7 @@
     <h1>
       <%= link_to "FarMar  ", root_path, class: "page-link" %>
       <%= link_to "Vendors ", vendors_path, class: "page-link" %>
-      <%= link_to "#{@vendor.name} / ", vendors_path, class: "page-link" %>
+      <%= link_to "#{@vendor.name} / ", vendor_path(@vendor.id), class: "page-link" %>
     </h1>
     <h2 class="user-header">Products</h2>
   </nav>
