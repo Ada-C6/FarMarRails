@@ -16,8 +16,7 @@
 
 html {
   font: normal normal 18px/1 'Catamaran', sans-serif;
-  color: #D9D7D7;
-  background-color: #050505;
+  color: #050505;
  }
 
 h1 {
@@ -28,13 +27,13 @@ h1 {
 }
 
 main {
-  margin-left: 5vmin;
+  margin-left: 1.5vmin;
   margin-top: 1.5vmin;
 }
 
 a {
   text-decoration: none;
-  color: #50A971;
+  color: #19753B;
 }
 
 a:hover {
@@ -81,4 +80,40 @@ a.new {
 .splash a:hover {
   text-decoration: none;
   color: #A4A4A4;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #D9D7D7;
+  text-align: center;
+  background-color: #A4A4A4;
+}
+
+thead th {
+  font-family: 'Nothing You Could Do', cursive;
+  border-bottom: 1px solid #D9D7D7;
+  color: #A4A4A4;
+  background-color: #494949;
+}
+
+thead th:first-child {
+  width: 80%;
+}
+
+thead th:nth-child(2) {
+  width: 10%;
+
+}
+thead th:nth-child(3) {
+  width: 10%;
+}
+
+th, td {
+  padding: 0.5em;
+}
+
+section:first-child {
+  text-align: center;
 }

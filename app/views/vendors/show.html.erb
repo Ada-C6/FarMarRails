@@ -1,27 +1,49 @@
 <header>
-  <h1>Welcome <%= @vendor.name %></h1>
+  <h1><%= @vendor.name %></h1>
   <nav>
     <li><%= link_to "Vendors Index", vendors_path %></li>
   </nav>
 </header>
 
 <main>
-  <p>
-    Number of employees: <%= @vendor.num_employees %>
-  </p>
+  <section>
+    <p>
+      Number of employees: <%= @vendor.num_employees %>
+    </p>
+  </section>
 
-  <h2>Products:</h2>
-  <p>
-    <%= link_to "Add a new product", new_vendor_product_path(@vendor), class: "new" %>
-  </p>
+  <section>
+    <h2>Products:</h2>
+    <p>
+      <%= link_to "Add a new product", new_vendor_product_path(@vendor), class: "new" %>
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
 
-  <ul>
-    <% @vendor.products.each do |product| %>
-    <li>
-      <%= product.name %> &mdash;
-      <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %> /
-      <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "#{product.name}: This product will be deleted. Please confirm."} %>
-    </li>
-    <% end %>
-  </ul>
+      <tbody>
+        <% @vendor.products.each do |product| %>
+        <tr>
+          <th scope="row">
+            <%= product.name %>
+          </th>
+
+          <td>
+            <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %>
+          </td>
+
+          <td>
+            <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "Are you sure you want to delete #{product.name}?"} %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>
+
 </main>
