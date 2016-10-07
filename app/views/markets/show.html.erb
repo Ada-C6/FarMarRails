@@ -31,7 +31,7 @@
   </table>
 
   <%= link_to edit_market_path(@market),
-  class: "page-link edit-markets",
+  class: "page-link-icon edit-markets",
     aria: {label: "Edit Market"}  do %>
     <i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
   <% end %>
@@ -57,7 +57,7 @@
 
       <li>
       <%= link_to edit_market_vendor_path(vendor.market, vendor),
-        class: 'page-link',
+        class: 'page-link-icon',
         aria: {label: "Edit Vendor"}  do %>
         <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
       <% end %>
@@ -66,7 +66,7 @@
       <li>
       <%= link_to market_vendor_path(vendor.market, vendor),
         method: :delete,
-        class: 'page-link',
+        class: 'page-link-icon',
         aria: {label: "Delete Vendor"},
         data: {confirm: "Are you sure you want to delete permanently?"} do %>
         <i class="fa fa-trash fa-fw fa-lg" aria-hidden="true"></i>

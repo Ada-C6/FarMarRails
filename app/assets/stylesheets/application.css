@@ -53,7 +53,7 @@ a {
   color: rgb(224,224,235);
 }
 
-.page-link {
+.page-link, .page-link-icon {
   display: inline-block;
   margin: 0 0.5rem;
 }
