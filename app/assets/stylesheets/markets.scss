@@ -1,3 +1,23 @@
 // Place all the styles related to the Market controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.market-display {
+  background-color: #114B5F;
+  text-align: center;
+  color: white;
+}
+
+.market-display h5{
+  padding-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.market-display h2 {
+  margin-bottom: 0px;
+}
+
+.market-display form {
+  padding-bottom: 10px; 
+}

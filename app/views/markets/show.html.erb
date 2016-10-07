@@ -1,12 +1,10 @@
-<h2> <%= @market.name %></h2>
-
-<ul>
-<li><%= @market.street_address %></li>
-<li><%= @market.city %></li>
-<li><%= @market.county %></li>
-<li><%= @market.state %></li>
-<li><%= @market.zip_code %></li>
-</ul>
+<div class="market-display">
+  <h2> <%= @market.name %></h2>
+  <h5>
+    <%= @market.street_address %> | <%= @market.city %> | <%= @market.county %> | <%= @market.state %> | <%= @market.zip_code %>
+  </h5>
+  <%= button_to "Edit this Market", edit_market_path(@market), method: :get%>
+</div>
 
 <h3> Vendors </h3>
 <ul>
