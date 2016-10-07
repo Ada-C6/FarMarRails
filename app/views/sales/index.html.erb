@@ -5,7 +5,11 @@
 <div class="container">
 <body class="market-view">
 
-<h3>Current Month's Sales (<%= Time.now.strftime("%B %Y") %>)</h3>
+
+<h2>General Sales Info</h2>
+
+<p>Current Month's Sales (<%= Time.now.strftime("%B %Y") %>):</p>
+>>>>>>> b/dkl/product_tables
 
 <% current_sale_count = 0 %>
 <% @sales.each do |sale| %>
@@ -22,22 +26,31 @@
 
 <hr>
 
-<h3>All Sales</h3>
 
+<h2>All Sales </h2>
+<table class="sales-index-table">
+  <tr>
+   <th>Sale Amount</th>
+   <th>Sale Date</th>
+ </tr>
+>>>>>>> b/dkl/product_tables
 <% @sales.each do |sale| %>
-  <p>Sale Amount:
+<tr>
+  <td>
     <% if sale[:amount] == 0.to_i %>
       <%= " None" %></p>
     <% else %>
       $<%= add_decimal(sale[:amount]) %>
     <% end %>
-
-  <p>Sale Date:
+  </td>
+  <td>
     <% if sale[:purchase_time] != nil %>
       <%= sale[:purchase_time].strftime("%A, %B %d, %Y") %></p>
     <% else %>
       N/A</p>
     <% end %>
+  </td>
 <% end %>
-
+</tr>
+</table>
 <p><%= link_to("Back to Product List", vendor_products_path(@vendor.id)) %></p>
