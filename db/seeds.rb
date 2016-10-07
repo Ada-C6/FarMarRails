@@ -10,23 +10,23 @@
 require 'csv'
 
 
-# seed Markets
-#
-# CSV.foreach('seed_csvs/markets.csv') do |line|
-#   Market.create(name: line[1], address: line[2], city: line[3], county: line[4], state: line[5], zip: line[6])
-# end
-#
-# # seed Vendors
-#
-# CSV.foreach('seed_csvs/vendors.csv') do |line|
-#   Vendor.create(name: line[1], no_employees: line[2], market_id: line[3])
-# end
-#
-# # seed Products
-#
-# CSV.foreach('seed_csvs/products.csv') do |line|
-#   Product.create(name: line[1], vendor_id: line[2])
-#end 
+seed Markets
+
+CSV.foreach('seed_csvs/markets.csv') do |line|
+  Market.create(name: line[1], address: line[2], city: line[3], county: line[4], state: line[5], zip: line[6])
+end
+
+# seed Vendors
+
+CSV.foreach('seed_csvs/vendors.csv') do |line|
+  Vendor.create(name: line[1], no_employees: line[2], market_id: line[3])
+end
+
+# seed Products
+
+CSV.foreach('seed_csvs/products.csv') do |line|
+  Product.create(name: line[1], vendor_id: line[2])
+end
 
 # seed Sales
 
