@@ -203,7 +203,16 @@ td {
   margin-top: 15%;
   font-size: 2rem;
   text-shadow: 2px 0 0 rgba(0, 0, 0, 0.51);
+}
 
+.errors {
+  background-color: rgba(93, 51, 90, 0.7);
+  width: 40%;
+  border-radius: 1rem;
+}
+
+.errors ul {
+  padding-left: 1cm;
 }
 
 .edit-markets {
