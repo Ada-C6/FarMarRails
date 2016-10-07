@@ -1,15 +1,40 @@
-/*body {
+body {
   background-image: url(holden-beach-farmers-market.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100vw;
   background-attachment: fixed;
+  font-size: 1.5em;
 }
 
 article {
   position: relative;
-}*/
+}
+
+.visitor_list {
+  background: rgba(0, 0, 0, 0.7);
+  width: 45%;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 3px;
+  border-radius: 4px;
+  color: white;
+}
+
+.visitor_list p a {
+  color: #ff9559;
+}
+
+.visitor_list p a:visited {
+  color: #ff3b4a;
+}
+
+.routing_links {
+  float: left;
+}
+
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

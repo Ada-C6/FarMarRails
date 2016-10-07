@@ -1,11 +1,13 @@
 <%= render partial: "visitor_header" , locals: { action_name: "get"}%>
 
 <h2>Here is a list of all products:</h2>
-<% @products.each do |product| %>
-<article>
-  <p>
-    <%find_market = Vendor.find(product.vendor_id) %>
-    <%= link_to "#{product.name}", show_all_path(find_market.market_id) %>
-  </p>
-  <% end %>
-</article>
+<section class="visitor_list">
+  <% @products.each do |product| %>
+  <article>
+    <p>
+      <%find_market = Vendor.find(product.vendor_id) %>
+      <%= link_to "#{product.name}", show_all_path(find_market.market_id) %>
+    </p>
+    <% end %>
+  </article>
+</section>
