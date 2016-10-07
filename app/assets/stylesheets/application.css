@@ -47,10 +47,6 @@ nav a {
   border-color: #904E55;
 }
 
-
-}
-
-
 a:hover {
   background-color: #5B2333;
   color: #A9ACA9;
@@ -70,6 +66,12 @@ li {
 a {
   text-decoration: none;
   color: #A5FFD6;
-  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
-
 }
+
+body ul.list a {
+  text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+
+/*p.edit {
+  color: #FE5F55,
+}*/
