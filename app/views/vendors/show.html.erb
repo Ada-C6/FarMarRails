@@ -20,7 +20,8 @@
     <li>
       <%= product.name %> &mdash;
       <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %> /
-      <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "#{product.name}: This product will be deleted. Please confirm."} %>
+      <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "#{product.name}: This product will be deleted. Please confirm."} %> /
+      <%= link_to "Register Sale", new_vendor_product_sale_path(@vendor.id, product.id), class: "new" %>
     </li>
     <% end %>
   </ul>
