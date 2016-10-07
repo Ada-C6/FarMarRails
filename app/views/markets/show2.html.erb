@@ -16,7 +16,7 @@
   <% @vendor.each do |v| %>
     <li><%= v.name %>
     <%= link_to "Edit", edit_vendor_path(v) %>
-    <%= link_to "DESTROY!!", market_view_path(:id),  method: :delete , data: {confirm: "Are you really sure?"}%>
+    <%= link_to "DESTROY!!", vendor_path(v),  method: :delete , data: {confirm: "Are you really sure?"}%>
     </li>
   <% end %>
 </ul>
