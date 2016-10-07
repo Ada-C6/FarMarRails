@@ -6,7 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="market-view">
+  <h1><%= @header %></h1>
   <nav>
       <ul class="navbar">
         <li> <%= link_to "HOME", root_path %> </li>
@@ -14,8 +15,10 @@
         <li> <%= link_to "ACT AS VENDOR", vendors_path %> </li>
       </ul>
   </nav>
-<%= yield %>
 
+<div class="container">
+<%= yield %>
+</div>
 </body>
 
 </html>
