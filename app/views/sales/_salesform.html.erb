@@ -1,0 +1,10 @@
+<%= form_for @mysale,
+  method: @sale_method,
+  url: @sale_path do |f| %>
+ 
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.submit %>
+    <% end %>

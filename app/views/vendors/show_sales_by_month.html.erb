@@ -1,0 +1,6 @@
+<h3>Sales for <%= Date::MONTHNAMES[@sales_month.to_i] %> <%= @sales_year%></h3>
+
+<% @sales_wanted.each do |sale_wanted|%>
+	<p>Time: <%= sale_wanted.purchase_time %></p>
+	<p>Amount: <%= sale_wanted.amount %></p>
+<% end %>

@@ -1,0 +1,45 @@
+<h1 class="center"><%= @myvendor.name %> Vendor Account</h1>
+<article>
+  <section id="total">
+    <h3> My Total Sales<h3>
+      <p>$<%= @total / 100.00 %></p>
+
+
+
+
+  </section>
+  <section id="sales">
+      <h2>My Sales</h2>
+      <% @sales.each do |sale| %>
+      <ul>
+      <li>$<%= sale.amount / 100.00 %>&nbsp;&nbsp;<%= sale.product.name %></li>
+      </ul>
+    <% end %>
+  </section>
+
+    <h3> My Sales By Month</h3>
+    
+     
+      <%= form_for @myvendor,  method: "get", url: show_sales_by_month_path do |f| %>
+        <%= select_year(2013) %>
+        <%= select_month(Time.now) %>
+        <%= f.submit "Find sales" %>
+      <% end %>
+
+    <section id="products">
+      <h2>My Products</h2>
+      <% @myproducts.each do |product| %>
+      <ul>
+        <li><%= product.name %></li><li><p><%= button_to('Edit Product', products_edit_path, method: :get) %></li>
+
+      <li><%= button_to('Delete Product', products_delete_path, method: :delete) %></li>
+      <li> <%= button_to("add sale", sales_new_path(@myvendor.id,product.id), method: :get) %></li>
+    </ul>
+
+
+
+      <% end %>
+      <p><%= button_to('Add Product', products_new_path, method: :get) %></p>
+
+      </section>
+    </article>

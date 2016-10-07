@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FarMarRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><%= link_to("Home", users_index_path) %></li>
+        <li><%= link_to("Markets", markets_index_path) %></li>
+        <li><%= link_to("Vendors", vendors_index_path) %></li>
+      </ul>
+    </nav>
+  </header>
+<%= yield %>
+<footer>
+  <nav>
+    <ul>
+      <li><%= link_to("Home", users_index_path) %></li>
+      <li><%= link_to("Markets", markets_index_path) %></li>
+      <li><%= link_to("Vendors", vendors_index_path) %></li>
+    </ul>
+  </nav>
+</footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/*All Pages*/
+
+@font-face {
+  font-family: "Raleway";
+  src: url ('/fonts/Raleway');
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #FCF7F8
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  margin: 10px;
+}
+
+header {
+  background-color: #AB3428;
+  font-size: 2em;
+}
+
+footer {
+  background-color: #4E8098;
+  height: 60px;
+  clear: both;
+}
+
+footer nav ul {
+  text-align: center;
+}
+
+header ul {
+  margin-top: 0;
+  margin-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-bottom: 0;
+
+}
+
+.center {
+  text-align: center;
+}
+
+
+
+
+/*Home Page*/
+.hero {
+  width: 100%;
+}
+
+  .home {
+    float: right;
+  border-radius: 100%;
+  padding: 20px;
+}
+
+#color {
+  background-color: #AB3428
+}
+
+#welcome {
+  margin-top: 30px;
+  font-size: 2em;
+}
+/*.home2 {
+border-radius: 100%;
+padding: 20px;
+margin-left: 30px;
+}*/
+
+
+h1 {
+  text-decoration: none;
+}
+
+/*Show Page*/
+#products {
+float: right;
+  margin: 0px;
+  width: 30%;
+  padding-right: 40px;
+
+}
+
+#sales {
+  float: left;
+margin-left: 20px;
+  width: 30%;
+  padding-bottom: 30px;
+  padding-left: 20px;
+}
+
+#total {
+  float: left;
+  width: 20%;
+  padding-left: 20px;
+}
