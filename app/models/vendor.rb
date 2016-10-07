@@ -3,6 +3,13 @@ class Vendor < ActiveRecord::Base
   has_many :products
   has_many :sales
 
+
+  validates :name, presence: true
+  validates :market_id, presence: true, numericality: true
+  validates :num_employees, presence: true, numericality: true
+
+
+
   def sales_total
     total = 0
     sales.each do |sale|

@@ -1,4 +1,13 @@
-
+<% if @market.errors.any? %>
+<ul>
+  <% @market.errors.each do |column, message| %>
+  <li>
+    <%= column %>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
 
 <%= form_for @market, method: action_name do |f| %>
 <%= f.label :name %>

@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
 
   resources :markets do
-    resources :vendors
+    resources :vendors, except: [:index, :show]
   end
-  resources :vendors do
+  resources :vendors, only: [:index, :show] do
       resources :products do
-        resources :sales
+        resources :sales, only: [:new, :show, :create]
       end
-      resources :sales
+      resources :sales, only: [:show]
   end
 
 
