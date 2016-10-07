@@ -4,10 +4,10 @@ class Sale < ActiveRecord::Base
 
 
 
-  # def total_sales
+  # def self.total_sales_by_vendor
   #   total = []
-  #   @sale = Sale.find(params[:id])
+  #   @sale = Sale.find_by
   #   total << @sale.amount
-  #   total.inject(0){|sum,x| sum + x }
+  #   total.inject(0){|sum, x| sum + x }
   # end
 end
