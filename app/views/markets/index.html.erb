@@ -9,7 +9,7 @@
     <tr>
       <% @market.all.each do |market| %>
       <td><%= link_to "#{market.name}", market_path(market) %> </td>
-      <td><%= link_to "Edit", edit_market_path(market), method: :get%></td>
+      <td><%= link_to "Edit", edit_market_path(market), method: :get  %></td>
 
     </tr>
     <% end %>
