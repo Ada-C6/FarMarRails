@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   # Acting as a vendor doing things directly to sales without going through product
   resources :vendor do
-    resources :sale, only: [:index]
+    resources :sale
   end
 
   # Getting to sales through product
