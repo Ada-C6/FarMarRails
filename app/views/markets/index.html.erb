@@ -1,2 +1,16 @@
-<h1>Markets#index</h1>
-<p>Find me in app/views/markets/index.html.erb</p>
+<h1>Welcome Market Organizers</h1>
+
+<button><%= link_to( "Create a New Market", newmarket_path) %></button>
+
+<article>
+  <h2> Markets </h2>
+  <% @allmarkets.each do |mar| %>
+    <ul>
+      <li>
+        <%= link_to "#{mar.id}. #{mar.name}", showmarket_path(mar[:id]) %>
+        <button><%= link_to( "Edit", editmarket_path(mar[:id]) ) %></button>
+        <button><%= link_to( "Delete", destroymarket_path(mar[:id]), data: { confirm: "Are you sure you want to delete this market?" }, method: :delete) %></button>
+      </li>
+    </ul>
+  <% end %>
+</article>

@@ -1,0 +1,19 @@
+<h1>Add a Vendor </h1>
+<article>
+  <%= form_for @ven, url: action_name do |f| %>
+    <ul>
+      <li><%= f.label :name %></li>
+      <li><%= f.text_field :name, :cols => 50, :rows => 5 %></li>
+
+      <li><%= f.label :employee_number %></li>
+      <li><%= f.text_field :employee_num %></li>
+
+      <li><%= f.label :market_id %></li>
+      <li><%= f.text_field :market_id %></li>
+    </ul>
+
+    <%= f.submit %>
+  <% end %>
+
+  <button><%= link_to("Back to home", index_path) %></button>
+</article>
