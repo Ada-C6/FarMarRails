@@ -14,19 +14,59 @@
  *= require_self
  */
 
-header {
-  background-color: #98A6D4;
-}
-
 * {
   font-family: 'Raleway', sans-serif;
 }
 
 body {
-  background-color: #8E4585;
-}
+  background-image: url("https://s-media-cache-ak0.pinimg.com/236x/26/8a/84/268a848280fe4b553759d1d7a09f4bfb.jpg");
 
+}
 
 ul {
   list-style-type: none;
+}
+
+nav li {
+  display: inline-block;;
+  border-radius:  4px;
+  border-color: #2F2235;
+  border: 3px;
+}
+
+nav a {
+  display: block;
+  width: 200px;
+  background-color: #A9ACA9;
+  color: #5B2333;
+  padding: 3px;
+  border: 4px;
+  margin: 7px;
+  border-radius: 5px;
+  border: 4px;
+  border-color: #904E55;
+}
+
+
+}
+
+
+a:hover {
+  background-color: #5B2333;
+  color: #A9ACA9;
+}
+
+h1 {
+  color: #AD2831;
+  font-size:75px;
+  text-shadow: -2px 0 white, 0 3px white, 3px 0 white, 0 -3px white;
+  border-radius: 2px;
+}
+
+li {
+  color: #C0C0C0;
+}
+
+a {
+  text-decoration: none
 }
