@@ -6,6 +6,8 @@
   <p>
     <%find_market = Vendor.find(product.vendor_id) %>
     <%= link_to "#{product.name}", show_product_path(find_market.market_id) %>
+    <%= link_to( 'Edit', edit_product_path(product.id) ) %>
+    <%= button_to 'delete', {action: "destroy", id: product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
   </p>
   <% end %>
 </article>

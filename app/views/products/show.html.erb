@@ -2,6 +2,11 @@
 
 <h1><%= @product.name %> Info:</h1>
 
+<p>
+  <%= link_to( 'Edit', edit_product_path(@product.id) ) %>
+  <%= button_to 'delete', {action: "destroy", id: @product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+</p>
+
 <p>Vendor Name: <%= @vendor %></p>
 
 <h2>List of Product's Sales by Sale Amount:</h2>
@@ -10,6 +15,8 @@
 <article>
   <p>
     <%=link_to "$#{sale.amount/100.00}", show_sale_path(sale.id) %>
+    <%= link_to( 'Edit', edit_sale_path(sale.id) ) %>
+    <%= button_to 'delete', {action: "destroy", id: sale.id }, method: :delete, data: {confirm: "Are you sure?"} %>
   </p>
   <% end %>
 </article>

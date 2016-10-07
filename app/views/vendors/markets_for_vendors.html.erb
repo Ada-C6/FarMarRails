@@ -1,0 +1,11 @@
+<%= render partial: "vendor_header" , locals: { action_name: "get"}%>
+
+<h2>Here is a list of all markets:</h2>
+<% @markets.each do |market| %>
+<article>
+  <p>
+    <%= link_to "#{market.name}", market_for_ven_path(market.id) %>
+    <%= market.state %>
+  </p>
+  <% end %>
+</article>

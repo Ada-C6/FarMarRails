@@ -16,7 +16,6 @@ class VendorsController < ApplicationController
   def show
     find_all
     @vendor = find_vendor
-
     if @vendor.market_id == 0
       @market = "This vendor has no Market"
     else
@@ -75,6 +74,24 @@ class VendorsController < ApplicationController
     @vendor.destroy
     redirect_to vendors_path
   end
+
+  def markets_for_vendors
+    @markets = Market.all
+  end
+
+  def market_for_ven
+    @markets = Market.all
+    @market = Market.find(params[:id].to_i)
+    find_all
+    @vendor_list = []
+    @vendors.each do |vendor|
+      if vendor.market_id == @market.id
+      @vendor_list << vendor
+      end
+    end
+    return @vendor_list
+  end
+
 end
 
   private

@@ -40,6 +40,10 @@ Rails.application.routes.draw do
 
   delete 'vendors/destroy'
 
+  get 'vendors/markets_for_vendors' => 'vendors#markets_for_vendors', as: 'markets_for_vendors'
+
+  get 'vendors/market_for_ven/:id' => 'vendors#market_for_ven', as: 'market_for_ven' 
+
   ###############################
 
   get 'products/index' => 'products#index', as: 'products'

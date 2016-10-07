@@ -9,3 +9,6 @@
 <p>Sale Amount: $<%= @sale.amount/100.00 %></p>
 
 <p>Sale Date and Time: <%= @sale.purchase_time %></p>
+
+<%= link_to( 'Edit', edit_sale_path(@sale.id) ) %>
+<%= button_to 'delete', {action: "destroy", id: @sale.id }, method: :delete, data: {confirm: "Are you sure?"} %>
