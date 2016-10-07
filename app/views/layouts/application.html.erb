@@ -7,6 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= button_to "Market", marketsIndex_path, method: :get %>
+    <%= button_to "Home", index_path, method: :get %>
+  </header>
 
 <%= yield %>
 

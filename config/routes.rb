@@ -1,18 +1,34 @@
 Rails.application.routes.draw do
 
-  get 'markets/index'
+  ################### Modify Markets information ###############
+
+  get 'markets' => 'markets#index', as: "marketsIndex"
 
   get 'markets/show'
 
-  get 'markets/create'
+  post 'markets/create' => 'markets#create', as: 'createmarket'
 
-  get 'markets/new'
+  get 'markets/new' => 'markets#new', as: 'newmarket'
 
-  get 'markets/edit'
+  get 'markets/:id/edit' => 'markets#edit', as: 'editmarket'
 
-  get 'markets/update'
+  patch 'markets/:id/update' => 'markets#update', as: 'updatemarket'
 
-  get 'markets/destroy'
+  delete 'markets/:id/destroy' => 'markets#destroy', as: 'destroymarket'
+
+  ################## Modify vendors information ###################
+
+  post 'markets/createvendor' => 'markets#createvendor', as: 'createvendor'
+
+  get 'markets/newvendor'
+
+  get 'markets/:id/editvendor' => 'markets#editvendor', as: 'editvendor'
+
+  patch 'markets/:id/updatevendor' => 'markets#updatevendor', as: 'updatevendor'
+
+  delete 'markets/:id/destroyvendor' => 'markets#destroyvendor', as: 'deletevendor'
+
+ ############## Modify Products information ####################
 
 
   get 'vendors/index'
@@ -33,7 +49,7 @@ Rails.application.routes.draw do
 
 
 
-  root to: 'general_users#index'
+  root to: 'general_users#index', as: 'index'
 
   get 'general_users/index' => 'general_users#index'
 
