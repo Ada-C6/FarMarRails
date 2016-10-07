@@ -18,13 +18,16 @@
 <h3>Vendors</h3>
 <%= link_to("Add a New Vendor", new_market_vendor_path(@market.id))%>
 
-<ul>
+<table>
+
 <% @vendors_list.each do |vendor| %>
-  <li><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%>
-    <%= link_to("Edit Vendor", edit_market_vendor_path(vendor.market_id, vendor.id))%>
-    <%= link_to("Delete Vendor", market_vendor_path(vendor.market_id, vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"})%>
-  </li>
+  <tr>
+    <td><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%></td>
+    <td><%= link_to("Edit Vendor", edit_market_vendor_path(vendor.market_id, vendor.id))%></td>
+    <td><%= link_to("Delete Vendor", market_vendor_path(vendor.market_id, vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"})%></td>
+  </tr>
 <% end %>
-</ul>
-<%= link_to("Return to list of All Markets", markets_path)%>
+</table>
+
+<h3><%= link_to("Return to list of All Markets", markets_path)%></h3>
 </body>
