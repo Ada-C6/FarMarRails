@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FarMarRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div id="wrap">
+<body>
+    <header>
+      <h1 class='top-title'> <%= link_to('FarMar Finder','/', id: 'top-home-link') %></h1>
+      <nav class='top-nav'>
+          <%= link_to('use as market', markets_home_path) %>
+          <%= link_to('use as vendor', vendors_home_path) %>
+          <%= link_to('use as guest', markets_index_path) %>
+      </nav>
+      <br class='clearfloat' />
+    </header>
+
+
+<div class='body-content'>
+<%= yield %>
+</div>
+<footer>
+  &copy; 2016 Jessica Chung & Lauren Fries Brink
+</footer>
+</body>
+</div>
+</html>

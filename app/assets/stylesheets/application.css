@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro';
+
+ /* ------all-site-styling---------*/
+
+ * {
+   font-family: 'Source Sans Pro', sans-serif;
+   color: #0A0908;
+ }
+
+ header {
+   background-image: url("farmers-market-local-produce-520.jpg");
+   height: 15vh;
+   background-repeat: no-repeat;
+   background-size: 100%;
+ }
+
+body {
+  background-color: #EAE0D5;
+ }
+
+ .body-content {
+  padding: 5vh 0 0 5vh;
+ }
+
+ a {
+  color: #22333B;
+
+ }
+
+ a:hover{
+   color: rgb(100, 134, 82);
+ }
+
+ h1 {
+   font-size: 3em;
+ }
+
+ h2 {
+   font-size: 2.5em;
+ }
+
+ h3 {
+   font-size: 2em;
+ }
+
+ h4 {
+   font-size: 1.75em;
+ }
+
+ h5 {
+   font-size: 1.5em;
+ }
+
+ h6 {
+   font-size: 1.25em;
+ }
+
+ ul {
+   padding-top: 0;
+   margin-top: 0;
+ }
+
+
+/* -------------top nav buttons---------*/
+ .top-nav {
+   float: right;
+   margin-top: 2vmin;
+   padding: 2vmin;
+ }
+
+ .top-nav *{
+   display: inline;
+   padding: 2vmin;
+   background-color: white;
+   border-radius: 5%;
+   border: 2px solid black;
+   margin: 0 1vw 0 1vw;
+   opacity: 0.65;
+   text-decoration: none;
+ }
+
+.top-nav a:hover{
+  opacity: 1
+}
+
+.top-title{
+  margin-bottom: 4vh;
+  padding: 5vh;
+  display: inline;
+
+ }
+
+#top-home-link {
+  padding-top: 3vh;
+  text-decoration: none;
+  color: white;
+
+}
+
+li {
+  margin-top: 2vh;
+}
+
+footer {
+  margin: 5vh 0 2vh 0;
+  text-align: center;
+}

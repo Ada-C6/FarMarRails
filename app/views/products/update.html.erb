@@ -1,0 +1,16 @@
+<article class='created-product'>
+
+  <h2>Product updated</h2>
+
+  <h4><%= Vendor.find(@product.vendor_id).name %></h3>
+
+  <h6>
+    <%= @product.name %>
+  </h6>
+
+  <nav>
+    <%= link_to("Back to Vendor", show_vendor_path(@product.vendor_id)) %>
+    <%= link_to("All Vendors", vendors_home_path) %>
+  </nav>
+
+</article>
