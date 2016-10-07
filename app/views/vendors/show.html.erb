@@ -1,0 +1,26 @@
+<div class="main-display">
+  <h2> <%= @vendor.name %></h2>
+
+
+<h5>At: <%= @market.name %> | Employees: <%= @vendor.num_employees %>
+</h5>
+<%= button_to "Edit Vendor", edit_market_vendor_path(market_id: @market.id, id: @vendor.id), method: :get%>
+<%= button_to "Delete Vendor", market_vendor_path(market_id: @market.id, id: @vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?" } %>
+</div>
+
+<h3> Products </h3>
+<ul>
+<% @vendor.products.each do |product| %>
+  <li><%= product.name %>
+  <%= link_to "Edit", edit_market_vendor_product_path(vendor_id: @vendor.id, id: product) %>
+  <%= link_to "Delete", market_vendor_product_path(vendor_id: @vendor.id, id: product), method: :delete, data: { confirm: "Are you sure you want to delete this product?" } %></li>
+<% end %>
+</ul>
+<%= button_to "Add New Product", new_market_vendor_product_path(vendor_id:@vendor.id), method: :get %>
+<h3>Sales</h3>
+<ul>
+  <li>
+    <%= link_to "See Sales", market_vendor_sales_path(vendor_id:@vendor.id) %>
+  </li>
+</ul>
+<%= button_to "Add a Sale", new_market_vendor_sale_path(market_id: @market.id, vendor_id: @vendor.id), method: :get %>

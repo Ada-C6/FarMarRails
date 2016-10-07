@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  # root 'user#index'
+  root 'site#index'
+  get 'market_portal' => 'site#market_portal', as: 'm_portal'
+  get 'vendor_portal' => 'site#vendor_portal', as: 'v_portal'
+
+  # resources :user, only: [:index] do
+    resources :markets do
+      resources :vendors, except: [:index] do
+        resources :products, except: [:index, :show]
+        resources :sales, except: [:destroy, :update, :edit, :show]
+      end
+    end
+  # end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

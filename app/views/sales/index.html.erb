@@ -1,0 +1,12 @@
+<h2>All Sales for <%= link_to @vendor.name, market_vendor_path(id: @vendor.id) %></h2>
+
+<%= render partial: "table", locals: { sales: @sales } %>
+
+
+<h3> Sales Total: <%= sprintf("$%0.02f",total_sales(@sales)/100.to_f) %></h3>
+
+<h2>Current Month Sales</h2>
+
+<%= render partial: "table", locals: { sales: @current_sales } %>
+
+<h3> Current Month Sales Total: <%= sprintf("$%0.02f",total_sales(@current_sales)/100.to_f) %></h3>

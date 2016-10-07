@@ -1,0 +1,12 @@
+<%# @TODO - add validations for model attributes & handle errors  %>
+<ul>
+<%= form_for [@vendor.market, @vendor, @product], method: http_method do |f| %>
+<li>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</li>
+<li>
+  <%= f.submit "Submit" %>
+</li>
+<% end %>
+</ul>

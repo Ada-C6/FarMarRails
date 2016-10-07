@@ -1,0 +1,6 @@
+<h2> Select Market Below </h2>
+<ul>
+  <% @markets.each do |market| %>
+    <li><%= link_to market.name, market_path(market) %> </li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<div class="main-display">
+  <h2> <%= @market.name %></h2>
+  <h5>
+    <%= @market.street_address %> | <%= @market.city %> | <%= @market.county %> | <%= @market.state %> | <%= @market.zip_code %>
+  </h5>
+  <%= button_to "Edit this Market", edit_market_path(@market), method: :get%>
+  <%= button_to "Delete Market", market_path(id: @market.id), method: :delete, data: { confirm: "Are you sure you want to delete this market?" } %>
+</div>
+
+<h3> Vendors </h3>
+<ul>
+<% @market.vendors.each do |vendor| %>
+  <li><%= link_to vendor.name, market_vendor_path(market_id: @market.id, id: vendor) %></li>
+<% end %>
+</ul>
+<%= button_to "Add New Vendor", new_market_vendor_path(@market), method: :get%>
