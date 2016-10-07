@@ -1,0 +1,48 @@
+<h3>This is a partial form for new and edit market views</h3>
+<h3>Please fill in market info here</h3>
+
+<% if @market.errors.any? %>
+  <ul class="errors">
+    <% @market.errors.each do |column, message| %>
+      <li>
+        <strong>
+          <%= column.capitalize %>
+        </strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @market, method: :patch do |f| %>
+  <p>
+    <%= f.label :name %>:
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %>:
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :city %>:
+    <%= f.text_field :city %>
+  </p>
+
+  <p>
+    <%= f.label :county %>:
+    <%= f.text_field :county %>
+  </p>
+
+  <p>
+    <%= f.label :state %>:
+    <%= f.text_field :state %>
+  </p>
+
+  <p>
+    <%= f.label :zip %>:
+    <%= f.text_field :zip %>
+  </p>
+
+  <%= f.submit "Submit" %>
+<% end %>
