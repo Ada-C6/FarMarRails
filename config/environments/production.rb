@@ -1,5 +1,6 @@
 Rails.application.configure do
 
+  # Added this to fix Heroku image issue
   config.serve_static_assets = true
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -31,6 +32,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # Changed this value to true to fix Heroku issue
   config.assets.compile = true
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
