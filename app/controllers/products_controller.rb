@@ -4,19 +4,25 @@ class ProductsController < ApplicationController
     @this_vendors_products = Product.where(vendor_id: this_vendor)
   end
 
-  def new; end
+  def new
+    this_vendor = Vendor.find(params[:id]).id
+    @new_product = Product.new(vendor_id: this_vendor)
+  end
 
-  def create_product
+  def create
     this_vendor = Integer(params[:id])
-    @this_product = Product.new
-    @this_product.vendor_id = this_vendor.id
-    @this_product.save
-    if @this_product.save
-      redirect_to vendor_products_new_path
+    @new_product = Product.new(vendor_id: this_vendor)
+    @new_product.save
+    if @new_product.update(product_params)
+      redirect_to vendor_products_path
     else
-      render :new_product
+      render :new
     end
   end
-end
 
-private
+  private
+
+  def product_params
+    params.require(:product).permit(:name)
+  end
+end

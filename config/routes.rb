@@ -20,12 +20,10 @@ Rails.application.routes.draw do
   get 'farmers/vendors/:id', to: 'vendors#show', as: 'vendor'
 
   get 'farmers/vendors/:id/products', to: 'products#index', as: 'vendor_products'
-
   get 'farmers/vendors/:id/products/new', to: 'products#new', as: 'products_new'
-  post 'vendors' => 'products#create'
+  post 'farmers/vendors/:id/products/new' => 'products#create'
 
-
-  get 'farmers/vendors/:id/sales', to: 'vendors#show_sales', as: 'vendor_sales'
+  get 'farmers/vendors/:id/sales', to: 'sales#index', as: 'vendor_sales'
 
 
 
