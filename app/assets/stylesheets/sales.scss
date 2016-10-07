@@ -1,3 +1,16 @@
 // Place all the styles related to the sales controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#bottom {
+  margin-top: 4vh;
+}
+
+#even-more-bottom {
+  margin: 3vmin 1vmin 3vmin 0;
+}
+
+#even-more-bottom a{
+  padding-right: 2vmin;
+  font-size: 1.25em;
+}
