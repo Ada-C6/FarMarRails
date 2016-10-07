@@ -3,8 +3,9 @@
 <ul>
   <% @this_vendors_sales.each do |s| %>
     <li><%= "#{s.amount}" %></li>
-    <%= total += s.amount %>
+
   <% end %>
 </ul>
 <h3>Total Sales:</h3>
+<% total += s.amount %>
 <%= total %>
