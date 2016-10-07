@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.name = params[:product][:name]
     @product.vendor_id = params[:product][:vendor_id]
-    @vendor.save
+    @product.save
 
     redirect_to show_vendor_path(@product.vendor_id)
   end

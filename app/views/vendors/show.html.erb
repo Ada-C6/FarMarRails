@@ -6,6 +6,9 @@
 
 <p>Vendor's Number of Employees: <%= @vendor.num_employees %></p>
 
+<%= link_to( 'Edit', edit_vendor_path(@vendor.id) ) %>
+<%= button_to 'delete', {action: "destroy", id: @vendor.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+
 <h2>List of vendor's products:</h2>
 
 <% @product_list.each do |product| %>

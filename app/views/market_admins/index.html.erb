@@ -6,6 +6,8 @@
   <p>
     <%= link_to "#{market.name}", show_market_path(market.id) %>
     <%= market.state %>
+      <%= link_to( 'Edit', edit_market_path(market.id) ) %>
+      <%= button_to 'delete', {action: "destroy", id: market.id }, method: :delete, data: {confirm: "Are you sure?"} %>
   </p>
   <% end %>
 </article>
