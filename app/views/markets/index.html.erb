@@ -5,11 +5,14 @@
 
 <h4><%= link_to("Add a New Market", new_market_path) %></h4>
 
+<table>
 
 <% @markets.each do |market| %>
-  <br><%= link_to("#{market.name}", market_path(market.id)) %>
-  <b><%= link_to "Edit Market Info", edit_market_path(market.id) %></b>
+<tr>
+<td><%= link_to("#{market.name}", market_path(market.id)) %> </td>
+  <td><%= link_to "Edit Market Info", edit_market_path(market.id) %></td>
 <% end %>
-
+</tr>
+</table>
 </body>
 </div>
