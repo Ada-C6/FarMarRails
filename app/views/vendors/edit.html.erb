@@ -1,12 +1,12 @@
 <section>
   <header>
-    <h1>Edit a Vendor</h1>
+    <h1>Edit a Product</h1>
   </header>
-  <%= form_for @vendor, url: update_path do |f| %>
+  <%= form_for @product, url: updateProduct_path do |f| %>
   <p>
     <%= render partial: 'form', locals: {:f => f} %>
     <div>
-      <%= f.submit 'Edit'%>
+      <%= f.submit 'Submit'%>
     </div>
   </p>
   <% end %>

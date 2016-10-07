@@ -1,8 +1,8 @@
 <section>
   <header>
-    <h1>Add a New Vendor</h1>
+    <h1>Add a New Product</h1>
   </header>
-  <%= form_for @vendor, url: create_path do |f| %>
+  <%= form_for @product, url: createProduct_path do |f| %>
   <p>
     <%= render partial: 'form', locals: {:f => f} %>
     <div>

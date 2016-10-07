@@ -4,46 +4,53 @@ class VendorsController < ApplicationController
   end
 
   def new
-    @vendor = Vendor.new
+    @product = Product.new
   end
 
 
   def create
     @params = params
-    @vendor = Vendor.new
-    @vendor.name = params[:vendor][:name]
-    @vendor.employee_num = params[:vendor][:employee_num]
-    @vendor.market_id = params[:vendor][:market_id]
 
-    @vendor.save
+    @product = Product.new
+    @product.name = params[:product][:name]
+    @product.vendor_id = params[:product][:id].to_i
 
-    redirect_to action: "index"
+    @product.save
+
+    redirect_to action: 'show', id:@product.vendor_id
 
   end
 
   def show
     @vendor = Vendor.find(params[:id].to_i)
+    @products = Product.all
+    @markets = Market.all
   end
 
   def edit
+    @product = Product.find(params[:id].to_i)
     @vendor = Vendor.find(params[:id].to_i)
   end
 
   def update
-    @vendor = Vendor.find(params[:id].to_i)
+    @product = Product.find(params[:id].to_i)
 
-    @vendor.name = params[:vendor][:name]
-    @vendor.employee_num = params[:vendor][:employee_num]
-    @vendor.market_id = params[:vendor][:market_id]
+    @product.name = params[:product][:name]
+    @product.vendor_id = params[:product][:vendor_id]
 
-    @vendor.save
+    @product.save
 
-    redirect_to action: "index"
+    redirect_to action: 'show'
   end
 
   def destroy
-    @vendor = Vendor.destroy(params[:id].to_i)
-    redirect_to action: "index"
+    @product = Product.destroy(params[:id].to_i)
+    redirect_to action: 'index'
+  end
+
+  def show_product
+    @product = Product.find(params[:id].to_i)
+    # @vendors = Vendor.all
   end
 
   private

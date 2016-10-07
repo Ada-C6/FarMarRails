@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'vendors' => 'vendors#index', as:'vendorindex'
+  get 'vendors' => 'vendors#index', as:'vendorIndex'
 
-  get 'vendors/new' => 'vendors#new', as: 'new'
+  get 'vendors/new' => 'vendors#new', as: 'newProduct'
 
-  get 'vendors/:id' => 'vendors#show', as: 'show'
+  get 'vendors/:id/show' => 'vendors#show', as: 'showVendor'
 
-  post 'vendors'  => 'vendors#create', as: 'create'
+  post 'vendors/create'  => 'vendors#create', as: 'createProduct'
 
-  get 'vendors/:id/edit' => 'vendors#edit', as: 'edit'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'editProduct'
 
-  patch 'vendors/:id' => 'vendors#update', as: 'update'
+  patch 'vendors/:id/update' => 'vendors#update', as: 'updateProduct'
 
-  delete 'vendors/:id' => 'vendors#destroy', as: 'delete'
+  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'deleteProduct'
 
+  get 'vendors/show_product/:id' => 'vendors#show_product', as: 'showProduct'
 
 
   root to: 'general_users#index'
