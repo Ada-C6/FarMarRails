@@ -19,8 +19,8 @@ CSV.read('seed_csvs/markets.csv').each do |line|
   market[:zip] = line[6]
 
   market.each do |key, value|
-    if value.nil?
-      value == key.to_s
+    if market[key].nil?
+      market[key] = key.to_s
     end
   end
 
@@ -34,6 +34,15 @@ CSV.read('seed_csvs/vendors.csv').each do |line|
   vendor[:num_employees] = line[2].to_i
   vendor[:market_id] = line[3].to_i
 
+
+    if vendor[:name].nil?
+      vendor[:name] = key.to_s
+    end
+
+    if vendor[:num_employees].nil?
+      vendor[:num_employees] = 0
+    end
+
   Vendor.create(vendor)
 end
 
@@ -41,6 +50,10 @@ CSV.read('seed_csvs/products.csv').each do |line|
   product = {}
   product[:name] = line[1]
   product[:vendor_id] = line[2].to_i
+
+  if product[:name].nil?
+    product[:name] = key.to_s
+  end
 
   Product.create(product)
 end
@@ -51,6 +64,14 @@ CSV.read('seed_csvs/sales.csv').each do |line|
   sale[:purchase_time] = DateTime.parse(line[2])
   sale[:vendor_id] = line[3].to_i
   sale[:product_id] = line[4].to_i
+
+  if sale[:amount].nil?
+    sale[:amount] = 0
+  end
+
+  if sale[:purchase_time].nil?
+    sale[:purchase_time] = Time.now.utc
+  end
 
   Sale.create(sale)
 end
