@@ -1,3 +1,5 @@
+<!-- TODO: Refactor to move Ruby code to Model or Controller as appropriate -->
+
 <h3><%= @vendor.name %></h3>
 
 <p>Product list</p>
@@ -10,4 +12,16 @@
 
 <p>Sales</p>
 
-<%= link_to("All Sales", vendor_sales_path) %>
+Total Sales:
+<% total_sales = 0 %>
+<% @sales.each do |sale| %>
+  <% total_sales += sale[:amount] %>
+<% end %>
+
+<% if total_sales != 0.to_i %>
+  $<%= add_decimal(total_sales)%></p>
+<% else %>
+  <%= " N/A"%>
+<% end %>
+
+<p><%= link_to("All Sales List", vendor_sales_path) %></p>
