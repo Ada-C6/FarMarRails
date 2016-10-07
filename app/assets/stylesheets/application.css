@@ -68,6 +68,11 @@ li {
   margin: 0 auto;
 }
 
+
 .product-table {
   text-align: left;
+}
+
+.all-markets {
+  text-align: center;
 }

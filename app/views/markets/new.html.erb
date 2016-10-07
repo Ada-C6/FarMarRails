@@ -11,7 +11,7 @@
 <%= f.label :county %>
 <%= f.text_field :county %>
 <%= f.label :state %>
-<%= select_tag :state, options_for_select(us_states) %>
+<%= f.select :state, options_for_select( us_states) %>
 <%= f.label :zip %>
 <%= f.text_field :zip%>
 <%= f.submit%>

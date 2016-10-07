@@ -1,16 +1,20 @@
 <div class="overall-header-text">
   <h1> <%=@market.name%></h1>
 </div>
-<%= button_to "Add A New Vendor", [:new, @market, @vendor], method: :get%>
+<%= link_to "Add A New Vendor", [:new, @market, @vendor], method: :get%>
 <div >
   <h2> List of Vendors</h2>
 </div>
-<ul>
-  <li> <%@market.vendors.all.each do |vendor|%>
-      Vendor <%=vendor.name%>
-      <%= button_to "Edit" , [:edit, @market, @vendor], method: :get%>
-      <%= button_to "Delete This Vendor", market_vendor_path(@market, vendor), method: :delete, data: { confirm: "Are you really sure?" } %>
 
-      <%end%>
-  </li>
-</ul>
+<table class="list-of-markets">
+  <tbody>
+    <tr>
+      <%@market.vendors.all.each do |vendor|%>
+      <td>  Vendor <%=vendor.name%>  </td>
+      <td>   <%= link_to "Edit" , [:edit, @market, @vendor], method: :get%>  </td>
+      <td> <%= link_to "Delete", market_vendor_path(@market, vendor), method: :delete, data: { confirm: "Are you really sure?" } %>   </td>
+
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,13 +1,17 @@
 <div class="overall-header-text">
   <h1>List of Markets</h1>
 </div>
+<p>
+<%= link_to "Add New Market", new_market_path, method: :get%>
+</p>
+<table class="list-of-markets">
+  <tbody>
+    <tr>
+      <% @market.all.each do |market| %>
+      <td><%= link_to "#{market.name}", market_path(market) %> </td>
+      <td><%= link_to "Edit", edit_market_path(market), method: :get%></td>
 
-
-<%= button_to "Add New Market", new_market_path, method: :get%>
-<ul>
-  <% @market.all.each do |market| %>
-  <li class="list-of-markets">
-    <%= link_to "#{market.name}", market_path(market) %> <%= button_to "Edit", edit_market_path(market), method: :get%>
-    </li>
+    </tr>
     <% end %>
-  </ul>
+  </tbody>
+</table>

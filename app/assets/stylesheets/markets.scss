@@ -2,14 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "font-awesome";
-
-.fa-pencil-square-o{
-  display: block;
-  padding-top: 6vh;
-color: #009900;
-padding-left: 2vw;
-}
-.fa-pencil-square-o:hover{
-  color: #009905;
+.list-of-markets {
+  text-align: left;
+  margin: 0 auto;
+  
 }
