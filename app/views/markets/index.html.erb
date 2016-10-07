@@ -1,0 +1,8 @@
+<section>
+<% @markets.each do |market| %>
+  <p>
+    <%= link_to(market.name, show_markets_path(market.id))%>
+    <%= "| #{market.city}, #{market.state}" %>
+  </p>
+<% end %>
+</section>

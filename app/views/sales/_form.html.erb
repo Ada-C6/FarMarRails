@@ -1,0 +1,17 @@
+
+<div class="form">
+<%= form_for @sale, url: action_name do |f| %> <%# could have - method: @method - before url to specify the method PUT via a variable created in controller%>
+
+  <div class="field">
+    <%= f.label :amount %> <!-- title is the name of the instance varaible to name this with -->
+    <%= f.number_field :amount, :amount => nil, :required => true, class: :text_field, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= f.label :purchase_time %> 
+    <%= f.datetime_field :purchase_time, :purchase_time => nil, :required => true %>
+  </div>
+
+  <%= f.submit action_name, class: 'submit_btn' %>
+<% end %>
+</div>

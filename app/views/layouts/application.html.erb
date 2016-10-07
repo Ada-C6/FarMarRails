@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FarMar</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>FarMar: The Farmening</h1>
+    <nav>
+      <ul>
+        <li><%= link_to "Home/Change User", root_path %></li>
+      </ul>
+    </nav>
+  </header>
+
+<%= yield %>
+
+</body>
+</html>

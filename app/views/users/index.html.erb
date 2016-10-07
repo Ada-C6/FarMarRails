@@ -1,0 +1,9 @@
+<h2>Login as:</h2>
+
+<%# link_to "Guest", show_user_path(type: "guest"), :class => 'homepage_button'  %>
+<%# link_to "Market", show_user_path(type: "market") %>
+<%# link_to "Vendor", show_user_path(type: "vendor") %>
+
+<%= button_to "Guest", show_users_path(type: "guest"), method: :get, :class => 'homepage_button' %>
+<%= button_to "Market", show_users_path(type: "market"), method: :get, :class => 'homepage_button'  %>
+<%= button_to "Vendor", show_users_path(type: "vendor"), method: :get, :class => 'homepage_button'   %>

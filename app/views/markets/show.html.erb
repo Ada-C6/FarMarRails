@@ -1,0 +1,32 @@
+<section>
+  <h1><%= @market.name %></h1>
+  <p><%= "#{@market.address}" %>
+  <br>
+  <%= "#{@market.city}, #{@market.state} #{@market.zip}" %>
+  <br>
+  <%= "#{@market.county} County" %></p>
+</section>
+
+<% if @user == "market" %>
+  <section class="new_aside">
+    <h3>Add a new vendor: </h3>
+    <%= button_to "New Vendor", new_vendors_path(market_id: @market.id), method: :get, class: 'btn' %>
+  </section>
+<% end %>
+
+<section>
+  <h3>Vendors at this market:</h3>
+  <% @vendors.each do |vendor| %>
+    <p><%= link_to(vendor.name, show_vendors_path(vendor.id))%></p>
+
+    <% if @user == "market" %>
+      <%= button_to "Edit", edit_vendors_path(id: vendor.id, market_id: @market.id), method: :get, class: 'btn' %>
+      <%= button_to "Remove", delete_vendors_path(id: vendor.id), method: :delete, class: 'btn', data: { confirm: "Are you sure you want to delete this Vendor from your Market? This action cannot be undone." } %>
+
+    <% end %>
+
+
+  <% end %>
+</section>
+
+<%= params %>

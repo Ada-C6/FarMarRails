@@ -1,0 +1,13 @@
+<section>
+  <h2><%= @vendor.name %></h2>
+  <p><%= "Number of employees: #{@vendor.no_employees} " %></p>
+</section>
+
+<section>
+  <h3>Products at this vendor:</h3>
+  <% @products.each do |product| %>
+    <p><%= product.name %></p>
+  <% end %>
+</section>
+
+<%= params %>

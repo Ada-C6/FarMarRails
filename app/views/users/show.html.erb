@@ -1,0 +1,42 @@
+<% if @user == "market" %>
+  <section class="new_aside">
+    <h2>Add a new market: </h2>
+    <%= button_to "New Market", new_markets_path, method: :get, class: 'btn' %>
+  </section>
+<% end %>
+
+<section>
+
+  <% if @user == "market" %>
+      <h2>Active markets: </h2>
+      <% @markets.each do |market| %>
+        <p>
+          <%= link_to(market.name, show_markets_path(market.id, @user))%>
+          <%= "| #{market.city}, #{market.state}" %>
+        </p>
+        <%= button_to "Edit", edit_markets_path(id: market.id), method: :get, class: 'btn' %>
+        <%= button_to "Remove", delete_markets_path(id: market.id), method: :delete, class: 'btn', data: { confirm: "Are you sure you want to delete this Vendor from your Market?" } %>
+      <% end %>
+
+  <% elsif @user == "guest"  %>
+      <h2>Active markets: </h2>
+      <% @markets.each do |market| %>
+        <p>
+          <%= link_to(market.name, show_markets_path(market.id, @user))%>
+          <%= "| #{market.city}, #{market.state}" %>
+        </p>
+      <% end %>
+
+  <% elsif @user == "vendor"  %>
+
+    <h2>Active vendors: </h2>
+    <% @vendors.each do |vendor| %>
+      <p>
+        <%= link_to(vendor.name, index_vendors_path(vendor.id))%>
+      </p>
+    <% end %>
+  <% end %>
+
+</section>
+
+<%= params %>

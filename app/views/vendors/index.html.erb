@@ -1,0 +1,22 @@
+
+<section>
+  <h1><%= @vendor.name %></h1>
+  <p><%= "Number of employees: #{@vendor.no_employees} " %></p>
+</section>
+
+<section>
+  <h3>Your current products:</h3>
+  <% @products.each do |product| %>
+    <p><%= product.name%></p>
+  <% end %>
+  <%= button_to "Manage Products", index_products_path(id: @vendor.id), method: :get, class: 'btn' %>
+</section>
+
+<section>
+  <h3>Your total sales:</h3>
+  <%= to_dollars(@revenue) %>
+  <%= button_to "Manage Sales", index_sales_path(id: @vendor.id), method: :get, class: 'btn' %>
+</section>
+
+
+<%= params %>

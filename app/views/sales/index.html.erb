@@ -1,0 +1,18 @@
+<section>
+  <h2><%= "#{@vendor.name} Sales" %></h2>
+</section>
+
+<h3>Add a new sale: </h3>
+<%= button_to "New Sale", new_sales_path(vendor_id: @vendor.id), method: :get, class: 'btn' %>
+
+<section>
+  <h3>Your sales:</h3>
+  <%# @sales.each do |sale| %>
+    <p><%# "Amount: #{to_dollars(sale.amount)}" %></p>
+    <p><%# "Purchase time: #{sale.purchase_time}" %></p>
+    <p><%# "Purchase time: #{sale.purchase_time}" %></p>
+
+  <%# end %>
+</section>
+
+<%= params %>
