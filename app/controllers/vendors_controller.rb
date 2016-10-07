@@ -16,7 +16,12 @@ class VendorsController < ApplicationController
   def show
     find_all
     @vendor = find_vendor
-    @market = Market.find(@vendor.market_id).name
+
+    if @vendor.market_id == 0
+      @market = "This vendor has no Market"
+    else
+      @market = Market.find(@vendor.market_id).name
+    end
 
     @total_sales = 0
     @sales.each do |sale|

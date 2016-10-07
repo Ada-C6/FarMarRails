@@ -1,8 +1,4 @@
-<h1>Welcome Market Admin!</h1>
-
-<section>
-    <p><%= link_to( 'Create a new Market!', new_market_path ) %></p>
-</section>
+<%= render partial: "market_vendor_header" , locals: { action_name: "get"}%>
 
 <h2>Here is a list of all markets:</h2>
 <% @markets.each do |market| %>

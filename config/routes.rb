@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get 'far_mar/index' => 'far_mar#index', as: 'index'
 
+  get 'far_mar/admin_home' => 'far_mar#admin_home', as: 'admin_home'
+
+  get 'far_mar/vendor_home' => 'far_mar#vendor_home', as: 'vendor_home'
+
   #################################
 
   get 'market_admins/index' => 'market_admins#index', as: 'market_admins'
