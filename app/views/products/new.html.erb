@@ -1,0 +1,7 @@
+<h1>New Product for Vendor</h1>
+
+<%= form_for @new_product, :url => {method: :post} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Add Product" %>
+<% end %>
