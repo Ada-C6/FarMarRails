@@ -149,6 +149,7 @@ th {
 td {
   padding: 0 1rem 0 1rem;
   font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
 }
 
 .form {
@@ -263,4 +264,9 @@ td {
 .sale-display {
   margin: .7rem 0 0 0;
   width: 36rem;
+
+}
+
+.sale-display th {
+  width: calc(100%/3);
 }
