@@ -16,6 +16,7 @@
 html {
   background-color: #5DA399;
   font-family: 'Lato', sans-serif;
+  color: #FFFFFF;
 }
 
 header {
@@ -87,4 +88,13 @@ a {
 /*The link hover color works well for both the main page background and the nav backgroung*/
 a:hover {
   color: #BACEB7;
+}
+
+input, #sale_product_id {
+  background-color: #016572;
+  color: #FFFFFF;
+  border: 0px transparent;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2px;
 }
