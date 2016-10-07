@@ -3,6 +3,11 @@
 Welcome to the vendor portal!
 
 <h3>Here's a list of our vendors: </h3>
+
+<table>
 <% @vendors.each do |vendor| %>
-  <br><%= link_to("#{vendor.name}", vendor_products_path(vendor.id)) %>
+<tr>
+  <td><%= link_to("#{vendor.name}", vendor_products_path(vendor.id)) %></td>
 <% end %>
+</tr>
+</table>

@@ -94,6 +94,11 @@ td a {
   padding: 10px;
 }
 
+.vendor_table {
+  display: block;
+  width: 70%;
+}
+
 /*div {
   background-image: url("farmar_bg.jpg");
   background-size: 99%;
