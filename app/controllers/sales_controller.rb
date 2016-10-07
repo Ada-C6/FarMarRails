@@ -9,7 +9,7 @@ class SalesController < ApplicationController
     @sale.product_id = @product.id
     @vendor = Vendor.find(params[:vendor_id])
     @sale.vendor_id = @vendor.id
-    @sale.purchase_time = Time.now
+    @sale.purchase_time = Time.now.utc
     if @sale.save
       redirect_to vendor_path(@vendor)
     else

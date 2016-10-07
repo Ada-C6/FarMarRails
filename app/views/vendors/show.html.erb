@@ -11,8 +11,13 @@
   </p>
 <h2>Sales:</h2>
 <p>
+  Current month sales: $<%= sales_sum_month(sales_month(@vendor)) %>
+  ($<%= sales_sum(@vendor) %> to date)
   <%= link_to "Total sales", vendor_sales_path(@vendor) %>
-  ($<%= sales_sum(@vendor) %>)
+</p>
+
+<p>
+  <%=  %>
 </p>
 
   <h2>Products:</h2>

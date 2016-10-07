@@ -1,9 +1,14 @@
-<h2>Sales for <%= @vendor.name %></h2>
+<h2><%= @vendor.name %></h2>
+<h3>Current month sales:</h3>
+<% sales_month(@vendor).each do |sale| %>
+  <%= display_sales(sale) %>
+<% end %>
+<h3>All sales:</h3>
 <ul>
-<% @vendor.sales.each_with_index do |sale, i| %>
+<% @vendor.sales.each do |sale| %>
 <li>
-  <%= sale.purchase_time.strftime("%H:%M %Y-%m-%d") %>:
-  <%=   sale.amount %>cents
+  <%= display_sales(sale) %>
+
 </li>
 <% end %>
 </ul>
