@@ -1,4 +1,20 @@
 
+table {
+  display: block;
+  margin-left: 20%;
+}
+
+.product-index-table {
+  margin-left: 30%;
+}
+
+.vendor-index-table {
+  margin-left: 35%;
+}
+
+.sales-index-table {
+  margin-left: 33%;
+}
 
 h1 {
   text-align: center;

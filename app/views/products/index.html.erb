@@ -4,11 +4,11 @@
 
 <h2>Product list</h2>
 
-<table>
+<table class="product-index-table">
 
 <% @product_list.each do |product| %>
 <tr>
-  <td><%= product[:name] %> </td>
+  <td><b><%= product[:name] %> </b></td>
   <td><%= link_to("Edit ", edit_vendor_product_path(product[:vendor_id], product[:id]))%> </td>
   <td><%= link_to("Delete", vendor_product_path(product[:vendor_id], product[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this product?"}) %></td>
   <td><%= link_to("New Sale", new_vendor_product_sale_path(@vendor.id, product.id))%></td>
@@ -48,4 +48,4 @@
   <%= " N/A"%></p>
 <% end %>
 
-<p><%= link_to("Sales Lists", vendor_sales_path) %></p>
+<h3><%= link_to("View All Sales by Product", vendor_sales_path) %></h3>
