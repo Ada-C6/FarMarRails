@@ -1,1 +1,7 @@
-<h1>Vendor Index View, woo hoo!</h1>
+<h2>Please select which vendor you are to see all of your options:</h2>
+
+<% @vendors.each do |v| %>
+    <p>
+        <%= link_to(v.name, vendor_path(v[:id])) %>
+    </p>
+    <% end %>

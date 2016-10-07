@@ -1,0 +1,7 @@
+<h3>Vendor: <%= @product.vendor.name %></h3>
+
+<h1>EDIT THIS PRODUCT:</h1>
+
+<%= render(partial: 'form', locals: { local_url: vendor_product_path(@product.vendor, @product) }) %>
+
+<%= link_to 'or, go back', vendor_path(@product.vendor) %>
