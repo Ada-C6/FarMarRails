@@ -1,7 +1,11 @@
 <h1>Vendor: <%= "#{ @vendor.name }" %></h1>
 
-<h2><%= link_to("Your products...", vendor_products_path(@vendor.id)) %></h2>
-<h2><%= link_to("Your sales...", vendor_sales_path(@vendor.id)) %></h2>
-
+<h2>Your products...</h2>
+<h4>make: create a product link.</h4>
+<% @products.each do |prod| %>
+    <p>
+        <%= "#{ prod.name }" %>
+    </p>
+<% end %>
 
 <%= link_to 'or, go back', vendors_path %>
