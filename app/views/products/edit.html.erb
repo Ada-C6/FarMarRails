@@ -1,0 +1,8 @@
+<h1>Edit Product Name</h1>
+
+<%= form_for @this_vendors_products, :url => { method: :patch } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Save Changes" %>
+  <% end %>

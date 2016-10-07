@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get 'farmers/vendors/:id/products', to: 'products#index', as: 'vendor_products'
   get 'farmers/vendors/:id/products/new', to: 'products#new', as: 'products_new'
   post 'farmers/vendors/:id/products/new' => 'products#create'
+  get 'farmers/vendors/:vendor_id/products/:id/edit', to: 'products#edit', as: 'edit_product'
+  patch 'farmers/vendors/:vendor_id/products/:id/edit' => 'products#update'
+  delete 'farmers/vendors/:vendor_id/products/:id' => 'products#destroy', as: 'delete_product'
 
   get 'farmers/vendors/:id/sales', to: 'sales#index', as: 'vendor_sales'
 

@@ -20,6 +20,26 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+    @this_vendors_products = Product.find(params[:id])
+  end
+
+  def update
+    @this_vendors_products = Product.find(params[:id])
+
+    if @this_vendors_products.update(product_params)
+      redirect_to vendor_products_path(params[:vendor_id])
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @this_vendors_products = Product.find(params[:id]).destroy
+    redirect_to vendor_products_path(params[:vendor_id])
+  end
+
+
   private
 
   def product_params
