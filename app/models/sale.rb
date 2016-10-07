@@ -4,7 +4,6 @@ class Sale < ActiveRecord::Base
 
   validates :product_id, presence: true, numericality: true
   validates :vendor_id, presence: true, numericality: true
-  validates :name, presence: true
   validates :purchase_time, presence: true
   validates :amount, presence: true, numericality: true
 end
