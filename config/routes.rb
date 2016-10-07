@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :vendors, only: [:index, :show] do
       resources :products, except: [:show] do
-          resources :sales, only: [:new]
+          resources :sales, only: [:new, :create]
       end
       resources :sales, only: [:index]
   end
