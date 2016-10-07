@@ -2,9 +2,9 @@
   <nav>
 
     <h1>
-      <%= link_to "FarMar  ", root_path, class: "page-link" %>
-      <%= link_to "Vendors ", vendors_path, class: "page-link" %>
-      <%= link_to "#{@vendor.name} / ", vendor_path(@vendor.id), class: "page-link" %>
+      <%= link_to "FarMar", root_path, class: "page-link" %>
+      <%= link_to "Vendors", vendors_path, class: "page-link" %>
+      <%= link_to "#{@vendor.name}", vendor_path(@vendor.id), class: "page-link" %>
     </h1>
     <h2 class="user-header">Sales</h2>
   </nav>
@@ -22,14 +22,14 @@
 <table class="sale-display">
   <tr>
     <th>Product</th>
-    <th>Amount in USD</th>
-    <th>Purchase Time</th>
+    <th>Amount</th>
+    <th>Purchase Date</th>
     <th></th>
   </tr>
   <tr>
     <td><%= sale.product.name %></td>
-    <td><%= sale.amount/100 %></td>
-    <td><%= sale.purchase_time %></td>
+    <td><%= dollar_format(sale.amount) %></td>
+    <td><%= human_readable_time(sale.purchase_time) %></td>
   </tr>
   <tr>
   </tr>

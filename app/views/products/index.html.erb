@@ -24,7 +24,7 @@
       <%= link_to new_vendor_product_sale_path(vendor_id: product.vendor_id,
         product_id: product.id),
         method: :get,
-        class: 'page-link',
+        class: 'page-link-icon',
         aria: {label: "Add a Sale"}  do %>
         <i class="fa fa-usd fa-lg" aria-hidden="true"></i>
       <% end %>
@@ -33,7 +33,7 @@
       <li><%= link_to edit_vendor_product_path(vendor_id: product.vendor_id,
         id: product.id),
         method: :get,
-        class: 'page-link',
+        class: 'page-link-icon',
         aria: {label: "Edit Product"}  do %>
         <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
       <% end %>
@@ -42,7 +42,7 @@
       <li><%= link_to vendor_product_path(vendor_id: product.vendor_id,
         id: product.id),
         method: :delete,
-        class: 'page-link',
+        class: 'page-link-icon',
         aria: {label: "Delete Product"},
         data: {confirm: "Are you sure you want to delete permanently?"} do %>
         <i class="fa fa-trash fa-fw fa-lg" aria-hidden="true"></i>
