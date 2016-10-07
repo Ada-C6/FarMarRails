@@ -1,13 +1,13 @@
-<%# @TODO - Time.zone = "Pacific Time (US & Canada)" %>
+<%# @TODO - could add time zone with line: Time.zone = "Pacific Time (US & Canada)" %>
 <%# @TODO - add validations for model attributes & handle errors  %>
 <%= form_for [@vendor.market, @vendor, @sale], method: http_method do |f| %>
 <ul>
   <li>
     <%= f.label :product_id %>
-    <%= f.select :sale, :product_id, @products_selection_array %>
+    <%= f.select :product_id, @products_selection_array %>
   </li>
   <li>
-    <%= f.label :amount %>
+    <%= f.label :amount, "Amount " %>
     <%= f.text_field :amount %>
   </li>
   <li>
