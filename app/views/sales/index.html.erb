@@ -1,4 +1,4 @@
-<h2>All Sales for <%= @vendor.name %></h2>
+<h2>All Sales for <%= link_to @vendor.name, market_vendor_path(id: @vendor.id) %></h2>
 <table>
   <tr>
     <td> Product </td>
