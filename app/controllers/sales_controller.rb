@@ -12,6 +12,8 @@ class SalesController < ApplicationController
 
   def new
     @sale = Sale.new
+    @vendor = Vendor.find(params[:vendor_id])
+    @product = Product.find(params[:product_id])
   end
 
   def create

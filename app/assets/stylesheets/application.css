@@ -195,6 +195,9 @@ td {
 
 .form-header h1 {
   margin-top: 8%;
+  font-size: 2rem;
+  text-shadow: 2px 0 0 rgba(0, 0, 0, 0.51);
+
 }
 
 .edit-markets {

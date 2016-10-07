@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @vendor = Vendor.find(params[:vendor_id])
   end
 
 
@@ -27,6 +28,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @vendor = Vendor.find(params[:vendor_id])
   end
 
   def update
