@@ -1,4 +1,21 @@
+
 Rails.application.routes.draw do
+  root 'homes#index'
+  get 'homes/show_markets' => 'homes#show_markets'
+  get 'homes/:id' => 'homes#show', as: 'single_market'
+
+
+  resources :markets do
+    resources :vendors, except: [:index, :show]
+  end
+  resources :vendors, only: [:index, :show] do
+      resources :products do
+        resources :sales, only: [:new, :show, :create]
+      end
+      resources :sales, only: [:show]
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

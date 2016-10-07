@@ -1,0 +1,23 @@
+<% if @sale.errors.any? %>
+<ul>
+  <% @sale.errors.each do |column, message| %>
+  <li>
+    <%= column %>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for [@sale.product.vendor, @sale.product, @sale] do |f| %>
+
+<%= f.label :product_id %>
+<%= f.text_field :product_id %>
+<%= f.label :amount %>
+<%= f.text_field :amount %>
+
+<%= f.hidden_field :purchase_time, :value => Time.now %>
+
+<%= f.submit "Sell Now" %>
+<% end %>

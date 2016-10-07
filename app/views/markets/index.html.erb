@@ -1,0 +1,19 @@
+<h3>Which market are you?</h3>
+
+<h4><%= link_to "Can't find yourself? Create a new Market", new_market_path %> </h4>
+
+<% @markets.each do |market| %>
+<ul>
+
+  <li><%= link_to "#{market.name}", market_path(market) %>
+    <%= link_to "Edit", edit_market_path(market) %>
+
+
+
+
+  </li>
+
+
+
+</ul>
+<% end %>

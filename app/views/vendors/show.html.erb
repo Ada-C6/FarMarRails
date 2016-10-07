@@ -1,0 +1,44 @@
+<h3><%= "#{@vendor.name} details:" %></h3>
+
+<h4>Info</h4>
+<p>
+  <%= "Market: #{@market.name}"%><br>
+  <%= "Number of employees: #{@vendor.num_employees}" %><br>
+</p>
+
+<h4>Products</h4>
+
+  <% @products.each do |product| %>
+  <ul>
+  <li><%= product.name %></li> <%= link_to "Edit product", edit_vendor_product_path(@vendor, product) %>
+  <%= link_to "Delete product", vendor_product_path(@vendor, product), method: 'delete', data: {confirm: "BURNINATE?"} %>
+  <%= link_to "Sell this product", new_vendor_product_sale_path(@vendor, product) %>
+</ul>
+  <% end  %>
+
+  <p>
+    <%= link_to "Add a new product", new_vendor_product_path(@vendor) %>
+  </p>
+
+<h4>Sale log</h4>
+
+<ol>
+  <% @sales.each do |sale| %>
+  <li><%= link_to "#{sale.purchase_time.to_formatted_s(:long_ordinal)}", vendor_sale_path(@vendor, sale) %></li>
+
+  <% end %>
+</ol>
+
+<p><%= "Total Sales Amount: #{@vendor.sales_total}" %></p>
+<p>
+  <h4>Sales This Month:</h4>
+  <ol>
+      <% @vendor.sales_this_month(@vendor.get_current_month).each do |sale| %>
+      <li><%= link_to "#{sale.purchase_time.to_formatted_s(:long_ordinal)}", vendor_sale_path(@vendor, sale) %></li>
+    <% end %>
+  </ol>
+
+</p>
+<p>
+  <%= "Total Amount this month: #{@vendor.sales_total_current_month(@vendor.get_current_month)}" %>
+</p>

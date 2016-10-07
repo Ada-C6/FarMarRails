@@ -1,0 +1,9 @@
+<h3>Sale details:</h3>
+<p>
+  <%= "Amount: #{@sale.amount}" %><br>
+  <%= "Vendor id: #{ @sale.vendor_id }" %><br>
+  <%= "Product id: #{ @sale.product_id }" %><br>
+  <%= "Purchase Time: #{@sale.purchase_time}" %><br>
+
+  <%= link_to "Back to vendor", vendor_path(@sale.vendor) %>
+</p>

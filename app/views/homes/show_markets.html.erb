@@ -1,0 +1,10 @@
+<h3>Here are all the markets you can visit</h3>
+
+<% @markets.each do |m| %>
+<ul>
+
+  <li><%= link_to "#{m.name}", single_market_path(m) %></li>
+
+</ul>
+
+<% end %>
