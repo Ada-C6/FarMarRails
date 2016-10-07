@@ -8,4 +8,5 @@ You're here because you are a market. Yay!
 
 <% @markets.each do |market| %>
   <br><%= link_to("#{market.name}", market_path(market.id)) %>
+  <b><%= link_to "Edit Market Info", edit_market_path(market.id) %></b>
 <% end %>
