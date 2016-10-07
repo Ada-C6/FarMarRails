@@ -1,4 +1,4 @@
-<h2>Sales for <%= @vendor.name %></h2>
+<h2>All Sales for <%= @vendor.name %></h2>
 <table>
   <tr>
     <td> Product </td>
@@ -14,4 +14,22 @@
   <% end %>
 </table>
 
-<h3> Total Sales: <%= sprintf("$%0.02f",total_sales/100.to_f) %></h3>
+<h3> Total Sales: <%= sprintf("$%0.02f",total_sales(@sales)/100.to_f) %></h3>
+
+<h2>Current Month Sales</h2>
+<table>
+  <tr>
+    <td> Product </td>
+    <td> Amount </td>
+    <td> Sale Time </td>
+  </tr>
+  <% @current_sales.each do |sale| %>
+  <tr>
+    <td><%= product_name(sale) %></td>
+    <td><%= sprintf("$%0.02f", sale.amount/100.to_f) %></td>
+    <td><%= sale.purchase_time %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h3> Total Sales: <%= sprintf("$%0.02f",total_sales(@current_sales)/100.to_f) %></h3>
