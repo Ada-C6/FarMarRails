@@ -9,10 +9,12 @@
 <h2> Vendors in this Market: </h2>
   <ul>
     <% @allvendors.each do |ven| %>
-      <% if @market[:id] == ven.market_id %>
-        <li><%= ven.name %></li>
-      <% end %>
+      <li><%= ven.name %></li>
+        <ul>
+          <% ven.products.each do |product| %>
+            <li><%= product.name %></li>
+          <% end %>
+        </ul>
     <% end %>
-
   </ul>
 </section>
