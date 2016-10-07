@@ -8,7 +8,7 @@
     <br />Market: <%= @vendor.market.name %>
 
     <h3>Product list</h3>
-    <table>
+    <table class="product-table">
       <tbody>
         <tr>
           <% @vendor.products.all.each do |product| %>
@@ -60,7 +60,6 @@
     <% if monthly_sales.count == 0 %>
       <p>This vendor has no sales this month</p>
     <% else %>
-    <!-- Something about going through monthly_sales and looking for this month -->
       <table>
         <thead>
           <tr>
