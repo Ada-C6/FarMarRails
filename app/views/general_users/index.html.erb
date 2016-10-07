@@ -1,4 +1,9 @@
 <h1>Markets</h1>
+  <nav>
+    <ul>
+      <li> <%= button_to "Vendor Account", vendorIndex_path, method: :get  %></li>
+    </ul>
+  </nav>
 <article>
   <% @allmarkets.each do |ea_market| %>
     <h2><%= link_to ea_market.name, showmarket_path(ea_market.id) %></h2>

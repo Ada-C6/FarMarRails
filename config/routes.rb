@@ -31,21 +31,21 @@ Rails.application.routes.draw do
  ############## Modify Products information ####################
 
 
-  get 'vendors/index'
+  get 'vendors' => 'vendors#index', as:'vendorIndex'
 
-  get 'vendors/show'
+  get 'vendors/new' => 'vendors#new', as: 'newProduct'
 
-  get 'vendors/edit'
+  get 'vendors/:id/show' => 'vendors#show', as: 'showVendor'
 
-  get 'vendors/update'
+  post 'vendors/create'  => 'vendors#create', as: 'createProduct'
 
-  get 'vendors/new'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'editProduct'
 
-  get 'vendors/create'
+  patch 'vendors/:id/update' => 'vendors#update', as: 'updateProduct'
 
-  get 'vendors/destory'
+  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'deleteProduct'
 
-
+  get 'vendors/show_product/:id' => 'vendors#show_product', as: 'showProduct'
 
 
 
