@@ -1,3 +1,5 @@
+<h3>Vendor: <%= @vendor.name %></h3>
+
 <h1>CREATE A NEW PRODUCT:</h1>
 
 <%= render(partial: 'form', locals: { local_url: vendor_products_path(@vendor_id) }) %>

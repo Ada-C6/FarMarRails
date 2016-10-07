@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
     def new
         @product = Product.new
         @vendor_id = params[:vendor_id]
+        @vendor = Vendor.find(@vendor_id)
     end
 
     def create
