@@ -1,10 +1,12 @@
-<h3><%= Vendor.find(@products[0].vendor_id).name %>'s Products</h3>
-<h4>Market: <%= Market.find(@products[0].vendor_id).name %></h4>
+<head>
+  <title><% @page_name = Vendor.find(@products[0].vendor_id).name + "'s Products"%></title>
+</head>
+<h4 class='name-title'>Market: <%= Market.find(@products[0].vendor_id).name %></h4>
 
-<table>
+<table class='table-product'>
   <tr>
     <th>Product Name</th>
-    <th>Actions</th>
+    <th class="table-product-action">Actions</th>
   </tr>
   <% @products.each do |product| %>
   <tr>

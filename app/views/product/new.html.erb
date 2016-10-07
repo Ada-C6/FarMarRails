@@ -1,5 +1,8 @@
-<h3><%= Vendor.find(params[:vendor_id]).name %></h3>
+<head>
+  <title><% @page_name = Vendor.find(params[:vendor_id]).name %></title>
+</head>
 
-<h4>Add new product</h4>
+<h4 class='name-title'>Add new product</h4>
+
 
 <%= render partial: "product_form", locals: {path: vendor_product_index_path, http_method: :post} %>

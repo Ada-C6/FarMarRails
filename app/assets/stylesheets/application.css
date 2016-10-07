@@ -50,15 +50,32 @@ h1 {
   color: grey;
 }
 
-.market-form {
+.market-form, .product-form-partial, .sale-form-partial {
   margin-left: 20%;
 }
 
 .market-details {
   margin-left: 20%;
 }
-.table-info td {
+
+.table-product-action {
+text-align: center;
+}
+
+.table-info td, .table-product td {
   padding-right: 3%;
+  color: #F5B19A;
+}
+
+.table-product {
+  margin-left: 42%;
+  column-width: auto;
+}
+
+
+.name-title {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
   color: #F5B19A;
 }
 
