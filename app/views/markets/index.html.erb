@@ -4,8 +4,4 @@
   <%= button_to("Add a Market", markets_new_path, method: :get) %>
 </p>
 
-<ul>
-<% @markets.each do |market| %>
-    <li><%= link_to("#{market.name}", show_market_path(market)) %><%= ": #{market.city}, #{market.state}"%></li>
-<% end %>
-</ul>
+<%= render partial: 'markets/market_index', locals: {path: 'show_market_path(market)'}%>

@@ -1,0 +1,5 @@
+<ul>
+<% @markets.each do |market| %>
+    <li><%= link_to("#{market.name}", path) %><%= ": #{market.city}, #{market.state}"%></li>
+<% end %>
+</ul>
