@@ -1,0 +1,10 @@
+<%#  market_vendor_url, method: http_method do |f| %>
+<%= form_for [@market, @vendor], method: http_method do |f| %>
+  <br><%= f.label :name, "Vendor Name" %>
+  <%= f.text_field :name %>
+
+  <br><%= f.label :num_employees, "Number of Employees" %>
+  <%= f.text_field :num_employees %>
+
+  <br><%= f.submit "Submit"%>
+<% end %>

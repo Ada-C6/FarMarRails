@@ -1,3 +1,37 @@
+h1 {
+  text-align: center;
+  font-family: cursive;
+  color: white;
+}
+
+body {
+    background-color: #82b324;
+}
+
+.home_bg {
+    background-image: url("farmar_bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+  list-style: none;
+}
+
+.navbar li{
+  list-style: none;
+  display: inline;
+  padding: 40px;
+}
+
+/*div {
+  background-image: url("farmar_bg.jpg");
+  background-size: 99%;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}*/
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

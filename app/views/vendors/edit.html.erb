@@ -1,0 +1,3 @@
+<h1> Edit Vendor: <%= "#{@vendor.name}" %> </h1>
+<%= render partial: "form", locals: {http_method: :patch,
+  http_action: market_vendor_path({market_id: @market.id, vendor_id: @vendor})} %>

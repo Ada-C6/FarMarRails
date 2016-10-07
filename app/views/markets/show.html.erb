@@ -12,8 +12,14 @@
 <b><%= link_to "Edit Market Info", edit_market_path(@market.id) %></b>
 
 <h3>Vendors</h3>
-<% @vendors_list.each do |vendor| %>
-  <p><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%>
-  </p>
+<%= link_to("Add a New Vendor", new_market_vendor_path(@market.id))%>
 
+<ul>
+<% @vendors_list.each do |vendor| %>
+  <li><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%>
+    <%= link_to("Edit Vendor", edit_market_vendor_path(vendor.market_id, vendor.id))%>
+    <%= link_to("Delete Vendor", market_vendor_path(vendor.market_id, vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"})%>
+  </li>
 <% end %>
+</ul>
+<%= link_to("Return to list of All Markets", markets_path)%>
