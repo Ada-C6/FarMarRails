@@ -1,0 +1,21 @@
+<head>
+<title><%= @header = "All Markets" %></title>
+</head>
+<div class="container">
+<body class="market-view">
+
+<h3>Current Markets </h3>
+
+<h4><%= link_to("Add New Market", new_market_path) %></h4>
+
+<table>
+
+<% @markets.each do |market| %>
+<tr>
+<td><%= link_to("#{market.name}", market_path(market.id)) %> </td>
+  <td><b><%= link_to "Edit Market Info", edit_market_path(market.id) %></b></td>
+<% end %>
+</tr>
+</table>
+</body>
+</div>

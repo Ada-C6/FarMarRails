@@ -1,0 +1,16 @@
+<!-- TODO: Refactor to move Ruby code to Model/ Controller/Helper as appropriate -->
+<head>
+<title><%= @header = "All Vendors" %></title>
+</head>
+<div class="container">
+<body class="market-view">
+
+<h3>Current Vendors </h3>
+
+<table class="vendor-index-table">
+<% @vendors.each do |vendor| %>
+<tr>
+  <td><%= link_to("#{vendor.name}", vendor_products_path(vendor.id)) %></td>
+<% end %>
+</tr>
+</table>

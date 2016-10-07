@@ -1,0 +1,34 @@
+<head>
+<title><%= @header = @market.name %></title>
+</head>
+<div class="container">
+<body class="market-view">
+<!-- REMOVED THIS BECAUSE TITLE ABOVE TAKES CARE OF IT<h1><%= @market.name %></h1> -->
+<h3>Info</h3>
+
+<h3>Address</h3>
+<p>Street: <%= @market.address %></p>
+<p> City: <%= @market.city %></p>
+<p> County: <%= @market.county %></p>
+<p>State: <%= @market.state %></p>
+<p>Zip Code: <%= @market.zip %></p>
+
+
+<b><%= link_to "Edit Market Info", edit_market_path(@market.id) %></b>
+
+<h3>Vendors</h3>
+<b><%= link_to("Add a New Vendor", new_market_vendor_path(@market.id))%></b>
+
+<table>
+
+<% @vendors_list.each do |vendor| %>
+  <tr>
+    <td><%= link_to(vendor.name, market_vendor_path(vendor.market_id, vendor.id))%></td>
+    <td><%= link_to("Edit Vendor", edit_market_vendor_path(vendor.market_id, vendor.id))%></td>
+    <td><%= link_to("Delete Vendor", market_vendor_path(vendor.market_id, vendor.id), method: :delete, data: { confirm: "Are you sure you want to delete this vendor?"})%></td>
+  </tr>
+<% end %>
+</table>
+
+<h3><%= link_to("Return to list of All Markets", markets_path)%></h3>
+</body>

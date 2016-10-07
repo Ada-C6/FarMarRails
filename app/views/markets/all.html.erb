@@ -1,0 +1,22 @@
+<head>
+<title><%= @header = "All Markets" %> %></title>
+</head>
+<div class="container">
+<body class="market-view">
+
+<% @markets.each do |market| %>
+  <h3><%= market.name %></h3>
+  <br><%= market.address %>
+  <br><%= market.city %>
+  <br><%= market.county %>
+  <br><%= market.state %>
+  <br><%= market.zip %>
+
+  <h4>Associated Vendors</h4>
+  <% @vendors.each do |vendor| %>
+    <% if vendor.market_id == market.id %>
+    <p><b><%= vendor.name %></b> &nbsp &nbsp Number of Employees: <%= vendor.num_employees %></p>
+    <% end %>
+  <% end %>
+  <hr>
+<% end %>

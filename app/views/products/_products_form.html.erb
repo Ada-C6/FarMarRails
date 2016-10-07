@@ -1,0 +1,5 @@
+  <%= form_for ([@vendor, @product]) do |f| %>
+    <p><%= f.label :name %>
+    <%= f.text_field :name %></p>
+    <p><%= f.submit "Submit" %></p>
+  <% end %>

@@ -1,0 +1,14 @@
+<head>
+<title><%= @header = @vendor.name %> </title>
+</head>
+<div class="container">
+<body class="market-view">
+
+<h3>Info</h3>
+
+<p>Number of Employees: <%= @vendor.num_employees %></p>
+<p>Belongs To Market: <%= @vendor.market.name %></p>
+
+<br><%= link_to("Return to #{@market.name} Info Page", market_path(@market.id)) %>
+
+<br><%= link_to("Return to All Markets Page", markets_path) %>

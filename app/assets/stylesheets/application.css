@@ -1,3 +1,127 @@
+
+table {
+  display: block;
+  margin-left: 20%;
+}
+
+.product-index-table {
+  margin-left: 30%;
+}
+
+.vendor-index-table {
+  margin-left: 35%;
+}
+
+.sales-index-table {
+  margin-left: 33%;
+}
+
+h1 {
+  text-align: center;
+  font-family: cursive;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+}
+
+body {
+    /*background-color: #82b324;*/
+}
+
+.container {
+  margin-right: auto;
+   margin-left: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+div {
+  background-color: #F1F2F2 ;
+   opacity: 0.9;
+   /*padding: 30px;*/
+   margin: 60px;
+}
+
+.market-view {
+  /*background-image: url("veggies.jpg");*/
+  background-image: url("farmar_bg.jpg");
+
+  background-size: 100%;
+  background-repeat: repeat;
+}
+
+.home_bg {
+    background-image: url("farmar_bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+  list-style: none;
+  text-align: center;
+  /*background-color: white;*/
+}
+
+.navbar li{
+  list-style: none;
+  display: inline;
+  padding: 40px;
+  /*font-family: cursive;*/
+  color: white;
+}
+
+.navbar a:link, a:visited {
+background-color: #f44336;
+color: white;
+padding: 14px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+
+div.home-button {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  float:right;
+  border-radius: 3%;
+  }
+
+.home-button a:link {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited, a:link {
+  color: black;
+  text-decoration: underline;
+}
+
+table {
+  text-align: center;
+}
+td  {
+  padding: 20px;
+  text-align: center;
+  border: black solid 1px;
+}
+
+td a {
+  padding: 10px;
+}
+
+/*div {
+  background-image: url("farmar_bg.jpg");
+  background-size: 99%;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}*/
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
