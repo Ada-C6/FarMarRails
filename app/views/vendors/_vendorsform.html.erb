@@ -1,0 +1,11 @@
+<%= form_for @myvendor, method: @vendor_method, url: @vendor_path do |v| %>
+  <%= v.label :name %>
+  <%= v.text_field :name %>
+
+  <%= v.label :num_employees %>
+  <%= v.text_field :num_employees %>
+
+  <%= v.submit 'save' %>
+
+  <% end %>
+<!-- # adding confirm, to submit form for rails  -->
