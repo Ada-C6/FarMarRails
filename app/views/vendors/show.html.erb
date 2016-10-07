@@ -55,9 +55,8 @@
     <% monthly_sales = @vendor.sales.where(:purchase_time => Time.now.beginning_of_month..Time.now.end_of_month) %>
     <% if monthly_sales.count == 0 %>
       <p>This vendor has no sales this month</p>
-    <% elsif %>
-    <!-- Something about going through monthly_sales and looking for this month -->
     <% else %>
+    <!-- Something about going through monthly_sales and looking for this month -->
       <table>
         <thead>
           <tr>
@@ -68,7 +67,7 @@
         </thead>
         <tbody>
           <tr>
-            <% @vendor.sales.all.each do |sale| %>
+            <% monthly_sales.each do |sale| %>
             <td><%= sale.product.name %></td>
             <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
             <td><%= number_to_currency(sale.amount/100.00) %></td>
@@ -79,7 +78,7 @@
     <% end %>
     <h4>
       Total Monthly Sales:
-        $<%= (Sale.where(vendor_id: @vendor.id).sum(:amount))/100.00 %>
+        $<%= (monthly_sales.where(vendor_id: @vendor.id).sum(:amount))/100.00 %>
     </h4>
   </div>
 </div>
