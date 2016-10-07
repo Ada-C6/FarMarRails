@@ -18,7 +18,9 @@ class SalesController < ApplicationController
     @sale = @product.sales.new(sale_params)
     @sale.vendor = @vendor
     @sale.purchase_time = Time.now
-    @sale.amount *= 100
+    if @sale.valid?
+      @sale.amount *= 100
+    end
     if @sale.save
       redirect_to vendor_path(@vendor.id)
     else
