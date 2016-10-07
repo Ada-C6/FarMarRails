@@ -25,11 +25,12 @@ class VendorsController < ApplicationController
     @vendor = Vendor.find(params[:id].to_i)
     @products = Product.all
     @markets = Market.all
+    @sales = Sale.all
   end
 
   def edit
     @product = Product.find(params[:id].to_i)
-    @vendor = Vendor.find(params[:id].to_i)
+    @vendor = Vendor.find(@product.vendor_id)
   end
 
   def update
@@ -40,7 +41,7 @@ class VendorsController < ApplicationController
 
     @product.save
 
-    redirect_to action: 'show'
+    redirect_to action: 'show', id:@product.vendor_id
   end
 
   def destroy
@@ -50,7 +51,24 @@ class VendorsController < ApplicationController
 
   def show_product
     @product = Product.find(params[:id].to_i)
+    @sale = Sale.find(params[:id].to_i)
     # @vendors = Vendor.all
+  end
+
+  def show_sale
+    @sale = Sale.find(params[:id].to_i)
+  end
+
+  def create_sale
+    @params = params
+
+    @product = Product.new
+    @product.name = params[:product][:name]
+    @product.vendor_id = params[:product][:id].to_i
+
+    @product.save
+
+    redirect_to action: 'show', id:@product.vendor_id
   end
 
   private

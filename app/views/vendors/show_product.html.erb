@@ -1,2 +1,14 @@
+<h2> Product Details: </h2>
 
-<h2> This vendor's Product: </h2>
+<ul>
+  <li>name:<%= @product[:name] %></li>
+  <li>vendor_id:<%= @product[:vendor_id] %></li>
+</ul>
+
+<h3> Sales of this product: </h3>
+
+<ul>
+  <li>sale amount:<%= @sale[:sale_amount] %></li>
+  <li>name:<%= @sale[:name] %></li>
+</ul>
+<%= button_to "Add a Sale", newSale_path(@sale.id), method: :get%>

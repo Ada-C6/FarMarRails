@@ -15,6 +15,22 @@
         <li><%= button_to "Delete", deleteProduct_path(product.id), data: {confirm:"Are you sure?"}, method: :delete %></li>
       <% end %>
     <% end %>
+    <%= link_to "Create a New Product", newProduct_path, method: :get %>
+  </ul>
+</section>
+
+<section>
+<h2> This Vendor's Sales by product: </h2>
+  <ul>
+    <% @sales.each do |sale| %>
+      <% if @vendor[:id] == sale.vendor_id %>
+        <li>Product: <%= @products.find(sale.product_id).name %></li>
+        <li>sale amount:<%= sale.amount %></li>
+        <li>purchase Time: <%= sale.purchase_time %></li>
+
+        <p></p>
+      <% end %>
+    <% end %>
     <%= link_to "Create a New Proudct", newProduct_path, method: :get %>
   </ul>
 </section>
