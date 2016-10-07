@@ -61,7 +61,7 @@ nav ul li {
 }
 
 /*Nav links need to be a different color because the background is darker*/
-nav a {
+nav a, h3 a {
   color: #0099ad;
 }
 
