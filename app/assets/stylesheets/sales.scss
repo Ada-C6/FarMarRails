@@ -2,12 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table, td {
-  border: black thin solid;
-}
+// table {
+//   border: white thin solid;
+// }
 
 table {
   width:60%;
   margin-left:20%;
   margin-right:20%;
+}
+
+td {
+  text-align: center;
 }
