@@ -2,7 +2,9 @@
 
 <p>Product list</p>
 <% @product_list.each do |product| %>
-  <p><%= link_to(product[:name], vendor_product_path(product[:vendor_id], product[:id]))%> <%= link_to("Edit ", edit_vendor_product_path(product[:vendor_id], product[:id]))%> <%= link_to("Delete", vendor_product_path(product[:vendor_id], product[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this product?"}) %> <%= link_to("Create a sale for this product", new_vendor_product_sale_path(@vendor.id, product.id))%></p>
+  <p><%= product[:name] %> <%= link_to("Edit ", edit_vendor_product_path(product[:vendor_id], product[:id]))%> <%= link_to("Delete", vendor_product_path(product[:vendor_id], product[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this product?"}) %> <%= link_to("Create a sale for this product", new_vendor_product_sale_path(@vendor.id, product.id))%></p>
+  <!--  Alternative Syntax -->
+  <%# link_to("Create a sale", [@vendor, @product]) %>
 <% end %>
 <p><%= link_to("New Product", new_vendor_product_path) %></p>
 

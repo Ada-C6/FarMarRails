@@ -6,11 +6,6 @@ class ProductsController < ApplicationController
     @sales = @vendor.sales
   end
 
-  def show
-    @vendor = Vendor.find(params[:vendor_id])
-    @product = Product.find(params[:id])
-  end
-
   def new
     @vendor = Vendor.find(params[:vendor_id])
     @product = Product.new
