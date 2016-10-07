@@ -7,19 +7,6 @@
   </nav>
 </header>
 
-
-<% if @vendor.errors.any? %>
-  <ul class="errors">
-    <% @vendor.errors.each do |column, message| %>
-      <li>
-        <strong>
-          <%= column.capitalize %>
-        </strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
 <%= render partial: "form",
           locals: { http_method: :post,
             local_path_variable: market_vendors_path } %>

@@ -4,9 +4,8 @@
   <nav>
     <ul>
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "Vendors Index", vendors_path %></li>
     </ul>
   </nav>
 </header>
 
-<%= render partial: "form", locals: { http_method: :patch } %>
+<%= render partial: "form", locals: { http_method: :patch, local_path_variable: vendor_path } %>
