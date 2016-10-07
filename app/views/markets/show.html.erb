@@ -1,0 +1,24 @@
+<h1>Market#Show</h1>
+
+<ul>
+  <li>name: <%= @market.name %></li>
+  <li>address: <%= @market.address %> </li>
+  <li>city: <%= @market.city %> </li>
+  <li>county: <%= @market.county %> </li>
+  <li>state: <%= @market.state %> </li>
+  <li>zip: <%= @market.zip %> </li>
+
+  <li>vendors: <%= @vendors.length %></li>
+</ul>
+
+<%= link_to "Add a new vendor", new_market_vendor_path(@market.id) %>
+
+
+<p>
+  <% @vendors.each do |vendor| %>
+    <p> vendor: <%= vendor.name %> <%= link_to "Edit",
+      edit_market_vendor_path(id: vendor.id, market_id: @market.id) %>
+      <%= link_to "Delete", market_vendor_path(vendor.id, @market.id), method: :delete,
+      data: { confirm: "Are you absolutely sure you want to delete this vendor?" } %></p>
+  <% end %>
+</p>

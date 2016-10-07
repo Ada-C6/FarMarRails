@@ -1,0 +1,11 @@
+<h1>Edit This Vendor</h1>
+
+<%= form_for @vendor, url: market_vendor_path(market_id: @vendor.market, id: @vendor) do |v| %>
+  <%= v.label :name %>
+  <%= v.text_field :name %>
+
+  <%= v.label :num_employees %>
+  <%= v.text_field :num_employees %>
+
+  <%= v.submit "Submit" %>
+<% end %>

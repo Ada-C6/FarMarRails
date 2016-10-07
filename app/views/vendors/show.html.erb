@@ -1,0 +1,24 @@
+<h1>Vendor: <%= @vendor.name %></h1>
+<h4>This vendor sells at <%= @vendor.market.name %>.</h4>
+
+<div class="vendor_product_info">
+    <h2><%= @vendor.name %> - products...</h2>
+    <% @products.each do |product| %>
+        <p>
+            <%= product.name %>
+            <%= link_to("edit", edit_vendor_product_path(@vendor, product)) %>
+            <%= link_to("delete", vendor_product_path(@vendor, product), method: :delete, data: {confirm: "Are you sure you want to permanently delete this product?"}) %>
+            <%= link_to("create sale", new_vendor_product_sale_path(@vendor, product)) %>
+        </p>
+    <% end %>
+
+    <%= link_to("Add a new product", new_vendor_product_path(@vendor)) %>
+</div>
+
+<div class="vendor_sale_info">
+    <h2><%= @vendor.name %> - sales...</h2>
+</div>
+
+<footer>
+    <%= link_to 'or, go back', vendors_path %>
+</footer>
