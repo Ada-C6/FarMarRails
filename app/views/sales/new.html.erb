@@ -1,0 +1,33 @@
+<h2>Add a new sale</h2>
+
+<% if @sale.errors.any? %>
+  <ul class="errors">
+    <% @sale.errors.each do |column, message| %>
+      <li>
+        <strong>
+          <%= column.capitalize %>
+        </strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<h3>Please enter the sale amount:</h3>
+<%= form_for @sale, url: vendor_product_sales_path  do |f| %>
+<p>
+  <%= f.label :amount %>:
+  <%= f.text_field :amount %>
+</p>
+<p>
+  <%= f.submit "Submit" %>
+</p>
+
+
+
+
+<% end %>
+
+
+
+<p>
+  This is the sale view: new.html.erb
+</p>
