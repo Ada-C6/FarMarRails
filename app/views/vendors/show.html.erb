@@ -33,7 +33,15 @@
 </ol>
 
 <p><%= "Total Sales Amount: #{@vendor.sales_total}" %></p>
+<p>
+  <h5>Sales This Month:</h5>
+  <ol>
+      <% @vendor.sales_this_month(@vendor.get_current_month).each do |sale| %>
+      <li><%= link_to "#{sale.purchase_time}", vendor_sale_path(@vendor, sale) %></li>
+    <% end %>
+  </ol>
 
+</p>
 <p>
   <%= "Total Amount this month: #{@vendor.sales_total_current_month(@vendor.get_current_month)}" %>
 </p>

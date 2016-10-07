@@ -19,11 +19,20 @@ class Vendor < ActiveRecord::Base
   def sales_total_current_month(month)
     total = 0
     sales.each do |sale|
-      if sale.purchase_time.month == month
+      if sale.purchase_time.month == month && sale.purchase_time.year == Time.now.year
         total += sale.amount.to_i
       end
     end
     return total
   end
 
+  def sales_this_month(month)
+    monthly_sales = []
+    sales.each do |sale|
+      if sale.purchase_time.month == month && sale.purchase_time.year == Time.now.year
+        monthly_sales << sale
+      end
+    end
+    return monthly_sales
+  end
 end
