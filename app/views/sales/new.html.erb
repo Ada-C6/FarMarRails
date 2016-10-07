@@ -1,0 +1,14 @@
+<h3>Vendor: <%= @vendor.name %></h3>
+<h3>Product: <%= @product.name %></h3>
+
+
+<h1>CREATE A NEW SALE (in cents):</h1>
+
+<%= form_for @sale, url: vendor_product_sales_path(@vendor_id, @product_id) do |f| %>
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+
+    <%= f.submit "Submit" %>
+<% end %>
+
+<%= link_to 'or, go back', vendor_path(@vendor_id) %>
