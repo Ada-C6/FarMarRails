@@ -4,7 +4,7 @@
 
 <p>Product list</p>
 <% @product_list.each do |product| %>
-  <p><%= product[:name] %> <%= link_to("Edit ", edit_vendor_product_path(product[:vendor_id], product[:id]))%> <%= link_to("Delete", vendor_product_path(product[:vendor_id], product[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this product?"}) %> <%= link_to("Create a sale for this product", new_vendor_product_sale_path(@vendor.id, product.id))%></p>
+  <p><%= product[:name] %> <%= link_to("Edit ", edit_vendor_product_path(product[:vendor_id], product[:id]))%> <%= link_to("Delete", vendor_product_path(product[:vendor_id], product[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this product?"}) %> <%= link_to("New Sale", new_vendor_product_sale_path(@vendor.id, product.id))%></p>
   <!--  Alternative Syntax -->
   <%# link_to("Create a sale", [@vendor, @product]) %>
 <% end %>
@@ -12,7 +12,21 @@
 
 <p>Sales</p>
 
-Total Sales:
+<p>Current Month's Sales:
+<% total_month_sales = 0 %>
+<% @sales.each do |sale| %>
+  <% if sale[:purchase_time].strftime("%Y%m") == Time.now.strftime("%Y%m") %>
+    <% total_month_sales += sale[:amount] %>
+  <% end %>
+<% end %>
+
+<% if total_month_sales != 0.to_i %>
+  $<%= add_decimal(total_month_sales)%></p>
+<% else %>
+  <%= " None"%></p>
+<% end %>
+
+<p>Total Sales:
 <% total_sales = 0 %>
 <% @sales.each do |sale| %>
   <% total_sales += sale[:amount] %>
@@ -21,7 +35,7 @@ Total Sales:
 <% if total_sales != 0.to_i %>
   $<%= add_decimal(total_sales)%></p>
 <% else %>
-  <%= " N/A"%>
+  <%= " N/A"%></p>
 <% end %>
 
-<p><%= link_to("All Sales List", vendor_sales_path) %></p>
+<p><%= link_to("Sales Lists", vendor_sales_path) %></p>

@@ -1,10 +1,40 @@
 <!-- TODO: Refactor to move Ruby code to Model/ Controller/Helper as appropriate -->
 
-<p>Sale List</p>
+<p>Lists of Sales</p>
 
-<%= link_to("Back to Product List", vendor_products_path(@vendor.id)) %>
+<p>Current Month's Sales (<%= Time.now.strftime("%B %Y") %>):</p>
+
+<% current_sale_count = 0 %>
+<% @sales.each do |sale| %>
+  <% if sale[:purchase_time].strftime("%Y%m") == Time.now.strftime("%Y%m") %>
+    <% current_sale_count += 1 %>
+    <p>Sale Amount: $<%= add_decimal(sale[:amount]) %></p>
+    <p>Sale Date: <%= sale[:purchase_time].strftime("%A, %B %d, %Y") %></p>
+  <% end %>
+
+  <% end %>
+  <% if current_sale_count == 0%>
+  None</p>
+<% end %>
+
+<hr>
+
+<p>All Sales: </p>
 
 <% @sales.each do |sale| %>
-  <p>Sale amount: $<%= add_decimal(sale[:amount]) %></p>
-  <p>Sale date/time: <%= sale[:purchase_time] %></p></p>
+  <p>Sale Amount:
+    <% if sale[:amount] == 0.to_i %>
+      <%= " None" %></p>
+    <% else %>
+      $<%= add_decimal(sale[:amount]) %>
+    <% end %>
+
+  <p>Sale Date:
+    <% if sale[:purchase_time] != nil %>
+      <%= sale[:purchase_time].strftime("%A, %B %d, %Y") %></p>
+    <% else %>
+      N/A</p>
+    <% end %>
 <% end %>
+
+<p><%= link_to("Back to Product List", vendor_products_path(@vendor.id)) %></p>
