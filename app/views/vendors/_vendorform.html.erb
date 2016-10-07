@@ -1,0 +1,17 @@
+<%= form_for @vendor,
+  url: action_name do |f| %>
+<ul>
+  <li><%= f.label :name %></li>
+  <li><%= f.text_field :name %></li>
+
+  <li><%= f.label :employees %></li>
+  <li><%= f.text_field :employees %></li>
+
+  <li><%= f.label :market_id %></li>
+  <li><%= f.collection_select :market_id, Market.order(:name),:id,:name, include_blank: false %>
+  </li>
+
+  <li><%= f.submit class: 'button' %>
+</ul>
+
+  <% end %>

@@ -1,0 +1,8 @@
+<h1><%= @product[:name] %></h1>
+
+<article>
+  <h3> Currently sold at:  </h3>
+  <p>Market: <%= link_to(@product.vendor.market.name, marketsshow_path(@product.vendor.market.id)) %></p>
+  <p>Vendor: <%= link_to(@product.vendor.name, marketsshow_path(@product.vendor.id)) %></p>
+
+</article>

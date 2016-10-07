@@ -1,0 +1,16 @@
+<%= form_for @sale,
+  url: action_name do |f| %>
+<ul>
+  <li><%= f.label :amount %></li>
+  <li><%= f.text_field :amount %></li>
+
+  <li><%= f.label :vendor_id %></li>
+  <li><%= f.text_field :vendor_id %></li>
+
+  <li><%= f.label :product_id %></li>
+  <li><%= f.text_field :product_id %></li>
+
+  <li><%= f.submit class: 'button' %>
+</ul>
+
+  <% end %>
