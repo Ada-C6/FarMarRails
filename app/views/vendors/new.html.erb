@@ -1,2 +1,13 @@
-<h1>Vendors#new</h1>
-<p>Find me in app/views/vendors/new.html.erb</p>
+<section>
+  <header>
+    <h1>Add a New Product</h1>
+  </header>
+  <%= form_for @product, url: createProduct_path do |f| %>
+  <p>
+    <%= render partial: 'form', locals: {:f => f} %>
+    <div>
+      <%= f.submit 'Add'%>
+    </div>
+  </p>
+  <% end %>
+</section>

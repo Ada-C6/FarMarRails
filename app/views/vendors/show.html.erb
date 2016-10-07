@@ -1,2 +1,20 @@
-<h1>Vendors#show</h1>
-<p>Find me in app/views/vendors/show.html.erb</p>
+<h1> <%= @vendor[:name]  %></h1>
+<article>
+
+  <p>Number of Employees:<%= @vendor[:employee_num] %></p>
+  <p><%= @markets.find(@vendor[:market_id]).name %></p>
+</article>
+
+<section>
+<h2> This vendor's Product: </h2>
+  <ul>
+    <% @products.each do |product| %>
+      <% if @vendor[:id] == product.vendor_id %>
+        <li><%= link_to product.name, showProduct_path(product.id) %></li>
+        <li><%= button_to "Edit", editProduct_path(product.id), method: :get%></li>
+        <li><%= button_to "Delete", deleteProduct_path(product.id), data: {confirm:"Are you sure?"}, method: :delete %></li>
+      <% end %>
+    <% end %>
+    <%= link_to "Create a New Proudct", newProduct_path, method: :get %>
+  </ul>
+</section>
