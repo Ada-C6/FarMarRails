@@ -2,11 +2,11 @@
   <h1>List of Markets</h1>
 </div>
 <div class="all-markets">
-<ul>
-  <% @market.each do |i| %>
-  <li>
-    <%= link_to "#{i.name}", user_market_path(i) %>
-  </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @market.each do |i| %>
+      <li>
+        <%= link_to "#{i.name}", user_market_path(i) %>
+      </li>
+    <% end %>
+  </ul>
 </div>
