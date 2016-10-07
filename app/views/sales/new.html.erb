@@ -1,6 +1,5 @@
 <%= form_for ([@vendor, @sale]) do |f| %>
   <p>Sale Amount (in cents) <%= f.text_field :amount %></p>
   <p>Purchase Date (DD-MM-YYYY) <%= f.text_field :purchase_time %></p>
-
   <p><%= f.submit "Submit" %></p>
 <% end %>
