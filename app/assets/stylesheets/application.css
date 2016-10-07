@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+html {
+  background-color: #5DA399;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  background-color: #114B5F;
+  color: #FFFFFF;
+  font-family: 'Acme', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #016572;
+}
+
+a:hover {
+  color: #BACEB7;
+}
