@@ -1,26 +1,35 @@
-<h2>Welcome <%= @vendor.name %></h2>
-<p>
-Number of employees: <%= @vendor.num_employees %>
-</p>
-<p>
-  Create a new product <%= link_to "here", new_vendor_product_path(@vendor) %>.
-</p>
-<h3>Products:</h3>
-<% @vendor.products.each do |product| %>
-<p>
-  <%= product.name %>
-  <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %>
-  <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "#{product.name}: This product will be deleted. Please confirm."} %>
+<header>
+  <h1>Welcome <%= @vendor.name %></h1>
+  <nav>
+    <li><%= link_to "Vendors Index", vendors_path %></li>
+  </nav>
+</header>
 
-</p>
-<% end %>
+<main>
+  <p>
+    Number of employees: <%= @vendor.num_employees %>
+  </p>
 
-<p>
-  ______________________________________________________
-</p>
+  <h2>Products:</h2>
+  <p>
+    <%= link_to "Add a new product", new_vendor_product_path(@vendor), class: "new" %>
+  </p>
+
+  <ul>
+    <% @vendor.products.each do |product| %>
+    <li>
+      <%= product.name %> &mdash;
+      <%= link_to "Edit", edit_vendor_product_path(@vendor.id, product.id) %> /
+      <%= link_to "Delete", vendor_product_path(@vendor.id, product.id), method: :delete, data: { confirm: "#{product.name}: This product will be deleted. Please confirm."} %>
+    </li>
+    <% end %>
+  </ul>
+</main>
+
+<!-- DELETE THIS BEFORE SUBMITTING! -->
+<hr>
 <p>
   As a vendor, I can create, edit, or delete my Products
 </p>
-
 
 <p>This is the vendors view show.html.erb</p>
