@@ -19,11 +19,11 @@
     <li>
       <p><%= vendor.name %></p>
       <p>
-      <%= button_to "Delete", vendors_destroy_path(vendor.id),
-                              method: :delete, data: { confirm: "Are you sure you want to remove this vendor?"} %>
+        <%= button_to "Edit", vendors_edit_path(vendor.id), method: :get %>
       </p>
       <p>
-        <%= button_to "Edit", vendors_edit_path(vendor.id), method: :get %>
+      <%= button_to "Delete", vendors_destroy_path(vendor.id),
+                              method: :delete, data: { confirm: "Are you sure you want to remove this vendor?"} %>
       </p>
       <p id="exception"> Employees: <%= vendor.no_employees %> </p>
     </li>
