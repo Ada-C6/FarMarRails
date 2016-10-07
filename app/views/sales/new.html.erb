@@ -1,4 +1,4 @@
-<h1>Add a sale:</h1>
+<h1>Add a New Sale</h1>
 <% if @sale.errors.any? %>
   <ul class="errors">
     <% @sale.errors.each do |column, message| %>
@@ -10,11 +10,11 @@
 <% end %>
 
 
-<%= form_for @sale, url: vendor_product_sales_path , method: :post do |f| %>
+<%= form_for @sale, url: vendor_product_sales_path, html: {class: 'form'}, method: :post do |f| %>
   <%= f.label :amount, "Amount: $" %>
   <%= f.text_field :amount %>
 
-  <%= f.submit%>
+  <%= f.submit :class => 'create_button'%>
 
 <% end %>
 

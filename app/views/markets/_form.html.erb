@@ -8,38 +8,25 @@
   </ul>
 <% end %>
 
-<%= form_for @market, url: submit_url, method: http_method do |f| %>
-  <p>
-    <%= f.label :name %><br>
+<%= form_for @market, url: submit_url, html: {class: 'form'}, method: http_method do |f| %>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-  </p>
 
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
 
-  <p>
-    <%= f.label :city %><br>
-    <%= f.text_area :city %>
-  </p>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
 
-  <p>
-    <%= f.label :county %><br>
-    <%= f.text_area :county %>
-  </p>
+    <%= f.label :county %>
+    <%= f.text_field :county %>
 
-  <p>
-    <%= f.label :state %><br>
-    <%= f.text_area :state %>
-  </p>
+    <%= f.label :state %>
+    <%= f.text_field :state %>
 
-  <p>
-    <%= f.label :zip %><br>
-    <%= f.text_area :zip %>
-  </p>
+    <%= f.label :zip %>
+    <%= f.text_field :zip %>
 
-  <p>
-    <%= f.submit %>
-  </p>
+    <%= f.submit :class => 'create_button' %>
+
 <% end %>

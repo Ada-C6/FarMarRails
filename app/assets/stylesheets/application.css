@@ -140,3 +140,42 @@ td {
   padding: 0 1rem 0 1rem;
   font-family: 'Didact Gothic', sans-serif;
 }
+
+.form {
+  margin: 4% 40% 0 0;
+  padding: 2rem 1rem 1rem .5rem;
+  background-color: rgba(0, 0, 0, 0.51);
+  text-shadow: 1px 1px black;
+  border-radius: 1rem;
+}
+
+.form label {
+  width: 20%;
+  float: left;
+  text-align: right;
+  margin-right: 1rem;
+  display: block;
+}
+
+.form input {
+  border-radius: .3rem;
+  width: 70%;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+.form .create_button {
+  background-color: rgb(78, 124, 75);
+  padding: 1rem .7rem;
+  border-radius: .6rem;
+  margin-top: 1%
+  border: 1px solid rgb(103, 117, 103);
+  color: rgb(240, 249, 240);
+  box-shadow: 3px 3px 7px 0px rgba(50, 50, 50, 0.75);
+  width: 8rem;
+  margin-left: 24%;
+  margin-right: 30%;
+}
+
+.form .create_button:hover {
+  background-color: rgb(72, 134, 68);

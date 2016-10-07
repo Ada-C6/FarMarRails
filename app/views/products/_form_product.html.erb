@@ -8,10 +8,10 @@
   </ul>
 <% end %>
 
-<%= form_for @product, url: submit_url, method: http_method do |f| %>
-  <%= f.label :name %>
+<%= form_for @product, url: submit_url, html: {class: 'form'}, method: http_method do |f| %>
+  <%= f.label :name, "Product Name:"%>
   <%= f.text_field :name %>
 
-  <%= f.submit%>
+  <%= f.submit :class => 'create_button' %>
 
 <% end %>
