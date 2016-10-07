@@ -1,0 +1,12 @@
+<h1>Edit a Vendor</h1><br>
+
+<%= form_for @myvendor, url: vendor_update_path, method: 'put' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :num_employees %>
+  <%= f.number_field :num_employees  %>
+
+  <%= f.submit %>
+<% end %>
+

@@ -1,0 +1,36 @@
+// Place all the styles related to the Vendors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  background-color:#FFF1AA;
+  font-family:helvetica;
+}
+
+th.header {
+  
+  background: #FFBE4B;
+  padding: 3px;
+  border: 1px solid blue;
+  border-radius: 2px;
+}
+
+tr:nth-child(even) {
+  background: #F0691B;
+}
+
+td, a {
+  text-decoration: none;
+  text-color: #1A1506;
+}
+
+a:hover { 
+    background-color: yellow;
+}
+
+button {
+  display: inline-block;
+  background-color: none;
+}
+
+

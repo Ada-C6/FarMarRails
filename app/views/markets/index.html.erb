@@ -1,0 +1,25 @@
+<h1>Welcome to our Markets</h1>
+<%= link_to 'Create a new Market', market_new_path %>
+<table>
+<tr>
+  <th>Market Name</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>County</th>
+  <th>State</th>
+  <th>Zipcode</th>
+  <th colspan="2"></th>
+</tr>
+<% @markets.each do |market| %>
+    <tr>
+      <td><%= market.name %> </td>
+      <td><%= market.address %></td>
+      <td><%= market.city %></td>
+      <td><%= market.county %></td>
+      <td><%= market.state %></td>
+      <td><%= market.zip %></td>
+      <td><%= link_to 'View Market!', market_show_path(market) %></td
+      >
+    </tr>
+  <% end %>
+</table>

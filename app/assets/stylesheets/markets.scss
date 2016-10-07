@@ -1,0 +1,29 @@
+// Place all the styles related to the Markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  background-color:#FFF1AA;
+  font-family:helvetica;
+}
+
+th.header {
+  
+  background: #FFBE4B;
+  padding: 3px;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+tr:nth-child(even) {
+  background: #F0691B;
+}
+
+
+input {
+  text-color: #1A1506;
+}
+
+td, a {
+   color: #1A1506;
+}

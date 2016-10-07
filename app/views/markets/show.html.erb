@@ -1,0 +1,43 @@
+<table>
+<tr>
+  <th>Market Name</th>
+  <th>Address</th>
+  <th>City</th>
+  <th>County</th>
+  <th>State</th>
+  <th>Zipcode</th>
+  <th colspan="2"></th>
+</tr>
+    <tr>
+      <td><%= @mymarket.name %> </td>
+      <td><%= @mymarket.address %></td>
+      <td><%= @mymarket.city %></td>
+      <td><%= @mymarket.county %></td>
+      <td><%= @mymarket.state%></td>
+      <td><%= @mymarket.zip %></td>
+    </tr>
+</table>
+<br>
+
+<%= button_to "Edit Market", market_edit_path(@mymarket.id), method: :get%>
+<%= button_to "Delete Market", market_delete_path(@mymarket.id), method: :delete, data: {confirm:"Are you Sure?" }  %>
+<!-- wave 32 replace with partial -->
+<br>
+<table>
+<tr>
+  <th>Vendor Name</th>
+  <th> Jobs Provided</th>
+  <th>Market ID</th>
+  <th colspan="2"></th>
+</tr>
+<% @vendors.each do |vendor| %>
+  <% if vendor.market_id == @mymarket.id %>
+    <tr>
+      <td><%= vendor.name %> </td>
+      <td><%= vendor.num_employees %></td>
+      <td><%= vendor.market_id %></td>
+      <td><%= link_to 'View Vendors!', vendor_show_path(vendor) %></td>
+    </tr>
+  <% end %>
+<% end %>
+</table>
