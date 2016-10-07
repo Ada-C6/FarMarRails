@@ -2,12 +2,9 @@ class Sale < ActiveRecord::Base
   belongs_to :vendor
   belongs_to :product
 
-
-
-  # def self.total_sales_by_vendor
-  #   total = []
-  #   @sale = Sale.find_by
-  #   total << @sale.amount
-  #   total.inject(0){|sum, x| sum + x }
-  # end
+  validates :product_id, presence: true, numericality: true
+  validates :vendor_id, presence: true, numericality: true
+  validates :name, presence: true
+  validates :purchase_time, presence: true
+  validates :amount, presence: true, numericality: true
 end

@@ -1,4 +1,13 @@
-
+<% if @product.errors.any? %>
+<ul>
+  <% @product.errors.each do |column, message| %>
+  <li>
+    <%= column %>
+    <%= message %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
 <%= form_for [@product.vendor, @product], method: action_name do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
