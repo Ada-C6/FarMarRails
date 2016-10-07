@@ -1,2 +1,7 @@
-<h1>Add A New Vendor</h1>
+<head>
+<title><%= @header = "Add New Vendor" %> %></title>
+</head>
+<div class="container">
+<body class="market-view">
+  
 <%= render partial: "form", locals: { http_method: :post }%>

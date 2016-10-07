@@ -1,1 +1,7 @@
+<head>
+<title><%= @header = "Editing Product:" + @product.name %></title>
+</head>
+<div class="container">
+<body class="market-view">
+
 <%= render partial: "products_form", locals: { http_method: :patch }%>

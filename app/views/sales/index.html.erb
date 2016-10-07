@@ -1,8 +1,11 @@
 <!-- TODO: Refactor to move Ruby code to Model/ Controller/Helper as appropriate -->
+<head>
+<title><%= @header = "List of Sales" %> </title>
+</head>
+<div class="container">
+<body class="market-view">
 
-<p>Lists of Sales</p>
-
-<p>Current Month's Sales (<%= Time.now.strftime("%B %Y") %>):</p>
+<h3>Current Month's Sales (<%= Time.now.strftime("%B %Y") %>)</h3>
 
 <% current_sale_count = 0 %>
 <% @sales.each do |sale| %>
@@ -19,7 +22,7 @@
 
 <hr>
 
-<p>All Sales: </p>
+<h3>All Sales</h3>
 
 <% @sales.each do |sale| %>
   <p>Sale Amount:

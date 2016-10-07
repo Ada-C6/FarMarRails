@@ -1,7 +1,10 @@
-Individual Vendor Page
-<h1>Vendor: <%= @vendor.name %></h1>
-<p>Market ID:<%= @vendor.market_id %>
+<head>
+<title><%= @header = @vendor.name %> </title>
+</head>
+<div class="container">
+<body class="market-view">
 
+<h3>Info</h3>
 
 <p>Number of Employees: <%= @vendor.num_employees %></p>
 <p>Belongs To Market: <%= @vendor.market.name %></p>
