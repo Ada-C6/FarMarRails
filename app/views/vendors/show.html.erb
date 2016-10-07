@@ -2,7 +2,7 @@
 <h4>This vendor sells at <%= @vendor.market.name %>.</h4>
 
 <div class="vendor_product_info">
-    <h2><%= @vendor.name %> products...</h2>
+    <h2><%= @vendor.name %> - products...</h2>
     <% @products.each do |product| %>
         <p>
             <%= product.name %>
@@ -16,7 +16,7 @@
 </div>
 
 <div class="vendor_sale_info">
-    <h2><%= @vendor.name %> sales...</h2>
+    <h2><%= @vendor.name %> - sales...</h2>
 </div>
 
 <footer>
