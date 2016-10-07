@@ -24,6 +24,3 @@ module FarMarRails
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
-
-# added this because was getting an error when trying to push to heroku
-config.assets.initialize_on_precompile = false
