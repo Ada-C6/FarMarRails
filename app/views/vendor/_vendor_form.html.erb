@@ -12,8 +12,8 @@
 <%= form_for @vendor, :url => vendor_index_path, method: http_method do |f| %>
 <table class="vendor-form-partial">
   <tr>
-    <td><%= f.label :name %> </td>
-    <td><%= f.text_field :name, :size => 100 %> </td>
+    <td><%= f.label :name,"Name*"%> </td>
+    <td><%= f.text_field :name, :size => 100 , :required => true%> </td>
   </tr>
 
   <tr>
@@ -23,7 +23,7 @@
 
   <tr>
     <td><%= f.label :market_id, "Market ID*" %></td>
-    <td><%= f.text_field :market_id, :value => params[:market_id] %></td>
+    <td><%= f.text_field :market_id, :value => params[:market_id], :required => true  %></td>
   </tr>
 
   <tr>

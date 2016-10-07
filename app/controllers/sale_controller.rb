@@ -14,7 +14,13 @@ class SaleController < ApplicationController
 
   def create
     @sale = Sale.create!(sale_params)
-    redirect_to vendor_sale_index_path
+    if vendor_sale?
+      redirect_to vendor_sale_index_path(params[:vendor_id])
+    elsif product_sale?
+      redirect_to product_sale_index_path(params[:product_id])
+    else
+      redirect_to root_path
+    end
   end
 
   def new
@@ -41,7 +47,14 @@ class SaleController < ApplicationController
 
   def destroy
     @sale = Sale.find(params[:id]).destroy
-    redirect_to vendor_sale_index_path
+    
+    if vendor_sale?
+      redirect_to vendor_sale_index_path(params[:vendor_id])
+    elsif product_sale?
+      redirect_to product_sale_index_path(params[:product_id])
+    else
+      redirect_to root_path
+    end
   end
 
   ####### STRONG PARAMS #########
@@ -49,7 +62,7 @@ class SaleController < ApplicationController
   private
 
   def sale_params
-    params.require(:sale).permit(:name, :vendor_id)
+    params.require(:sale).permit(:amount, :purchase_time, :vendor_id, :product_id)
   end
 
 

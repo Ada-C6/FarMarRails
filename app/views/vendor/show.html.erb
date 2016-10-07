@@ -21,6 +21,7 @@
 <p><%= link_to "Back to all vendors", vendor_index_path %></p>
 <p><%= link_to "Add a new sale", new_vendor_sale_path(@vendor.id) %></p>
 <p><%= link_to "View all products", vendor_product_index_path(params[:id]) %></p>
+<p><%= link_to "View all sales", vendor_sale_index_path(params[:id]) %></p>
 
 <br>
 <%= button_to "Delete this vendor", {:action => 'destroy', :id => @vendor.id }, :method => :delete, data: { confirm: "Really, now?" } %>

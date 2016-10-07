@@ -2,12 +2,12 @@
   <% product = Product.find(params[:product_id]) %>
   <h3><%= product.vendor.name %></h3>
   <h4>Edit sale</h4>
-  <%= render partial: "sale_form", locals: {path: edit_product_sale_index_path, http_method: :patch} %>
+  <%= render partial: "sale_form", locals: {path: edit_product_sale_path, http_method: :patch} %>
 
 <% elsif vendor_sale? %>
   <h3><%= Vendor.find(params[:vendor_id]).name %></h3>
   <h4>Edit sale</h4>
-  <%= render partial: "sale_form", locals: {path: edit_vendor_sale_index_path, http_method: :patch} %>
+  <%= render partial: "sale_form", locals: {path: edit_vendor_sale_path, http_method: :patch} %>
 <% else %>
   <%= puts "Error on add new sale page" %>
 <% end %>
