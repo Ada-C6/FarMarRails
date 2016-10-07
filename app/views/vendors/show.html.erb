@@ -9,12 +9,15 @@
   <p>
     Number of employees: <%= @vendor.num_employees %>
   </p>
+<h2>Sales:</h2>
+<p>
+  <%= link_to "Total sales", vendor_sales_path(@vendor) %>
+</p>
 
   <h2>Products:</h2>
   <p>
     <%= link_to "Add a new product", new_vendor_product_path(@vendor), class: "new" %>
   </p>
-
   <ul>
     <% @vendor.products.each do |product| %>
     <li>

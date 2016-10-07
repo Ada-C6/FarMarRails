@@ -1,0 +1,10 @@
+<h2>Sales for <%= @vendor.name %></h2>
+<ul>
+<% @vendor.sales.each_with_index do |sale, i| %>
+<li>
+  <%= sale.purchase_time.strftime("%H:%M %Y-%m-%d") %>:
+  <%=   sale.amount %>cents
+</li>
+<% end %>
+</ul>
+<p>This is the sales view index.html.erb</p>

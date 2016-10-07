@@ -17,6 +17,13 @@ class SalesController < ApplicationController
     end
   end
 
+  def index
+    @sales = Sale.all
+    @vendor = Vendor.find(params[:vendor_id])
+    # @product = Product.find(params[:product_id])
+
+  end
+
   # ---- PRIVATE METHODS ----
 
     private

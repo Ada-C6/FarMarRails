@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     resources :vendors, only: [:new, :create]
   end
   resources :vendors, except: [:new, :create] do
+    resources :sales, only: [:index]
     resources :products, except: [:index, :show] do
-      resources :sales, only: [:create, :new, :index]
+      resources :sales, only: [:create, :new]
     end
   end
 
