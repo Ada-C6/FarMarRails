@@ -1,0 +1,5 @@
+<h1>CREATE A NEW PRODUCT:</h1>
+
+<%= render(partial: 'form', locals: { local_url: vendor_products_path(@vendor_id) }) %>
+
+<%= link_to 'or, go back', vendor_path(@vendor_id) %>
