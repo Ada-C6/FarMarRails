@@ -1,9 +1,12 @@
 <h1>This is the Markets#Index Page!</h1>
 
+<%= link_to "Create a new market", new_market_path %>
+
 <p>
   <% @markets.each do |m| %>
+    <br>
     <%= "#{ m.name }" %>
     <%= link_to "View this market", market_path(m.id) %>
-
+    </br>
   <% end %>
 </p>
