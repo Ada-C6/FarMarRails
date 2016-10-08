@@ -1,0 +1,13 @@
+<%= render partial: "visitor_header" , locals: { action_name: "get"}%>
+
+<h2>MARKETS:</h2>
+<section class="visitor_list">
+  <% @markets.each do |market| %>
+  <article>
+    <p>
+      <%= link_to "#{market.name}", show_all_path(market.id) %>
+      <%= market.state %>
+    </p>
+    <% end %>
+  </article>
+</section>

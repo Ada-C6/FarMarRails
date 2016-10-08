@@ -1,0 +1,13 @@
+<%= render partial: "vendor_header" , locals: { action_name: "get"}%>
+
+<h2>Welcome Vendor!</h2>
+
+<section class="visitor_list">
+  <section>
+      <p><%= link_to( 'Create a new Vendor', new_vendor_path ) %></p>
+  </section>
+
+  <section>
+      <p><%= link_to( 'Create a new Product', new_product_path ) %></p>
+  </section>
+</section>

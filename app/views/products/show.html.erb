@@ -1,0 +1,24 @@
+<%= render partial: "market_vendor_header" , locals: { action_name: "get"}%>
+
+<h2><%= @product.name.upcase %> Info:</h2>
+
+<section class="visitor_list">
+  <p>
+    <%= link_to( 'Edit', edit_product_path(@product.id) ) %>
+    <%= button_to 'delete', {action: "destroy", id: @product.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+  </p>
+
+  <p>Vendor Name: <%= @vendor %></p>
+
+  <h3>SALES:</h3>
+
+  <% @sale_list.each do |sale| %>
+  <article>
+    <p>
+      <%=link_to "$#{sale.amount/100.00}", show_sale_path(sale.id) %>
+      <%= link_to( 'Edit', edit_sale_path(sale.id) ) %>
+      <%= button_to 'delete', {action: "destroy", id: sale.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+    </p>
+    <% end %>
+  </article>
+</section>

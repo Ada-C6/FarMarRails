@@ -1,0 +1,105 @@
+* {
+  font-family: 'Gorditas', cursive;
+  color: white;
+}
+
+body {
+  background-image: url(holden-beach-farmers-market.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+body h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+article {
+  position: relative;
+}
+
+.visitor_list {
+  background: rgba(0, 0, 0, 0.7);
+  margin-right: 10vw;
+  margin-left: 10vw;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 3px;
+  border-radius: 10px;
+  color: white;
+}
+
+.visitor_list p a {
+  color: #b3d087;
+}
+
+.visitor_list p a:visited {
+  color: #739024;
+}
+
+ul {
+  padding-left: 0;
+}
+
+nav li a {
+  display: inline-block;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  padding-up: 2vw;
+  padding-down: 2vw;
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  margin-right: 10px;
+}
+
+nav li {
+  display: inline-block;
+  width: 30vw;
+}
+
+nav {
+  text-align: center;
+}
+
+form.button_to input {
+  border-color: #354d1b;
+  background-color: #354d1b;
+  border-radius: 8px;
+}
+
+h2, h3, h4 {
+  color: #fef3b6;
+}
+
+.yellow {
+  color: #ea6981;
+}
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

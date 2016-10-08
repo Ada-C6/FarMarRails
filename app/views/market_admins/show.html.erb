@@ -1,0 +1,24 @@
+<%= render partial: "market_vendor_header" , locals: { action_name: "get"}%>
+
+<h2><%= @market.name.upcase %> Info:</h2>
+
+<section class="visitor_list">
+  <p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
+
+  <section>
+      <p><%= link_to( 'Edit', edit_market_path ) %></p>
+  </section>
+
+  <p> <%= button_to 'delete', {action: "destroy", id: @market.id }, method: :delete, data: {confirm: "Are you sure?"} %> </p>
+
+  <h3>VENDORS:</h3>
+  <% @vendor_list.each do |vendor| %>
+  <article>
+    <p>
+      <%= link_to "#{vendor.name}", show_vendor_path(vendor.id) %>
+      <%= link_to( 'Edit', edit_vendor_path(vendor.id) ) %>
+      <%= button_to 'delete', {action: "destroy", id: vendor.id }, method: :delete, data: {confirm: "Are you sure?"} %>
+    </p>
+    <% end %>
+  </article>
+</section>
