@@ -1,12 +1,10 @@
 <%= render partial: "visitor_header" , locals: { action_name: "get"}%>
 
 <h2><%= @market.name.upcase %> Info:</h2>
-
-<p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
-
-
-<h2>VENDORS:</h2>
 <section class="visitor_list">
+  <p>Market Address: <%= @market.address %>, <%= @market.city %>, <%= @market.county %>, <%= @market.state %>, <%= @market.zip %></p>
+
+  <h2>VENDORS:</h2>
   <% @vendor_list.each do |vendor| %>
   <article>
     <h3 class="yellow"><%= vendor.name %></h3>
