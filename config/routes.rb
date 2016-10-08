@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
   # get 'vendors/show_sale/:id' => 'vendors#show_sale', as: 'showSale'
 
-  get 'vendors/:id/products/:prod_id/new_sale' => 'vendors#new_sale', as: 'new_sale'
+  get 'vendors/:vendor_id/products/:product_id/new_sale' => 'vendors#new_sale', as: 'new_sale'
 
   post 'vendors/create_sale'  => 'vendors#create_sale', as: 'create_sale'
 

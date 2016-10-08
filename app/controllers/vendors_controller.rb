@@ -51,13 +51,17 @@ class VendorsController < ApplicationController
   end
 
   def show_product
-    @product = Product.find(params[:id].to_i)
-    @sale = Sale.find(params[:id].to_i)
+    @product_id = params[:id].to_i
+    @product = Product.find(@product_id)
+    # find all Sales that has certain product ID
+    @sales = Sale.where(product_id: @product_id).all
     # @vendors = Vendor.all
   end
 
 ################## Modify Sales ##################
   def new_sale
+    @product_id = params[:product_id]
+    @vendor_id = params[:vendor_id]
     @sale = Sale.new
   end
 
@@ -69,12 +73,15 @@ class VendorsController < ApplicationController
     @params = params
 
     @sale = Sale.new
+    # FIXME: Amount should be a float number.
     @sale.amount = params[:sale][:amount].to_i
+    @sale.vendor_id = params[:sale][:vendor_id].to_i
+    @sale.product_id = params[:sale][:product_id].to_i
     @sale.purchase_time = Time.now
 
     @sale.save
 
-    redirect_to action: 'show', id:@product.vendor_id
+    redirect_to action: 'show_product', id:@sale.product_id
   end
 
   private

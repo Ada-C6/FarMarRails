@@ -7,8 +7,11 @@
 
 <h3> Sales of this product: </h3>
 
-<ul>
-  <li>sale amount:<%= @sale[:sale_amount] %></li>
-  <li>name:<%= @sale[:name] %></li>
-</ul>
+<% @sales.each do |sale| %>
+  <ul>
+    <li>sale amount: <%= sale.amount %></li>
+    <li>purchase time: <%= sale.purchase_time%></li>
+  </ul>
+<% end %>
+
 <%= button_to "Add a Sale", new_sale_path( @product.vendor_id, @product.id), method: :get%>

@@ -1,11 +1,8 @@
 <h1>Vendors Account</h1>
 
 <ul>
-
   <p></p>
   <% @vendors.each do |vendor| %>
   <li><%= link_to vendor.name, show_vendor_path(vendor.id) %></li>
   <% end %>
-
-
 </ul>
