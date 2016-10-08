@@ -1,0 +1,49 @@
+<h1><%= @market.name %></h1>
+
+<p>
+  <%= link_to "Return to Markets Overview", view_all_markets_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= @market.name %></td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td><%= @market.address %></td>
+  </tr>
+
+  <tr>
+    <th>City</th>
+    <td><%= @market.city %></td>
+  </tr>
+
+  <tr>
+    <th>County</th>
+    <td><%= @market.county %></td>
+  </tr>
+
+  <tr>
+    <th>State</th>
+    <td><%= @market.state %></td>
+  </tr>
+  <tr>
+    <th>Zip</th>
+    <td><%= @market.zip %></td>
+  </tr>
+</table>
+
+<p>
+  Vendors participating in <%= @market.name %>:
+</p>
+<table>
+  <tr>
+    <th>Vendors</th>
+  </tr>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= vendor.name %></td>
+  </tr>
+<% end %>
+</table>

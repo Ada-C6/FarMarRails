@@ -1,0 +1,7 @@
+<h1>Edit this entry: <%= @market.name %></h1>
+
+<p>
+  <%= link_to "Return to Markets Overview", markets_path %>
+</p>
+
+<%= render partial: "form", locals: { http_method: :patch} %>

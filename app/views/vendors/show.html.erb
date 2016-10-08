@@ -1,0 +1,17 @@
+<h1>Vendor: <%= @vendor.name %></h1>
+
+<p><%= link_to "Edit this Vendor entry", edit_vendor_path(@vendor)%></p>
+<table>
+  <tr>
+    <th>Number of employees</th>
+    <td><%= @vendor.num_employees %></td>
+  </tr>
+  <tr>
+    <th>Market ID</th>
+    <td><%= @vendor.market_id %></td>
+  </tr>
+</table>
+
+<p><%= link_to "View Products", vendor_view_products_path(@vendor.id) %></p>
+
+<p><%= link_to "View Sales", vendor_sales_path(@vendor.id) %></p>

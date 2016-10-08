@@ -1,0 +1,20 @@
+<h1>Vendors participating in <%= @market.name %></h1>
+
+<p>
+  <%= link_to "Return to #{@market.name}", market_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number of Employees</th>
+    <th>Update</th>
+  </tr>
+<% @vendors.each do |vendor| %>
+<tr>
+  <td><%= vendor.name %></td>
+  <td><%= vendor.num_employees %></td>
+  <td><%= link_to "Edit", edit_vendor_path(vendor) %>, <%= link_to "Delete", vendor_path(vendor), method: :delete, data: { confirm: "Are you sure you want to delete the vendor?" } %></td>
+</tr>
+<% end %>
+</table

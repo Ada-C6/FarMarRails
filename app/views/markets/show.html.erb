@@ -1,0 +1,41 @@
+<h1><%= @market.name %></h1>
+
+<p>
+  <%= link_to "Edit this Market entry", edit_market_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= @market.name %></td>
+  </tr>
+  <tr>
+    <th>Address</th>
+    <td><%= @market.address %></td>
+  </tr>
+
+  <tr>
+    <th>City</th>
+    <td><%= @market.city %></td>
+  </tr>
+
+  <tr>
+    <th>County</th>
+    <td><%= @market.county %></td>
+  </tr>
+
+  <tr>
+    <th>State</th>
+    <td><%= @market.state %></td>
+  </tr>
+  <tr>
+    <th>Zip</th>
+    <td><%= @market.zip %></td>
+  </tr>
+</table>
+
+<p>
+  <%= link_to "View all Vendors participating in this Market", market_view_vendors_path %>
+</p>
+
+<p><%= link_to "Create a new Vendor", market_new_vendor_path %></p>

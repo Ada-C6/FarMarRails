@@ -1,0 +1,5 @@
+<h1>Edit existing vendor: <%=@vendor.name  %></h1>
+
+<%= render partial: "form" %>
+
+<p><%= link_to "Return to Vendor page", vendor_path(@vendor.id) %></p>

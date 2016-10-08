@@ -1,0 +1,26 @@
+<h1>Products of <%= @vendor.name %></h1>
+
+<p><%= link_to "Create New Product", new_vendor_product_path(@vendor.id) %></p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>New Sale</th>
+    <th>Update</th>
+  </tr>
+
+<% @products.each do |product| %>
+
+<tr>
+  <td><%= product.name %></td>
+  <td><%= link_to "Create", new_vendor_sale_path(@vendor) %></td>
+  <td><%= link_to "Edit", edit_vendor_product_path(@vendor, product) %>, <%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you sure you want to delete the product?" } %></td>
+</tr>
+
+<% end %>
+
+</table>
+
+<p><%= link_to "See list of vendor's sales", vendor_sales_path(@vendor.id) %></p>
+
+<p><%= link_to "Return to Vendor page", vendor_path(@vendor.id) %></p>

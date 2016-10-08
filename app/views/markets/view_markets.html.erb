@@ -1,0 +1,12 @@
+<h1>All Markets</h1>
+
+<p>
+  Click on a Market to see details
+</p>
+<table>
+  <% @markets.each do |market| %>
+    <tr>
+      <td><%= link_to market.name, view_market_path(market) %></td>
+    </tr>
+  <% end %>
+</table>

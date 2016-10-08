@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref_id: 1
+  name: MyString
+  ref_id_vendor: 1
+
+two:
+  ref_id: 1
+  name: MyString
+  ref_id_vendor: 1

@@ -1,0 +1,41 @@
+<%= form_for @market, method: http_method do |t| %>
+
+<p>
+  <%= t.label "Reference ID" %>
+  <%= t.text_field :ref_id %>
+</p>
+
+<p>
+  <%= t.label "Name" %>
+  <%= t.text_field :name %>
+</p>
+
+
+<p>
+  <%= t.label "Address" %>
+  <%= t.text_field :address %>
+</p>
+
+<p>
+  <%= t.label "City" %>
+  <%= t.text_field :city %>
+</p>
+
+<p>
+  <%= t.label "County" %>
+  <%= t.text_field :county %>
+</p>
+
+<p>
+  <%= t.label "State" %>
+  <%= t.text_field :state %>
+</p>
+
+<p>
+  <%= t.label "Zip" %>
+  <%= t.text_field :zip %>
+</p>
+
+  <%= t.submit "Submit" %>
+
+<% end %>

@@ -1,0 +1,53 @@
+<h1>Sales of <%= @vendor.name %></h1>
+
+<p>
+  <%= link_to "Return to Products page", vendor_products_path %>
+</p>
+
+<p><%= link_to "Return to Vendor page", vendor_path(@vendor.id) %></p>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>Purchase Date</th>
+  </tr>
+  <% total = 0 %>
+  <% monthly_sales = [] %>
+  <% @sales.each do |s| %>
+  <tr>
+    <td><%= "$#{sprintf('%.2f' % (s.amount/100.0))}" %></td>
+    <td><%= s.purchase_time.strftime("%m/%d/%Y") %></td>
+    <% total += s.amount %>
+  </tr>
+
+  <% if s.purchase_time >= DateTime.now.at_beginning_of_month - 24.hours && s.purchase_time <= DateTime.now.at_end_of_month - 24.hours %>
+  <% monthly_sales << s %>
+  <% end %>
+  <% end %>
+</table>
+
+<p><strong><%= "Total sales: $#{ sprintf('%.2f' % (total/100.0)) }" %></strong></p>
+
+<p>
+  <h2>Sales of current month:</h2>
+  <% if monthly_sales.count > 0 %>
+  <% monthly_total = 0 %>
+  <table>
+    <tr>
+      <th>Amount</th>
+      <th>Purchase Date</th>
+    </tr>
+    <% monthly_sales.each do |ms| %>
+    <tr>
+      <td><%= "$#{sprintf('%.2f' % (ms.amount/100.0))}" %></td>
+      <td><%= ms.purchase_time.strftime("%m/%d/%Y") %></td>
+      <% monthly_total += ms.amount %>
+    </tr>
+    <% end %>
+  </table>
+
+  <p><%= "Monthly total: $#{ sprintf('%.2f' % (monthly_total/100.0)) }" %></p>
+
+  <% else %>
+  <%= "No sales so far this month" %>
+  <% end %>

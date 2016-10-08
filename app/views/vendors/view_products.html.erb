@@ -1,0 +1,23 @@
+<!-- I don't think this page is doing anything but I'm too scared to delete it -->
+
+<h1>List of <%= @vendor.name %>'s Products</h1>
+
+<p>
+  <%= link_to "Return to Vendor", vendor_path %>
+</p>
+
+<h2>Products:</h2>
+
+<% @products.each do |product| %>
+<ul>
+  <li><%= product.name %>
+    <%= link_to "Edit", edit_vendor_product_path(@vendor, product) %>
+    <%= link_to "Create New Sale", new_vendor_sale_path(@vendor) %>
+    <%= link_to "Delete", vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you sure you want to delete the product?" } %>
+</li>
+</ul>
+<% end %>
+
+<%= link_to "Create a new product", new_vendor_product_path(@vendor.id) %>
+
+<%= link_to "View list of vendor's sales", vendor_sales_path(@vendor.id) %>

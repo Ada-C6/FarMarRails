@@ -1,3 +1,124 @@
+/*Section A: Overall font, background image, header, footer, body's background container */
+
+* {
+  font-family: 'Lora', serif;
+}
+
+body {
+  background-image: url("healthy-organic-food.jpg");
+  background-size: auto;
+}
+
+.container {
+  margin: 30px 30px 30px 30px;
+  padding: 3px 50px 5px 50px;
+  background-color: #F1F2F2;
+  opacity: 0.90;
+  border-radius: 20px;
+}
+
+header {
+  border-bottom: 5px solid #CC3333;
+  font-weight: bolder;
+  text-align: center;
+  color: #CC3333;
+}
+
+header p {
+  font-size: 30px;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 5px;
+}
+
+header nav ul li {
+  font-size: 18px;
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+header nav ul li a:link {
+  text-decoration: none;
+  color: #CC3333;
+}
+
+footer {
+  font-size: 15px;
+  color: #333333;
+  text-align: center;
+  margin-top: 100px;
+  line-height: 0.5;
+}
+
+/*Section B: Content display for body's container*/
+main {
+  color: #333333;
+  line-height: 1.5;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 25px;
+}
+
+main a:link {
+  text-decoration: none;
+  color: #CC3333;
+}
+
+table {
+  border-collapse: collapse;
+  width: auto;
+}
+
+th, td {
+  text-align: left;
+  padding: 15px;
+  border: 1px solid #CCCCCC;
+}
+
+th {
+  font-weight: 600;
+  font-weight: bold;
+  color: black;
+  background-color: #CCCCCC;
+  border: 1px solid #F1F2F2;
+}
+/*Section C: This is the Overview page*/
+
+.overview {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.overview li {
+  font-size: 25px;
+  list-style-type: none;
+  display: inline-block;
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid #CC3333;
+}
+
+.overview li a:link {
+  text-decoration: none;
+  color: #333333;
+}
+
+.overview li a:visited {
+  text-decoration: none;
+  color: #333333;
+}
+
+
+/*MISC*/
+
+a:hover {
+  background: #CCCCCC;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -1,0 +1,17 @@
+<h1>Add a Sale entry for <%= @vendor.name %></h1>
+
+<%= form_for [@vendor, @sale] do |s| %>
+  <p><%= s.label :amount %>
+  <%= s.text_field :amount %></p>
+
+  <p>
+    <%= s.label "Purchase date" %>
+    <%= s.date_field :purchase_time %>
+  </p>
+
+  <p>
+    <%= s.submit "Submit" %>
+  </p>
+<% end %>
+
+<p><%= link_to "Return to Vendor's list of Products", vendor_products_path(@vendor.id) %></p>

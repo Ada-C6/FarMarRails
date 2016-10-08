@@ -1,0 +1,39 @@
+<h1>Create a new Vendor entry for <%= @market.name %></h1>
+
+<%= form_for @vendor, url: market_post_vendor_path(@market.id) do |v| %>
+<p>
+  <label for="name">Name</label>
+  <%# v.label :name %>
+  <%= v.text_field :name %>
+</p>
+
+<p>
+  <label for="ref_id">Reference ID</label>
+  <%# v.label "Reference ID" %>
+  <%= v.text_field :ref_id %>
+</p>
+
+<p>
+  <label for="num_employees">Number of Employees</label>
+  <%# v.label :num_employees %>
+  <%= v.text_field :num_employees %>
+</p>
+
+<p>
+  <label for="market_id">Market ID</label>
+  <%# v.label "Market ID" %>
+  <%= v.text_field :market_id %>
+</p>
+
+<p>
+  <%= v.submit "Submit" %>
+</p>
+<% end %>
+
+<p>
+  <%= link_to "Return to list of Vendors participating in #{@market.name}", market_view_vendors_path%>
+</p>
+
+<p>
+  <%= link_to "Return to #{@market.name}", market_path%>
+</p>

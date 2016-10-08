@@ -2,13 +2,38 @@
 <html>
 <head>
   <title>FarMarRails</title>
+  <link href="https://fonts.googleapis.com/css?family=David+Libre|Lora|Roboto" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class ="container">
+    <header>
+      <p>FARMAR DATABASE</p>
+      <nav>
+        <ul>
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "List of All Markets", view_all_markets_path %></li>
+          <li><%= link_to "Market Main Page", markets_path %></li>
+          <li><%= link_to "Vendor Main Page", vendors_path %></li>
+        </ul>
+      </nav>
+    </header>
 
-<%= yield %>
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p>
+        Webpage by Kelly & Danielle
+      </p>
+      <p>
+        Copyright &copy; 2016 - Present.  All rights reserved.
+      </p>
+    </footer>
+  </div>
 
 </body>
 </html>
