@@ -33,11 +33,11 @@ Rails.application.routes.draw do
 
   get 'vendors' => 'vendors#index', as:'vendorIndex'
 
-  get 'vendors/new' => 'vendors#new', as: 'newProduct'
+  get 'vendors/:id/products/new' => 'vendors#new', as: 'newProduct'
 
   get 'vendors/:id/show' => 'vendors#show', as: 'showVendor'
 
-  post 'vendors/create'  => 'vendors#create', as: 'createProduct'
+  post 'vendors/:id/products/create'  => 'vendors#create', as: 'createProduct'
 
   get 'vendors/:id/edit' => 'vendors#edit', as: 'editProduct'
 
@@ -47,11 +47,12 @@ Rails.application.routes.draw do
 
   get 'vendors/show_product/:id' => 'vendors#show_product', as: 'showProduct'
 
-
+############### Modify Sales Information #####################
 
   # get 'vendors/show_sale/:id' => 'vendors#show_sale', as: 'showSale'
 
-  get 'vendors/new_sale/:id' => 'vendors#new_sale', as: 'newSale'
+  get 'vendors/:id/products/:prod_id/new_sale' => 'vendors#new_sale', as: 'newSale'
+
   post 'vendors/create_Sale'  => 'vendors#create_sale', as: 'createSale'
 
 

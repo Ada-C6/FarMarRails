@@ -15,7 +15,7 @@
         <li><%= button_to "Delete", deleteProduct_path(product.id), data: {confirm:"Are you sure?"}, method: :delete %></li>
       <% end %>
     <% end %>
-    <%= link_to "Create a New Product", newProduct_path, method: :get %>
+    <%= link_to "Create a New Product", newProduct_path(@vendor.id), method: :get %>
   </ul>
 </section>
 

@@ -2,7 +2,7 @@
   <header>
     <h1>Add a New Product</h1>
   </header>
-  <%= form_for @product, url: createProduct_path do |f| %>
+  <%= form_for @product, url: createProduct_path(@vendor.id) do |f| %>
   <p>
     <%= render partial: 'form', locals: {:f => f} %>
     <div>

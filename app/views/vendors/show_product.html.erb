@@ -11,4 +11,4 @@
   <li>sale amount:<%= @sale[:sale_amount] %></li>
   <li>name:<%= @sale[:name] %></li>
 </ul>
-<%= button_to "Add a Sale", newSale_path(@sale.id), method: :get%>
+<%= button_to "Add a Sale", newSale_path( @product.vendor_id, @product.id), method: :get%>

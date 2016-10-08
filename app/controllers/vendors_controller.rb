@@ -5,6 +5,7 @@ class VendorsController < ApplicationController
 
   def new
     @product = Product.new
+    @vendor = Vendor.find(params[:id].to_i)
   end
 
 
@@ -13,7 +14,7 @@ class VendorsController < ApplicationController
 
     @product = Product.new
     @product.name = params[:product][:name]
-    @product.vendor_id = params[:product][:id].to_i
+    @product.vendor_id = params[:id].to_i
 
     @product.save
 
@@ -55,6 +56,11 @@ class VendorsController < ApplicationController
     # @vendors = Vendor.all
   end
 
+################## Modify Sales ##################
+  def new_sale
+    @sale = Sale.new
+  end
+
   def show_sale
     @sale = Sale.find(params[:id].to_i)
   end
@@ -62,11 +68,10 @@ class VendorsController < ApplicationController
   def create_sale
     @params = params
 
-    @product = Product.new
-    @product.name = params[:product][:name]
-    @product.vendor_id = params[:product][:id].to_i
+    @sale.amount = params[:sale][:amount].to_i
+    @sale.purchase_time = Time.now
 
-    @product.save
+    @sale.save
 
     redirect_to action: 'show', id:@product.vendor_id
   end

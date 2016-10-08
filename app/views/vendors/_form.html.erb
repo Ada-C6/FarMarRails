@@ -4,9 +4,4 @@
     <%= f.text_field :name, :class => "name" %>
   </li>
 
-  <li>
-    <%= f.label "Vendor:" %>
-    <%= f.collection_select :id, Vendor.order(:name),:id,:name, include_blank: false %>
-  </li>
-
 </ul>
