@@ -1,0 +1,18 @@
+<h1 class="title">Market</h1>
+<p>Name: <%= @market.name %></p>
+<p>County: <%= @market.county %></p>
+<p>Address: <%= @market.address %></p>
+  <p><%= @market.city %>, <%= @market.state %></p>
+    <p><%= @market.zip %></p>
+<h2 class= "link"><%= link_to("Edit this market", edit_market_path, method: :get) %></h2>
+<h2 class= "link"><%= link_to("See my vendors", market_vendors_path(@market), method: :get) %></h2>
+<h2 class= "link"><%= link_to("Create a new vendor", new_market_vendor_path(@market), method: :get) %></h2>
+
+
+<h1 class= "title">Vendors</h1>
+<% @vendors.each do |v| %>
+<h2><%= v.name %></h2>
+  <h2 class= "link"><%= link_to("View vendor details", market_vendors_path(@market, v), method: :get) %></h2>
+    <h2 class= "link"><%= link_to("Edit this vendor", edit_market_vendor_path(@market, v), method: :get) %></h2>
+      <h2 class= "link"><%= link_to"Delete", market_vendor_path(@market, v), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></h2>
+        <% end %>

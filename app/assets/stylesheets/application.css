@@ -13,3 +13,123 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+   font-family: Mathlete-Skinny;
+   src: url(mathlete/Mathlete-Skinny.otf);
+ }
+
+
+
+.p{
+  position: relative;
+  text-align: left;
+  font-size: 1em;
+  color: aqua;
+  margin-bottom: 15px;
+  margin-left: 15px;
+
+}
+
+.img {
+    position: relative;
+    float: left;
+    width:  100px;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+
+
+a, a:visited{
+	color: violet;
+	font-family: Mathlete-Skinny;
+	font-size: 1em;
+}
+
+html, body { height: 100%; }
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-weight: 200;
+  font-size: 1.5em;
+  font-style: normal;
+  font-family: Mathlete-Skinny;
+  text-align: justify;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+li a{
+position: relative;
+list-style-type: none;
+text-decoration: none;
+}
+
+ul, menu, dir {
+    position: relative;
+    display: block;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+.navigation {
+    position: relative;
+    z-index: 30;
+    display: block;
+    font-size: 2em;
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: cyan;
+    float: left;
+  }
+
+.link {
+  position: relative;
+  display: block;
+  font-size: 1em;
+  list-style-type: none;
+  text-decoration: none;
+  padding: 5px;
+  overflow: hidden;
+  color: grey;
+  background-color: honeydew;
+}
+
+.title {
+    display: block;
+    position: relative;
+    text-align: center;
+    color: thistle;
+    background: skyblue;
+    padding: 14px 16px;
+    font-family: Mathlete-Skinny;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.nav {
+    margin: 20px 16px;
+    position: relative;
+    display: block;
+    color: mediumorchid;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav:hover {
+    background-color: papayawhip;
+}
+
+footer {
+  position: relative;
+  background-color: deepskyblue;
+  border-top: aqua thick;
+  margin-top: 200px;
+}

@@ -1,0 +1,15 @@
+
+<h1 class= "title">All Vendors</h1>
+
+<nav class = "nav">
+  <ul class="navigation">
+    <li class="nav"><a href="/">Home</a></li>
+    <li class="nav"><%= link_to("Markets", markets_path, method: :get) %></li>
+    <li class="nav"><%= link_to("Create a new Vendor", new_vendor_path, method: :get) %></li>
+
+<% @vendor.each do |t| %>
+  <h1 class="title"><%= "Vendor: #{t.name}" %></h1>
+<li class="link"><%= link_to("View details", vendor_path(t), method: :get) %></li>
+ <% end %>
+</ul>
+</nav>

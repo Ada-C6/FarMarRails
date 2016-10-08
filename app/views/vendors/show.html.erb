@@ -1,0 +1,12 @@
+
+<h1 class = "title">Vendor: <%= @vendor.name %></h1>
+<p>Employee Count: <%= @vendor.number_employees %></p>
+<p>Vendor_ID: <%= @vendor.id %></p>
+<p>Market ID: <%= @vendor.market_id %></p>
+
+
+<h2 class="link"><%= link_to("Edit", edit_vendor_path(@vendor.id), method: :get) %></h2>
+
+<h2 class="link"><%= link_to "Delete", vendor_path(@vendor), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %></h2>
+<h2 class="link"><%= link_to("Your Products", vendor_products_path(@vendor), method: :get) %></h2>
+<h2 class="link"><%= link_to("Your Sales", vendor_sales_path(@vendor), method: :get) %></h2>

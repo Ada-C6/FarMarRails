@@ -1,0 +1,14 @@
+
+<h1>All Markets</h1>
+<nav class = "nav">
+<ul class="navigation">
+<li class="nav"><%= link_to("Create a new market", new_market_path, method: :get) %></li>
+<li class="nav"><a href="/">Home</a></li>
+</ul>
+</nav>
+
+
+  <% @markets.each do |market| %>
+  <h2 class="link"><%= "Market: #{market.name}" %></h2>
+  <h2 class="link"><%= link_to("View details", market_path(market), method: :get) %></h2>
+<% end %>

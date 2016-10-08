@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+
+
+  get 'markets/index' => 'markets#view'
+  get 'markets/:id/details' => 'markets#details', as: 'market_details'
+  root 'welcome#index'
+
+
+    resources :markets, only: [:index, :edit, :new, :update, :create, :show] do
+    resources :vendors, only: [:index, :new, :create, :edit, :update, :destroy, :show]
+  end
+
+  resources :vendors do
+    resources :products, only: [:new, :create, :edit, :update, :destroy, :index, :show]
+    resources :sales, only: [:new, :create, :show, :index]
+  end
+
+  resources :markets, only: [:index, :show] do
+  resources :vendors, only: [:index, :show]
+end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -52,5 +73,4 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
 end

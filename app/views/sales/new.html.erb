@@ -1,0 +1,8 @@
+<%= form_for @sale, url: vendor_sales_path(params[:vendor_id]) do |f| %>
+  <%= f.label :amount %>
+  <%= f.text_field :amount %>
+
+  <%= f.hidden_field :product_id, value: params[:product_id] %>
+
+  <%= f.submit "Submit" %>
+  <% end %>

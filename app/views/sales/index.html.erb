@@ -1,0 +1,32 @@
+ALL SALES #<%# TODO: fix html on this page, remove ugly headings and make this more user friendly outside of debugging %>
+<ul>
+<% @sales.each do |sale| %>
+  <li>Sale:
+  <%= "Amount: #{sale.amount}" %>
+  <%= "Purchase time: #{sale.purchase_time}" %>
+  <%= "Vendor id: #{sale.vendor_id}" %>
+  <%= "Product id: #{sale.product_id}" %></li>
+<% end %>
+</ul>
+
+
+TOTAL ALL SALES
+<p><%= "Total of all sales: #{ @total_sales }" %></p>
+
+
+CURRENT MONTH SALES
+
+<%# NOTE: this will not output the correct information because the methods (in the model) are still in debugging mode to see if the connection and method use will work at all %>
+<ul>
+<% @this_month_sales.each do |sale| %>
+  <li>Sale:
+  <%= "Amount: #{sale.amount}" %>
+  <%= "Purchase time: #{sale.purchase_time}" %>
+  <%= "Vendor id: #{sale.vendor_id}" %>
+  <%= "Product id: #{sale.product_id}" %></li>
+<% end %>
+</ul>
+
+CURRENT MONTH SALES TOTAL
+<%# NOTE: this will also output incorrect information because this method does not work yet %>
+<p> <%= @this_month_sales_total %></p>

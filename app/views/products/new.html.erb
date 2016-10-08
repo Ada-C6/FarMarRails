@@ -1,0 +1,8 @@
+<li class="nav"><a href="/">Home</a></li>
+<h1></h1>
+<h1 class="title">
+<%= form_for @product, url: vendor_products_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Submit" %>
+  <% end %></h1>
