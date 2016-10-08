@@ -31,29 +31,29 @@ Rails.application.routes.draw do
  ############## Modify Products information ####################
 
 
-  get 'vendors' => 'vendors#index', as:'vendorIndex'
+  get 'vendors' => 'vendors#index', as:'vendor_index'
 
-  get 'vendors/:id/products/new' => 'vendors#new', as: 'newProduct'
+  get 'vendors/:id/products/new' => 'vendors#new', as: 'new_product'
 
-  get 'vendors/:id/show' => 'vendors#show', as: 'showVendor'
+  get 'vendors/:id/show' => 'vendors#show', as: 'show_vendor'
 
-  post 'vendors/:id/products/create'  => 'vendors#create', as: 'createProduct'
+  post 'vendors/:id/products/create'  => 'vendors#create', as: 'create_product'
 
-  get 'vendors/:id/edit' => 'vendors#edit', as: 'editProduct'
+  get 'vendors/:id/edit' => 'vendors#edit', as: 'edit_product'
 
-  patch 'vendors/:id/update' => 'vendors#update', as: 'updateProduct'
+  patch 'vendors/:id/update' => 'vendors#update', as: 'update_product'
 
-  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'deleteProduct'
+  delete 'vendors/:id/destroy' => 'vendors#destroy', as: 'delete_product'
 
-  get 'vendors/show_product/:id' => 'vendors#show_product', as: 'showProduct'
+  get 'vendors/show_product/:id' => 'vendors#show_product', as: 'show_product'
 
 ############### Modify Sales Information #####################
 
   # get 'vendors/show_sale/:id' => 'vendors#show_sale', as: 'showSale'
 
-  get 'vendors/:id/products/:prod_id/new_sale' => 'vendors#new_sale', as: 'newSale'
+  get 'vendors/:id/products/:prod_id/new_sale' => 'vendors#new_sale', as: 'new_sale'
 
-  post 'vendors/create_Sale'  => 'vendors#create_sale', as: 'createSale'
+  post 'vendors/create_sale'  => 'vendors#create_sale', as: 'create_sale'
 
 
   root to: 'general_users#index', as: 'index'

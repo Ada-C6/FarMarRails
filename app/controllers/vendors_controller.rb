@@ -68,6 +68,7 @@ class VendorsController < ApplicationController
   def create_sale
     @params = params
 
+    @sale = Sale.new
     @sale.amount = params[:sale][:amount].to_i
     @sale.purchase_time = Time.now
 

@@ -8,8 +8,9 @@
 </head>
 <body>
   <header>
-    <%= button_to "Market", marketsIndex_path, method: :get %>
     <%= button_to "Home", index_path, method: :get %>
+    <%= button_to "Market", marketsIndex_path, method: :get %>
+    <%= button_to "Vendor", vendor_index_path, method: :get %>
   </header>
 
 <%= yield %>
