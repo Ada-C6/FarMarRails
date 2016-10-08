@@ -23,10 +23,13 @@ class VendorsController < ApplicationController
   end
 
   def show
-    @vendor = Vendor.find(params[:id].to_i)
+    @vendor_id = params[:id].to_i
+    @vendor = Vendor.find(@vendor_id)
     @products = Product.all
     @markets = Market.all
     @sales = Sale.all
+
+    @sale_sum = self.sale_sum(@vendor_id)
   end
 
   def edit
@@ -82,6 +85,15 @@ class VendorsController < ApplicationController
     @sale.save
 
     redirect_to action: 'show_product', id:@sale.product_id
+  end
+
+  def sale_sum(vendor_id)
+    sales = Sale.where(vendor_id: vendor_id).all
+    sale_sum = 0
+    sales.each do |sale|
+      sale_sum += sale.amount.to_i
+    end
+    return sale_sum
   end
 
   private

@@ -20,6 +20,9 @@
 </section>
 
 <section>
+<h2> Vendor's total sales: <%= @sale_sum %> </h2>
+
+
 <h2> This Vendor's Sales by product: </h2>
   <ul>
     <% @sales.each do |sale| %>
@@ -31,6 +34,6 @@
         <p></p>
       <% end %>
     <% end %>
-    <%= link_to "Create a New Proudct", newProduct_path, method: :get %>
+    <%= link_to "Create a New Proudct", new_product_path, method: :get %>
   </ul>
 </section>
