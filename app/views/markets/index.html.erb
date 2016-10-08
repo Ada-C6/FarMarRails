@@ -1,0 +1,13 @@
+
+
+<%=image_tag("cropped-vegetables.jpg", size: "200x200", alt:"Veggie art", class:"hero")%>
+<h1 class="center">Markets</h1>
+<section class='button'>
+	<%= button_to("add market", {action: "new"}, method: :get) %>
+</section>
+<section>
+<% @markets.each do |market| %>
+<p><%= link_to(market.name, markets_show_path(market.id)) %>
+<%= "#{market[:city]}, #{market[:state]}"  %></p>
+<% end %>
+</section>

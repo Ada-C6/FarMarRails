@@ -1,0 +1,29 @@
+ <h1><%= @mymarket.name %></h1>
+<section>
+
+	<!-- <p>name: </p> -->
+	<p>address: <%=@mymarket.address %> <%=@mymarket.city%> <%=@mymarket.county%> <%=@mymarket.state%>, <%=@mymarket.zip%></p>
+  <!-- <p>id: <%= @mymarket.id %></p> -->
+  <!-- #Market edit button -->
+    <section class='button'> <%= button_to("edit market", markets_edit_path(@mymarket.id), method: :get) %>
+    </section>
+</section>
+<section>
+  <hr >
+	<h2>Vendor's List</h2>
+  <ul>
+
+  </ul>
+	<% @myvendors.each do |vendor| %>
+		<p>
+      Vendor Name:<%= vendor.name %>
+    </p>
+    <p>
+      Number of Employees:<%=vendor.num_employees %>
+    </p>
+    <%= button_to("edit vendor", vendors_edit_path(vendor.id), method: :get)%>
+
+    <%= button_to("delete vendor", vendors_destroy_path(vendor.id), method: :delete, data: {confirm: "Are you sure?"})%>
+
+  <%end%>
+</section>
