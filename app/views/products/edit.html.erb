@@ -1,0 +1,14 @@
+<%# form_for vendor_product_path(params[:vendor_id], params[:id]), method: :patch do |f| %>
+
+<%# form_for @vendor, url: {action: "create"} do, was only using second param? %>
+<%# form_for [@market, @vendor] do %>
+
+<section class="centered-list">
+  <h1 class="page-title"><%= @vendor_product.name %></h1>
+  <h2 class="section-heading">Edit Product</h1>
+  <%= form_for @vendor_product, url: {action: "update"} do |f| %>
+    <p><%= f.label :Name %>:</p>
+    <p><%= f.text_field :name %></p>
+    <p><%= f.submit "Submit" %></p>
+  <% end %>
+</section>

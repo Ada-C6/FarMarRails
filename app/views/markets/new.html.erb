@@ -1,0 +1,17 @@
+<section class="centered-list">
+<%= form_for @market do |f| %>
+  <p><%= f.label :Name %>:</p>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.label :Address %>:</p>
+  <p><%= f.text_field :address %></p>
+  <p><%= f.label :City %>:</p>
+  <p><%= f.text_field :city %></p>
+  <p><%= f.label :County %>:</p>
+  <p><%= f.text_field :county %></p>
+  <p><%= f.label :State %>:</p>
+  <p><%= f.text_field :state %></p>
+  <p><%= f.label :Zip %>:</p>
+  <p><%= f.text_field :zip %></p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
+</section>

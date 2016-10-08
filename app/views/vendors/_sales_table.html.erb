@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <% @attribute_keys.each do |a| %>
+      <th><%= a.to_s %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% sales.each do |sale| %>
+    <tr>
+      <% sale.attributes.each do |k, v| %>
+      <td>
+        <%= v %>
+      </td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<h4><%= "TOTAL: $#{sales_total}" %></h4>

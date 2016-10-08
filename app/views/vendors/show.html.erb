@@ -1,0 +1,30 @@
+
+<h1 class="page-title"><%= @vendor.name %></h1>
+  <p class="vendor-details">Vendor ID: <%= @vendor.id %> | Number of Employees: <%= @vendor.number_of_employees %></p>
+<h3 class="vendor-market"><%= @vendor_market %></h3>
+  <p class="market-address"><%= @full_address %></p>
+
+<h2 class="section-heading">Products</h2>
+  <p class="add-product"><%= link_to "Add Product", new_vendor_product_path(params[:id]) %></p>
+  <ul class="centered-list">
+    <% @products.each do |product| %>
+      <li>
+        <%= product.name %>
+      </li>
+      <li><%= link_to "Edit", edit_vendor_product_path(params[:id], product.id) %> | <%= link_to "Delete", vendor_product_path(params[:id], product.id), method: :delete, data: { confirm: "Are you sure?"} %> | <%= link_to "Add Sale", new_vendor_product_sale_path(params[:id], product.id) %></li>
+    <% end %>
+  </ul>
+
+<section class="sales_tables">  
+  <h2 class="section-heading">Sales</h2>
+  <% if @sales.empty? %>
+  <p>
+    <%= @vendor.name %> has no sales to date.
+  </p>
+  <% else %>
+  <h3>ALL SALES</h3>
+  <%= render partial: "sales_table", locals: { sales: @sales, sales_total: @sales_total } %>
+  <h3>CURRENT MONTH SALES</h3>
+  <%= render partial: "sales_table", locals: { sales: @month_sales, sales_total: @current_month_total } %>
+  <% end %>
+</section>

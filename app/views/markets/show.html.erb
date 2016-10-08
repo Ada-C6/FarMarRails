@@ -1,0 +1,42 @@
+<section class ="market-info">
+  <ul>
+    <h1 class="page-title"><%= @market.name %></h1>
+    <% if @link == "market" %>
+    <span class="add-vendor-edit-market"><li><%= link_to "Edit Market", edit_market_path %></li></span>
+    <% end %>
+
+    <li class="market-address" >
+      <%= @market.address %>,
+      <%= @market.city %>,
+      <%= @market.state %>,
+      <%= @market.zip %>
+    </li>
+  </ul>
+</section>
+
+<article class="market-vendors">
+
+ <h2 class="section-heading">List of Vendors</h2>
+  <ul>
+    <% if @link == "market" %>
+  <span class="add-vendor-edit-market"><li><%= link_to "Add Vendor", new_market_vendor_path(@market.id) %></li></span>
+    <% end %>
+  </ul>
+  <ul class="centered-list">
+    <% @vendors.each do |vendor| %>
+      <li>
+        <%= vendor.name %>
+      </li>
+      <li>
+        <% if @link == "market" %>
+        <%= link_to "Edit", edit_market_vendor_path(vendor.market, vendor)  %> |
+        <%= link_to "Delete", market_vendor_path(@market, vendor),  method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
+        <% if vendor != nil %>
+        <% else %>
+        <%= @msg %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</article>

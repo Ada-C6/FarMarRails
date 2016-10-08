@@ -1,0 +1,14 @@
+<h2 class="page-title">Pick Your Market</h2>
+
+<ul class="centered-list">
+   <% if @link == 'market' %>
+        <div class="create-market"><li><%= link_to "Create a Market", new_market_path %></li></div>
+        <% @markets.each do |market| %>
+        <li> <%=link_to market.name, market_path(market.id) %></li>
+      <% end  %>
+   <% elsif @link == "user"%>
+         <% @markets.each do |market| %>
+         <li> <%= link_to market.name, user_show_path(market.id) %></li>
+         <% end %>
+   <% end %>
+</ul>

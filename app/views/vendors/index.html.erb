@@ -1,0 +1,9 @@
+
+<h2 class="page-title">Pick Your Vendor</h2>
+<ul class="centered-list">
+  <% @vendors_all.each do |vendor| %>
+    <li>
+      <%= link_to vendor.name, vendor_path(vendor.id) %>
+    </li>
+  <% end %>
+</ul>

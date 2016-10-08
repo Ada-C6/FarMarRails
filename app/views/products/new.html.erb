@@ -1,0 +1,5 @@
+<section class="centered-list">
+  <h1 class="page-title"><%= @vendor.name %></h1>
+  <h2 class="section-heading">Add New Product</h1>
+    <%= render partial: "form", locals: { product: [:vendor, @vendor_product], http_method: :post } %>
+</section>
