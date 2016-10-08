@@ -1,4 +1,6 @@
+require 'date'
 class VendorsController < ApplicationController
+
   def index
     @vendors = Vendor.all
   end
@@ -30,6 +32,13 @@ class VendorsController < ApplicationController
     @sales = Sale.all
 
     @sale_sum = self.sale_sum(@vendor_id)
+
+
+    begin_time = Date.today.strftime("%Y%m")
+    end_time = (Date.today>>1).strftime("%Y%m")
+    puts begin_time, end_time
+    @sale_month = self.sale_month(begin_time, end_time, @vendor_id)
+
   end
 
   def edit
@@ -91,13 +100,33 @@ class VendorsController < ApplicationController
     sales = Sale.where(vendor_id: vendor_id).all
     sale_sum = 0
     sales.each do |sale|
-      sale_sum += sale.amount.to_i
+      sale_sum += sale.amount
     end
-    return sale_sum
+    return sale_sum.to_f
   end
+
+  def sale_month(begin_time, end_time, vendor_id)
+    # find all Sales that has certain product ID
+    sales = Sale.where(Vendor_id: vendor_id).all
+
+    sales_month = sales.where("created_at > ? AND created_at < ?", begin_time, end_time).all
+
+    sale_month = 0
+    sales_month.each do |sale|
+      sale_month += sale.amount
+    end
+    return sale_month.to_f
+    # sales_month
+
+  end
+
+
+
 
   private
    def post_params
      params.require(:task).permit(:title, :description)
    end
+
+
 end

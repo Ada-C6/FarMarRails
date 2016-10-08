@@ -22,13 +22,12 @@
 <section>
 <h2> Vendor's total sales: <%= @sale_sum %> </h2>
 
-
 <h2> This Vendor's Sales by product: </h2>
   <ul>
     <% @sales.each do |sale| %>
       <% if @vendor[:id] == sale.vendor_id %>
         <li>Product: <%= @products.find(sale.product_id).name %></li>
-        <li>sale amount:<%= sale.amount %></li>
+        <li>sale amount:$<%= sale.amount/100 %></li>
         <li>purchase Time: <%= sale.purchase_time %></li>
 
         <p></p>
@@ -37,3 +36,7 @@
     <%= link_to "Create a New Proudct", new_product_path, method: :get %>
   </ul>
 </section>
+
+<h2> Vendor's total sales in current month: $<%= @sale_month %></h2>
+
+<h2> Vendor's Sale in current mounth: </h2>

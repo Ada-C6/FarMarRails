@@ -9,7 +9,8 @@
 
 <% @sales.each do |sale| %>
   <ul>
-    <li>sale amount: <%= sale.amount %></li>
+    <% # FIXME: sales amount should be float%>
+    <li>sale amount: $<%= sale.amount/100 %></li>
     <li>purchase time: <%= sale.purchase_time%></li>
   </ul>
 <% end %>
