@@ -1,0 +1,14 @@
+<h1>Welcome Market Organizers</h1>
+
+<button><%= link_to( "Create a New Market", newmarket_path) %></button>
+
+<article>
+  <h2> Markets </h2>
+  <% @allmarkets.each do |mar| %>
+    <ul>
+      <li>
+        <%= link_to "#{mar.id}. #{mar.name}", showthemarket_path(mar[:id]) %>
+      </li>
+    </ul>
+  <% end %>
+</article>

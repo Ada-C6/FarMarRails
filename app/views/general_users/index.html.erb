@@ -1,0 +1,6 @@
+<h1>Markets</h1>
+<article>
+  <% @allmarkets.each do |ea_market| %>
+    <h2><%= link_to ea_market.name, showmarket_path(ea_market.id) %></h2>
+  <% end %>
+</article>
