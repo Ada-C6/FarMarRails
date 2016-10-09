@@ -2,10 +2,10 @@
 
 <button><%= link_to( "Create a New Market", newmarket_path) %></button>
 
-<article>
-  <h2> Markets </h2>
+<h2> Markets </h2>
+<article class="markets_list">
   <% @allmarkets.each do |mar| %>
-    <ul>
+    <ul class="market_row">
       <li>
         <%= link_to "#{mar.id}. #{mar.name}", showthemarket_path(mar[:id]) %>
       </li>

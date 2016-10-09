@@ -1,6 +1,16 @@
-<h1>Markets</h1>
-<article>
-  <% @allmarkets.each do |ea_market| %>
-    <h2><%= link_to ea_market.name, showmarket_path(ea_market.id) %></h2>
-  <% end %>
-</article>
+<section>
+  <h1 class="market_title">View All Markets</h1>
+
+  <div class="name_button">
+    <p>Name</p>
+  </div>
+  <div class="state_button">
+    <p>State</p>
+  </div>
+
+  <article class="markets_list">
+    <% @allmarkets.each do |ea_market| %>
+      <p class="market_row"><%= link_to ea_market.name, showmarket_path(ea_market.id) %></p>
+    <% end %>
+  </article>
+</section>

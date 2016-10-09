@@ -4,16 +4,32 @@
   <title>FarMarRails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Lora|Poiret+One" rel="stylesheet">
   <%= csrf_meta_tags %>
+  <link href="style/normalize.css" type="text/css" rel="stylesheet">
 </head>
+
+
 <body>
   <header>
-    <%= button_to "Home", index_path, method: :get %>
-    <%= button_to "Market", marketsIndex_path, method: :get %>
-    <%= button_to "Vendor", vendor_index_path, method: :get %>
+
+    <h1>Maycar Farmers Market</h1>
+
+    <nav>
+      <ul>
+        <li><%= link_to "Home", index_path, method: :get %></li>
+        <li><%= link_to "Market Login", marketsIndex_path, method: :get %></li>
+        <li><%= link_to "Vendor Login", vendor_index_path, method: :get %></li>
+      </ul>
+  </nav>
   </header>
+  <div class="my-container">
+  <img src='http://cdn.weddingbells.ca/wp-content/uploads/2014/05/Summery-Garden-Wedding-in-Niagara-On-The-Lake-Ontario0903.jpg'>
+  <%= yield %>
 
-<%= yield %>
-
+  </div>
+  <footer>
+    <p>Maya Wang&amp;Carmen Chan@2016</p>
+  </footer>
 </body>
 </html>
