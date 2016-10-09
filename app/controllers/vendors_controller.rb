@@ -33,10 +33,15 @@ class VendorsController < ApplicationController
 
     @sale_sum = self.sale_sum(@vendor_id)
 
+    now = Time.now
 
-    begin_time = Date.today.strftime("%Y%m")
-    end_time = (Date.today>>1).strftime("%Y%m")
-    puts begin_time, end_time
+    begin_time = Date.new(now.year, now.month, 1)
+    if now.month == 12
+      end_time = Date.new(now.year+1, 1, 1)
+    else
+      end_time = Date.new(now.year, now.month+1, 1)
+    end
+
     @sale_month = self.sale_month(begin_time, end_time, @vendor_id)
 
   end
@@ -107,21 +112,18 @@ class VendorsController < ApplicationController
 
   def sale_month(begin_time, end_time, vendor_id)
     # find all Sales that has certain product ID
-    sales = Sale.where(Vendor_id: vendor_id).all
+    sales = Sale.where(vendor_id: vendor_id)
 
-    sales_month = sales.where("created_at > ? AND created_at < ?", begin_time, end_time).all
+    sales_month = sales.where(purchase_time: begin_time ..  end_time).all
 
+    puts "sales_month #{sales_month.length}"
     sale_month = 0
     sales_month.each do |sale|
       sale_month += sale.amount
     end
-    return sale_month.to_f
+    return sale_month.to_f/100
     # sales_month
-
   end
-
-
-
 
   private
    def post_params
