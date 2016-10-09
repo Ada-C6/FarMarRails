@@ -12,12 +12,12 @@ a {
   text-decoration: none;
 }
 
-.main-page-middle {
+.homepage-buttons a{
   color: white;
   text-decoration: none;
 }
 
-.main-page-middle:hover {
+.homepage-buttons a:hover {
     color: white;
 }
 h6 {
