@@ -33,17 +33,9 @@ class VendorsController < ApplicationController
 
     @sale_sum = self.sale_sum(@vendor_id)
 
-    now = Time.now
-
-    begin_time = Date.new(now.year, now.month, 1)
-    if now.month == 12
-      end_time = Date.new(now.year+1, 1, 1)
-    else
-      end_time = Date.new(now.year, now.month+1, 1)
-    end
-
-    @sale_month = self.sale_month(begin_time, end_time, @vendor_id)
-
+    @sales_this_month = sales_this_month(@vendor_id)
+    
+    @sale_month = @sales_this_month.to_ary.sum {|s| s.amount}.to_f / 100
   end
 
   def edit
@@ -110,19 +102,24 @@ class VendorsController < ApplicationController
     return sale_sum.to_f
   end
 
-  def sale_month(begin_time, end_time, vendor_id)
+  def sales_date_range(begin_time, end_time, vendor_id)
     # find all Sales that has certain product ID
     sales = Sale.where(vendor_id: vendor_id)
 
-    sales_month = sales.where(purchase_time: begin_time ..  end_time).all
+    return sales.where(purchase_time: begin_time ..  end_time).all
 
-    puts "sales_month #{sales_month.length}"
-    sale_month = 0
-    sales_month.each do |sale|
-      sale_month += sale.amount
+  end
+
+  def sales_this_month(vendor_id)
+    now = Time.now
+    begin_time = Date.new(now.year, now.month, 1)
+    if now.month == 12
+      end_time = Date.new(now.year+1, 1, 1)
+    else
+      end_time = Date.new(now.year, now.month+1, 1)
     end
-    return sale_month.to_f/100
-    # sales_month
+
+    return self.sales_date_range(begin_time, end_time, vendor_id)
   end
 
   private

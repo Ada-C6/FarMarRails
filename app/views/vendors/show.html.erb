@@ -38,4 +38,15 @@
 
 <h2> Vendor's total sales in current month: $<%= @sale_month %></h2>
 
-<h2> Vendor's Sale in current mounth: </h2>
+<h2> Vendor's Sale list in current mounth: </h2>
+<ul>
+  <% @sales_this_month.each do |sale| %>
+    <% if @vendor[:id] == sale.vendor_id %>
+      <li>Product: <%= @products.find(sale.product_id).name %></li>
+      <li>sale amount:$<%= sale.amount/100 %></li>
+      <li>purchase Time: <%= sale.purchase_time %></li>
+
+      <p></p>
+    <% end %>
+  <% end %>
+</ul>
