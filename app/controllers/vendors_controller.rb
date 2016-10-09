@@ -34,7 +34,7 @@ class VendorsController < ApplicationController
     @sale_sum = self.sale_sum(@vendor_id)
 
     @sales_this_month = sales_this_month(@vendor_id)
-    
+
     @sale_month = @sales_this_month.to_ary.sum {|s| s.amount}.to_f / 100
   end
 

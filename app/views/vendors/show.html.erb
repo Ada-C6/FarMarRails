@@ -27,7 +27,7 @@
     <% @sales.each do |sale| %>
       <% if @vendor[:id] == sale.vendor_id %>
         <li>Product: <%= @products.find(sale.product_id).name %></li>
-        <li>sale amount:$<%= sale.amount/100 %></li>
+        <li>sale amount:$<%= sale.amount %></li>
         <li>purchase Time: <%= sale.purchase_time %></li>
 
         <p></p>
@@ -43,7 +43,7 @@
   <% @sales_this_month.each do |sale| %>
     <% if @vendor[:id] == sale.vendor_id %>
       <li>Product: <%= @products.find(sale.product_id).name %></li>
-      <li>sale amount:$<%= sale.amount/100 %></li>
+      <li>sale amount:$<%= sale.amount %></li>
       <li>purchase Time: <%= sale.purchase_time %></li>
 
       <p></p>
