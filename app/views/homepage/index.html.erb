@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      <% @little_title = 'welcome to'%>
+      <%= @title = '~FARMAR HELL~'%>
+    </title>
+  </head>
+  <body>
+    <main class ="homepage-buttons">
+      <h2><%= link_to "Act As A Market", market_index_path %></h2>
+      <h2><%= link_to "Act As A Vendor", vendor_index_path %></h2>
+    </main>
+  </body>
+</html>

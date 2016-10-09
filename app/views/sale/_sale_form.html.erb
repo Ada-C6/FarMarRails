@@ -1,0 +1,43 @@
+<% if @sale.errors.any? %>
+  <ul class="error">
+    <% @sale.errors.each do |error, message| %>
+    <li><strong><%= error.upcase %></strong><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @sale, url: path, method: http_method do |f| %>
+<table class="sale-form-partial">
+  <tr>
+    <td><%= f.label :amount %> </td>
+    <td><%= f.text_field :amount, :size => 100 %> </td>
+  </tr>
+  <tr>
+    <td><%= f.label :purchase_time %> </td>
+    <td><%= f.datetime_field :purchase_time, :value => "YYYY-MM-DD", :size => 100 %> </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :vendor_id, "Vendor ID*" %> </td>
+    <% if vendor_sale? %>
+      <td><%= f.text_field :vendor_id, :value => params[:vendor_id], :required => true %> </td>
+    <% else %>
+      <td><%= f.text_field :vendor_id, :required => true %> </td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td><%= f.label :product_id, "Product ID*" %> </td>
+    <% if product_sale? %>
+      <td><%= f.text_field :product_id, :value => params[:product_id], :required => true %> </td>
+    <% else %>
+      <td><%= f.text_field :product_id, :required => true %> </td>
+    <% end %>
+  </tr>
+
+  <tr>
+    <td class="submit-button"><%= f.submit "Set Sale!" %></td>
+  </tr>
+</table>
+<% end %>

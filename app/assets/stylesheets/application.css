@@ -1,3 +1,186 @@
+main {
+  margin-bottom: 10%;
+}
+
+a:hover {
+  color: #666699;
+}
+
+a {
+  color: #F5B19A;
+  font-family: 'Quicksand';
+  text-decoration: none;
+}
+
+.homepage-buttons a{
+  color: white;
+  text-decoration: none;
+}
+
+.homepage-buttons a:hover {
+    color: white;
+}
+h6 {
+  text-align: center;
+  font-family: 'Quicksand', serif;
+  color: #F5B19A;
+}
+h1 {
+  text-align: center;
+  font-family: 'Quicksand', serif;
+  font-size: 4em;
+  color: #F5B19A;
+  /*background-color: #efefef;*/
+}
+
+/*main {
+  margin-top: 30px;
+}*/
+
+.add-market {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.market-table {
+  margin-left: 29%;
+}
+
+.market-table tr {
+  color: grey;
+}
+
+.market-form, .product-form-partial, .sale-form-partial {
+  margin-left: 20%;
+}
+
+.market-details {
+  margin-left: 20%;
+}
+
+.table-product-action {
+text-align: center;
+}
+
+.table-info td, .table-product td {
+  padding-right: 3%;
+  color: #F5B19A;
+}
+
+.table-product {
+  margin-left: 42%;
+  column-width: auto;
+}
+
+
+.name-title {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #F5B19A;
+}
+
+nav{
+margin-left: 8%;
+margin-bottom: 5%;
+}
+
+nav a {
+  color: grey;
+}
+
+.top-buttons li {
+  display: inline;
+  font-family: 'Julius Sans One', sans-serif;
+  border-bottom: 2pt solid #F5B19A;
+  color: #666699;
+  /*previous color #39324b*/
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 5px 25px;
+  font-size: 9pt;
+}
+
+footer {
+  font-family: 'Bad Script', sans-serif;
+  color: #F5B19A;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #efefef;
+  text-align: center;
+  margin-top: 5%;
+  position: fixed;
+}
+
+/*.bottom-buttons li{
+  display: inline;
+  font-family: 'Julius Sans One', sans-serif;
+  border-right: 2pt solid #39324b;
+  color: #39324b;
+  margin-right: 8%;
+  margin-left: 8%;
+  padding: 0px 25px;
+  font-size: 9pt;
+}*/
+
+
+h3 {
+  text-align: center;
+  font-family: 'Quicksand', serif;
+  letter-spacing: 5px;
+  font-size: 5em;
+  color: white;
+  border-radius: 25px;
+  background-size: 280px 260px;
+  margin: 0 10%;
+  background-repeat: repeat;
+  opacity: 0.7;
+  background-image: url("http://abwatercolors.com/wp-content/uploads/2012/11/farmersMarket.jpg");
+}
+
+/*middle pictures in home page*/
+h2 {
+  text-align: center;
+  font-family: 'Quicksand', serif;
+  letter-spacing: 5px;
+  font-size: 5em;
+  color: white;
+  border-radius: 25px;
+  background-size: 280px 260px;
+  padding: 3% 3%;
+  margin: 5% 10%;
+  background-repeat: repeat;
+  opacity: 0.7;
+  background-image: url("http://abwatercolors.com/wp-content/uploads/2012/11/farmersMarket.jpg");
+}
+
+table {
+  margin: 0 17%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+th {
+  border-bottom: 2pt solid grey;
+  text-align: left;
+}
+
+main table {
+  /*margin-top: 6%;*/
+  margin-left: 35%;
+}
+
+footer a {
+  color: #F5B19A;
+}
+/*.table-top * {
+  margin: 0 20%;
+}
+
+.table-info * {
+  margin-right: 10%;
+}*/
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FarMarRails</title>
+  <title>FarMar</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="../../assets/stylesheets/application.css" media="screen" title="no title" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Bad+Script|Anton|Julius+Sans+One|Poiret+One|Quicksand" rel="stylesheet">
 </head>
 <body>
+  <header>
+    <h6><%= @little_title %></h6>
+    <h1><%= @title %></h1>
+    <h3><%= @page_name %></h3>
+    <nav>
+      <ul class="top-buttons">
+        <li><%= link_to "HOME", root_path %></li>
+        <li><%= link_to "VIEW ALL MARKETS", market_index_path %></li>
+        <li><%= link_to "VIEW ALL VENDORS", vendor_index_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
 
-<%= yield %>
 
+<footer>
+<p>
+  Brought to you by lovely Nicole and Yeni :)
+</p>
+</footer>
 </body>
 </html>

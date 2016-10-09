@@ -1,0 +1,15 @@
+
+<% if product_sale? %>
+  <% product = Product.find(params[:product_id]) %>
+  <h3><%= product.vendor.name %></h3>
+  <h4>Add new sale</h4>
+  <%= render partial: "sale_form", locals: {path: product_sale_index_path, http_method: :post} %>
+
+<% elsif vendor_sale? %>
+  <h3><%= Vendor.find(params[:vendor_id]).name %></h3>
+  <h4>Add new sale</h4>
+  <%= render partial: "sale_form", locals: {path: vendor_sale_index_path, http_method: :post} %>
+
+<% else %>
+  <%= puts "Error on add new sale page" %>
+<% end %>

@@ -1,0 +1,33 @@
+<head>
+  <title><%= @page_name = 'Vendor Form'%></title>
+</head>
+<% if @vendor.errors.any? %>
+  <ul class="error">
+    <% @vendor.errors.each do |error, message| %>
+    <li><strong><%= error.upcase %></strong><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @vendor, :url => vendor_index_path, method: http_method do |f| %>
+<table class="vendor-form-partial">
+  <tr>
+    <td><%= f.label :name,"Name*"%> </td>
+    <td><%= f.text_field :name, :size => 100 , :required => true%> </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :num_employees %> </td>
+    <td><%= f.text_field :num_employees, :size => 100 %> </td>
+  </td>
+
+  <tr>
+    <td><%= f.label :market_id, "Market ID*" %></td>
+    <td><%= f.text_field :market_id, :value => params[:market_id], :required => true  %></td>
+  </tr>
+
+  <tr>
+    <td class="submit-button"><%= f.submit "Send 'er, Vendor!" %></td>
+  </tr>
+</table>
+<% end %>

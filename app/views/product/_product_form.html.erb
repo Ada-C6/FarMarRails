@@ -1,0 +1,26 @@
+<% if @product.errors.any? %>
+  <ul class="error">
+    <% @product.errors.each do |error, message| %>
+    <li><strong><%= error.upcase %></strong><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @product, url: path, method: http_method do |f| %>
+<table class="product-form-partial">
+  <tr>
+    <td><%= f.label :name %> </td>
+    <td><%= f.text_field :name, :size => 100 %> </td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :vendor_id %> </td>
+    <td><%= f.text_field :vendor_id, :value=> params[:vendor_id], :required => true %> </td>
+  </td>
+
+  <tr>
+    <td class="submit-button"><%= f.submit "Produce Product!" %></td>
+  </tr>
+</table>
+<% end %>

@@ -1,0 +1,22 @@
+<head>
+  <title><%= @page_name = 'View All Vendors'%></title>
+</head>
+
+<% if params[:market_id] != nil %>
+<h4><%= link_to "Add a new vendor for this market", new_market_vendor_path(@vendors[0].market_id) %></h4>
+<% end %>
+
+<table>
+  <tr>
+    <th>Vendor Name</th>
+    <th>Actions</th>
+  </tr>
+  <% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= link_to "#{vendor.name}", vendor_path(vendor) %></td>
+    <td><small>
+      <%= link_to "[Edit]", edit_vendor_path(vendor) %>
+      <%= link_to "[Delete]", vendor_path(vendor), method: :delete, data: { confirm: "Really, now?" } %></small> </td>
+  </tr>
+  <% end %>
+</table>
