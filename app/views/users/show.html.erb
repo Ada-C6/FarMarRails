@@ -1,0 +1,23 @@
+<h1>Welcome Visitor!</h1>
+<h3><%= link_to("See all Markets", marketsindex_path) %></h3>
+<p>or select a market:
+  <%= collection_select :market_id, :name, Market.order(:name),:id,:name, include_blank: false %> **this dropdown doesn't work yet**
+  <%= button_to 'Go', marketsshow_path(:id), method: :get, class: :button %></p>
+
+<p>See Market by State:
+  <%= select_tag :state, options_for_select( us_states ) %> **this dropdown doesn't work yet, to filter by state change code. Currently set to WA**
+  <%= button_to 'Go', marketsshowstate_path('Florida'), method: :get, class: :button %>
+</p>
+
+
+
+<h3><%= link_to("See all Vendors", vendorsindex_path) %></h3>
+<p>or select a vendor:
+  <%= collection_select :vendor_id, :name, Vendor.order(:name),:id,:name, include_blank: false %>**this dropdown doesn't work yet**
+  <%= button_to 'Go', vendorsshow_path(:id), method: :get, class: :button %></p>
+
+
+<h3><%= link_to("See all Products", productsindex_path) %></h3>
+<p>or select a product to see where it is sold:
+  <%= collection_select :product_id, :name, Product.order(:name),:id,:name, include_blank: false %>**this dropdown doesn't work yet**
+  <%= button_to 'Go', productsshow_path(:id), method: :get, class: :button %></p>

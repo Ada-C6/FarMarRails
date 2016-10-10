@@ -1,0 +1,12 @@
+<% if @markets.count == 0 %>
+  <h1>Sorry, there are no Farmers Markets in that state.</h1>
+<% else %>
+  <h1>Here are all of the markets in <%= @markets.first.state %>!</h1>
+  <% @markets.each do |market| %>
+
+    <article>
+      <h2><%= link_to(market.name, marketsshow_path(market.id)) %></h2>
+    </article>
+
+  <% end %>
+<% end %>

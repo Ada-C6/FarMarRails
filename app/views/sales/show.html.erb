@@ -1,0 +1,10 @@
+<h1><%= link_to( @sale.vendor.name, vendorsshow_path(@sale.vendor.id)) %></h1>
+
+<h3><%= @sale.product.name %>: $<%= (sprintf "%.2f", @sale.amount / 100.0) %></h3>
+<h4><%= @sale.purchase_time %></h4>
+
+
+<ul class="align-buttons">
+  <li><%= button_to 'Edit this Sale', salesedit_path(params[:id]), :class => "button", method: :get %></li>
+  <li><%= button_to 'Delete this Sale', salesdestroy_path(), :class => "button", method: :delete, data: {confirm: 'Are you sure you want to delete this sale?'} %></li>
+</ul>

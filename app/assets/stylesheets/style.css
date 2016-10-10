@@ -1,0 +1,141 @@
+@import   'https://fonts.googleapis.com/css?family=Josefin+Sans|Londrina+Shadow|Playfair+Display';
+
+html {
+font: normal normal 14px/1 'Playfair Display', 'serif';
+}
+
+/************************************/
+/* NAVIGATION BAR AND HEADER SECTION */
+/************************************/
+
+.navigation-container {
+  width: 100%;
+  height: 10%;
+  text-align:center;
+}
+
+.navigation-container li {
+  list-style-type: none;
+  padding: 0 2% 0 2%;
+  display: inline-block;
+}
+
+.navigation-container ul {
+  padding: 1%;
+  margin: 0;
+}
+
+/************************************/
+/* LINKS */
+/************************************/
+.navigation-container li a {
+  color: #000000;
+  font-size: 2em;
+  font-family: 'Josefin Sans';
+  text-decoration: none;
+  text-align: center;
+}
+
+.navigation-container li a:hover {
+  color: #D56E4F;
+}
+
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #7D543A
+}
+
+a:hover {
+  color: #D56E4F;
+}
+
+
+/************************************/
+/* MAIN BODY SECTIONS
+/************************************/
+body {
+  margin-left: .5%;
+  margin-right: .5%;
+  font-family: 'Playfair Display', serif;
+  background-color: #D2E4E8
+}
+
+h1 {
+  font-family: 'Londrina Shadow';
+  color: #D56E4F;
+  font-size: 3em;
+  padding-top: 2%;
+}
+
+h2 {
+  font-family: 'Josefin Sans';
+  font-size: 1.5em;
+  text-align: left;
+  /*width: 30%;*/
+  margin: 5px 2px 5px 2px;
+}
+
+h3 {
+  margin: 2% 0 2% 0;
+  padding: 0;
+  font-family: "Londrina Shadow";
+  color: #D56E4F;
+  font-size: 2.5em;
+
+}
+
+section div {
+  display: inline-block;
+  padding: 0;
+  width: 32%;
+  /*vertical-align: top;*/
+}
+
+.image-format {
+  text-align: center;
+}
+
+#center {
+  padding-bottom: 2%;
+  text-align: center;
+}
+
+/************************************/
+/* FORMS */
+/************************************/
+ul   {
+  list-style-type: none;
+}
+
+
+/************************************/
+/* BUTTONS */
+/************************************/
+.align-buttons {
+  padding-left: 0;
+}
+
+.align-buttons li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 1% 2% 1% 2%;
+}
+
+.button {
+  background-color: #D56E4F;
+  border: none;
+  color: #D2E4E8;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #A7B724;
+  color: #D2E4E8;
+}

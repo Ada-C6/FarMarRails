@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>FarMarRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header>
+
+      <nav class="navigation-container">
+        <ul>
+          <li><%= link_to(image_tag("logo1option.png", :alt => "logo", :title => "logo"), root_path) %> </li>
+        </ul>
+        <ul>
+          <li><%= link_to("Markets' Home", marketsindex_path)%></li>
+          <li><%= link_to("Show Vendors", vendorsindex_path)%></li>
+          <li><a href ="https://weather.com/"> Weather </a></li>
+          <li><%= link_to("Log Out", root_path)%></li>
+        </ul>
+      </nav>
+    </header>
+
+
+<%= yield %>
+
+</body>
+</html>

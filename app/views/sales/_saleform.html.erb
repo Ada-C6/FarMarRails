@@ -1,0 +1,16 @@
+<%= form_for @sale,
+  url: action_name do |f| %>
+<ul>
+  <li><%= f.label :amount %></li>
+  <li><%= f.text_field :amount %></li>
+
+  <li><%= f.label :vendor_id %></li>
+  <li><%= f.select(:vendor_id, Vendor.all.map{|u| [u.name, u.id]}, {include_blank: true}) %></li>
+
+  <li><%= f.label :product_id %></li>
+  <li><%= f.select(:product_id, Product.all.map{|u| [u.name, u.vendor_id]}, {include_blank: true}) %></li>
+
+  <li><%= f.submit class: 'button' %>
+</ul>
+
+  <% end %>
