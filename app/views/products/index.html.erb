@@ -1,0 +1,32 @@
+<%= render 'shared/user_id_header' %>
+
+<h2>My products</h2>
+
+<p class="strong-text"> <%= "Hello, #{current_user.name}!" %> </p>
+
+<p>
+
+Here are the products you currently sell: </p>
+
+<% current_user.products.each do |product| %>
+  <li> <%= "Name: #{product.name}, ID: #{product.id}" %>
+    <div class="edit-delete">
+      <ul>
+
+
+      <li>
+        <%= button_to "Edit", products_edit_path(product.id), method: :get %>
+      </li>
+      <li>
+          <%= button_to("Delete", products_destroy_path(product.id), :data => {:confirm => 'Are you sure? Deleting a product also deletes all sales associated with that product.'}, :method => 'delete') %>
+      </li>
+      </ul>
+    </div>
+  </li>
+<%end%></p>
+
+<div class="button">
+<p> <%= link_to "Add a product", products_new_path, method: :get %></p>
+</div>
+
+<%= render 'shared/vindex_footer'%>

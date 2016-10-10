@@ -1,0 +1,24 @@
+<%= render 'shared/user_id_header' %>
+
+<% if @time_period == 'this_month' %>
+  <h2>Sales for <%= DateTime.now.strftime("%B %Y")%></h2>
+
+  <p> Total for month to date: $<%= "#{format("%.2f", @vendor.this_months_sales/100.0)}"%> </p>
+
+  <% @vendor.sales.each do |sale| %>
+    <% if sale.purchase_time.month == DateTime.now.month && sale.purchase_time.year == DateTime.now.year %>
+      <p><%= "ID: #{sale.id}, Amount: $#{format("%.2f", sale.amount/100.0)}, Product: #{sale.product.name}, Sold at: #{sale.purchase_time}" %></p>
+    <% end %>
+  <% end %>
+
+<% else%>
+  <h2>All my sales</h2>
+
+  <p> Total sales: $<%= "#{format("%.2f", @vendor.total_sales/100.0)}"%> </p>
+
+  <% @vendor.sales.each do |sale| %>
+    <p><%= "ID: #{sale.id}, Amount: $#{format("%.2f", sale.amount/100.0)}, Product: #{sale.product.name}, Sold at: #{sale.purchase_time}" %></p>
+  <% end %>
+<% end %>
+
+<p><%= link_to "Back to sales home", sales_index_path, method: :get%></p>

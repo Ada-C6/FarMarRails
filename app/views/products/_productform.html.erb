@@ -1,0 +1,19 @@
+
+
+<section class="product-form">
+
+<%= form_for @product, method: @method, url: @path do |f| %>
+<div>
+  <ul>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+        <%= f.submit %>
+    </li>
+  </ul>
+</div>
+
+<% end %>
+</section>

@@ -1,0 +1,20 @@
+<%= render 'shared/welcome_header' %>
+
+<h2>Welcome, <%= @type.capitalize %>!</h2>
+
+<p>Please create a new session by identifying yourself using the dropdown:</p>
+
+<section>
+
+<%= form_for(:session, url: sessions_create_path(:user_type => @type)) do |f| %>
+
+  <% if @type == 'market' %>
+    <%= f.collection_select :id, Market.all, :id, :name %>
+  <% elsif @type == 'vendor' %>
+    <%= f.collection_select :id, Vendor.all, :id, :name %>
+  <% end %>
+
+  <%= f.submit "Log in" %>
+
+<% end %>
+</section>

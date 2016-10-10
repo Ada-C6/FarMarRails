@@ -1,0 +1,18 @@
+<%= render 'shared/welcome_header' %>
+
+<div class="nav">
+  <ul>
+    <li>
+      <%= link_to image_tag("guest.svg", :alt => "Guest", :class => "css"), users_index_path(:user_type =>'user') %>
+    </li>
+    <li>
+      <%= link_to image_tag("vendor2.svg", :alt => "Vendors", :class => "css"), sessions_new_path(:user_type => 'vendor') %>
+    </li>
+    <li>
+      <%= link_to image_tag("market.svg", :alt => "Markets", :class => "css"), sessions_new_path(:user_type => 'market') %>
+    </li>
+
+  </ul>
+</div>
+
+<%= render 'shared/footer' %>

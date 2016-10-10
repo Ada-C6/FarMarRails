@@ -1,0 +1,14 @@
+<%= render 'shared/user_id_header' %>
+<h2>My sales</h2>
+<p>See what you've sold and add new sales!</p>
+
+<div class="button">
+
+
+<p><%= link_to "All my sales", sales_show_path(:period => :all), method: :get %></p>
+<p><%= link_to "This month's sales", sales_show_path(:period => :this_month), method: :get %></p>
+<p><%= link_to "Add a sale", sales_new_path, method: :get %></p>
+
+</div>
+
+<%= render 'shared/vindex_footer' %>

@@ -1,0 +1,36 @@
+<%= render 'shared/welcome_header' %>
+
+<h2>Farmers Market: <%= @market.name %></h2>
+
+<h2>Address:</h2>
+
+<p><%=@market.address%></p>
+<p><%=@market.city%>, <%=@market.county%>, <%=@market.state%>, <%=@market.zip%></p>
+
+<h2>Vendors:</h2>
+
+<ul>
+
+  <% @market.vendors.each do |vendor| %>
+    <li><%=vendor.name%></li>
+  <% end %>
+
+</ul>
+
+<div class="footer-container">
+  <nav>
+    <ul>
+      <li>
+        <%= link_to "Market Directory", users_index_path %>
+      </li>
+    </ul>
+    <ul class="social-media">
+      <li>
+        <%= link_to image_tag("facebook-square.png", :alt => "facebook", :class => "css"), sessions_index_path %>
+      </li>
+      <li>
+        <%= link_to image_tag("twitter.png", :alt => "twitter", :class => "css"), sessions_index_path %>
+      </li>
+    </ul>
+  </nav>
+</div>

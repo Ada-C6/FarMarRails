@@ -1,0 +1,19 @@
+<%= render 'shared/user_id_header' %>
+
+<h2><%= "Welcome, #{@market.name}!"%></h2>
+
+<h2>Address:</h2>
+
+<p><%=@market.address%></p>
+<p><%=@market.city%>, <%=@market.county%>, <%=@market.state%>, <%=@market.zip%></p>
+
+<div class="button">
+
+<p><%= link_to "Edit my market profile", markets_edit_path(current_user.id) %></p>
+<p><%= link_to "Make a new market", markets_new_path %></p>
+
+</div>
+
+<h3><%= link_to "View My Vendors", vendors_show_path %></h3>
+
+<%= render 'shared/footer' %>

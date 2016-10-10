@@ -1,0 +1,13 @@
+<section>
+<%= form_for @market_vendor, url: action_name,  html: { class: "vendor_create" } do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label "number of Employees" %>
+  <%= f.number_field :num_employees %>
+
+  <%= f.hidden_field :market_id, :value => current_user.id %>
+
+  <%= f.submit %>
+<% end %>
+</section>

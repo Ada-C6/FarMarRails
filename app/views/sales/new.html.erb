@@ -1,0 +1,14 @@
+<%= render 'shared/user_id_header' %>
+<h2>Add a new sale </h2>
+
+<section>
+  <%= form_for @sale, method: 'post', url: sales_create_path do |f| %>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+
+    <%= f.label :product_id %>
+    <%= f.collection_select :product_id, @vendor.products.all, :id, :name %>
+
+    <%= f.submit %>
+  <% end %>
+</section>

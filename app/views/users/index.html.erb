@@ -1,0 +1,15 @@
+<%= render 'shared/welcome_header' %>
+<p>FarMar helps you get info about farmer's markets you may want to attend.</p>
+<p>Choose a farmer's market to get more info:</p>
+
+
+<ul>
+  <% @markets.each do |market| %>
+
+      <li><%= link_to market.name, users_show_path(market.id) %></li>
+
+  <% end %>
+
+</ul>
+
+<%= render 'shared/footer' %>

@@ -1,0 +1,30 @@
+<%#Vendors belonging to a Market %>
+<%= render 'shared/user_id_header' %>
+
+<section class="vendor-show">
+  <h2>Your Current Vendors</h2>
+
+<ul>
+  <% @market.vendors.each do |vendor| %>
+    <li>
+      <%= "#{vendor.name},   ID: #{vendor.id},   Number of  employees:  #{vendor.num_employees}" %>
+    </li>
+    <div class="edit-delete">
+      <ul>
+
+      <li >
+        <%= button_to "Edit", vendors_edit_path(vendor.id), {:method => :get} %>
+      </li>
+      <li>
+        <%= button_to "Delete", {action: "destroy", id: vendor.id}, method: :delete, data: {confirm: "Are you sure you want to delete this vendor?" }%>
+      </li>
+      </ul>
+    </div>
+
+  </ul>
+  <%end%>
+</section>
+
+<h3 class="create-buttons"><%= link_to "Create New Vendor", new_vendor_path %> </h3>
+
+<%= render 'shared/mi_link' %>

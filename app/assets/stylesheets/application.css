@@ -1,0 +1,207 @@
+/*overall stuff*/
+
+header {
+  background-color: #C5E0DC;
+  margin: 0;
+  overflow: auto;
+}
+
+body {
+  font-family: 'Gruppo', cursive;
+  text-align: center;
+}
+
+section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-family: 'Cabin Sketch';
+  font-size: 5rem;
+  color: #FFF;
+  display: inline;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  font-weight: normal;
+  margin-left: 1em;
+}
+
+h3 {
+  display: inline-block;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 1.5rem;
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.strong-text {
+  font-size: 2rem;
+}
+
+/****home page icon/link****/
+
+.home-button {
+  float: right;
+  margin: .5em;
+}
+
+/*****main page large icons*****/
+.nav {
+  list-style: none;
+  display: block;
+  text-align: center;
+  height: 30em;
+}
+
+.nav li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/******Form styling*******/
+
+.forms div {
+  display: block;
+  margin: 2rem;
+  font-size: 1.5rem;
+}
+
+.product-form div {
+  display: block;
+}
+
+.product-form li {
+  display: inline-block;
+  margin: 2rem;
+}
+
+/******buttons*******/
+
+.edit-delete {
+  display: block;
+  margin-top: 1rem;
+}
+
+.edit-delete  li {
+  display: inline-block;
+  margin: 2rem;
+}
+
+/******back to vendor navigation*******/
+.vendor-show {
+ height: 35rem;
+ display: block;
+ overflow: auto;
+}
+
+.vendor-show li {
+  display: inline-block;
+  margin: 20px;
+}
+
+/******vendor index********/
+
+.button p {
+  display: inline-block;
+  margin: 4rem;
+}
+.button a:link {
+  background-color: #E8DDCB;
+  color: #016563;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button a:hover, a:active {
+    background-color: #C5E0DC;
+}
+
+
+/******Footer styling******/
+.footer-container {
+  background-color: #E08E79;
+}
+
+.footer-container nav {
+  list-style: none;
+  display: block;
+  text-align: center;
+}
+
+.footer-container li {
+  display: inline-block;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
+.footer-container a:link, a:visited {
+    background-color: #E8DDCB;
+    color: #016563;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.footer-container a:hover, a:active {
+    background-color: #C5E0DC;
+}
+.social-media a:link, a:visited {
+    background-color: #E8DDCB;
+    color: #016563;
+    padding: 0px 0px;
+    display: inline-block;
+}
+
+.social-media a:hover, a:active {
+    background-color: #C5E0DC;
+}
+
+/******vindex footer*******/
+
+.back-button {
+  float:left;
+  margin: 2rem;
+}
+
+.social-media a {
+  float: right;
+  margin: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
