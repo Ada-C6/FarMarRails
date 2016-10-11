@@ -1,23 +1,22 @@
-<h1> <%= @market[:name]  %></h1>
-<section>
+<h1 class="detail_title"> <%= @market[:name]  %></h1>
+<section class="detail_content">
   <p><%= @market[:street] %></p>
   <p><%= @market[:city] %>, <%= @market[:state] %> <%= @market[:zip] %></p>
 </section>
 
-<section>
+<section class="botton">
   <button><%= link_to( "Edit", editmarket_path(@market[:id].to_i) ) %></button>
   <button><%= link_to( "Delete", destroymarket_path(@market[:id].to_i), data: { confirm: "Are you sure you want to delete this market?" }, method: :delete) %></button>
 </section>
 
-<section>
-<h2> Vendors in this Market: </h2>
-  <ul>
-    <% @vendors_in_market.each do |vendor| %>
-      <li>
-        <%= link_to vendor.name, show_vendor_path(vendor[:id]) %>
-        <button><%= link_to "Edit Vendor Information", editvendor_path(vendor[:id]) %></button>
-        <button><%= link_to( "Delete Vendor", destroyvendor_path(vendor[:id]), data: { confirm: "Are you sure you want to delete this vendor?" }, method: :delete) %></button>
-      </li>
-    <% end %>
-  </ul>
+
+<h2 class="list_title"> Vendors in this Market: </h2>
+<section class="full_list">
+  <% @vendors_in_market.each do |vendor| %>
+    <p class="list_row">
+      <%= link_to vendor.name, show_vendor_path(vendor[:id]) %>
+      <button><%= link_to "Edit Vendor Information", editvendor_path(vendor[:id]) %></button>
+      <button><%= link_to( "Delete Vendor", destroyvendor_path(vendor[:id]), data: { confirm: "Are you sure you want to delete this vendor?" }, method: :delete) %></button>
+    </p>
+  <% end %>
 </section>
