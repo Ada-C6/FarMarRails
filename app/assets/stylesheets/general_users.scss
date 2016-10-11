@@ -1,120 +1,32 @@
 // Place all the styles related to the general_users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-/*background*/
-body{
-  // background-color:#d3d3d3;
-}
-
-
-.my-container {
-    position: relative;
-    overflow: hidden;
-}
-.my-container .market_title, .markets_list, .name_button, .state_button {
-    position: relative;
-    z-index: 2;
-
-}
-.my-container img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    opacity: 0.6;
-}
-
-/*header*/
-header{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: white;
-  z-index: 1000;
-  width: 100%;
-  position: fixed;
-  background-color: #FFF;
-  opacity: 0.9;
-  border-bottom: 1px solid #d3d3d3;
-  display: inline;
-}
-
-header h1{
-  font-family: "Poiret One";
-  width: 30%;
+.list_title{
   position: relative;
-  float: left;
-}
-
-/*navigator*/
-ul{
-  list-style-type: none;
- }
-
-
-header nav{
- text-align: right;
- font-family:"Lora";
- margin-right: 4rem;
-}
-
-nav li{
-  display: inline;
-}
-
-nav ul{
-  width: 50%;
-  float: right;
-}
-
-ul a{
-color: black;
-text-decoration: none;
-list-style-type: none;
-margin-right: 0.5rem;
-margin-left: 0.5rem;
-text-transform: uppercase;
-}
-
-nav a:hover{
-  color: #df5d4b;
- }
-
-/*body*/
-section{
-  padding-top: 5rem;
-}
-
-.name_button, .state_button{
-  // border-radius: 1rem;
-  background-color: green;
-  box-shadow: 5px 5px 5px #888888;
-  width: 5rem;
-  height: 2rem;
-  position: relative;
-  display: inline-block;
-}
-
-.name_button, .state_button p{
-  color: white;
+  top: 18rem;
+  left: 15rem;
+  background-color: rgba(0, 0, 0, 0.70);
+  width: 18rem;
   text-align: center;
-  // padding-top: 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  font-family: "lora";
 }
 
-.markets_list{
-  margin-top: 5rem;
-  margin-bottom: 4rem;
-  margin-left: 30%;
+.full_list{
+  // margin-top: 5rem;
+  // margin-bottom: 4rem;
+  margin-left: 50%;
   width: 28rem;
-  height: 15rem;
+  height: 23rem;
   overflow: scroll;
   // border: 1px solid #d3d3d3;
   background-color: rgba(0, 0, 0, 0.70);
-  border-radius: 1rem;
+  // background-color: rgba(255, 255, 255, 0.90);
+  border-radius: 0.5rem;
 }
 
-.market_row a:link, a:visited, a:active{
+.list_row a:link, a:visited, a:active{
   text-decoration: none;
   font-family: "Lora";
   margin-left: 1rem;
@@ -122,34 +34,12 @@ section{
 
 article a{
   color: white;
+  // color: black;
 }
 
-.market_row a:hover{
+.list_row a:hover{
   color: #df5d4b;
+  font-family: "Lora";
   // background-color: #FFF;
   // opacity: 0.9;
-
-}
-
-.market_title{
-  font-family: "lora";
-  color: white;
-}
-
-
-/*footer*/
-
-footer{
-  background: #f2f2f2;
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  clear: both;
-}
-
-footer p{
-  font-family:"Lora";
-  color: black;
-  display: inline;
-  font-size: 0.8rem;
 }

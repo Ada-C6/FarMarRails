@@ -41,6 +41,7 @@ class VendorsController < ApplicationController
   def edit
     @product = Product.find(params[:id].to_i)
     @vendor = Vendor.find(@product.vendor_id)
+
   end
 
   def update
