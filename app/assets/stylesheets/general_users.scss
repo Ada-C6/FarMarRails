@@ -1,3 +1,45 @@
 // Place all the styles related to the general_users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.list_title{
+  position: relative;
+  top: 18rem;
+  left: 15rem;
+  background-color: rgba(0, 0, 0, 0.70);
+  width: 18rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  color: white;
+  font-family: "lora";
+}
+
+.full_list{
+  // margin-top: 5rem;
+  // margin-bottom: 4rem;
+  margin-left: 50%;
+  width: 28rem;
+  height: 23rem;
+  overflow: scroll;
+  // border: 1px solid #d3d3d3;
+  background-color: rgba(0, 0, 0, 0.70);
+  // background-color: rgba(255, 255, 255, 0.90);
+  border-radius: 0.5rem;
+}
+
+.list_row a:link, a:visited, a:active{
+  text-decoration: none;
+  font-family: "Lora";
+  margin-left: 1rem;
+}
+
+article a{
+  color: white;
+  // color: black;
+}
+
+.list_row a:hover{
+  color: #df5d4b;
+  font-family: "Lora";
+  // background-color: #FFF;
+  // opacity: 0.9;
+}

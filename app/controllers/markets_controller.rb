@@ -13,6 +13,7 @@ class MarketsController < ApplicationController
 
     @mar = Market.create({name: params[:market][:name], street: params[:market][:street], city: params[:market][:city], county: params[:market][:county], state: params[:market][:state], zip: params[:market][:zip]})
 
+    redirect_to action: 'index'
   end
 
   def new

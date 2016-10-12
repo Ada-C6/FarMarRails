@@ -1,11 +1,11 @@
-<h1>Vendors Account</h1>
+<section>
+  <h1 class="list_title">View All Vendors</h1>
 
-<ul>
-
-  <p></p>
-  <% @vendors.each do |vendor| %>
-  <li><%= link_to vendor.name, showVendor_path(vendor.id) %></li>
-  <% end %>
-
-
-</ul>
+  <article class="full_list">
+    <% @vendors.each do |vendor| %>
+      <p class="list_row">
+        <%= link_to vendor.name, show_vendor_path(vendor.id) %>
+      </p>
+    <% end %>
+  </article>
+</section>

@@ -10,27 +10,43 @@
   <ul>
     <% @products.each do |product| %>
       <% if @vendor[:id] == product.vendor_id %>
-        <li><%= link_to product.name, showProduct_path(product.id) %></li>
-        <li><%= button_to "Edit", editProduct_path(product.id), method: :get%></li>
-        <li><%= button_to "Delete", deleteProduct_path(product.id), data: {confirm:"Are you sure?"}, method: :delete %></li>
+        <li><%= link_to product.name, show_product_path(product.id) %></li>
+        <li><%= button_to "Edit", edit_product_path(product.id), method: :get%></li>
+        <li><%= button_to "Delete", delete_product_path(product.id), data: {confirm:"Are you sure?"}, method: :delete %></li>
       <% end %>
     <% end %>
-    <%= link_to "Create a New Product", newProduct_path(@vendor.id), method: :get %>
+    <%= link_to "Create a New Product", new_product_path(@vendor.id), method: :get %>
   </ul>
 </section>
 
 <section>
+<h2> Vendor's total sales: $<%= @sale_sum %> </h2>
+
 <h2> This Vendor's Sales by product: </h2>
   <ul>
     <% @sales.each do |sale| %>
       <% if @vendor[:id] == sale.vendor_id %>
         <li>Product: <%= @products.find(sale.product_id).name %></li>
-        <li>sale amount:<%= sale.amount %></li>
+        <li>sale amount:$<%= sale.amount %></li>
         <li>purchase Time: <%= sale.purchase_time %></li>
 
         <p></p>
       <% end %>
     <% end %>
-    <%= link_to "Create a New Proudct", newProduct_path, method: :get %>
   </ul>
 </section>
+
+<h2> Vendor's total sales in current month: $<%= @sale_month %></h2>
+
+<h2> Vendor's Sale list in current mounth: </h2>
+<ul>
+  <% @sales_this_month.each do |sale| %>
+    <% if @vendor[:id] == sale.vendor_id %>
+      <li>Product: <%= @products.find(sale.product_id).name %></li>
+      <li>sale amount:$<%= sale.amount %></li>
+      <li>purchase Time: <%= sale.purchase_time %></li>
+
+      <p></p>
+    <% end %>
+  <% end %>
+</ul>

@@ -1,5 +1,5 @@
 
-<article>
+<article class="form">
   <%= form_for @mar, url: action_name do |f| %>
     <ul>
       <li><%= f.label :name %></li>
@@ -21,8 +21,8 @@
       <li><%= f.text_field :zip %></li>
     </ul>
 
-    <%= f.submit %>
+    <p class="submit_button"><%= f.submit 'Submit'%></p>
   <% end %>
 
-  <button><%= link_to("Back to home", index_path) %></button>
+  <!-- <button><%= link_to("Back to home", index_path) %></button> -->
 </article>
