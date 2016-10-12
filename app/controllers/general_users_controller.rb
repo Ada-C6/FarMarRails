@@ -7,4 +7,10 @@ class GeneralUsersController < ApplicationController
     @market = Market.find(params[:id].to_i)
     @allvendors = @market.vendors
   end
+
+  def sort_by
+    @allmarkets = Market.all.order(params[:sort])
+    render :index
+  end
+
 end

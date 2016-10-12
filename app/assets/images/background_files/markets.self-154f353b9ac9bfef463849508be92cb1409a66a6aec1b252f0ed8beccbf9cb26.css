@@ -1,0 +1,89 @@
+/*index*/
+/* line 7, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.name_button, .state_button, .create_market {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-left: 0.5rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: 0.5rem;
+  position: relative;
+  top: 18rem;
+  left: 15rem;
+  color: white;
+}
+
+/* line 19, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.name_button, .state_button {
+  width: 8rem;
+  height: 3rem;
+}
+
+/* line 24, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.create_market {
+  width: 13rem;
+  height: 2rem;
+  padding-top: 0.5rem;
+  margin-left: 2.5rem;
+}
+
+/* line 31, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.create_market a:link, a:visited, a:active {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* line 37, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.create_market a:hover {
+  color: #df5d4b;
+}
+
+/* line 40, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+div a {
+  color: white;
+}
+
+/*create*/
+/* line 45, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.create_title {
+  width: 13rem;
+  height: 2rem;
+  padding-top: 0.5rem;
+}
+
+/* line 52, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.form {
+  font-family: "lora";
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  margin-left: 45%;
+  width: 45%;
+  padding-top: 2rem;
+}
+
+/* line 61, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.form label {
+  width: 25%;
+  float: left;
+  text-align: right;
+  margin-right: 1rem;
+  display: block;
+  color: white;
+}
+
+/* line 70, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.form input {
+  border-radius: .2rem;
+  width: 45%;
+  padding: .5rem;
+  margin-bottom: .5rem;
+}
+
+/* line 77, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/markets.scss */
+.form .submit_button {
+  border-radius: .6rem;
+  width: 100%;
+  margin-left: 33%;
+}
+
+/*show*/

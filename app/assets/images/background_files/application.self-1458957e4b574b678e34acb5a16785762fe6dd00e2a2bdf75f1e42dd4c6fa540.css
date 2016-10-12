@@ -10,17 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
  /*background*/
 
 /*body{
   background-image: url('http://www.dealweal.in/wp-content/uploads/2016/07/ChoppingBoard2.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
 }*/
+
 
 
  .my-container {
@@ -41,12 +39,8 @@
  }
 
 body{
-  background-image: url('../../assets/images/background2.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url("http://www.dealweal.in/wp-content/uploads/2016/07/ChoppingBoard2.jpg");
 }
-
-
  /*header*/
  header{
    // padding-top: 0.5rem;
