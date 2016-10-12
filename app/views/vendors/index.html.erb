@@ -1,0 +1,11 @@
+<section>
+  <h1 class="list_title">View All Vendors</h1>
+
+  <article class="full_list">
+    <% @vendors.each do |vendor| %>
+      <p class="list_row">
+        <%= link_to vendor.name, show_vendor_path(vendor.id) %>
+      </p>
+    <% end %>
+  </article>
+</section>

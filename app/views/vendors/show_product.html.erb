@@ -1,0 +1,18 @@
+<h2> Product Details: </h2>
+
+<ul>
+  <li>name:<%= @product[:name] %></li>
+  <li>vendor_id:<%= @product[:vendor_id] %></li>
+</ul>
+
+<h3> Sales of this product: </h3>
+
+<% @sales.each do |sale| %>
+  <ul>
+    <% # FIXME: sales amount should be float%>
+    <li>sale amount: $<%= sale.amount %></li>
+    <li>purchase time: <%= sale.purchase_time%></li>
+  </ul>
+<% end %>
+
+<%= button_to "Add a Sale", new_sale_path( @product.vendor_id, @product.id), method: :get%>

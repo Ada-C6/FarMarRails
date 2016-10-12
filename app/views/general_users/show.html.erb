@@ -1,0 +1,20 @@
+<h1> <%= @market[:name]  %></h1>
+<article>
+
+  <p><%= @market[:street] %></p>
+  <p><%= @market[:city] %>, <%= @market[:state] %> <%= @market[:zip] %></p>
+</article>
+
+<section>
+<h2> Vendors in this Market: </h2>
+  <ul>
+    <% @allvendors.each do |ven| %>
+      <li><%= ven.name %></li>
+        <ul>
+          <% ven.products.each do |product| %>
+            <li><%= product.name %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </ul>
+</section>

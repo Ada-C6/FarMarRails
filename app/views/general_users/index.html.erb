@@ -1,0 +1,34 @@
+<section>
+  <h1 class="list_title">View All Markets</h1>
+
+  <div class="name_button">
+    <p><%= link_to "Sort by Name", sort_by_path(sort: "name")  %></p>
+  </div>
+
+  <div class="state_button">
+    <p><%= link_to "Sort by State", sort_by_path(sort: "state") %></p>
+  </div>
+
+  <div class="state_button">
+    <p><%= link_to "Sort by City", sort_by_path(sort: "city") %></p>
+  </div>
+
+  <article class="full_list">
+    <table>
+      <tr>
+        <th class="top-row">Market Name</th>
+        <th class="top-row">State</th>
+        <th class="top-row">City</th>
+      </tr>
+      <% @allmarkets.each do |ea_market| %>
+        <!-- <p class="list_row"> -->
+          <tr>
+            <td class="name-table"><%= link_to ea_market.name, showmarket_path(ea_market.id) %></td>
+            <td><%= ea_market.state %></td>
+            <td><%= ea_market.city %></td>
+          </tr>
+        <!-- </p> -->
+      <% end %>
+    </table>
+  </article>
+</section>
