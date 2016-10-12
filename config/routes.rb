@@ -55,8 +55,11 @@ Rails.application.routes.draw do
 
   post 'vendors/create_sale'  => 'vendors#create_sale', as: 'create_sale'
 
+############# general_users ###################
 
   root to: 'general_users#index', as: 'index'
+
+  get 'general_users/sort_by' => 'general_users#sort_by', as: 'sort_by'
 
   get 'general_users/index' => 'general_users#index'
 

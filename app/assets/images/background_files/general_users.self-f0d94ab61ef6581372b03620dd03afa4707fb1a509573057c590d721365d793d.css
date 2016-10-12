@@ -1,0 +1,40 @@
+/* line 4, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/general_users.scss */
+.list_title {
+  position: relative;
+  top: 18rem;
+  left: 15rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 18rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  color: white;
+  font-family: "lora";
+}
+
+/* line 16, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/general_users.scss */
+.full_list {
+  margin-left: 50%;
+  width: 28rem;
+  height: 23rem;
+  overflow: scroll;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+}
+
+/* line 29, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/general_users.scss */
+.list_row a:link, a:visited, a:active {
+  text-decoration: none;
+  font-family: "Lora";
+  margin-left: 1rem;
+}
+
+/* line 35, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/general_users.scss */
+article a {
+  color: white;
+}
+
+/* line 40, /Users/CarmenChan/Documents/ADA/Rails/FarMarRails/app/assets/stylesheets/general_users.scss */
+.list_row a:hover {
+  color: #df5d4b;
+  font-family: "Lora";
+}
