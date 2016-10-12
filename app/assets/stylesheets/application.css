@@ -16,7 +16,7 @@
  /*background*/
 
 /*body{
-  background-image: url('http://www.dealweal.in/wp-content/uploads/2016/07/ChoppingBoard2.jpg');
+  background-image: url('https://github.com/goaskcarmen/FarMarRails/blob/master/app/assets/images/background2.jpeg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -40,11 +40,11 @@
      opacity: 0.7;
  }
 
-body{
+/*body{
   background-image: url('../../assets/images/background2.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
 
  /*header*/
