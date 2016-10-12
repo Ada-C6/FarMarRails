@@ -1,0 +1,16 @@
+<section>
+  <!-- <h1>Welcome Market Organizers</h1> -->
+  <h1 class="list_title">View All Markets</h1>
+
+  <div class="create_market">
+    <%= link_to( "Create a New Market", newmarket_path) %>
+  </div>
+
+  <article class="full_list">
+    <% @allmarkets.each do |mar| %>
+      <p class="list_row">
+          <%= link_to "#{mar.name}", showthemarket_path(mar[:id]) %>
+      </p>
+    <% end %>
+  </article>
+</section>

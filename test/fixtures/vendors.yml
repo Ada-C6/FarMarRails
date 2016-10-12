@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  name: MyString
+  employee_num: 
+  market_id: 
+
+two:
+  id: 
+  name: MyString
+  employee_num: 
+  market_id: 

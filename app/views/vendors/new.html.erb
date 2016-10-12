@@ -1,0 +1,13 @@
+<section>
+  <header>
+    <h1>Add a New Product</h1>
+  </header>
+  <%= form_for @product, url: create_product_path(@vendor.id) do |f| %>
+  <p>
+    <%= render partial: 'form', locals: {:f => f} %>
+    <div>
+      <%= f.submit 'Add'%>
+    </div>
+  </p>
+  <% end %>
+</section>

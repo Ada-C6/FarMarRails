@@ -1,0 +1,28 @@
+
+<article class="form">
+  <%= form_for @mar, url: action_name do |f| %>
+    <ul>
+      <li><%= f.label :name %></li>
+      <li><%= f.text_field :name, :cols => 50, :rows => 5 %></li>
+
+      <li><%= f.label :street %></li>
+      <li><%= f.text_field :street %></li>
+
+      <li><%= f.label :city %></li>
+      <li><%= f.text_field :city %></li>
+
+      <li><%= f.label :county %></li>
+      <li><%= f.text_field :county %></li>
+
+      <li><%= f.label :state %></li>
+      <li><%= f.text_field :state %></li>
+
+      <li><%= f.label :zip %></li>
+      <li><%= f.text_field :zip %></li>
+    </ul>
+
+    <p class="submit_button"><%= f.submit 'Submit'%></p>
+  <% end %>
+
+  <!-- <button><%= link_to("Back to home", index_path) %></button> -->
+</article>
