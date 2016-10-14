@@ -3,10 +3,10 @@ class SalesController < ApplicationController
     this_vendor = Integer(params[:id])
     @this_vendors_sales = Sale.where(vendor_id: this_vendor)
 
-
+    #TODO: return sales list and total by month
     # @current_time = DateTime.now.strftime "%m/%y"
-    @start = Date.new(2013,11)
-    @current_month = @start..(@start + 30)
+    # @start = Date.new(2013,11)
+    # @current_month = @start..(@start + 30)
   end
 
   def new
