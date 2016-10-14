@@ -1,0 +1,24 @@
+<h1>Edit Market Details</h1>
+
+<ul>
+  <li>Name: <%= @this_market.name %></li>
+  <li>Address: <%= @this_market.address %></li>
+  <li>City: <%= @this_market.city %></li>
+  <li>County: <%= @this_market.county %></li>
+  <li>State: <%= @this_market.state %></li>
+  <li>Zip: <%= @this_market.zip %></li>
+</ul>
+
+<p><%= link_to "Edit Market", edit_market_path(@id) %></p>
+
+<h3>Market Vendors</h3>
+<ul>
+  <% @vendor.each do |v| %>
+    <li><%= v.name %>
+    <%= link_to "Edit", edit_vendor_path(v) %>
+    <%= link_to "DESTROY!!", vendor_path(v),  method: :delete , data: {confirm: "Are you really sure?"}%>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add Vendor", new_vendor_path(@id) %></p>

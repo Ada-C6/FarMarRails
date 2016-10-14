@@ -1,0 +1,25 @@
+<h2>Vendor Sales</h2>
+<% total = 0 %>
+<ul>
+  <% @this_vendors_sales.each do |s| %>
+    <li><%= "#{s.amount}" %></li>
+    <% total += s.amount %>
+  <% end %>
+</ul>
+
+<h3>Total Sales:</h3><%= total %>
+
+
+<!-- #TODO: sales for current month, move method into sales #controller -->
+<!-- <h3>Current Month Sales:</h3>
+<%= @current_month%>
+
+<% @this_vendors_sales.each do |s| %>
+  <% if @current_month === @start+3 %>
+      YES!
+  <% end %>
+  <% if @current_month === s.time %>
+    DEBUGING
+    <%= s.amount %>
+  <% end %>
+<% end %> -->

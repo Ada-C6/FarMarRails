@@ -1,0 +1,8 @@
+<h1>LIST OF VENDORS</h1>
+
+<ul class = "list">
+  <% @vendor_list.each do |v| %>
+  <li><%= link_to "#{v.name}", vendor_path(v) %></li>
+  <% end %>
+
+</ul>

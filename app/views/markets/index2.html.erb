@@ -1,0 +1,12 @@
+<h1>CONTINUE AS MARKET</h1>
+
+<h3><%= link_to "Create New Market", new_market_path %></h3>
+
+<ul class = "list">
+  <% @market_list.each do |m| %>
+  <li><%= link_to "#{m.name}", market_view_path(m) %>
+  </li>
+  <% end %>
+
+
+</ul>

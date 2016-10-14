@@ -1,0 +1,11 @@
+<h1>Edit Vendor Information</h1>
+
+<%= form_for @this_vendor, 'farmers/market_views/:id/vendor/' => { method: :patch} do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :employees %>
+<%= f.text_field :employees %>
+
+<%= f.submit "Submit" %>
+<% end %>
