@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'farmers/market_views' => 'markets#index2'
   get 'farmers/market_views/new', to: 'markets#new', as: 'new_market'
-  post 'farmers/market_views' => 'markets#create'
+  post 'farmers/market_views/new' => 'markets#create'
   get 'farmers/market_views/:id/edit', to: 'markets#edit', as: 'edit_market'
   patch 'farmers/market_views/:id' => 'markets#update'
   get 'farmers/market_views/:id', to: 'markets#show2', as: 'market_view'
