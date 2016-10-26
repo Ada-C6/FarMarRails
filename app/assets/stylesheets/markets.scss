@@ -1,0 +1,202 @@
+// Place all the styles related to the markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.market_container {
+  width: 80vw;
+  height: 70vh;
+  margin: 3vh auto;
+  // border: 1px solid black;
+}
+
+.all_markets_list {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  overflow: auto;
+  border-top: 1px solid black;
+  margin: auto;
+}
+
+.market_container h1 {
+  margin: 2vh 0 1vh 0;
+}
+.market_container .add_market_button {
+  margin: 1vh 0 2vh 0;
+}
+
+.market_container .add_market_button form.button_to {
+  text-align: left;
+  margin-left: 80%;
+  width: auto;
+}
+
+.vendor_container {
+  width: 80vw;
+  height: 65vh;
+  margin: 5vh auto 3vh auto;
+  // border: 1px solid black;
+}
+.vendors_for_market {
+  border-top: 1px solid black;
+  width: 90%;
+  height: 75%;
+  position: relative;
+  overflow: auto;
+  margin: 2vh auto;
+ }
+
+.address h3 {
+  font-size: 2.3rem;
+}
+
+.address p {
+  font-size: 2rem;
+  display: inline-block;
+}
+
+.vendor_container h3 {
+  font-size: 2.3rem;
+  padding: 1vh 0;
+}
+.address .vendors_for_market p {
+  font-size: 2rem;
+}
+
+.all_markets_list {
+  display: block;
+  text-align: center;
+}
+
+.all_markets_list h2 {
+  display: inline-block;
+  margin: 1vh;
+}
+
+.all_markets_list p {
+  display: inline-block;
+}
+
+.all_markets_list form.button_to {
+  display: inline-block;
+}
+
+.form_attribute {
+  display: block;
+  margin: 1vh;
+  padding: 1vh;
+  vertical-align: right;
+}
+
+.form_attribute input {
+  padding: 1vh;
+  text-align: center;
+  font-size: 1rem;
+  width: 20%;
+  margin-left: 1vw;
+}
+
+h1.market_name {
+  font-weight: 800;
+  // text-decoration: underline;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.address h3 {
+  margin: 1vh;
+  display: inline-block;
+}
+
+.address .edit_delete_buttons {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.address .edit_delete_buttons form.button_to {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  width: 20%;
+}
+.address .edit_delete_buttons form.button_to input {
+  padding: 0.5vh 2vw;
+  margin: 0 4vh;
+}
+
+.add_vendor_button {
+  margin-bottom: 2vh;
+}
+
+
+
+
+// For market vendors
+h1.market_vendor_name {
+  font-weight: 800;
+  // text-decoration: underline;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.vendor_products_div {
+  margin: 4vw auto;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+
+.vendor_products_div h3 {
+  font-size: 2.3rem;
+  padding: 1vh 0;
+}
+
+
+.vendor_products_div article {
+  margin: 1vh;
+}
+
+.vendor_markets_div {
+  margin: 2vw;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 1vw;
+}
+
+.vendor_markets_div h3 {
+  font-size: 2.3rem;
+  padding: 1vh 0;
+}
+
+.vendor_markets_div article p {
+  text-transform: capitalize;
+}
+.vendor_markets_div article {
+  margin: 1vh;
+}
+
+.market_vendor_button_div {
+  display: block;
+}
+
+.market_vendor_button_div p.vendor_show_button  {
+  display: inline-block;
+}
+
+.market_vendor_button_div p.vendor_show_button form.button_to {
+  display: inline-block;
+  margin: 2vw;
+}
+
+
+.market_vendor_button_div p.vendor_show_button form.button_to input {
+  display: inline-block;
+}
+
+h1.form_title {
+  font-weight: 800;
+  // text-decoration: underline;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}

@@ -1,0 +1,23 @@
+<h1 class="market_name"><%= @mymarket.name %></h1>
+<article class="address">
+  <h3>Address: </h3>
+  <p>  <%= @mymarket.street %>,  </p>
+  <p>  <%= @mymarket.city %>,   </p>
+  <p>  <%= @mymarket.county %>,   </p>
+  <p>  <%= @mymarket.state %>,   </p>
+  <p>  <%= @mymarket.zip %>,   </p>
+  <div class="edit_delete_buttons">
+    <p> <%= button_to "Edit Market", market_edit_path(@mymarket.id), method: :get %></p>
+    <p> <%= button_to "Delete Market", {action: "destroy", id: @mymarket.id}, method: :delete, data: {confirm: "Are you sure?"} %></p>
+  </div>
+</article>
+
+<div class="vendor_container">
+  <h3> Vendors: </h3>
+  <article class="vendors_for_market">
+    <% @market_vendors.each do |vendor| %>
+      <p>  <%= link_to(vendor.name, market_vendor_show_path(@mymarket.id, vendor.id)) %>  </p>
+    <% end %>
+  </article>
+  <p class="add_vendor_button"><%= button_to "Add Vendor", {controller: 'markets', action: 'vendor_new'}, {path: 'market_vendor_new', method: :get} %></p>
+</div>

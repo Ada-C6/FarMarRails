@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FarMarRails</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Gidugu|Give+You+Glory|Open+Sans|Open+Sans+Condensed:300|Raleway|Satisfy" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="page-wrapper">
+<header>
+  <h1 class="nassa">Nassa</h1>
+  <h1 class="pipe"> | </h1>
+  <h1 class="farmers_market">Farmer's Market</h1>
+  <nav>
+    <ul>
+      <li> <%= link_to "HOME", landing_path %>  </li>
+      <li> <%= link_to "MARKETS", market_index_path %>  </li>
+      <li> <%= link_to "VENDORS", vendor_index_path %>  </li>
+    </ul>
+  </nav>
+</header>
+<main>
+<%= yield %>
+</main>
+</div>
+<footer>
+  <p> &copy; - Nina Mutty and Sassa Kitka - 2016 </p>
+</footer>
+
+</body>
+</html>

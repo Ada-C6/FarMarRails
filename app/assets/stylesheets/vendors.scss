@@ -1,0 +1,79 @@
+// Place all the styles related to the vendors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.vendor_index_container {
+  width: 80vw;
+  height: 70vh;
+  margin: 3vh auto;
+  // border: 1px solid black;
+}
+
+.all_vendor_index_list {
+  width: 90%;
+  height: 80%;
+  position: relative;
+  overflow: auto;
+  border-top: 1px solid black;
+  margin: auto;
+}
+
+.vendor_index_container h1 {
+  margin: 3vh 0;
+}
+
+.all_vendor_index_list article {
+  margin: 1vh;
+}
+
+
+.vendor_show_sales .see_sales_button {
+  margin: 1vh;
+}
+
+.each_sale_article {
+  margin: 3vh auto;
+  border: 1px solid black;
+  padding: 3vh;
+  width: 85vh;
+}
+
+.each_sale_article p {
+  display: inline-block;
+  margin: 1vh 2vw;
+}
+
+.each_sale_article p .bold {
+  font-weight: bold;
+}
+
+h4.total_sales_amount {
+  font-size: 2.2rem;
+
+}
+
+p.sale_note {
+  font-size: 1rem;
+  margin-bottom: 7vh;
+}
+
+.product_name {
+  font-size: 2rem;
+
+}
+
+.sale_form {
+  margin-bottom: 0.5vh;
+}
+
+
+.all_product_buttons {
+  display: block;
+  width: 50vw;
+  margin: auto;
+}
+
+
+.all_product_buttons .vendor_product_button {
+  display: inline-block;
+  margin: 4vh;
+}

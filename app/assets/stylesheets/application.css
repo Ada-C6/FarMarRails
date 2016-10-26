@@ -1,0 +1,178 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* This is a default that will override the browser pages, and then your page will style from there */
+
+ /*
+ Theme Name:
+ Theme URI:
+ Description:
+ Version: 1.0
+ Author:
+ Author URI:
+ */
+
+ /* reset styles */
+ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var, b, u, i, center,
+ dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td {
+ 	margin: 0; padding: 0;  border: 0; outline: 0; font-size: 100%;
+ 	vertical-align: baseline; background: transparent;
+ }
+ body { line-height: 1; }
+ ol, ul { list-style: none; }
+ blockquote, q { quotes: none; }
+ blockquote:before, blockquote:after, q:before, q:after { content: ''; }
+ :focus { outline: 0; }
+ ins { text-decoration: none; }
+ del { text-decoration: line-through; }
+ table { border-collapse: collapse; border-spacing: 0; }
+
+ body {
+ 	font-size: 62.5%;
+ 	text-align: left;
+ 	color: #000000;
+ }
+
+ /* container - place inside each section or around the entire page depending on your layout */
+ .container {
+ 	width: 960px;
+ 	margin: 0 auto;
+ 	text-align: left;
+ 	position: relative;
+ }
+
+ /* for clearing any floats <br class=&quot;clearfloat&quot; /> */
+ .clearfloat {
+     clear:both;
+     height:0;
+     font-size: 1px;
+     line-height: 0px;
+ }
+
+
+
+
+
+
+ /* Styles we want now */
+
+ html {
+   font-size: 16px;
+   font-family: 'Open Sans Condensed', sans-serif;
+ }
+
+
+ a:-webkit-any-link {
+   text-decoration: none;
+   color: black;
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 1.2rem;
+ }
+
+ a:-webkit-any-link:hover {
+  /*text-decoration: none;*/
+  font-weight: bold;
+  color: #1b2433;
+  text-decoration: underline;
+}
+
+
+header {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+header h1 {
+  display: inline-block;
+  /*border: 1px solid black;*/
+}
+
+header h1.nassa {
+  font-family: 'Satisfy', cursive , sans-serif;
+  font-size: 4.5rem;
+  margin: 3vh 0 3vh 5vw;
+}
+
+header h1.pipe {
+  font-size: 4.5rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 100;
+  margin: 0;
+}
+
+header h1.farmers_market {
+  font-size: 3rem;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 200;
+  margin: 0;
+}
+
+header nav {
+  display: inline-block;
+  margin-left: 30vw;
+}
+
+header nav ul {
+  display: inline-block;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 1.5vw;
+}
+
+main {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 6vh;
+  padding-bottom: 15vh;
+}
+
+main h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  margin-bottom: 4vh;
+}
+
+main p {
+  font-size: 1.9rem;
+}
+
+
+
+
+footer {
+  display: block;
+  width: 100vw;
+  border-top: 1px solid black;
+  margin-top: 5vh;
+  background-color: white;
+  color: black;
+  vertical-align: middle;
+  font-weight: 200;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  clear: both;
+}
+footer p {
+  font-size: 1rem;
+  padding: 2vh 0;
+  bottom: 0;
+}

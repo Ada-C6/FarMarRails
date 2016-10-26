@@ -1,0 +1,86 @@
+// Place all the styles related to the landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.path_body {
+  width: 80vw;
+  margin: auto;
+  border-top: 1px solid black;
+  height: 100%;
+}
+
+.question {
+  margin: 4vh auto 0 auto;
+}
+
+.market_path_styling {
+  width: 45%;
+  height: 45%;
+  display: inline-block;
+  margin-top: 8vh;
+}
+
+.overlay_vendor {
+  background-color: rgba(255,255,255,0.85);
+  width: 60%;
+  top: -200px;
+  height: 50%;
+  position: relative;
+  margin: auto;
+}
+
+.overlay_market {
+  background-color: rgba(255,255,255,0.85);
+  width: 60%;
+  top: -200px;
+  height: 50%;
+  position: relative;
+  margin: auto;
+}
+
+.overlay_market p {
+  padding: 5vh 1vh;
+}
+
+.overlay_vendor p {
+  padding: 5vh 1vh;
+}
+
+.overlay_market p a {
+  font-size: 2rem;
+}
+
+.overlay_vendor p a {
+  font-size: 2rem;
+}
+
+
+.vendor_path_styling {
+  width: 45%;
+  height: 45%;
+  display: inline-block;
+  margin-top: 8vh;
+}
+
+
+a img {
+  display: inline-block;
+  margin: auto;
+  height: 400px;
+  width: auto;
+}
+
+p.blueberries {
+  // background: url('assets/blueberries');
+  padding: 8vw;
+}
+
+
+.product_link_path {
+  margin-bottom: 2vh;
+}
+
+p.product_link_path a {
+  font-size: 2rem;
+}

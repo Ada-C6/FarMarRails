@@ -1,0 +1,12 @@
+<div class="market_container">
+  <h1>Choose Your Market</h1>
+  <div class="all_markets_list">
+  <% @markets.each do |market| %>
+    <article>
+      <h2> <%= link_to( market.name, market_show_path(market.id) ) %>  </h2>
+      <p> <%= button_to "Edit", {action: "edit", id: market.id}, method: :get %></p>
+    </article>
+  <% end %>
+  </div>
+  <p class="add_market_button">  <%= button_to "Add Market", {controller: 'markets', action: 'new'}, {path: 'market_new', method: :get} %></p>
+</div>

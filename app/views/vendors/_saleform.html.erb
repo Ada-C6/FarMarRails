@@ -1,0 +1,16 @@
+<h1 class="form_title"><%= Vendor.find(@myproduct.vendor_id).name %></h1>
+<h3 class="product_name_form"> Product: <%= @myproduct.name %></h3>
+
+
+<%= form_for @mysale, method: @post_method, url: @post_path do |f| %>
+<div class="form_attribute sale_form">
+	<%= f.label :amount %>
+	<%= f.text_field :amount %>
+</div>
+<p class="sale_note">
+  Note: please enter amount in cents
+</p>
+<div class="form_attribute">
+	<%= f.submit %>
+</div>
+<% end %>

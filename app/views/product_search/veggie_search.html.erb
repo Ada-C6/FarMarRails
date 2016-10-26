@@ -1,0 +1,7 @@
+<%= render partial: 'productsearchform' %>
+
+
+<p>Vegetables: <% @veggie_search.each do |v|%>
+	<p><%= v.name %></p>
+	<% end %>
+	</p>

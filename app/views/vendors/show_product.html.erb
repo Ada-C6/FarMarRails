@@ -1,0 +1,16 @@
+<%= render partial: 'vendor_header_form', locals: {action_name: "show_product"} %>
+
+<h2 class="product_name"><%= @myproduct.name %></h2>
+
+<div class="all_product_buttons">
+  <div class="vendor_product_button">
+    <%= button_to("Create a Sale", vendor_new_sale_path, method: :get) %>
+  </div>
+
+  <div class="vendor_product_button">
+  <%= button_to("Edit Product", edit_product_path(@myvendor.id, @myproduct.id), method: :get) %>
+  </div>
+  <div class="vendor_product_button">
+  <%= button_to("Delete", destroy_product_path(@myvendor.id, @myproduct.id), method: :delete, data: {confirm: "Are you sure?"}) %>
+  </div>
+</div>

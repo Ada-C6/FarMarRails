@@ -1,0 +1,10 @@
+<h1><%= @vendor.name %></h1>
+
+<% @products.each do |product|
+%>
+	<article>
+		<h2>
+			<%= link_to( product.name, show_product_path(product.id)) %>
+		</h2>
+	</article>
+<% end %>

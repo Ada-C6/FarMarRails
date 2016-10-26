@@ -1,0 +1,25 @@
+<h1 class="form_title"><%= @myvendor.name %></h1>
+
+<article class="vendor_products_div">
+<h3>Vendor Products: </h3>
+<% @products.each do |product| %>
+	<article>
+	<h4><%= link_to( product.name, show_product_path(@myvendor.id, product.id)) %></h4>
+	</article>
+<% end %>
+<p class="vendor_product_button" ><%= button_to( "Add New Product", new_product_path(@myvendor.id), method: :get) %></p>
+</article>
+
+<article class="vendor_markets_div">
+<h3> Participating Markets: </h3>
+<% @markets.each do |market| %>
+	<article>
+		<h4><%= link_to(market.name, show_market_from_vendor_path(market.id)) %></h4>
+	</article>
+<% end %>
+</article>
+
+<div class="vendor_show_sales">
+	<h4> Total Sales: $ <%= '%.2f' % (@total_sales/100) %></h4>
+	<p class="see_sales_button"><%= button_to( "See Sale Records", show_all_sales_path(@myvendor.id), method: :get) %></p>
+</div>

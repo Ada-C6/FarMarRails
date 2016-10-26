@@ -1,0 +1,13 @@
+<div class="vendor_index_container">
+	<h1>Choose Your Vendor</h1>
+	<div class="all_vendor_index_list">
+	<% @vendors.each do |vendor|
+	%>
+		<article>
+			<p>
+				<%= link_to( vendor.name, show_vendor_path(vendor.id)) %>
+			</p>
+		</article>
+	<% end %>
+	</div>
+</div>

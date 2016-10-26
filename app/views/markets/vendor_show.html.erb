@@ -1,0 +1,28 @@
+<h1 class="market_vendor_name"> <%= @myvendor.name %></h1>
+<p>Number of Employees: <%= @myvendor.num_employees %></p>
+
+
+<article class="vendor_products_div">
+  <h3> Product Offerings: </h3>
+  <% @vendor_products.each do |product| %>
+  	<article>
+  		<p><%= product.name %></p>
+  	</article>
+  <% end %>
+</article>
+
+<article class="vendor_markets_div">
+  <h3> Attended Markets: </h3>
+  <% @vendor_markets.each do |market| %>
+    <article>
+      <p><%= market.name %></p>
+    </article>
+  <% end %>
+
+</article>
+
+<div class="market_vendor_button_div">
+  <p class="vendor_show_button"> <%= button_to "Edit Vendor", market_vendor_edit_path(@mymarket.id, @myvendor.id), method: :get %></p>
+  <p class="vendor_show_button"> <%= button_to "Delete Vendor From Market", market_vendor_destroy_path(@mymarket.id, @myvendor.id), method: :delete, data: {confirm: "Are you sure?"} %></p>
+</div>
+<!-- Is there a way to undo a delete??? -->

@@ -1,0 +1,14 @@
+<h1 class="form_title">Sales Report for <%= @myvendor.name %></h1>
+
+<h4 class="total_sales_amount">Total Sales: $<%= '%.2f' % (@total_sales/100) %></h4>
+<% @allsales.each do |sale| %>
+  <article class="each_sale_article">
+    <p>
+      <span class="bold">Product:</span> <%= Product.find(sale.product_id.to_i).name %>
+    </p>
+    <p><span class="bold">Amount:</span> $<%= '%.2f' % (sale.amount/100) %></p>
+    <% if sale.purchase_time != nil %>
+    <p>  <span class="bold">Time of Purchase:</span> <%= sale.purchase_time %>  </p>
+    <% end %>
+  </article>
+<% end %>
