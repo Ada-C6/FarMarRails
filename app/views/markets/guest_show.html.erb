@@ -1,0 +1,43 @@
+<section class="body">
+
+  <article class="entity-display">
+    <img src="/assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+    <div class="entity-text">
+      <h3><%= @market.name %></h3>
+        <ul class="address-block">
+          <li><%= @market.address %></li>
+          <li><%= "#{@market.city}, #{@market.state} #{@market.zip}" %></li>
+        </ul>
+    </div>
+    <div class="list-break"></div>
+  </article>
+
+
+  <article>
+    <%# button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
+    <table>
+      <tr>
+        <th class="table17">Vendors</th>
+        <th class="table25">Description</th>
+        <th class="table10">Staff</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @market.vendors.each do |vendor| %>
+        <tr>
+          <td class="table17">
+            <%= link_to vendor.name, {controller: 'vendors', action: 'guest_show', id: vendor.id}, method: :get %>
+          </td>
+          <td class="table25">
+            <%= vendor.description %>
+          </td>
+          <td class="table10">
+            <%= vendor.num_of_employees %>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+
+    </article>
+
+</section>

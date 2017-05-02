@@ -1,0 +1,8 @@
+<div class="search no-selector">
+  <%= form_for :market, url: {controller: 'pages', action: 'market_login'}, method: :get do |f| %>
+    <%= f.text_field :id, placeholder: "Enter your market number"%>
+    <%= f.submit "login", class:"search-button market" %>
+  <% end %>
+</div>
+
+<img src="assets/market-splash.jpg" alt="Market vendor handing customer an apple" class="banner-image"/>

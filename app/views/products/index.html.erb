@@ -1,0 +1,29 @@
+<section class="body">
+
+  <div class="search search-high">
+    <%= search_form_for @search_product do |f| %>
+      <%= f.search_field :name_cont, placeholder: "Search Products"%>
+      <%= f.submit "search", class:"search-button" %>
+    <% end %>
+  </div>
+
+  <article>
+    <ul>
+    <% if !@products.empty? %>
+      <% @products.each do |product| %>
+        <div class="entity-text">
+          <h3><%= product.name %></h3>
+          <h4>sold by <%= link_to product.vendor.name, {controller: 'vendors', action: 'guest_show', id: product.vendor.id} %></h4>
+          <h4>at <%= link_to product.vendor.market.name, {controller: 'markets', action: 'guest_show', id: product.vendor.market.id}%></h4>
+        </div>
+        <div class="list-break"></div>
+      <% end %>
+    <% else %>
+      <p class="error-message">
+        Sorry! We didn't find any products with that search term.
+      </p>
+    <% end %>
+    </ul>
+
+  </article>
+</section>

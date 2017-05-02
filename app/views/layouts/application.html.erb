@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Farmers Markets</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Josefin+Sans|Playfair+Display" rel="stylesheet">
+  <%= stylesheet_link_tag    'application', 'reset.css', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+<nav>
+  <p><a href="/">Farmers Market</a></p>
+  <ul>
+    <li><a href='/admin'>Admin</a></li><li><a href="/market">Market</a></li><li><a href='/vendor'>Vendor</a></li>
+  </ul>
+</nav>
+
+
+
+<body>
+
+<%= yield %>
+
+</body>
+
+<footer>
+
+</footer>
+</html>

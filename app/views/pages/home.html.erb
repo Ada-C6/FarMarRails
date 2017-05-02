@@ -1,0 +1,16 @@
+<!-- HOME PAGE SEARCH DEFAULTS TO MARKET -->
+
+<div class="search">
+  <ul class="search-selector">
+    <li class="current"><a href="/market_search">markets</a></li><li><a href="/vendor_search">vendors</a></li><li><a href="/product_search">products</a></li>
+  </ul>
+
+  <%= search_form_for @search_market do |f| %>
+    <%= f.search_field :name_or_address_or_city_or_state_cont, placeholder: "Search Markets"%>
+    <%= f.submit "search", class:"search-button" %>
+  <% end %>
+</div>
+
+<%= render partial: 'see_all' %>
+
+<img src="assets/food-board.jpg" alt="Salmon meal on wooden platter" class="banner-image"/>

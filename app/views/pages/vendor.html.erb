@@ -1,0 +1,8 @@
+<div class="search no-selector">
+  <%= form_for :vendor, url: {controller: 'pages', action: 'vendor_login'}, method: :get do |f| %>
+    <%= f.text_field :id, placeholder: "Enter your vendor number"%>
+    <%= f.submit "login", class:"search-button vendor" %>
+  <% end %>
+</div>
+
+<img src="assets/cabbage.jpg" alt="Market vendor handing customer an apple" class="banner-image"/>

@@ -1,0 +1,24 @@
+<section class="stand-alone-form vendor">
+  <%= form_for @vendor do |f| %>
+    <ul>
+      <li>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+      </li>
+      <li>
+        <%= f.label :staff %>
+        <%= f.text_field :num_of_employees %>
+      </li>
+      <li>
+        <%= f.label :market_id %>
+        <%= f.text_field :market_id %>
+      </li>
+    </ul>
+
+    <%= f.submit class:"search-button" %>
+  <% end %>
+</section>

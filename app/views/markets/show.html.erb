@@ -1,0 +1,73 @@
+<section class="body">
+
+  <article class="entity-display">
+    <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+    <div class="entity-text">
+      <h3><%= @market.name %></h3>
+        <ul class="address-block">
+          <li><%= @market.address %></li>
+          <li><%= "#{@market.city}, #{@market.state} #{@market.zip}" %></li>
+          <div class = "entity-buttons">
+            <%= button_to "Edit Profile", {controller: 'markets', action: 'edit', id: @market.id }, method: :get %>
+          </div>
+        </ul>
+    </div>
+    <div class="list-break"></div>
+  </article>
+
+
+  <article>
+    <%# button_to "Add Vendor", {controller: 'vendors', action: 'new'}, method: :get %>
+    <table>
+      <tr>
+        <th class="table17">Vendors</th>
+        <th class="table25">Description</th>
+        <th class="table10">Staff</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @market.vendors.each do |vendor| %>
+        <tr>
+          <td class="table17">
+            <%= link_to vendor.name, {controller: 'vendors', action: 'show', id: vendor.id}, method: :get %>
+          </td>
+          <td class="table25">
+            <%= vendor.description %>
+          </td>
+          <td class="table10">
+            <%= vendor.num_of_employees %>
+          </td>
+          <td class="table-button market edit">
+            <%= button_to "edit", {controller: 'vendors', action: 'edit', id: vendor.id}, method: :get %>
+          </td>
+          <td class="table-button market delete">
+            <%= button_to "delete", {controller: 'vendors', action: 'destroy', id: vendor.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}%>
+          </td>
+        </tr>
+      <% end %>
+      </table>
+
+      <ul class="in-page-input-form">
+      <%= form_for @vendor, url: {controller: 'vendors', action: 'create'}, method: :post do |f| %>
+
+          <li class="form17">
+            <%= f.text_field :name, placeholder: "New vendor name"%>
+          </li>
+          <li class="form25">
+            <%= f.text_area :description, placeholder: "Description" %>
+          </li>
+          <li class="form10">
+            <%= f.number_field :num_of_employees, placeholder: "Staff" %>
+          </li>
+          <li class="hide">
+            <%= f.hidden_field :market_id, value: @market.id %>
+          </li>
+          <div class="entity-buttons">
+              <%= f.submit value:"Add Vendor" %>
+          </div>
+        <% end %>
+      </ul>
+
+    </article>
+
+</section>

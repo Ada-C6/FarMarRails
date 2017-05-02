@@ -1,0 +1,53 @@
+<section class="body">
+
+  <article class="sale-display">
+
+    <section class="top-of-page-form vendor">
+      <%= form_for @sale, url: {controller: 'sales', action: 'create'}, method: :post do |f| %>
+
+        <%= f.collection_select :product_id, @vendor.products, :id, :name %>
+        <%= f.number_field :amount, placeholder: "Amount" %>
+        <%= f.hidden_field :vendor_id, value: @vendor.id%>
+        <%= f.hidden_field :purchase_time, value: DateTime.now %>
+        <%= f.submit class:"search-button"%>
+
+      <% end %>
+    </section>
+
+
+    <ul>
+      <% if !@vendor.sales.nil? %>
+
+        <% @vendor.sales.each do |sale| %>
+          <div class="entity-text">
+            <h3> <%= sale.product.name %> </h3>
+            <h3 class="large-dollar"><%= "$#{'%.2f' % (sale.amount.to_i/100.0)}" %></h3>
+            <h4>Transaction #<%= sale.id %></h4>
+            <h4><%= "#{sale.purchase_time.strftime('%B %d, %Y')}" %></h4>
+            <div class="space"></div>
+            <div class="entity-buttons">
+              <%= button_to "Delete", {controller: 'sales', action: 'destroy', id: sale.id}, method: :delete, data: {confirm: "Are you sure you want to delete this?"}, class:"submit" %>
+            </div>
+          </div>
+          <div class="list-break"></div>
+
+        <% end %>
+
+      <% else %>
+        <p class="error-message">
+          No sales transactions yet. Enter your first sale!
+        </p>
+      <% end %>
+    </ul>
+
+    <div class="entity-text">
+      <h3>
+        Total Sales Amount:
+      </h3>
+      <h3 class="large-dollar">
+        <%= @total %>
+      </h3>
+    </div>
+  </article>
+
+</section>

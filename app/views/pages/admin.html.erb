@@ -1,0 +1,23 @@
+<div class="search search-low">
+  <%= form_for :market, url: {controller: 'pages', action: 'admin_market_login'}, method: :get do |f| %>
+    <%= f.text_field :id, placeholder: "Enter a market number"%>
+    <%= f.submit "view", class:"search-button market" %>
+  <% end %>
+
+  <%= form_for :vendor, url: {controller: 'pages', action: 'admin_vendor_login'}, method: :get do |f| %>
+    <%= f.text_field :id, placeholder: "Enter a vendor number"%>
+    <%= f.submit "view", class:"search-button vendor" %>
+  <% end %>
+</div>
+
+<%#= button_to "Add Market", {controller: 'markets', action: 'new'}, method: :get %>
+<section>
+  <%= form_for @market, {controller: 'markets', action: 'create'} do |f| %>
+    <%= f.text_field :name, placeholder: "Name", class:"name" %><%= f.text_field :address, placeholder: "Street Address" %><%= f.text_field :city, placeholder: "City" %><%= f.text_field :county, placeholder: "County" %><%= f.text_field :state, placeholder: "State" %><%= f.text_field :zip, placeholder: "Zip" %>
+
+    <%= f.submit "Add Market", class:"search-button" %>
+  <% end %>
+</section>
+
+
+<img src="assets/admin.jpg" alt="Laptop on table with chair" class="banner-image"/>

@@ -1,0 +1,689 @@
+/**********************************************/
+/********      GENERAL STYLING   **************/
+/**********************************************/
+
+a:link,
+a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #333333;
+}
+
+section.body {
+  padding: 10vw 0 0 0;
+  margin: 0 20vw 0 20vw;
+}
+
+.list-break {
+  border-bottom: 1px solid #d8d8d8;
+  height: 3vw;
+  margin: 0 0 3vw 0;
+}
+
+::-webkit-input-placeholder {
+  color: #585858;
+  font-weight: 300;
+}
+
+footer {
+  height: 10vw;
+}
+
+.space {
+  height: 2vw;
+}
+
+.sale-display {
+  margin: 0 12.5vw ;
+  width: 35vw;
+}
+
+
+/**********************************************/
+/**********       NAVIGATION     **************/
+/**********************************************/
+
+nav {
+  background-color: #FFF;
+  border: 1px solid transparent;
+  border-bottom: solid #d8d8d8 1px;
+  height: 5vw;
+  opacity: .8;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+
+nav p {
+  display: inline-block;
+  font: normal normal 1.6vw/1 'Playfair Display', sans-serif;
+  height: 1.6vw;
+  letter-spacing: .15em;
+  margin: 0 2vw;
+  padding: 1.7vw 0;
+  position: relative;
+  text-transform: uppercase;
+  width: 18.5vw;
+}
+
+nav ul {
+  float: right;
+  text-align: right;
+  width: 77vw;
+}
+
+nav ul li {
+  display: inline-block;
+  height: 1vw;
+  text-align: center;
+  padding: 2vw 0;
+}
+
+nav ul li a:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
+nav ul li a {
+  border: transparent;
+  border-left: solid #d8d8d8 1px;
+  font: normal 300 1vw/1 'Lato', sans-serif;
+  letter-spacing: .1em;
+  padding: 2vw 3.5vw;
+  text-transform: uppercase;
+  width: 10vw;
+}
+
+
+
+
+
+/**********************************************/
+/*******     FULL SCREEN IMAGES     ***********/
+/**********************************************/
+
+.banner-image {
+  width: 100vw;
+}
+
+
+
+
+
+/**********************************************/
+/**********       SEARCH FORMS      ***********/
+/**********************************************/
+
+div.search {
+  position: fixed;
+  margin: 36vh 25vw;
+  width: 50vw;
+}
+
+div.search form:nth-of-type(2) {
+  margin: 5vh 0;
+}
+
+div.no-selector {
+  margin: 45vh 25vw;
+  z-index: 0;
+}
+
+div.search-low {
+  margin: 55vh 25vw;
+}
+
+div.search-high {
+  background-color: #fafafa;
+  border: solid #d8d8d8 1px;
+  margin: 0 auto 5vw;
+  position: relative;
+  z-index: 0;
+}
+
+div.search form {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid transparent;
+  height: 4.25vw;
+}
+
+div.search input {
+  display: inline-block;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  margin: 1.125vw;
+  width: 38vw;
+}
+
+div.search ul.search-selector li {
+  display: inline-block;
+  margin: 0 .7vw 2vw 0;
+}
+
+div.search input.search-button,
+div.search ul.search-selector li a {
+  border: 1px solid transparent;
+  color: white;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  text-align: center;
+}
+
+div.search ul.search-selector li a {
+  background: rgba(255, 255, 255, .7);
+  border: solid #d8d8d8 1px;
+  padding: .75vw 1.75vw 1vw 1.75vw;
+}
+
+div.search ul.search-selector li a:link,
+div.search ul.search-selector li a:visited {
+  color: #000;
+}
+
+div.search ul.search-selector li a:hover,
+div.search ul.search-selector li.current a:hover {
+  background: #80b36e;
+  border: 1px solid transparent;
+}
+
+div.search ul.search-selector li.current a {
+  background-color: #61964f;
+  border: 1px solid transparent;
+  color: white;
+  opacity: 1;
+}
+
+div.search ul.search-selector li.current a:link,
+div.search ul.search-selector li.current a:visited {
+  color: #FFF;
+}
+
+div.search ul.search-selector li a:hover {
+  color: #FFF;
+}
+
+div.search input.search-button {
+  background-color: #da392a;
+  border-radius: .4vw;
+  float: right;
+  height: 3.25vw;
+  margin: .5vw;
+  text-align: center;
+  opacity: 1;
+  padding: .5vw;
+  width: 7vw;
+}
+
+
+
+
+/**********************************************/
+/****** COLORIZATION OF LOGIN BUTTONS *********/
+/**********************************************/
+
+div.search input.vendor{
+  background-color: #61964f;
+}
+
+div.search input.market {
+  background-color: #423d61;
+}
+
+
+
+
+
+/**********************************************/
+/******        SEARCH RESULTS         *********/
+/**********************************************/
+
+p.error-message {
+  color: #da392a;
+  font: normal normal 2vw 'Lato', sans-serif;
+  margin: 8vw 0 0 0;
+  text-align: center;
+}
+
+
+
+
+
+/**********************************************/
+/******        SEE ALL BUTTONS        *********/
+/**********************************************/
+
+div.see-all {
+  margin: 75vh 35vw;
+  position: fixed;
+  text-align: center;
+  width: 30vw;
+}
+
+div.see-all h5 {
+  font: normal 300 1.35vw/1 'Lato', sans-serif;
+  letter-spacing: .25em;
+  padding: 0 0 .5vw 0;
+}
+
+div.see-all ul li {
+  display: inline-block;
+}
+
+div.see-all ul li a {
+  background: rgba(255, 255, 255, .6);
+  border: 1px solid #d8d8d8;
+  border-radius: 100%;
+  color: #000;
+  display: inline-block;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  height: 1.5vw;
+  margin: 2vw 1.5vw 0 1.5vw;
+  padding: 1vw 1vw;
+  text-align: center;
+  width: 1.5vw;
+}
+
+div.see-all ul li a:link,
+div.see-all ul li a:visited {
+  color: #000;
+}
+
+div.see-all ul li a:hover {
+  background: rgba(255, 255, 255, .8);
+}
+
+
+
+
+
+/**********************************************/
+/**********       HEADING TAGS      ***********/
+/**********************************************/
+
+/* H3 Heading is used for Vendor or Market name in entity displays, available for similar*/
+div.entity-text h3 {
+  display: inline-block;
+  font: normal normal 1.75vw/1.75vw 'Josefin Sans', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+h3.large-dollar {
+  display: inline-block;
+  float: right;
+}
+
+/*H4 Heading is used for Vendor's Market text in entity displays, available for similar*/
+div.entity-text h4 {
+  font: normal 300 1vw/1.5 'Lato', sans-serif;
+  letter-spacing: .15em;
+  /*padding: .5vw 0 .5 0;*/
+  text-transform: uppercase;
+}
+
+h4 a:hover {
+  color: #dadada;
+}
+
+/*h5 Heading is used for Vendor descriptions*/
+h5{
+  color: #FFF;
+  font: normal 300 1.5vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  text-shadow: 2px 2px #404040;
+}
+
+
+
+
+
+
+/**********************************************/
+/**********     ENTITY DISPLAYS     ***********/
+/**********************************************/
+
+article.entity-display {
+  position: relative;
+}
+
+article.entity-display img {
+  border-radius: .5vw;
+  display: inline-block;
+  height: 15vw;
+  width: 15vw;
+}
+
+article.entity-display img.vendor {
+  background-color: #61964f;
+}
+
+article.entity-display img.market {
+  background-color: #423d61;
+}
+
+article.entity-display div.entity-text {
+  display: inline-block;
+  padding: 0 0 0 2vw;
+  vertical-align: top;
+  width: 40vw;
+}
+
+article.entity-display p {
+  font: normal 400 1vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  padding: 3vw 0 0 0;
+}
+
+article.entity-display ul.address-block li {
+  font: normal 300 1vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  padding: .5vw 0 0 0;
+  text-transform: uppercase;
+}
+
+article.entity-display ul.address-block li:first-of-type {
+  margin: 3vw 0 0 0;
+}
+
+article.entity-display button {
+  background-color: red;
+  height: 5vw;
+  width: 10vw;
+}
+
+
+
+
+
+/**********************************************/
+/**********         TABLES          ***********/
+/**********************************************/
+
+
+table th {
+  font: normal normal 1.3vw/1.3vw 'Josefin Sans', sans-serif;
+  letter-spacing: .15em;
+  padding: 0 0 2vw 0;
+  text-transform: uppercase;
+}
+
+table td {
+  font: normal 300 1vw/1vw 'Lato', sans-serif;
+  height: 2.5vw;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+
+
+
+/**********************************************/
+/**********  TABLE AND FORM WIDTHS  ***********/
+/**********************************************/
+
+.table17{
+  width: 17vw;
+}
+
+.table25 {
+  width: 24vw;
+}
+
+.table10 {
+  width: 7vw;
+}
+
+.table48 {
+  width: 48vw
+}
+
+.in-page-input-form li.form17 {
+  margin: 0 2vw 0 0 ;
+  width: calc(15vw - 6px);
+}
+
+.in-page-input-form li.form25 {
+  position: absolute;
+  margin: 0 2vw 0 17vw; ;
+  width: calc(22vw - 6px);
+}
+
+.in-page-input-form li.form10 {
+  position: absolute;
+  margin: 0 2vw 0 41vw ;
+  width: calc(6vw - 6px);
+}
+
+.in-page-input-form li.form48 {
+  position: absolute;
+  margin: 0 2vw 0 0 ;
+  width: calc(46vw - 6px);
+}
+
+
+
+/**********************************************/
+/**********       BUTTONS????       ***********/
+/**********************************************/
+
+article.entity-display div.entity-buttons {
+  position: absolute;
+  top: 12.1vw;
+  left: 17vw;
+}
+
+.entity-buttons li {
+  display: inline-block;
+}
+
+.entity-buttons input {
+  border: 1px solid #000;
+  display: inline-block;
+  font: normal 400 .8vw/1 'Lato', sans-serif;
+  height: 3vw;
+  letter-spacing: .15em;
+  margin: 0 .25vw .5vw 0;
+  padding: .75vw 1.25vw;
+  text-transform: uppercase;
+  width: 11vw;
+}
+
+.entity-buttons input:hover {
+  color: #dadada;
+}
+
+.in-page-input-form .entity-buttons {
+  float: right;
+}
+
+.in-page-input-form {
+  margin: 2vw 0 0 0;
+  position: relative;
+}
+
+.in-page-input-form li {
+  background-color: #fafafa;
+  border: solid #d8d8d8 1px;
+  display: inline-block;
+  font: normal normal 1vw/1 'Lato', sans-serif;
+  height: 2.2vw;
+  padding: .8vw 0 0 1vw;
+  position: absolute;
+  top: 0;
+}
+
+textarea {
+  width: 21vw;
+}
+
+.table-button input {
+  border: 1px solid transparent;
+  border-radius: .25vw;
+  color: #FFF;
+  height: 2.5vw;
+  letter-spacing: .1em;
+  margin: 0 0 1vw 1vw;
+  padding: 0 1vw;
+  text-align: center;
+  /*width: 4.2vw;*/
+}
+
+.table-button.market input {
+  background-color: #423d61;
+}
+
+.table-button.vendor input {
+  background-color: #61964f;
+}
+
+.table-button.market input:hover {
+  background-color: #5b5385;
+}
+
+.table-button.vendor input:hover {
+  background-color: #74ac61;
+}
+
+
+form#new_market.new_market,
+section.stand-alone-form {
+  position: fixed;
+  margin: 10vw 24.5vw;
+}
+
+form#new_market.new_market input,
+section.stand-alone-form input,
+section.stand-alone-form select,
+section.top-of-page-form input,
+section.top-of-page-form select {
+  background-color: #FFF;
+  border: solid #d8d8d8 1px;
+  height: 4vw;
+  margin: 0 .5vw 1vw .5vw;
+  width: 15.125vw;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  padding: 0 0 0 1.125vw;
+}
+
+form#new_market.new_market input {
+  opacity: .8;
+}
+
+form#new_market.new_market input.name {
+  width: 50vw;
+}
+
+form#new_market.new_market input.search-button {
+  background-color: #da392a;
+  border: 1px solid transparent;
+  border-radius: .4vw;
+  color: #FFF;
+  height: 3.25vw;
+  margin: 1vw;
+  text-align: center;
+  text-transform: lowercase;
+  opacity: 1;
+  padding: .5vw;
+  width: 15.125vw;
+}
+
+
+section.stand-alone-form li label {
+  display: inline-block;
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  width: 8vw;
+}
+
+section.stand-alone-form input {
+  width: 38vw;
+}
+
+section.stand-alone-form select {
+  border-radius: 0;
+  width: 39.25vw;
+}
+
+section.stand-alone-form input.search-button {
+  border-radius: .4vw;
+  color: #FFF;
+  margin: 2vw 12.5vw 12vw;
+  width: 25vw;
+}
+
+section.stand-alone-form.market input.search-button {
+  background-color: #423d61;
+}
+
+section.stand-alone-form.vendor input.search-button {
+  background-color: #61964f;
+}
+
+section.top-of-page-form {
+  font: normal normal 1.5vw/1 'Lato', sans-serif;
+  margin: 0 0 5vw 0;
+}
+
+section.top-of-page-form input {
+  height: 4vw;
+  margin: 0 0 0 0;
+  width: 16.3vw;
+}
+
+section.top-of-page-form select {
+  margin: 0 0 1vw 0;
+  width: 35vw;
+}
+
+section.top-of-page-form input.search-button {
+  background-color: #61964f;
+  border-radius: .4vw;
+  color: #FFF;
+  display: inline-block;
+  float: right;
+  height: 4vw;
+  padding: .5vw 1vw;
+  text-transform: lowercase;
+}
+
+section.top-of-page-form input,
+section.top-of-page-form select {
+  display: inline-block;
+}
+
+/**********************************************/
+/**********       WHYYYYYY???       ***********/
+/**********************************************/
+
+/*form.button_to input,
+li.form-submit {
+
+}
+
+form.button_to input:hover,
+li.form-submit:hover {
+  color: #dadada;
+  font: normal 400 .8vw/1 'Lato', sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+
+
+
+td.table-button form.button_to {
+  text-align: center;
+  margin: 0 0 1vw 1vw;
+  width: 4.5vw;
+}*/
+
+input#vendor_num_of_employees {
+  width: 8vw;
+}
+
+li.hide {
+  background-color: transparent;
+  border: transparent;
+  margin: none;
+  padding: none;
+}

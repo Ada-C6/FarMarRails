@@ -1,0 +1,31 @@
+<section class="body">
+
+  <div class="search search-high">
+    <%= search_form_for @search_market do |f| %>
+      <%= f.search_field :name_or_address_or_city_or_state_cont, placeholder: "Search Markets"%>
+      <%= f.submit "search", class:"search-button" %>
+    <% end %>
+  </div>
+
+<% if !@markets.empty? %>
+  <% @markets.each do |market| %>
+    <article class="entity-display">
+      <img src="../assets/Market-logo-white.png" alt="vendor placeholder logo" class="market"/>
+      <div class="entity-text">
+        <h3><%= link_to market.name, {action: 'guest_show', id: market}, method: :get %></h3>
+          <ul class="address-block">
+            <li><%= market.address %></li>
+            <li><%= "#{market.city}, #{market.state} #{market.zip}" %></li>
+          </ul>
+      </div>
+      <div class="list-break"></div>
+    </article>
+  <% end %>
+<% else %>
+  <p class="error-message">
+    Sorry! We didn't find any markets with that search term.
+  </p>
+<% end %>
+
+
+</section>

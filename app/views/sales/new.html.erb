@@ -1,0 +1,23 @@
+<section class="stand-alone-form vendor">
+  <%= form_for @sale do |f| %>
+    <ul>
+      <li>
+        <%= f.label :amount %>
+        <%= f.number_field :amount, placeholder: "$00.00" %>
+      </li>
+      <li>
+        <%= f.label :product_id %>
+        <%= f.collection_select :product_id, Vendor.find(@id).products, :id, :name %>
+      </li>
+      <li>
+        <%= f.hidden_field :vendor_id, value: @id%>
+      </li>
+      <li>
+        <%= f.hidden_field :purchase_time, value: DateTime.now %>
+      </li>
+    </ul>
+
+    <%= f.submit class:"search-button"%>
+
+  <% end %>
+</section>

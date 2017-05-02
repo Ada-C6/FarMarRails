@@ -1,0 +1,32 @@
+<section class="body">
+
+  <article class="entity-display">
+
+    <img src="/assets/Vendor-logo-white.png" alt="vendor placeholder logo" class="vendor"/>
+    <div class="entity-text">
+      <h3><%= @vendor.name %></h3>
+      <h4>at <%= link_to @vendor.market.name, {controller: 'markets', action: 'guest_show', id: @vendor.market_id}, method: :get %></h4>
+      <p>Description: <%= @vendor.description %></p>
+    </div>
+    <div class="list-break"></div>
+  </article>
+
+  <article>
+    <table>
+      <tr>
+        <th class="table17">Products</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @vendor.products.each do |product| %>
+        <tr>
+          <td class="table17">
+            <%= product.name %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+  </article>
+
+</section>
