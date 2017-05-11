@@ -13,3 +13,65 @@
  *= require_tree .
  *= require_self
  */
+
+/*All pages*/
+
+html {
+  font: normal normal 16px/1.2 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+header a, footer a {
+  color: white;
+  font-size: 18px;
+  margin: 0 15px;
+}
+
+header {
+  padding: 30px 0;
+}
+
+header li {
+  display: inline-block;
+}
+
+.main-body {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+footer {
+  padding: 10px 0;
+  margin-top: 50px;
+}
+
+header, footer {
+  background: url("/assets/Grass.jpg");
+  color: white;
+}
+
+.individual-market {
+  font-size: 18px;
+}
+
+.overall-header-text {
+  font: 24px/1 "Lato", sans-serif;
+  color: #2d47a3;
+}
+
+li {
+  display: block;
+}
+
+.vendor-sales, .products-employees {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.all-markets {
+  text-align: center;
+}
+
+a {
+  color: black;
+}

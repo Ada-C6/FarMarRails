@@ -1,0 +1,19 @@
+<div class="overall-header-text">
+  <h1><%=@market.name%></h1>
+</div>
+  <%= link_to "Add A New Vendor", [:new, @market, @vendor], method: :get%>
+<div >
+  <h2>List of Vendors</h2>
+</div>
+
+<table class="list-of-markets">
+  <tbody>
+    <tr>
+      <%@market.vendors.all.each do |vendor|%>
+        <td>Vendor <%=vendor.name%></td>
+        <td><%= link_to image_tag("/assets/edit.svg"), [:edit, @market, @vendor], method: :get%></td>
+        <td><%= link_to image_tag("/assets/delete.svg"), market_vendor_path(@market, vendor), method: :delete, data: { confirm: "Are you really sure?" } %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>

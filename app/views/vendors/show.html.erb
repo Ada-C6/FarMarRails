@@ -1,0 +1,87 @@
+<div class="individual-vendor">
+  <div class="overall-header-text">
+    <h1><%= @vendor.name %></h1>
+  </div>
+  <div class="products-employees">
+    <br />Number of employees: <%= @vendor.employee_number %>
+
+    <br />Market: <%= @vendor.market.name %>
+
+    <h3>Product list</h3>
+    <table class="product-table">
+      <tbody>
+        <tr>
+          <% @vendor.products.all.each do |product| %>
+            <td><%= product.name %></td>
+            <td><%= link_to image_tag("/assets/edit.svg"), edit_vendor_product_path(@vendor, product) %></td>
+            <td><%= link_to image_tag("/assets/delete.svg"), vendor_product_path(@vendor, product), method: :delete, data: { confirm: "Are you really sure?" } %></td>
+            <td><%= link_to "Create Sale", new_vendor_product_sale_path(vendor_id: @vendor.id, product_id: product.id) %></td>
+        </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <p> Would you like to add a new product? If so, <%= link_to "click here", new_vendor_product_path(@vendor) %> </p>
+
+  <h3>Total Sales List</h3>
+  <div class="vendor-sales">
+    <% if @vendor.sales == nil %>
+      <p>This vendor has no sales</p>
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @vendor.sales.all.each do |sale| %>
+            <td><%= sale.product.name %></td>
+            <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
+            <td><%= number_to_currency(sale.amount/100.00) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <h4>
+      Total Sales:
+        $<%= (Sale.where(vendor_id: @vendor.id).sum(:amount))/100.00 %>
+    </h4>
+  </div>
+
+  <h3>Monthly Sales List</h3>
+  <div class="vendor-sales">
+    <% monthly_sales = @vendor.sales.where(:purchase_time => Time.now.beginning_of_month..Time.now.end_of_month) %>
+    <% if monthly_sales.count == 0 %>
+      <p>This vendor has no sales this month</p>
+    <% else %>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% monthly_sales.each do |sale| %>
+            <td><%= sale.product.name %></td>
+            <td><%= sale.purchase_time.strftime("%m/%d/%Y") %></td>
+            <td><%= number_to_currency(sale.amount/100.00) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <h4>
+      Total Monthly Sales:
+        $<%= (monthly_sales.where(vendor_id: @vendor.id).sum(:amount))/100.00 %>
+    </h4>
+  </div>
+</div>

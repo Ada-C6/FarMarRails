@@ -1,0 +1,11 @@
+<div class="overall-header-text">
+  <h1>Add or Change a Vendor</h1>
+</div>
+<%= form_for [@market, @vendor] do  |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label "Number of Employees" %>
+<%= f.text_field :employee_number %>
+
+<%= f.submit%>
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Please enter your sale</h1>
+
+<% if @sale.errors.any? %>
+  <ul class="errors">
+    <% @sale.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for [@product.vendor, @product, @sale], url: {action: "create"} do |f| %>
+  <%= f.label "Sale amount" %>
+  <%= f.text_field :amount %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,21 @@
+<div class="individual-market">
+  <div class="overall-header-text">
+    <h1><%= @market.name %></h1>
+  </div>
+
+  <h3>Address</h3>
+  <br /><%= @market.address %>
+  <br /><%= @market.city %>
+  <br /><%= @market.state %>
+  <br /><%= @market.zip %>
+  <br /><%= @market.county %> County
+
+  <h3>Vendor list</h3>
+    <ul>
+      <%@market.vendors.all.each do |vendor|%>
+        <li>
+          <%=vendor.name%>
+        </li>
+      <%end%>
+    </ul>
+</div>
